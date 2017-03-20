@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="/waterfox-deb/assets/css/style.css?v=0333a2a707ce714c6c30979c436718a00cfeab5c">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/waterfox-deb/assets/js/script.js"></script>
+
+  <title>waterfox-deb</title>
+  <meta name="description" content="Deb packages and apt repository for Waterfox Web Browser for Ubuntu and its derivatives.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+<script type="text/javascript" src="https://counter8.fcs.ovh/private/counter.js?c=748c588edc3d2ceb484d0880cd31a58a"></script>
+<noscript><a href="https://www.freecounterstat.com" title="website counter"><img src="https://counter8.fcs.ovh/private/freecounterstat.php?c=748c588edc3d2ceb484d0880cd31a58a" border="0" title="website counter" alt="website counter"></a></noscript>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">waterfox-deb</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Deb packages and apt repository for Waterfox Web Browser for Ubuntu and its derivatives.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          
+          <a href="https://github.com/hawkeye116477/waterfox-deb" class="code">View waterfox-deb on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+
+<h2 id="installing">Installing</h2>
+<h3 id="method1">Method 1</h2>
+<p>Just install waterfox.deb package from <a href="https://hawkeye116477.github.io/waterfox-deb/pool/main/w/waterfox/waterfox_52.0.1_amd64.deb">here</a> and apt repository will be automatically added.</p>
+<h3 id="method2">Method 2</h2>
+<p>Run these commands to add this repostory to you APT source list:</p>
+<p><code>
+$ echo "deb https://hawkeye116477.github.io/waterfox-deb release main" | \
+sudo tee /etc/apt/sources.list.d/waterfox-release-hawkeye116477.list
+</code></p>
+<p>And the public GPG key:</p>
+<p><code>
+$ curl https://hawkeye116477.github.io/waterfox-deb/hawkeye116477.key | sudo apt-key add -
+</code></p>
+<p>You can use the packages after update your APT index:</p>
+<p><code>$ sudo apt-get update</code></p>
+<p>Then to install Waterfox, use Software Manager or type:</p>
+<p><code>$ sudo apt-get install waterfox</code></p>
+<h2 id="note">Note: Language packs and KDE integration features are available as separate packages to install from apt repository!</h2>
+
+
+<h2 id="source">Source</h2>
+<p>Packages was generated with files from <a href="https://github.com/MrAlex94/Waterfox">https://github.com/MrAlex94/Waterfox</a> and patched with <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">OpenSuse's KDE patches</a> and <a href="http://bazaar.launchpad.net/~mozillateam/firefox/firefox.xenial/files/head:/debian/patches/">Ubuntu Mozilla Team patches</a> .</p>
+
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      
+      <p><a href="https://github.com/hawkeye116477" class="avatar"><img src="https://github.com/hawkeye116477.png" width="48" height="48"></a> <a href="https://github.com/hawkeye116477">hawkeye116477</a> maintains <a href="https://github.com/hawkeye116477/waterfox-deb">waterfox-deb</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/hawkeye116477/waterfox-deb/tarball/master" class="tar">tar</a><a href="https://github.com/hawkeye116477/waterfox-deb/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+  
+</body>
+</html>
+
