@@ -1,3 +1,9 @@
+waterfox (52.0.1~build2) xenial; urgency=high
+
+  * Fixed "..error exit status 2"
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__
+
 waterfox (52.0.1) xenial; urgency=medium
 
   * Updated to Firefox 52.0.1
@@ -6,7 +12,7 @@ waterfox (52.0.1) xenial; urgency=medium
   * Enabled various HTML5 features
   * Disabled browser updater completely, because updates for Waterfox are through apt repository, so we don't need that updater
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 19 Mar 2017 15:29:29 +0100
 
 waterfox (52.0) xenial; urgency=medium
 
