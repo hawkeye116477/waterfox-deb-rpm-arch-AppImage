@@ -1,0 +1,71 @@
+.TH waterfox 1 2017-03-12 waterfox
+.SH NAME
+waterfox \- the Lightning Fast Browser from Waterfox Project
+
+.SH SYNOPSIS
+.B waterfox
+[\fIOPTIONS\fR] [\fIurl\fR]
+
+.SH DESCRIPTION
+See https://www.reddit.com/r/waterfox/ for help using the browser.
+This manpage only describes how to run it.
+
+.SH OPTIONS
+.TP
+\fB\-h, \-\-help\fR
+Prints the command line options.
+.TP
+\fB\-g, \-\-debug\fR
+Starts \fBwaterfox\fR in a debugger.
+.TP
+\fB\-d, \-\-debugger\fR
+Specify the debugger in which to start \fBwaterfox\fR. The default is gdb. Used in conjunction with \fB-g\fR.
+.TP
+\fB\-a, \-\-debugger\-args\fR
+Specify arguments to pass to the debugger. Used in conjunction with \fB-g\fR.
+.TP
+\fB\-no\-remote\fR
+Don't connect to any other running instances of \fBwaterfox\fR. Use this if you want to run \fBwaterfox\fR
+in an entirely new process. By default, \fBwaterfox\fR will delegate a command to an already running instance.
+.TP
+\fB\-ProfileManager\fR
+Start the profilemanager. Use this to choose the profile you would like to run \fBwaterfox\fR with. You
+will need to also use \fB\-no\-remote\fR if there is already a running \fBwaterfox\fR instance.
+.TP
+\fB\-P\fR \fIprofile\fR
+Start \fBwaterfox\fR with the profile named \fIprofile\fR. Will start the profile manager if a valid profile
+name is not specified. You will need to also use \fB\-no\-remote\fR if there is already a running \fBwaterfox\fR instance.
+.TP
+\fB\-safe\-mode\fR
+Start \fBwaterfox\fR in safe-mode. This disables all third-party extensions, and may be necessary if
+you are having problems with an extension you installed.
+.TP
+\fB\-new\-tab\fR \fIurl\fR
+Open \fIurl\fR in a new tab.
+.TP
+\fB\-new\-window\fR \fIurl\fR
+Open \fIurl\fR in a new window.
+.TP
+\fB\-v, \-version\fR
+Print the current version of \fBwaterfox\fR.
+.TP
+\fB\-UILocale\fR \fIlocale\fR
+Start \fBwaterfox\fR with the specified locale \fIlocale\fR. Use this to override your environment
+.TP
+\fB\-preferences\fR
+Open the preferences dialog.
+.TP
+\fB\-private\fR
+Start \fBwaterfox\fR in private browsing mode
+.TP
+\fB\-private\-toggle\fR
+Toggle private browsing mode
+.TP
+\fB\-setDefaultBrowser\fR
+Set \fBwaterfox\fR as the default web browser
+.TP
+\fB\-search\fR \fIterm\fR
+Search for \fIterm\fR with your default search engine
+.TP
+\fB\-jsconsole\fR
+Open the Error console. If \fBwaterfox\fR is not already running, this will open a new browser window too

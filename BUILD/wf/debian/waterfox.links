@@ -1,0 +1,8 @@
+# System dictionaries
+usr/share/hunspell usr/lib/waterfox/dictionaries
+
+# Waterfox launcher
+usr/lib/waterfox/waterfox.sh usr/bin/waterfox
+
+# Waterfox icon
+usr/lib/waterfox/browser/icons/mozicon128.png usr/share/pixmaps/waterfox.png

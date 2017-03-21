@@ -1,0 +1,25 @@
+waterfox (52.0.1) xenial; urgency=medium
+
+  * Updated to Firefox 52.0.1
+  * Fixed about home CSS
+  * Fixed Netflix/Amazon Prime Video/Chase website issues by spoofing Firefox 38 user agent for those sites
+  * Enabled various HTML5 features
+  * Disabled browser updater completely, because updates for Waterfox are through apt repository, so we don't need that updater
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__
+
+waterfox (52.0) xenial; urgency=medium
+
+  * Updated to Firefox 52.0
+  * Removed 64-Bit NPAPI Flash only limitation
+  * Pulled changes that fixed various issues with telemetry, startup performance and more. Big thanks to PandaCodex for their contributions!
+  * There is a small bug on about home with the logo being misplaced which I’ll make sure is resolved in a small bug fix update.
+  * Applied Ubuntu's patches: 
+    - allow-lockPref-everywhere.patch
+    - dont-override-general-useragent-locale.patch
+  * Applied OpenSuse's KDE patches
+  * Added manpage
+  * Disabled default browser checking
+  * Enabled e10s
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 16 Mar 2017 14:33:12 +0100

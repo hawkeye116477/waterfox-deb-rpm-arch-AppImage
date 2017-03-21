@@ -1,0 +1,505 @@
+Source: waterfox
+Section: web
+Priority: optional
+Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
+Build-Depends:debhelper (>= 9),
+Standards-Version: 3.9.7
+Homepage: https://www.waterfoxproject.org/
+
+Package: waterfox
+Architecture: amd64
+Pre-Depends: apt-transport-https
+Depends: lsb-release,
+	${misc:Depends},
+	libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.17), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-glib-1-2 (>= 0.78), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.4), libgtk2.0-0 (>= 2.14), libpango-1.0-0 (>= 1.22.0), libpangocairo-1.0-0 (>= 1.14.0), libstartup-notification0 (>= 0.8), libx11-6, libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxrender1, libxt6
+Recommends: libcanberra0,
+	libdbusmenu-glib4,
+	libdbusmenu-gtk4,
+	waterfox-kde
+Provides: www-browser,
+	gnome-www-browser,
+Suggests: fonts-lyx
+Description: The Lightning Fast Browser
+ Waterfox focuses on giving users choice while also helping make the world a better place. Watefox is partners with Ecosia, a search engine that plants trees with its generated revenues. The browser itself is focused on power users, which lets you make the important decisions. There is no plugin whitelist, you can run whichever extensions you like and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
+ .
+ Waterfox is powered by Mozilla Firefox source code.
+ .
+ Note: Language packs are available as seperate packages!
+
+Package: waterfox-kde
+Architecture: amd64
+Pre-Depends: apt-transport-https
+Depends: lsb-release,
+	${misc:Depends},
+	libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.4), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-glib-1-2 (>= 0.78), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk-3-0 (>= 3.4), libgtk2.0-0 (>= 2.14), libpango-1.0-0 (>= 1.22.0), libpangocairo-1.0-0 (>= 1.14.0), libstartup-notification0 (>= 0.8), libx11-6, libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxrender1, libxt6, libkf5configcore5 (>= 4.97.0), libkf5coreaddons5 (>= 4.99.0), libkf5i18n5 (>= 4.97.0), libkf5kiocore5 (>= 4.96.0), libkf5kiowidgets5 (>= 5.5.0+git20150101.0309+15.04), libkf5notifications5 (>= 4.96.0), libkf5service-bin, libkf5service5 (>= 4.96.0), libkf5windowsystem5 (>= 4.96.0), libqt5core5a (>= 5.3.0), libqt5gui5 (>= 5.0.2) | libqt5gui5-gles (>= 5.0.2), libqt5widgets5 (>= 5.2.0), libstdc++6 (>= 5.2), waterfox
+Recommends: libcanberra0,
+	libdbusmenu-glib4,
+	libdbusmenu-gtk4
+Provides: www-browser,
+	gnome-www-browser,
+Suggests: fonts-lyx
+Description: Waterfox package for integration with KDE Plasma
+ Install this package if you'd like Waterfox with KDE file dialogs, file associations, protocol handlers and
+ other KDE Plasma integration features.
+
+Package: waterfox-locale-af
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Afrikaans language pack for Waterfox
+ This package contains Afrikaans translations for Waterfox
+
+Package: waterfox-locale-an
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Aragonese language pack for Waterfox
+ This package contains Aragonese translations for Waterfox
+
+Package: waterfox-locale-ar
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Arabic language pack for Waterfox
+ This package contains Arabic translations for Waterfox
+
+Package: waterfox-locale-as
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Assamese language pack for Waterfox
+ This package contains Assamese translations for Waterfox
+
+Package: waterfox-locale-ast
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Asturian language pack for Waterfox
+ This package contains Asturian translations for Waterfox
+
+Package: waterfox-locale-az
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Azerbaijani language pack for Waterfox
+ This package contains Azerbaijani translations for Waterfox
+
+Package: waterfox-locale-bg
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Bulgarian language pack for Waterfox
+ This package contains Bulgarian translations for Waterfox
+
+Package: waterfox-locale-bn
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Bengali language pack for Waterfox
+ This package contains Bengali translations for Waterfox
+
+Package: waterfox-locale-br
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Breton language pack for Waterfox
+ This package contains Breton translations for Waterfox
+
+Package: waterfox-locale-bs
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Bosnian language pack for Waterfox
+ This package contains Bosnian translations for Waterfox
+
+Package: waterfox-locale-ca
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Catalan; Valencian language pack for Waterfox
+ This package contains Catalan; Valencian translations for Waterfox
+
+Package: waterfox-locale-cak
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Kaqchikel language pack for Waterfox
+ This package contains Kaqchikel translations for Waterfox
+
+Package: waterfox-locale-cs
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Czech language pack for Waterfox
+ This package contains Czech translations for Waterfox
+
+Package: waterfox-locale-cy
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Welsh language pack for Waterfox
+ This package contains Welsh translations for Waterfox
+
+Package: waterfox-locale-da
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Danish language pack for Waterfox
+ This package contains Danish translations for Waterfox
+
+Package: waterfox-locale-de
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: German language pack for Waterfox
+ This package contains German translations for Waterfox
+
+Package: waterfox-locale-el
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Greek language pack for Waterfox
+ This package contains Greek translations for Waterfox
+
+Package: waterfox-locale-en
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: English language pack for Waterfox
+ This package contains English translations for Waterfox
+
+Package: waterfox-locale-eo
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Esperanto language pack for Waterfox
+ This package contains Esperanto translations for Waterfox
+
+Package: waterfox-locale-es
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Spanish; Castilian language pack for Waterfox
+ This package contains Spanish; Castilian translations for Waterfox
+
+Package: waterfox-locale-et
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Estonian language pack for Waterfox
+ This package contains Estonian translations for Waterfox
+
+Package: waterfox-locale-eu
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Basque language pack for Waterfox
+ This package contains Basque translations for Waterfox
+
+Package: waterfox-locale-fa
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Persian language pack for Waterfox
+ This package contains Persian translations for Waterfox
+
+Package: waterfox-locale-fi
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Finnish language pack for Waterfox
+ This package contains Finnish translations for Waterfox
+
+Package: waterfox-locale-fr
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: French language pack for Waterfox
+ This package contains French translations for Waterfox
+
+Package: waterfox-locale-fy
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Western Frisian language pack for Waterfox
+ This package contains Western Frisian translations for Waterfox
+
+Package: waterfox-locale-ga
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Irish (Ireland) language pack for Waterfox
+ This package contains Irish (Ireland) translations for Waterfox
+
+Package: waterfox-locale-gd
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Gaelic; Scottish Gaelic language pack for Waterfox
+ This package contains Gaelic; Scottish Gaelic translations for Waterfox
+
+Package: waterfox-locale-gl
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Galician language pack for Waterfox
+ This package contains Galician translations for Waterfox
+
+Package: waterfox-locale-gn
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Guarani language pack for Waterfox
+ This package contains Guarani translations for Waterfox
+
+Package: waterfox-locale-gu
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Gujarati (India) language pack for Waterfox
+ This package contains Gujarati (India) translations for Waterfox
+
+Package: waterfox-locale-he
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Hebrew language pack for Waterfox
+ This package contains Hebrew translations for Waterfox
+
+Package: waterfox-locale-hi
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Hindi (India) language pack for Waterfox
+ This package contains Hindi (India) translations for Waterfox
+
+Package: waterfox-locale-hr
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Croatian language pack for Waterfox
+ This package contains Croatian translations for Waterfox
+
+Package: waterfox-locale-hsb
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Sorbian, Upper language pack for Waterfox
+ This package contains Sorbian, Upper translations for Waterfox
+
+Package: waterfox-locale-hu
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Hungarian language pack for Waterfox
+ This package contains Hungarian translations for Waterfox
+
+Package: waterfox-locale-hy
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Armenian (Armenia) language pack for Waterfox
+ This package contains Armenian (Armenia) translations for Waterfox
+
+Package: waterfox-locale-id
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Indonesian language pack for Waterfox
+ This package contains Indonesian translations for Waterfox
+
+Package: waterfox-locale-is
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Icelandic language pack for Waterfox
+ This package contains Icelandic translations for Waterfox
+
+Package: waterfox-locale-it
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Italian language pack for Waterfox
+ This package contains Italian translations for Waterfox
+
+Package: waterfox-locale-ja
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Japanese language pack for Waterfox
+ This package contains Japanese translations for Waterfox
+
+Package: waterfox-locale-kk
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Kazakh language pack for Waterfox
+ This package contains Kazakh translations for Waterfox
+
+Package: waterfox-locale-km
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Central Khmer language pack for Waterfox
+ This package contains Central Khmer translations for Waterfox
+
+Package: waterfox-locale-kn
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Kannada language pack for Waterfox
+ This package contains Kannada translations for Waterfox
+
+Package: waterfox-locale-ko
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Korean language pack for Waterfox
+ This package contains Korean translations for Waterfox
+
+Package: waterfox-locale-lt
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Lithuanian language pack for Waterfox
+ This package contains Lithuanian translations for Waterfox
+
+Package: waterfox-locale-lv
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Latvian language pack for Waterfox
+ This package contains Latvian translations for Waterfox
+
+Package: waterfox-locale-mai
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Maithili language pack for Waterfox
+ This package contains Maithili translations for Waterfox
+
+Package: waterfox-locale-mk
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Macedonian language pack for Waterfox
+ This package contains Macedonian translations for Waterfox
+
+Package: waterfox-locale-ml
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Malayalam language pack for Waterfox
+ This package contains Malayalam translations for Waterfox
+
+Package: waterfox-locale-mr
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Marathi language pack for Waterfox
+ This package contains Marathi translations for Waterfox
+
+Package: waterfox-locale-ms
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Malay language pack for Waterfox
+ This package contains Malay translations for Waterfox
+
+Package: waterfox-locale-nb
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Bokmål, Norwegian; Norwegian Bokmål language pack for Waterfox
+ This package contains Bokmål, Norwegian; Norwegian Bokmål translations for Waterfox
+
+Package: waterfox-locale-nl
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Dutch; Flemish language pack for Waterfox
+ This package contains Dutch; Flemish translations for Waterfox
+
+Package: waterfox-locale-nn
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Norwegian Nynorsk; Nynorsk, Norwegian language pack for Waterfox
+ This package contains Norwegian Nynorsk; Nynorsk, Norwegian translations for Waterfox
+
+Package: waterfox-locale-or
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Oriya language pack for Waterfox
+ This package contains Oriya translations for Waterfox
+
+Package: waterfox-locale-pa
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Panjabi; Punjabi (India) language pack for Waterfox
+ This package contains Panjabi; Punjabi (India) translations for Waterfox
+
+Package: waterfox-locale-pl
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Polish language pack for Waterfox
+ This package contains Polish translations for Waterfox
+
+Package: waterfox-locale-pt
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Portuguese language pack for Waterfox
+ This package contains Portuguese translations for Waterfox
+
+Package: waterfox-locale-ro
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Romanian language pack for Waterfox
+ This package contains Romanian translations for Waterfox
+
+Package: waterfox-locale-ru
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Russian language pack for Waterfox
+ This package contains Russian translations for Waterfox
+
+Package: waterfox-locale-si
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Sinhala; Sinhalese language pack for Waterfox
+ This package contains Sinhala; Sinhalese translations for Waterfox
+
+Package: waterfox-locale-sk
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Slovak language pack for Waterfox
+ This package contains Slovak translations for Waterfox
+
+Package: waterfox-locale-sl
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Slovenian language pack for Waterfox
+ This package contains Slovenian translations for Waterfox
+
+Package: waterfox-locale-sq
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Albanian language pack for Waterfox
+ This package contains Albanian translations for Waterfox
+
+Package: waterfox-locale-sr
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Serbian language pack for Waterfox
+ This package contains Serbian translations for Waterfox
+
+Package: waterfox-locale-sv
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Swedish (Sweden) language pack for Waterfox
+ This package contains Swedish (Sweden) translations for Waterfox
+
+Package: waterfox-locale-ta
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Tamil language pack for Waterfox
+ This package contains Tamil translations for Waterfox
+
+Package: waterfox-locale-te
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Telugu language pack for Waterfox
+ This package contains Telugu translations for Waterfox
+
+Package: waterfox-locale-th
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Thai language pack for Waterfox
+ This package contains Thai translations for Waterfox
+
+Package: waterfox-locale-tr
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Turkish language pack for Waterfox
+ This package contains Turkish translations for Waterfox
+
+Package: waterfox-locale-uk
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Ukrainian language pack for Waterfox
+ This package contains Ukrainian translations for Waterfox
+
+Package: waterfox-locale-uz
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Uzbek language pack for Waterfox
+ This package contains Uzbek translations for Waterfox
+
+Package: waterfox-locale-vi
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Vietnamese language pack for Waterfox
+ This package contains Vietnamese translations for Waterfox
+
+Package: waterfox-locale-xh
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Xhosa language pack for Waterfox
+ This package contains Xhosa translations for Waterfox
+
+Package: waterfox-locale-zh-hans
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Simplified Chinese language pack for Waterfox
+ This package contains Simplified Chinese translations for Waterfox
+
+Package: waterfox-locale-zh-hant
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Traditional Chinese language pack for Waterfox
+ This package contains Traditional Chinese translations for Waterfox

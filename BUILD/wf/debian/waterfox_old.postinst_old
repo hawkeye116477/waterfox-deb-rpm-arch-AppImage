@@ -1,0 +1,146 @@
+#!/bin/sh
+
+APP_NAME=waterfox
+
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remove" ] ; then
+    update-alternatives --install /usr/bin/gnome-www-browser \
+        gnome-www-browser /usr/bin/$APP_NAME 40
+
+    update-alternatives --install /usr/bin/x-www-browser \
+        x-www-browser /usr/bin/$APP_NAME 40
+fi
+
+# sources.list setting for Waterfox updates.
+REPOCONFIG="deb https://hawkeye116477.github.io/waterfox-deb release main"
+
+SOURCES_PREAMBLE="### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.\n"
+
+APT_CONFIG="`which apt-config 2> /dev/null`"
+
+# Install the repository signing key
+install_key() {
+  APT_KEY="`which apt-key 2> /dev/null`"
+  if [ -x "$APT_KEY" ]; then
+    "$APT_KEY" add - >/dev/null 2>&1 <<KEYDATA
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+Jh7r6FU=
+=94fh
+-----END PGP PUBLIC KEY BLOCK-----
+KEYDATA
+  fi
+}
+
+# Parse apt configuration and return requested variable value.
+apt_config_val() {
+  APTVAR="$1"
+  if [ -x "$APT_CONFIG" ]; then
+    "$APT_CONFIG" dump | sed -e "/^$APTVAR /"'!d' -e "s/^$APTVAR \"\(.*\)\".*/\1/"
+  fi
+}
+
+# Set variables for the locations of the apt sources lists.
+find_apt_sources() {
+  APTDIR=$(apt_config_val Dir)
+  APTETC=$(apt_config_val 'Dir::Etc')
+  APT_SOURCES="$APTDIR$APTETC$(apt_config_val 'Dir::Etc::sourcelist')"
+  APT_SOURCESDIR="$APTDIR$APTETC$(apt_config_val 'Dir::Etc::sourceparts')"
+}
+
+# Add the Waterfox repository to the apt sources.
+# Returns:
+# 0 - sources list was created
+# 2 - error
+create_sources_lists() {
+  if [ ! "$REPOCONFIG" ]; then
+    return 0
+  fi
+
+  find_apt_sources
+
+  SOURCELIST="$APT_SOURCESDIR/waterfox-release-hawkeye116477.list"
+
+  # Check if the correct repository configuration is in there.
+  REPOMATCH=$(grep "^[[:space:]#]*\b$REPOCONFIG\b" "$SOURCELIST" \
+    2>/dev/null)
+
+  # Don't do anything if the file is there, since that probably means
+  # we have already installed it
+  if [ -r "$SOURCELIST" ]; then
+    if [ ! "$REPOMATCH" ]; then
+        # At this point wrong configuration is active. In that case,
+        # just abandon the mess and recreate the file
+        # with the correct configuration.
+        printf "$SOURCES_PREAMBLE" > "$SOURCELIST"
+        printf "$REPOCONFIG\n" >> "$SOURCELIST"
+
+        if [ $? -eq 0 ]; then
+            return 0
+        fi
+        return 2
+    fi
+  fi
+
+  if [ -d "$APT_SOURCESDIR" ]; then
+    printf "$SOURCES_PREAMBLE" > "$SOURCELIST"
+    printf "$REPOCONFIG\n" >> "$SOURCELIST"
+    if [ $? -eq 0 ]; then
+      return 0
+    fi
+  fi
+  return 2
+}
+
+## MAIN ##
+install_key
+create_sources_lists
+#DEBHELPER#

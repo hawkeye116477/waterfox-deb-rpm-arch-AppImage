@@ -1,0 +1,4 @@
+features/langpack-es-AR@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/langpack-es-CL@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/langpack-es-ES@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/langpack-es-MX@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features

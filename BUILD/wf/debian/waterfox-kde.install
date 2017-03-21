@@ -1,0 +1,2 @@
+debian/kde.js /usr/lib/waterfox/browser/defaults/preferences
+debian/kwaterfoxhelper /usr/lib/waterfox

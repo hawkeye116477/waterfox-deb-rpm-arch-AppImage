@@ -1,0 +1,9 @@
+waterfox /usr/lib
+debian/vendor-gre.js /usr/lib/waterfox/defaults/pref
+debian/vendor-waterfox.js /usr/lib/waterfox/browser/defaults/preferences
+debian/waterfox.sh /usr/lib/waterfox
+debian/waterfox.desktop /usr/share/applications
+debian/distribution.ini /usr/lib/waterfox/distribution
+features/aushelper@mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/webcompat@mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/e10srollout@mozilla.org.xpi /usr/lib/waterfox/browser/features
