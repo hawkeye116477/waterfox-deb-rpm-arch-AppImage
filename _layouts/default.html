@@ -18,15 +18,15 @@
 </head>
 
 <body>
-<script type="text/javascript" src="https://counter8.fcs.ovh/private/counter.js?c=f19eb7918880d43b57700b39c8f7dedb"></script>
-<noscript><a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter8.fcs.ovh/private/freecounterstat.php?c=f19eb7918880d43b57700b39c8f7dedb" border="0" title="website hit counter" alt="website hit counter"></a></noscript>
+<script type="text/javascript" src="https://counter4.fcs.ovh/private/counter.js?c=eed10a45b3633491f0db3d5cce9e1897"></script>
+<noscript><a href="https://www.freecounterstat.com" title="counter for website"><img src="https://counter4.fcs.ovh/private/freecounterstat.php?c=eed10a45b3633491f0db3d5cce9e1897" border="0" title="counter for website" alt="counter for website"></a></noscript>
 
   <div class="wrapper">
     <header>
       <h1 class="title">waterfox-deb</h1>
     </header>
     <div id="container">
-      <p class="tagline">Deb packages and apt repository for Waterfox Web Browser for Ubuntu and its derivatives.</p>
+      <p class="tagline">Unofficial apt repository for Waterfox Web Browser for Ubuntu and its derivatives.</p>
       <div id="main" role="main">
         <div class="download-bar">
         <div class="inner">
@@ -37,28 +37,24 @@
         </div>
         <article class="markdown-body">
 
-<h2 id="installing">Installing</h2>
-<h3 id="method1">Method 1</h2>
-<p>Just install waterfox.deb package from <a href="https://hawkeye116477.github.io/waterfox-deb/pool/main/w/waterfox/waterfox_52.0.1_amd64.deb">here</a> and apt repository will be automatically added.</p>
-<h3 id="method2">Method 2</h2>
-<p>Run these commands to add this repostory to your APT sources list:</p>
-<p><code>
-$ echo "deb https://hawkeye116477.github.io/waterfox-deb release main" | \
-sudo tee /etc/apt/sources.list.d/waterfox-release-hawkeye116477.list
-</code></p>
-<p>And the public GPG key:</p>
-<p><code>
-$ curl https://hawkeye116477.github.io/waterfox-deb/hawkeye116477.key | sudo apt-key add -
-</code></p>
-<p>You can use the packages after update your APT index:</p>
-<p><code>$ sudo apt-get update</code></p>
-<p>Then to install Waterfox, use Software Manager or type:</p>
-<p><code>$ sudo apt-get install waterfox</code></p>
-<h2 id="note">Note: Language packs and KDE integration features are available as separate packages to install from apt repository!</h2>
+<h1 id="installing">Installing</h2>
+<h2 id="method1">Method 1</h2>
+<p>Download and install deb packages from <a href="https://github.com/hawkeye116477/waterfox-deb/tree/master/pool/main/w/waterfox">here</a>.</p>
+<h2 id="method2">Method 2</h2>
+<p>Run these commands to add this repostory to your APT sources list:
+<pre>$ echo "deb https://hawkeye116477.github.io/waterfox-deb release main" | \
+sudo tee /etc/apt/sources.list.d/waterfox-release-hawkeye116477.list</pre></p>
+<p>And the public GPG key:
+<pre>$ curl https://hawkeye116477.github.io/waterfox-deb/hawkeye116477.key | 
+sudo apt-key add -</pre></p>
+<p>You can download and install the packages after you update the APT package index:
+<pre>$ sudo apt-get update</pre></p>
+<p><h2 id="note">Note: Language packs and KDE integration features are available as separate packages to install from apt repository!</h2></p>
 
-
-<h2 id="source">Source</h2>
-<p>Packages was generated with files from <a href="https://github.com/MrAlex94/Waterfox">https://github.com/MrAlex94/Waterfox</a> and patched with <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">OpenSuse's KDE patches</a> and <a href="http://bazaar.launchpad.net/~mozillateam/firefox/firefox.xenial/files/head:/debian/patches/">Ubuntu Mozilla Team patches</a> .</p>
+<p> </p>
+<p> </p>
+<p><h1 id="source">Source</h2></p>
+<p>Packages were generated with files from <a href="https://github.com/MrAlex94/Waterfox">https://github.com/MrAlex94/Waterfox</a> and patched with <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">OpenSuse's KDE patches</a> and <a href="http://bazaar.launchpad.net/~mozillateam/firefox/firefox.xenial/files/head:/debian/patches/">Ubuntu Mozilla Team patches</a> (allow-lockPref-everywhere.patch and dont-override-general-useragent-locale.patch).</p>
 
         </article>
       </div>
@@ -77,7 +73,6 @@ $ curl https://hawkeye116477.github.io/waterfox-deb/hawkeye116477.key | sudo apt
   </div>
   <div class="current-section">
     <a href="#top">Scroll to top</a>
-    <a href="https://github.com/hawkeye116477/waterfox-deb/tarball/master" class="tar">tar</a><a href="https://github.com/hawkeye116477/waterfox-deb/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
     <p class="name"></p>
   </div>
   
