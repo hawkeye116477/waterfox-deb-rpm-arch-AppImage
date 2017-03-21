@@ -1,4 +1,4 @@
-waterfox (52.0.1~build2) xenial; urgency=high
+waterfox (52.0.1.1) xenial; urgency=high
 
   * Fixed "..error exit status 2"
 
