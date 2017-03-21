@@ -75,7 +75,7 @@ fi
 # Make sure correct permissions are set
 chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.prerm
 chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postinst
-chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postrm
+#chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postrm
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/rules
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.sh
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/kwaterfoxhelper
