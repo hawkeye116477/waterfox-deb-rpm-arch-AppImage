@@ -1,0 +1,45 @@
+diff --git a/browser/app/profile/firefox.js b/browser/app/profile/firefox.js
+index 4927f3b..5b881f4 100644
+--- a/browser/app/profile/firefox.js
++++ b/browser/app/profile/firefox.js
+@@ -184,7 +184,9 @@ pref("browser.customizemode.tip0.learnMoreUrl", "https://support.mozilla.org/1/f
+ pref("keyword.enabled", true);
+ pref("browser.fixup.domainwhitelist.localhost", true);
+ 
++#ifdef XP_WIN || XP_MACOSX
+ pref("general.useragent.locale", "@AB_CD@");
++#endif
+ pref("general.skins.selectedSkin", "classic/1.0");
+ 
+ pref("general.smoothScroll", true);
+diff --git a/browser/components/preferences/in-content/main.js b/browser/components/preferences/in-content/main.js
+index a337f1b..7a14976 100644
+--- a/browser/components/preferences/in-content/main.js
++++ b/browser/components/preferences/in-content/main.js
+@@ -146,6 +146,7 @@ var gMainPane = {
+ 	
+     if (selectedLocale != "") {
+       Services.prefs.setCharPref('general.useragent.locale', selectedLocale);
++		Services.prefs.setBoolPref('intl.locale.matchOS', false);
+       alertsService.showAlertNotification("",  "Restart Waterfox", "You'll need to restart Waterfox to see your selected locale.");
+     }
+   },
+diff --git a/browser/locales/en-US/firefox-l10n.js b/browser/locales/en-US/firefox-l10n.js
+index 4f266d5..f52a4f6 100644
+--- a/browser/locales/en-US/firefox-l10n.js
++++ b/browser/locales/en-US/firefox-l10n.js
+@@ -2,10 +2,14 @@
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ 
++#ifdef XP_WIN || XP_MACOSX
+ #filter substitution
++#endif
+ 
+ # LOCALIZATION NOTE: this preference is set to true for en-US specifically,
+ # locales without this line have the setting set to false by default.
+ pref("browser.search.geoSpecificDefaults", false);
+ 
++#ifdef XP_WIN || XP_MACOSX
+ pref("general.useragent.locale", "@AB_CD@");
++#endif
