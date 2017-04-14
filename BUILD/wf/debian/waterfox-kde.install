@@ -1,2 +1,0 @@
-debian/kde.js /usr/lib/waterfox/browser/defaults/preferences
-debian/kde_distribution/distribution.ini /usr/lib/waterfox/distribution
