@@ -35,11 +35,6 @@ if [ ! -d "$Dir/tmp" ]; then
     mkdir $Dir/tmp/waterfox-$VERSION
 	fi
 
-# Check if kwaterfoxhelper is available
-if [ ! -f $Dir/wf/debian/kwaterfoxhelper ]; then
-    echo "File kwaterfoxhelper is not available!"
-   exit 1
-fi
 
 # Copy deb templates
 if [ -d "$Dir/wf/debian" ]; then
@@ -78,7 +73,6 @@ chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postinst
 #chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postrm
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/rules
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.sh
-chmod 755 $Dir/tmp/waterfox-$VERSION/debian/kwaterfoxhelper
 
 
 # Remove unnecessary files

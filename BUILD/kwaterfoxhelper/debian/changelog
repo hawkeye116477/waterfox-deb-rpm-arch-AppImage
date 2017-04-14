@@ -1,0 +1,5 @@
+kwaterfoxhelper (5.0) xenial; urgency=low
+
+  * Add missing kwaterfoxhelper.notifyrc file
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 14 Apr 2017 17:36:29 +0100
