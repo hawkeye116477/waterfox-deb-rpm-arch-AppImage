@@ -1,11 +1,11 @@
 # HG changeset patch
-# Parent  1c4e33861cfcffe5a189802cf97957b0701260db
+# Parent  9488ac970162c2224614d544b9bab7b984b38c90
 
 diff --git a/browser/base/content/browser-kde.xul b/browser/base/content/browser-kde.xul
 new file mode 100644
 --- /dev/null
 +++ b/browser/base/content/browser-kde.xul
-@@ -0,0 +1,1134 @@
+@@ -0,0 +1,1136 @@
 +#filter substitution
 +<?xml version="1.0"?>
 +# -*- Mode: HTML -*-
@@ -186,6 +186,7 @@ new file mode 100644
 +    <menulist popuponly="true" id="ContentSelectDropdown" hidden="true">
 +      <menupopup rolluponmousewheel="true"
 +                 activateontab="true" position="after_start"
++                 level="parent"
 +#ifdef XP_WIN
 +                 consumeoutsideclicks="false" ignorekeys="shortcuts"
 +#endif
@@ -483,6 +484,9 @@ new file mode 100644
 +                accesskey="&syncedTabs.context.copy.accesskey;"
 +                id="syncedTabsCopySelected"/>
 +      <menuseparator/>
++      <menuitem label="&syncedTabs.context.openAllInTabs.label;"
++                accesskey="&syncedTabs.context.openAllInTabs.accesskey;"
++                id="syncedTabsOpenAllInTabs"/>
 +      <menuitem label="&syncSyncNowItem.label;"
 +                accesskey="&syncSyncNowItem.accesskey;"
 +                id="syncedTabsRefresh"/>
@@ -554,9 +558,7 @@ new file mode 100644
 +#ifdef MENUBAR_CAN_AUTOHIDE
 +             toolbarname="&menubarCmd.label;"
 +             accesskey="&menubarCmd.accesskey;"
-+#if defined(MOZ_WIDGET_GTK)
 +             autohide="true"
-+#endif
 +#endif
 +             context="toolbar-context-menu">
 +      <toolbaritem id="menubar-items" align="center">
@@ -1143,7 +1145,7 @@ new file mode 100644
 diff --git a/browser/base/jar.mn b/browser/base/jar.mn
 --- a/browser/base/jar.mn
 +++ b/browser/base/jar.mn
-@@ -66,16 +66,18 @@ browser.jar:
+@@ -60,16 +60,18 @@ browser.jar:
          content/browser/aboutSocialError.xhtml        (content/aboutSocialError.xhtml)
          content/browser/aboutProviderDirectory.xhtml  (content/aboutProviderDirectory.xhtml)
          content/browser/aboutTabCrashed.css           (content/aboutTabCrashed.css)
@@ -1159,7 +1161,7 @@ diff --git a/browser/base/jar.mn b/browser/base/jar.mn
          content/browser/browser-ctrlTab.js            (content/browser-ctrlTab.js)
          content/browser/browser-customization.js      (content/browser-customization.js)
          content/browser/browser-data-submission-info-bar.js (content/browser-data-submission-info-bar.js)
-         content/browser/browser-devedition.js         (content/browser-devedition.js)
+         content/browser/browser-compacttheme.js       (content/browser-compacttheme.js)
          content/browser/browser-feeds.js              (content/browser-feeds.js)
          content/browser/browser-fullScreenAndPointerLock.js  (content/browser-fullScreenAndPointerLock.js)
 diff --git a/browser/components/build/nsModule.cpp b/browser/components/build/nsModule.cpp
@@ -1225,8 +1227,7 @@ diff --git a/browser/components/build/nsModule.cpp b/browser/components/build/ns
 diff --git a/browser/components/preferences/in-content/main.js b/browser/components/preferences/in-content/main.js
 --- a/browser/components/preferences/in-content/main.js
 +++ b/browser/components/preferences/in-content/main.js
-@@ -33,16 +33,22 @@ var gMainPane = {
-       if (AppConstants.platform == "win") {
+@@ -32,16 +32,22 @@ var gMainPane = {
          // In Windows 8 we launch the control panel since it's the only
          // way to get all file type association prefs. So we don't know
          // when the user will select the default.  We refresh here periodically
@@ -1234,21 +1235,22 @@ diff --git a/browser/components/preferences/in-content/main.js b/browser/compone
          // be set while the prefs are open.
          window.setInterval(this.updateSetDefaultBrowser.bind(this), 1000);
        }
-+
-+    var env = Components.classes["@mozilla.org/process/environment;1"]
-+                          .getService(Components.interfaces.nsIEnvironment);
-+    var kde_session = 0;
-+    if (env.get('KDE_FULL_SESSION') == "true")
-+        kde_session = 1;
      }
++    var env = Components.classes["@mozilla.org/process/environment;1"]
++        .getService(Components.interfaces.nsIEnvironment);
++    var kde_session = 0;
++    if (env.get('KDE_FULL_SESSION') == "true") {
++        kde_session = 1;
++    }
  
      // set up the "use current page" label-changing listener
      this._updateUseCurrentButton();
-     window.addEventListener("focus", this._updateUseCurrentButton.bind(this), false);
+     window.addEventListener("focus", this._updateUseCurrentButton.bind(this));
  
      this.updateBrowserStartupLastSession();
  
-@@ -704,16 +710,27 @@ var gMainPane = {
+     if (AppConstants.platform == "win") {
+@@ -680,16 +686,27 @@ var gMainPane = {
        let alwaysCheckPref = document.getElementById("browser.shell.checkDefaultBrowser");
        alwaysCheckPref.value = true;
  
@@ -1561,7 +1563,7 @@ new file mode 100644
 +NS_GENERIC_FACTORY_CONSTRUCTOR_INIT(nsGNOMEShellService, Init)
 +NS_GENERIC_FACTORY_CONSTRUCTOR_INIT(nsKDEShellService, Init)
 +
-+NS_METHOD
++NS_IMETHODIMP
 +nsUnixShellServiceConstructor(nsISupports *aOuter, REFNSIID aIID, void **aResult)
 +{
 +    if( nsKDEUtils::kdeSupport())
@@ -1584,14 +1586,14 @@ new file mode 100644
 +
 +#include "nsIGNOMEShellService.h"
 +
-+NS_METHOD
++NS_IMETHODIMP
 +nsUnixShellServiceConstructor(nsISupports *aOuter, REFNSIID aIID, void **aResult);
 +
 +#endif // nsunixshellservice_h____
 diff --git a/browser/installer/package-manifest.in b/browser/installer/package-manifest.in
 --- a/browser/installer/package-manifest.in
 +++ b/browser/installer/package-manifest.in
-@@ -652,16 +652,17 @@
+@@ -638,16 +638,17 @@
  @RESPATH@/greprefs.js
  @RESPATH@/defaults/autoconfig/prefcalls.js
  @RESPATH@/browser/defaults/permissions

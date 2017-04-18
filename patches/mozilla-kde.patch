@@ -1,5 +1,5 @@
 # HG changeset patch
-# Parent  5f1979729aa3c6bc50f7097202991e73be677e5e
+# Parent  2b1505c8ca6fc80da9cf517b029a93c452cb9876
 Description: Add KDE integration to Waterfox (toolkit parts)
 Author: Wolfgang Rosenauer <wolfgang@rosenauer.org>
 Author: Lubos Lunak <lunak@suse.com>
@@ -187,8 +187,8 @@ diff --git a/python/mozbuild/mozpack/chrome/manifest.py b/python/mozbuild/mozpac
 diff --git a/toolkit/components/downloads/moz.build b/toolkit/components/downloads/moz.build
 --- a/toolkit/components/downloads/moz.build
 +++ b/toolkit/components/downloads/moz.build
-@@ -57,16 +57,17 @@ if not CONFIG['MOZ_SUITE']:
-         'nsDownloadManagerUI.manifest',
+@@ -49,16 +49,17 @@ if CONFIG['OS_ARCH'] == 'WINNT':
+         'nsDownloadScanner.cpp',
      ]
  
  FINAL_LIBRARY = 'xul'
@@ -229,7 +229,7 @@ diff --git a/toolkit/components/downloads/nsDownloadManager.cpp b/toolkit/compon
  #include "FennecJNIWrappers.h"
  #endif
  
-@@ -2723,16 +2727,25 @@ nsDownload::SetState(DownloadState aStat
+@@ -2724,16 +2728,25 @@ nsDownload::SetState(DownloadState aStat
        nsCOMPtr<nsIPrefBranch> pref(do_GetService(NS_PREFSERVICE_CONTRACTID));
  
        // Master pref to control this function.
@@ -255,7 +255,7 @@ diff --git a/toolkit/components/downloads/nsDownloadManager.cpp b/toolkit/compon
          int64_t goat = PR_Now() - mStartTime;
          showTaskbarAlert = goat > alertIntervalUSec;
  
-@@ -2764,16 +2777,17 @@ nsDownload::SetState(DownloadState aStat
+@@ -2765,16 +2778,17 @@ nsDownload::SetState(DownloadState aStat
                    message, !removeWhenDone,
                    mPrivate ? NS_LITERAL_STRING("private") : NS_LITERAL_STRING("non-private"),
                    mDownloadManager, EmptyString(), NS_LITERAL_STRING("auto"),
@@ -276,10 +276,10 @@ diff --git a/toolkit/components/downloads/nsDownloadManager.cpp b/toolkit/compon
 diff --git a/toolkit/content/jar.mn b/toolkit/content/jar.mn
 --- a/toolkit/content/jar.mn
 +++ b/toolkit/content/jar.mn
-@@ -70,29 +70,33 @@ toolkit.jar:
-    content/global/bindings/button.xml          (widgets/button.xml)
-    content/global/bindings/checkbox.xml        (widgets/checkbox.xml)
+@@ -73,29 +73,33 @@ toolkit.jar:
     content/global/bindings/colorpicker.xml     (widgets/colorpicker.xml)
+    content/global/bindings/datekeeper.js       (widgets/datekeeper.js)
+    content/global/bindings/datepicker.js       (widgets/datepicker.js)
     content/global/bindings/datetimepicker.xml  (widgets/datetimepicker.xml)
     content/global/bindings/datetimepopup.xml   (widgets/datetimepopup.xml)
     content/global/bindings/datetimebox.xml     (widgets/datetimebox.xml)
@@ -314,7 +314,7 @@ diff --git a/toolkit/content/widgets/dialog-kde.xml b/toolkit/content/widgets/di
 new file mode 100644
 --- /dev/null
 +++ b/toolkit/content/widgets/dialog-kde.xml
-@@ -0,0 +1,457 @@
+@@ -0,0 +1,455 @@
 +<?xml version="1.0"?>
 +<!-- This Source Code Form is subject to the terms of the Mozilla Public
 +   - License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -459,8 +459,8 @@ new file mode 100644
 +      <method name="centerWindowOnScreen">
 +        <body>
 +        <![CDATA[
-+          var xOffset = screen.availWidth/2 - window.outerWidth/2;
-+          var yOffset = screen.availHeight/2 - window.outerHeight/2;
++          var xOffset = screen.availWidth / 2 - window.outerWidth / 2;
++          var yOffset = screen.availHeight / 2 - window.outerHeight / 2;
 +
 +          xOffset = xOffset > 0 ? xOffset : 0;
 +          yOffset = yOffset > 0 ? yOffset : 0;
@@ -474,10 +474,10 @@ new file mode 100644
 +        this._configureButtons(this.buttons);
 +
 +        // listen for when window is closed via native close buttons
-+        window.addEventListener("close", this._closeHandler, false);
++        window.addEventListener("close", this._closeHandler);
 +
 +        // for things that we need to initialize after onload fires
-+        window.addEventListener("load", this.postLoadInit, false);
++        window.addEventListener("load", this.postLoadInit);
 +
 +        window.moveToAlertPosition = this.moveToAlertPosition;
 +        window.centerWindowOnScreen = this.centerWindowOnScreen;
@@ -512,9 +512,8 @@ new file mode 100644
 +                    // so return focus to the tab itself
 +                    initialFocusedElt.focus();
 +                  }
-+                }
-+                else if (!/Mac/.test(navigator.platform) &&
-+                         focusedElt.hasAttribute("dlgtype") && focusedElt != defaultButton) {
++                } else if (!/Mac/.test(navigator.platform) &&
++                           focusedElt.hasAttribute("dlgtype") && focusedElt != defaultButton) {
 +                  defaultButton.focus();
 +                }
 +              }
@@ -578,13 +577,13 @@ new file mode 100644
 +            // don't override custom labels with pre-defined labels on explicit buttons
 +            if (!button.hasAttribute("label")) {
 +              // dialog attributes override the default labels in dialog.properties
-+              if (this.hasAttribute("buttonlabel"+dlgtype)) {
-+                button.setAttribute("label", this.getAttribute("buttonlabel"+dlgtype));
-+                if (this.hasAttribute("buttonaccesskey"+dlgtype))
-+                  button.setAttribute("accesskey", this.getAttribute("buttonaccesskey"+dlgtype));
++              if (this.hasAttribute("buttonlabel" + dlgtype)) {
++                button.setAttribute("label", this.getAttribute("buttonlabel" + dlgtype));
++                if (this.hasAttribute("buttonaccesskey" + dlgtype))
++                  button.setAttribute("accesskey", this.getAttribute("buttonaccesskey" + dlgtype));
 +              } else if (dlgtype != "extra1" && dlgtype != "extra2") {
-+                button.setAttribute("label", this.mStrBundle.GetStringFromName("button-"+dlgtype));
-+                var accessKey = this.mStrBundle.GetStringFromName("accesskey-"+dlgtype);
++                button.setAttribute("label", this.mStrBundle.GetStringFromName("button-" + dlgtype));
++                var accessKey = this.mStrBundle.GetStringFromName("accesskey-" + dlgtype);
 +                if (accessKey)
 +                  button.setAttribute("accesskey", accessKey);
 +              }
@@ -592,8 +591,8 @@ new file mode 100644
 +            // allow specifying alternate icons in the dialog header
 +            if (!button.hasAttribute("icon")) {
 +              // if there's an icon specified, use that
-+              if (this.hasAttribute("buttonicon"+dlgtype))
-+                button.setAttribute("icon", this.getAttribute("buttonicon"+dlgtype));
++              if (this.hasAttribute("buttonicon" + dlgtype))
++                button.setAttribute("icon", this.getAttribute("buttonicon" + dlgtype));
 +              // otherwise set defaults
 +              else
 +                switch (dlgtype) {
@@ -637,7 +636,7 @@ new file mode 100644
 +            if (/Win/.test(navigator.platform)) {
 +              var spacer = document.getAnonymousElementByAttribute(this, "anonid", "spacer");
 +              spacer.removeAttribute("hidden");
-+              spacer.setAttribute("flex", shown["extra2"]?"1":"0");
++              spacer.setAttribute("flex", shown["extra2"] ? "1" : "0");
 +            }
 +          }
 +        ]]>
@@ -657,11 +656,10 @@ new file mode 100644
 +          if (newDefaultButton) {
 +            this.setAttribute("defaultButton", aNewDefault);
 +            newDefaultButton.setAttribute("default", "true");
-+          }
-+          else {
++          } else {
 +            this.setAttribute("defaultButton", "none");
 +            if (aNewDefault != "none")
-+              dump("invalid new default button: " +  aNewDefault + ", assuming: none\n");
++              dump("invalid new default button: " + aNewDefault + ", assuming: none\n");
 +          }
 +        ]]>
 +        </body>
@@ -706,13 +704,13 @@ new file mode 100644
 +        <body>
 +        <![CDATA[
 +          var event = document.createEvent("Events");
-+          event.initEvent("dialog"+aDlgType, true, true);
++          event.initEvent("dialog" + aDlgType, true, true);
 +
 +          // handle dom event handlers
 +          var noCancel = this.dispatchEvent(event);
 +
 +          // handle any xml attribute event handlers
-+          var handler = this.getAttribute("ondialog"+aDlgType);
++          var handler = this.getAttribute("ondialog" + aDlgType);
 +          if (handler != "") {
 +            var fn = new Function("event", handler);
 +            var returned = fn(event);
@@ -776,7 +774,7 @@ diff --git a/toolkit/content/widgets/preferences-kde.xml b/toolkit/content/widge
 new file mode 100644
 --- /dev/null
 +++ b/toolkit/content/widgets/preferences-kde.xml
-@@ -0,0 +1,1411 @@
+@@ -0,0 +1,1391 @@
 +<?xml version="1.0"?>
 +
 +<!DOCTYPE bindings [
@@ -853,8 +851,7 @@ new file mode 100644
 +            var event = document.createEvent("Events");
 +            event.initEvent("change", true, true);
 +            aPreference.dispatchEvent(event);
-+          }
-+          catch (e) {
++          } catch (e) {
 +            Components.utils.reportError(e);
 +          }
 +        ]]>
@@ -933,8 +930,7 @@ new file mode 100644
 +
 +          // Don't use the value setter here, we don't want updateElements to be prematurely fired.
 +          this._value = preference ? preference.value : this.valueFromPreferences;
-+        }
-+        else
++        } else
 +          this._value = this.valueFromPreferences;
 +        this.preferences._constructAfterChildren();
 +      ]]>
@@ -960,7 +956,7 @@ new file mode 100644
 +
 +          this.preferences.rootBranchInternal
 +              .removeObserver(this.name, this.preferences);
-+          this.setAttribute('name', val);
++          this.setAttribute("name", val);
 +          this.preferences.rootBranchInternal
 +              .addObserver(val, this.preferences, false);
 +
@@ -1135,8 +1131,7 @@ new file mode 100644
 +            default:
 +              this._reportUnknownType();
 +            }
-+          }
-+          catch (e) { }
++          } catch (e) { }
 +          return null;
 +        ]]>
 +        </getter>
@@ -1184,8 +1179,7 @@ new file mode 100644
 +              lf.persistentDescriptor = val;
 +              if (!lf.exists())
 +                lf.initWithPath(val);
-+            }
-+            else
++            } else
 +              lf = val.QueryInterface(Components.interfaces.nsILocalFile);
 +            this.preferences.rootBranch
 +                .setComplexValue(this.name, Components.interfaces.nsILocalFile, lf);
@@ -1216,11 +1210,10 @@ new file mode 100644
 +            try {
 +              var event = document.createEvent("Events");
 +              event.initEvent("syncfrompreference", true, true);
-+              var f = new Function ("event",
-+                                    aElement.getAttribute("onsyncfrompreference"));
++              var f = new Function("event",
++                                   aElement.getAttribute("onsyncfrompreference"));
 +              rv = f.call(aElement, event);
-+            }
-+            catch (e) {
++            } catch (e) {
 +              Components.utils.reportError(e);
 +            }
 +          }
@@ -1255,8 +1248,7 @@ new file mode 100644
 +            // of the input event handler.
 +            if (aElement.value !== val)
 +              setValue(aElement, "value", val);
-+          }
-+          else
++          } else
 +            setValue(aElement, "value", val);
 +        ]]>
 +        </body>
@@ -1271,13 +1263,12 @@ new file mode 100644
 +            try {
 +              var event = document.createEvent("Events");
 +              event.initEvent("synctopreference", true, true);
-+              var f = new Function ("event",
-+                                    aElement.getAttribute("onsynctopreference"));
++              var f = new Function("event",
++                                   aElement.getAttribute("onsynctopreference"));
 +              var rv = f.call(aElement, event);
 +              if (rv !== undefined)
 +                return rv;
-+            }
-+            catch (e) {
++            } catch (e) {
 +              Components.utils.reportError(e);
 +            }
 +          }
@@ -1423,7 +1414,7 @@ new file mode 100644
 +              acceptButton.disabled = true;
 +            } else {
 +              // morph the Cancel button into the Close button
-+              cancelButton.setAttribute ("icon", "close");
++              cancelButton.setAttribute("icon", "close");
 +              cancelButton.label = docElt.getAttribute("closebuttonlabel");
 +              cancelButton.accesskey = docElt.getAttribute("closebuttonaccesskey");
 +            }
@@ -1444,8 +1435,7 @@ new file mode 100644
 +        if ("arguments" in window && window.arguments[0] && document.getElementById(window.arguments[0]) && document.getElementById(window.arguments[0]).nodeName == "prefpane") {
 +          paneToLoad = document.getElementById(window.arguments[0]);
 +          this.lastSelected = paneToLoad.id;
-+        }
-+        else if (lastPane)
++        } else if (lastPane)
 +          paneToLoad = lastPane;
 +        else
 +          paneToLoad = panes[0];
@@ -1542,14 +1532,12 @@ new file mode 100644
 +
 +          this._selector.selectedItem = document.getAnonymousElementByAttribute(this, "pane", aPaneElement.id);
 +          if (!aPaneElement.loaded) {
-+            let OverlayLoadObserver = function(aPane)
-+            {
++            let OverlayLoadObserver = function(aPane) {
 +              this._pane = aPane;
 +            }
 +            OverlayLoadObserver.prototype = {
 +              _outer: this,
-+              observe: function (aSubject, aTopic, aData)
-+              {
++              observe(aSubject, aTopic, aData) {
 +                this._pane.loaded = true;
 +                this._outer._fireEvent("paneload", this._pane);
 +                this._outer._selectPane(this._pane);
@@ -1558,8 +1546,7 @@ new file mode 100644
 +
 +            var obs = new OverlayLoadObserver(aPaneElement);
 +            document.loadOverlay(aPaneElement.src, obs);
-+          }
-+          else
++          } else
 +            this._selectPane(aPaneElement);
 +        ]]>
 +        </body>
@@ -1576,14 +1563,13 @@ new file mode 100644
 +            event.initEvent(aEventName, true, true);
 +            var cancel = !aTarget.dispatchEvent(event);
 +            if (aTarget.hasAttribute("on" + aEventName)) {
-+              var fn = new Function ("event", aTarget.getAttribute("on" + aEventName));
++              var fn = new Function("event", aTarget.getAttribute("on" + aEventName));
 +              var rv = fn.call(aTarget, event);
 +              if (rv == false)
 +                cancel = true;
 +            }
 +            return !cancel;
-+          }
-+          catch (e) {
++          } catch (e) {
 +            Components.utils.reportError(e);
 +          }
 +          return false;
@@ -1637,8 +1623,7 @@ new file mode 100644
 +                if (this._shouldAnimate && oldPane.id != aPaneElement.id) {
 +                  aPaneElement.style.opacity = 0.0;
 +                  this.animate(oldPane, aPaneElement);
-+                }
-+                else if (!this._shouldAnimate && prefpanes.length > 1) {
++                } else if (!this._shouldAnimate && prefpanes.length > 1) {
 +                  var targetHeight = parseInt(window.getComputedStyle(this._paneDeckContainer, "").height);
 +                  var verticalPadding = parseInt(window.getComputedStyle(aPaneElement, "").paddingTop);
 +                  verticalPadding += parseInt(window.getComputedStyle(aPaneElement, "").paddingBottom);
@@ -1675,8 +1660,7 @@ new file mode 100644
 +          var animate = /Mac/.test(navigator.platform);
 +          try {
 +            animate = psvc.getBoolPref("browser.preferences.animateFadeIn");
-+          }
-+          catch (e) { }
++          } catch (e) { }
 +          return animate;
 +        ]]>
 +        </getter>
@@ -1729,8 +1713,7 @@ new file mode 100644
 +            if (increment != 0) {
 +              window.innerHeight += increment;
 +              this._currentHeight += increment;
-+            }
-+            else {
++            } else {
 +              aTimer.cancel();
 +              this._setUpFadeTimer();
 +            }
@@ -1825,8 +1808,7 @@ new file mode 100644
 +            if ("initWithParams" in win)
 +              win.initWithParams(aParams);
 +            win.focus();
-+          }
-+          else {
++          } else {
 +            var features = "resizable,dialog=no,centerscreen" + (aFeatures != "" ? ("," + aFeatures) : "");
 +            var parentWindow = (this.instantApply || !window.opener || window.opener.closed) ? window : window.opener;
 +            win = parentWindow.openDialog(aURL, "_blank", features, aParams);
@@ -1847,15 +1829,12 @@ new file mode 100644
 +                    .getService(Components.interfaces.nsIScriptSecurityManager);
 +        if (this.type == "child" && window.opener &&
 +            secMan.isSystemPrincipal(window.opener.document.nodePrincipal)) {
-+          let psvc = Components.classes["@mozilla.org/preferences-service;1"]
-+                               .getService(Components.interfaces.nsIPrefBranch);
 +          var pdocEl = window.opener.document.documentElement;
 +          if (pdocEl.instantApply) {
 +            let panes = this.preferencePanes;
 +            for (let i = 0; i < panes.length; ++i)
 +              panes[i].writePreferences(true);
-+          }
-+          else {
++          } else {
 +            // Clone all the preferences elements from the child document and
 +            // insert them into the pane collection of the parent.
 +            var pdoc = window.opener.document;
@@ -1898,8 +1877,7 @@ new file mode 100644
 +              }
 +            }
 +          }
-+        }
-+        else {
++        } else {
 +          let panes = this.preferencePanes;
 +          for (var i = 0; i < panes.length; ++i)
 +            panes[i].writePreferences(false);
@@ -2037,7 +2015,8 @@ new file mode 100644
 +          while (temp && temp.nodeType == Node.ELEMENT_NODE &&
 +                 !temp.hasAttribute("preference"))
 +            temp = temp.parentNode;
-+          return temp.nodeType == Node.ELEMENT_NODE ? temp : aStartElement;
++          return temp && temp.nodeType == Node.ELEMENT_NODE ?
++                 temp : aStartElement;
 +        ]]>
 +        </body>
 +      </method>
@@ -2150,8 +2129,7 @@ new file mode 100644
 +          try {
 +            var preference = this.preferenceForElement(elements[i]);
 +            preference.setElementValue(elements[i]);
-+          }
-+          catch (e) {
++          } catch (e) {
 +            dump("*** No preference found for " + elements[i].getAttribute("preference") + "\n");
 +          }
 +        }
@@ -2396,8 +2374,8 @@ diff --git a/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp b/toolkit/sy
 diff --git a/toolkit/xre/moz.build b/toolkit/xre/moz.build
 --- a/toolkit/xre/moz.build
 +++ b/toolkit/xre/moz.build
-@@ -40,17 +40,19 @@ elif CONFIG['MOZ_WIDGET_TOOLKIT'] == 'co
-         'updaterfileutils_osx.mm',
+@@ -53,17 +53,19 @@ elif CONFIG['MOZ_WIDGET_TOOLKIT'] == 'co
+         '../components/printingui/mac',
      ]
  elif CONFIG['MOZ_WIDGET_TOOLKIT'] == 'uikit':
      UNIFIED_SOURCES += [
@@ -2452,7 +2430,7 @@ new file mode 100644
 +#define KWATERFOXHELPER "kwaterfoxhelper"
 +#else
 +// not need for lib64, it's a binary
-+#define KWATERFOXHELPER "/usr/lib/waterfox/kwaterfoxhelper"
++#define KWATERFOXHELPER "/opt/waterfox/kwaterfoxhelper"
 +#endif
 +
 +#define KWATERFOXHELPER_VERSION 6
@@ -3778,7 +3756,7 @@ diff --git a/xpcom/components/ManifestParser.cpp b/xpcom/components/ManifestPars
 diff --git a/xpcom/components/moz.build b/xpcom/components/moz.build
 --- a/xpcom/components/moz.build
 +++ b/xpcom/components/moz.build
-@@ -44,12 +44,13 @@ FINAL_LIBRARY = 'xul'
+@@ -43,12 +43,13 @@ FINAL_LIBRARY = 'xul'
  LOCAL_INCLUDES += [
      '!..',
      '../base',
@@ -3813,7 +3791,7 @@ diff --git a/xpcom/io/nsLocalFileUnix.cpp b/xpcom/io/nsLocalFileUnix.cpp
  #include "prmem.h"
  #include "plbase64.h"
  
-@@ -1948,42 +1949,52 @@ nsLocalFile::SetPersistentDescriptor(con
+@@ -1949,42 +1950,52 @@ nsLocalFile::SetPersistentDescriptor(con
    return InitWithNativePath(aPersistentDescriptor);
  #endif
  }
@@ -3872,7 +3850,7 @@ diff --git a/xpcom/io/nsLocalFileUnix.cpp b/xpcom/io/nsLocalFileUnix.cpp
      return rv;
    }
    return NS_ERROR_FAILURE;
-@@ -1991,16 +2002,22 @@ nsLocalFile::Reveal()
+@@ -1992,16 +2003,22 @@ nsLocalFile::Reveal()
    return NS_ERROR_FAILURE;
  #endif
  }
