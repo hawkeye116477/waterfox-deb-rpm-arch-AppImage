@@ -2452,7 +2452,7 @@ new file mode 100644
 +#define KWATERFOXHELPER "kwaterfoxhelper"
 +#else
 +// not need for lib64, it's a binary
-+#define KWATERFOXHELPER "/usr/lib/waterfox/kwaterfoxhelper"
++#define KWATERFOXHELPER "/opt/waterfox/kwaterfoxhelper"
 +#endif
 +
 +#define KWATERFOXHELPER_VERSION 6
