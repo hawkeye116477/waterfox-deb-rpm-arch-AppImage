@@ -1,5 +1,5 @@
 # HG changeset patch
-# Parent  5f1979729aa3c6bc50f7097202991e73be677e5e
+# Parent  5c8ae59424f5318bf7a387257771bf95d3893063
 Description: Add KDE integration to Waterfox (toolkit parts)
 Author: Wolfgang Rosenauer <wolfgang@rosenauer.org>
 Author: Lubos Lunak <lunak@suse.com>
@@ -276,7 +276,7 @@ diff --git a/toolkit/components/downloads/nsDownloadManager.cpp b/toolkit/compon
 diff --git a/toolkit/content/jar.mn b/toolkit/content/jar.mn
 --- a/toolkit/content/jar.mn
 +++ b/toolkit/content/jar.mn
-@@ -70,29 +70,33 @@ toolkit.jar:
+@@ -71,29 +71,33 @@ toolkit.jar:
     content/global/bindings/button.xml          (widgets/button.xml)
     content/global/bindings/checkbox.xml        (widgets/checkbox.xml)
     content/global/bindings/colorpicker.xml     (widgets/colorpicker.xml)
@@ -310,6 +310,18 @@ diff --git a/toolkit/content/jar.mn b/toolkit/content/jar.mn
     content/global/bindings/scale.xml           (widgets/scale.xml)
     content/global/bindings/scrollbar.xml       (widgets/scrollbar.xml)
     content/global/bindings/scrollbox.xml       (widgets/scrollbox.xml)
+@@ -113,9 +117,9 @@ toolkit.jar:
+    content/global/bindings/videocontrols.css   (widgets/videocontrols.css)
+ *  content/global/bindings/wizard.xml          (widgets/wizard.xml)
+ #ifdef XP_MACOSX
+    content/global/macWindowMenu.js
+ #endif
+    content/global/svg/svgBindings.xml          (/layout/svg/resources/content/svgBindings.xml)
+    content/global/gmp-sources/eme-adobe.json   (gmp-sources/eme-adobe.json)
+    content/global/gmp-sources/openh264.json    (gmp-sources/openh264.json)
+-   content/global/gmp-sources/widevinecdm.json (gmp-sources/widevinecdm.json)
+\ No newline at end of file
++   content/global/gmp-sources/widevinecdm.json (gmp-sources/widevinecdm.json)
 diff --git a/toolkit/content/widgets/dialog-kde.xml b/toolkit/content/widgets/dialog-kde.xml
 new file mode 100644
 --- /dev/null
