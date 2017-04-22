@@ -1600,7 +1600,7 @@ diff --git a/browser/installer/package-manifest.in b/browser/installer/package-m
  ; Technically this is an app pref file, but we are keeping it in the original
  ; gre location for now.
  @RESPATH@/defaults/pref/channel-prefs.js
-+
++@BINPATH@/defaults/pref/kde.js
  
  ; Services (gre) prefs
  @RESPATH@/defaults/pref/services-sync.js
