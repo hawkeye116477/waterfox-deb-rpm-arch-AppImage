@@ -1,5 +1,11 @@
-waterfox-kde (52.0.2.1) xenial; urgency=low
+waterfox-kde (53.0) xenial; urgency=high
 
-  * Fix for replace errors
+  * Fixed error on startup
+  * Added firefox-branded-icons.patch and fix-wifi-scanner.diff
+  * Moved waterfox folder from usr/lib/waterfox to opt/waterfox
+  * Moved kwaterfoxhelper to separate package
+  * Disabled automatic updates, because we have updates through repo, so this not needed (updates aren't disabled for extensions)
+  * Updated to Firefox 53.0
+  * NPAPI Plugins and unsigned extensions should still run
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 14 Apr 2017 17:36:29 +0100
+ -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__

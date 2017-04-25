@@ -1,12 +1,9 @@
-waterfox (52.0.2) xenial; urgency=high
+waterfox (53.0) xenial; urgency=high
 
-    * Attempt to fix future issues with search engine getting replaced upon update. Unfortunately, your search preference will be edited with this update, but hopefully should stop getting overwritten with future updates.
-    * Fully gutted and removed slowStartup, BrowserUITelemetry & UITour, BrowserUsageTelemetry
-    * Update Git repository to include Mozilla commit history, old repo moved to Waterfox-old
-    * Updated to Firefox 52.0.2
-    * Disabled PulseAudio and enabled ALSA for Linux builds
-    * Update KDE variants for UI
-    * Add nognome-proxies.patch
-
-
+    * Removed all patches (patches are only on KDE Edition now)
+    * Moved waterfox folder from usr/lib/waterfox to opt/waterfox
+    * Disabled automatic updates, because we have updates through repo, so this not needed (updates aren't disabled for extensions)
+    * Updated to Firefox 53.0
+    * NPAPI Plugins and unsigned extensions should still run
+    
  -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__

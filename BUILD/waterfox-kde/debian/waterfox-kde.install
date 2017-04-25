@@ -1,1 +1,10 @@
-debian/kde.js /usr/lib/waterfox/browser/defaults/preferences
+debian/kde.js /opt/waterfox/browser/defaults/preferences
+waterfox /opt
+debian/vendor-gre.js /opt/waterfox/defaults/pref
+debian/vendor-waterfox.js /opt/waterfox/browser/defaults/preferences
+debian/waterfox.sh /opt/waterfox
+debian/waterfox.desktop /usr/share/applications
+debian/distribution.ini /opt/waterfox/distribution
+features/aushelper@mozilla.org.xpi /opt/waterfox/browser/features
+features/webcompat@mozilla.org.xpi /opt/waterfox/browser/features
+features/e10srollout@mozilla.org.xpi /opt/waterfox/browser/features

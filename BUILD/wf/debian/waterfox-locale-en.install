@@ -1,2 +1,2 @@
-features/langpack-en-GB@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features
-features/langpack-en-ZA@firefox.mozilla.org.xpi /usr/lib/waterfox/browser/features
+features/langpack-en-GB@firefox.mozilla.org.xpi /opt/waterfox/browser/features
+features/langpack-en-ZA@firefox.mozilla.org.xpi /opt/waterfox/browser/features

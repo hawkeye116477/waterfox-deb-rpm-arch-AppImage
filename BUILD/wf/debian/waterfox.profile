@@ -16,11 +16,14 @@ include /etc/firejail/disable-programs.inc
 include /etc/firejail/disable-devel.inc
 
 caps.drop all
+ipc-namespace
 netfilter
+nogroups
 nonewprivs
 noroot
 protocol unix,inet,inet6,netlink
 seccomp
+shell none
 tracelog
 
 whitelist ${DOWNLOADS}
@@ -55,7 +58,10 @@ whitelist ~/.config/pipelight-silverlight5.1
 include /etc/firejail/whitelist-common.inc
 
 # experimental features
-#private-bin firefox,which,sh,dbus-launch,dbus-send,env
-#private-etc passwd,group,hostname,hosts,localtime,nsswitch.conf,resolv.conf,xdg,gtk-2.0,gtk-3.0,X11,pango,fonts,firefox,mime.types,mailcap,asound.conf,pulse
+#private-bin waterfox,which,sh,dbus-launch,dbus-send,env
+#private-etc passwd,group,hostname,hosts,localtime,nsswitch.conf,resolv.conf,xdg,gtk-2.0,gtk-3.0,X11,pango,fonts,waterfox,mime.types,mailcap,asound.conf,pulse
 private-dev 
 private-tmp
+
+noexec ${HOME}
+noexec /tmp

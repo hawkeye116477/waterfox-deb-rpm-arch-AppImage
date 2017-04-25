@@ -1,0 +1,16 @@
+Source: kwaterfoxhelper
+Section: web
+Priority: optional
+Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: https://github.com/hawkeye116477/kwaterfoxhelper
+
+Package: kwaterfoxhelper
+Architecture: amd64
+Pre-Depends: apt-transport-https
+Depends: libc6 (>= 2.4), libkf5configcore5 (>= 4.97.0), libkf5coreaddons5 (>= 4.99.0), libkf5i18n5 (>= 4.97.0), libkf5kiocore5 (>= 4.96.0), libkf5kiowidgets5 (>= 5.5.0+git20150101.0309+15.04), libkf5notifications5 (>= 4.96.0), libkf5service-bin, libkf5service5 (>= 4.96.0), libkf5windowsystem5 (>= 4.96.0), libqt5core5a (>= 5.3.0), libqt5gui5 (>= 5.0.2) | libqt5gui5-gles (>= 5.0.2), libqt5widgets5 (>= 5.2.0), libstdc++6 (>= 5.2), waterfox-kde (>=53.0)
+Description: Integration of Waterfox with KDE Plasma
+  This is a helper application that allows Waterfox to use
+  KDE file dialogs, file associations, protocol handlers and
+  other KDE Plasma integration features.
