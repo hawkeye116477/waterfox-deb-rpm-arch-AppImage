@@ -24,4 +24,4 @@ Description: The free, open and private browser with KDE Plasma integration feat
  .
  Waterfox is powered by Mozilla Firefox source code.
  .
- Note: Language packs are available as seperate packages! This package contains KDE patches (which contains KDE file dialogs, file associations, protocol handlers and other KDE Plasma integration features) and other useful patche (firefox-branded-icons.patch, fix-wifi-scanner.diff, mozilla-nongnome-proxies.patch, waterfox-disable-updater.patch and waterfox-dont-override-general-useragent-locale.patch).
+ Note: Language packs are available as seperate packages! This package contains KDE patches (which contains KDE file dialogs, file associations, protocol handlers and other KDE Plasma integration features) and other useful patches (firefox-branded-icons.patch, fix-wifi-scanner.diff, mozilla-nongnome-proxies.patch, waterfox-disable-updater.patch and waterfox-dont-override-general-useragent-locale.patch).
