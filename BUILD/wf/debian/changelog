@@ -1,9 +1,7 @@
-waterfox (53.0) xenial; urgency=high
+waterfox (53.0.1) xenial; urgency=high
 
-    * Removed all patches (patches are only on KDE Edition now)
-    * Moved waterfox folder from usr/lib/waterfox to opt/waterfox
-    * Disabled automatic updates, because we have updates through repo, so this not needed (updates aren't disabled for extensions)
-    * Updated to Firefox 53.0
-    * NPAPI Plugins and unsigned extensions should still run
+    * Use built in OS location services. This will require permissions from your OS, which should ask when Waterfox tries to utilise the API
+    * Fixed add-on corruption issue on add-ons with no manifest ID
+    * Fixed a crash when KFileDialog is opened in Waterfox and then cancelled (probably boo#1015998)
     
  -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__

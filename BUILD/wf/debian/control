@@ -21,6 +21,12 @@ Description: The free, open and private browser
  .
  Note: Language packs are available as seperate packages! This package contains following patches: firefox-branded-icons.patch, fix-wifi-scanner.diff, mozilla-nongnome-proxies.patch, waterfox-disable-updater.patch and waterfox-dont-override-general-useragent-locale.patch.
 
+Package: waterfox-locale-ach
+Architecture: amd64
+Depends: 
+Description: Acholi language pack for Waterfox
+ This package contains Acholi translations for Waterfox
+ 
 Package: waterfox-locale-af
 Architecture: amd64
 Depends: 
@@ -116,6 +122,12 @@ Architecture: amd64
 Depends: 
 Description: German language pack for Waterfox
  This package contains German translations for Waterfox
+ 
+Package: waterfox-locale-dsb
+Architecture: amd64
+Depends: 
+Description: Lower Sorbian language pack for Waterfox
+ This package contains Lower Sorbian translations for Waterfox
 
 Package: waterfox-locale-el
 Architecture: amd64
@@ -158,6 +170,12 @@ Architecture: amd64
 Depends: 
 Description: Persian language pack for Waterfox
  This package contains Persian translations for Waterfox
+ 
+Package: waterfox-locale-ff
+Architecture: amd64
+Depends: 
+Description: Fulah language pack for Waterfox
+ This package contains Fulah translations for Waterfox
 
 Package: waterfox-locale-fi
 Architecture: amd64
@@ -291,6 +309,12 @@ Depends:
 Description: Korean language pack for Waterfox
  This package contains Korean translations for Waterfox
 
+Package: waterfox-locale-lij
+Architecture: amd64
+Depends: 
+Description: Ligurian language pack for Waterfox
+ This package contains Ligurian translations for Waterfox
+ 
 Package: waterfox-locale-lt
 Architecture: amd64
 Depends: 
@@ -375,6 +399,12 @@ Depends:
 Description: Portuguese language pack for Waterfox
  This package contains Portuguese translations for Waterfox
 
+Package: waterfox-locale-rm
+Architecture: amd64
+Depends: 
+Description: Romansh language pack for Waterfox
+ This package contains Romansh translations for Waterfox
+ 
 Package: waterfox-locale-ro
 Architecture: amd64
 Depends: 
@@ -404,6 +434,12 @@ Architecture: amd64
 Depends: 
 Description: Slovenian language pack for Waterfox
  This package contains Slovenian translations for Waterfox
+
+Package: waterfox-locale-son
+Architecture: amd64
+Depends: 
+Description: Songhai language pack for Waterfox
+ This package contains Songhai translations for Waterfox
 
 Package: waterfox-locale-sq
 Architecture: amd64
