@@ -5,7 +5,7 @@ Dir=$(cd "$(dirname "$0")" && pwd)
 cd $Dir
 
 # Init vars
-VERSION="5.0.1.2"
+VERSION="5.0.1.3"
 
 function finalCleanUp(){
     if [ -d "$Dir/tmp" ]; then
