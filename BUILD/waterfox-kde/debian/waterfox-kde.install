@@ -1,4 +1,3 @@
-debian/kde.js /opt/waterfox/browser/defaults/preferences
 waterfox /opt
 debian/vendor-gre.js /opt/waterfox/defaults/pref
 debian/vendor-waterfox.js /opt/waterfox/browser/defaults/preferences

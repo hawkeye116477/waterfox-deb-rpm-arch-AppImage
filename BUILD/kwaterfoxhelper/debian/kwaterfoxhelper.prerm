@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+APP_NAME=kwaterfoxhelper
+
+if [ "$1" = "remove" ] ; then
+    rm -rf /opt/waterfox/$APP_NAME
+    rm -rf /usr/share/knotifications5/$APP_NAME.notifyrc
+fi
+
+#DEBHELPER#

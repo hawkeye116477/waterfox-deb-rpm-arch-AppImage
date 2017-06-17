@@ -48,7 +48,7 @@ fi
 
 # Copy latest build
 	cd $Dir/tmp/waterfox-kde-$VERSION
-    cp -r ~/Waterfox/objdir/dist/waterfox/ $Dir/tmp/waterfox-kde-$VERSION
+    cp -r ~/git/Waterfox/objdir/dist/waterfox/ $Dir/tmp/waterfox-kde-$VERSION
 	if [ -d "$Dir/tmp/waterfox-kde-$VERSION/waterfox" ]; then
 	mv $Dir/tmp/waterfox-kde-$VERSION/waterfox/browser/features $Dir/tmp/waterfox-kde-$VERSION
 else
@@ -88,5 +88,5 @@ else
    exit 1
 fi
 
-notify-send "Deb & PPA complete!"
+notify-send "Deb package for APT repository complete!"
 finalCleanUp

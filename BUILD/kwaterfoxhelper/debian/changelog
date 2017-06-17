@@ -1,5 +1,5 @@
-kwaterfoxhelper (5.0.1.2) xenial; urgency=high
+kwaterfoxhelper (__VERSION__) xenial; urgency=high
 
-  * Changed path to /opt/waterfox
+  * 
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__

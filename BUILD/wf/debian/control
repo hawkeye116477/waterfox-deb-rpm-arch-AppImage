@@ -518,9 +518,3 @@ Architecture: amd64
 Depends: 
 Description: Traditional Chinese language pack for Waterfox
  This package contains Traditional Chinese translations for Waterfox
-
-Package: waterfox-firejail-profile
-Architecture: amd64
-Depends: firejail 
-Description: Firejail profile for Waterfox
- This package contains Firejail profile for Waterfox

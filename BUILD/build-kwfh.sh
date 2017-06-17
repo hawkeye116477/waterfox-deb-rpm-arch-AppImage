@@ -5,43 +5,31 @@ Dir=$(cd "$(dirname "$0")" && pwd)
 cd $Dir
 
 # Init vars
-VERSION="5.0.1.3"
+VERSION=""
 
 function finalCleanUp(){
     if [ -d "$Dir/tmp" ]; then
         echo "Cleaning temporary dirs"
         rm -rf $Dir/tmp
-        rm -rf $Dir/tmp2
     fi
 }
+
+# Get kwaterfoxhelper version
+if [ ! -d "$Dir/tmp/version/latest_version.txt" ]; then 
+    mkdir -p $Dir/tmp/version
+    wget -O $Dir/tmp/version/latest_version.txt https://github.com/hawkeye116477/kwaterfoxhelper/raw/master/latest_version.txt
+fi
+
+if [ -f "$Dir/tmp/version/latest_version.txt" ]; then
+    VERSION=$(<$Dir/tmp/version/latest_version.txt)
+else
+    echo "Unable to get current helper version!"
+    exit 1    
+fi
 
 # Generate template directories
 if [ ! -d "$Dir/tmp/kwaterfoxhelper-$VERSION" ]; then 
     mkdir -p $Dir/tmp/kwaterfoxhelper-$VERSION
-fi
-
-# Generate directory for compiling kwaterfoxhelper
-if [ ! -d "$Dir/tmp2" ]; then 
-    mkdir $Dir/tmp2
-fi
-
-# Copy latest build
-cd $Dir/tmp2
-wget https://github.com/hawkeye116477/kwaterfoxhelper/archive/v$VERSION.tar.gz
-tar xzf v$VERSION.tar.gz
-
-# Compile kwaterfoxhelper
-cd ./kwaterfoxhelper-$VERSION
-cmake ./
-make
-
-# Copy compiled files
-if [ -f "$Dir/tmp2/kwaterfoxhelper-$VERSION/kwaterfoxhelper" ] && [ -f "$Dir/tmp2/kwaterfoxhelper-$VERSION/kwaterfoxhelper.notifyrc" ]; then
-    cp $Dir/tmp2/kwaterfoxhelper-$VERSION/kwaterfoxhelper $Dir/tmp/kwaterfoxhelper-$VERSION/
-    cp $Dir/tmp2/kwaterfoxhelper-$VERSION/kwaterfoxhelper.notifyrc $Dir/tmp/kwaterfoxhelper-$VERSION/
-else
-    echo "Unable to locate compiled files!"
-    exit 1
 fi
 
 # Copy deb templates
@@ -54,21 +42,33 @@ fi
 
 # Generate change log template
 CHANGELOGDIR=$Dir/tmp/kwaterfoxhelper-$VERSION/debian/changelog
-if grep -q -E "__TIMESTAMP__" "$CHANGELOGDIR" ; then
+if grep -q -E "__VERSION__|__CHANGELOG__|__TIMESTAMP__" "$CHANGELOGDIR" ; then
+    sed -i "s|__VERSION__|$VERSION|" "$CHANGELOGDIR"
     DATE=$(date --rfc-2822)
     sed -i "s|__TIMESTAMP__|$DATE|" "$CHANGELOGDIR"
+
 else
     echo "An error occured when trying to generate $CHANGELOGDIR information!"
     exit 1  
 fi
 
+# Change version in postinst script
+POSTINST=$Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.postinst
+if grep -q -E "__VERSION__|" "$POSTINST" ; then
+    sed -i "s|__VERSION__|$VERSION|" "$POSTINST"
+else
+    echo "An error occured when trying to change version in postinst script!"
+    exit 1  
+fi
+
 # Make sure correct permissions are set
 chmod 755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/rules
-chmod 777 $Dir/tmp/kwaterfoxhelper-$VERSION/kwaterfoxhelper
+chmod  755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.prerm
+chmod  755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.postinst
 
-# Build .deb package (Requires devscripts to be installed sudo apt install devscripts).
+# Build .deb package
 notify-send "Building deb packages!"
-cd ~/waterfox-deb/BUILD/tmp/kwaterfoxhelper-$VERSION
+cd ~/git/waterfox-deb/BUILD/tmp/kwaterfoxhelper-$VERSION
 debuild -us -uc -d
 
 if [ -f $Dir/tmp/kwaterfoxhelper_*_amd64.deb ]; then
@@ -79,5 +79,5 @@ else
 fi
 
 
-notify-send "Deb & PPA complete!"
+notify-send "Deb package for APT repository complete!"
 finalCleanUp

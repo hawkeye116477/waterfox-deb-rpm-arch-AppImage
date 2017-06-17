@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+APP_NAME=kwaterfoxhelper
+
+if [ "$1" = "configure" ]; then
+    VERSION="__VERSION__"
+    if [[ -d $HOME/build ]]; then
+        rm -Rf $HOME/build
+    fi
+    mkdir -p $HOME/build
+cd $HOME/build
+wget https://github.com/hawkeye116477/$APP_NAME/archive/v$VERSION.tar.gz
+tar xzf v$VERSION.tar.gz
+cmake $HOME/build/$APP_NAME-$VERSION \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr
+make
+
+cp -rf $HOME/build/$APP_NAME /opt/waterfox/
+cp -rf $HOME/build/$APP_NAME-$VERSION/$APP_NAME.notifyrc /usr/share/knotifications5/
+rm -rf $HOME/build
+fi
+
+#DEBHELPER#

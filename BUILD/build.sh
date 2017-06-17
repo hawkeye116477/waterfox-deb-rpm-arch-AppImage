@@ -91,5 +91,5 @@ else
    exit 1
 fi
 
-notify-send "Deb & PPA complete!"
+notify-send "Deb package for APT repository complete!"
 finalCleanUp
