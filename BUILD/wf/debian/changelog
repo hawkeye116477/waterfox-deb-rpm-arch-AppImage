@@ -1,7 +1,6 @@
-waterfox (54.0) xenial; urgency=high
+waterfox (54.0.0.1) xenial; urgency=high
 
-    * Updated to Firefox 54.0
-    * Language request now also change when a different locale is selected
+    * 
     
     
  -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__

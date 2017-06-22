@@ -50,7 +50,7 @@ fi
 	wget https://storage-waterfox.netdna-ssl.com/releases/linux64/installer/waterfox-$VERSION.en-US.linux-x86_64.tar.bz2
 	tar jxf waterfox-$VERSION.en-US.linux-x86_64.tar.bz2
 	if [ -d "$Dir/tmp/waterfox-$VERSION/waterfox" ]; then
-	mv $Dir/tmp/waterfox-$VERSION/waterfox/browser/features $Dir/tmp/waterfox-$VERSION
+	mv $Dir/tmp/waterfox-$VERSION/waterfox/browser/features/ $Dir/tmp/waterfox-$VERSION
 else
     echo "Unable to Waterfox package files, Please check the build was created and packaged successfully!"
     exit 1     

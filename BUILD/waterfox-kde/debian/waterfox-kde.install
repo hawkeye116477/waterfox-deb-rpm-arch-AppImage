@@ -7,3 +7,4 @@ debian/distribution.ini /opt/waterfox/distribution
 features/aushelper@mozilla.org.xpi /opt/waterfox/browser/features
 features/webcompat@mozilla.org.xpi /opt/waterfox/browser/features
 features/e10srollout@mozilla.org.xpi /opt/waterfox/browser/features
+features/screenshots@mozilla.org.xpi /opt/waterfox/browser/features
