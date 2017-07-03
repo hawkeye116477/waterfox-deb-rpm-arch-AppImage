@@ -70,7 +70,7 @@ fi
 chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.prerm
 chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postinst
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/rules
-chmod 755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.sh
+chmod 755 $Dir/tmp/waterfox-$VERSION/debian/wrapper/waterfox
 
 # Remove unnecessary files
 rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/dictionaries

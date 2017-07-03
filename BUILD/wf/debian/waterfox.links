@@ -1,11 +1,8 @@
 # System dictionaries
 usr/share/hunspell opt/waterfox/dictionaries
 
-# Waterfox launcher
-opt/waterfox/waterfox.sh usr/bin/waterfox
-
 # Waterfox icon
 opt/waterfox/browser/icons/mozicon128.png usr/share/pixmaps/waterfox.png
 
-# Replace duplicate binary with symlink to launcher
-opt/waterfox/waterfox.sh opt/waterfox/waterfox-bin
+# Replace duplicate binary with wrapper
+usr/bin/waterfox opt/waterfox/waterfox-bin

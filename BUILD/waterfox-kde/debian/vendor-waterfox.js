@@ -8,10 +8,3 @@ pref("extensions.autoDisableScopes", 3);
 // Don't display the one-off addon selection dialog when
 // upgrading from a version of Waterfox older than 8.0
 pref("extensions.shownSelectionUI", true);
-
-// Opt all of us into e10s, instead of just 50%
-pref("browser.tabs.remote.autostart", true);
-
-//Disable automatic updates, because we have updates through repo, so this is not needed (updates aren't disabled for extensions)
-pref("app.update.auto", false);
-pref("app.update.enabled", false);
