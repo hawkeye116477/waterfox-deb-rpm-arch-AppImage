@@ -1,5 +1,5 @@
-waterfox-kde (54.0.0.1.1) xenial; urgency=high
+waterfox-kde (54.0.0.1.2) xenial; urgency=high
 
-    * Fixed broken bookmarks menu
+    * Add missing depend
     
  -- hawkeye116477 <hawkeye116477@gmail.com>  __TIMESTAMP__
