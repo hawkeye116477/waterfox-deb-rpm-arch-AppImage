@@ -1,4 +1,4 @@
-waterfox (54.0.0.1) xenial; urgency=high
+waterfox (__VERSION__) xenial; urgency=high
 
     * 
     
