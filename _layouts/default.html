@@ -1,45 +1,40 @@
 <!doctype html>
 <!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
 <!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
-<html>
+<html lang="{{ site.lang | default: "en-US" }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <link rel="stylesheet" href="/waterfox-deb/assets/css/style.css?v=0333a2a707ce714c6c30979c436718a00cfeab5c">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/waterfox-deb/assets/js/script.js"></script>
+  <script type="text/javascript" src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
-  <title>waterfox-deb</title>
-  <meta name="description" content="Deb packages and apt repository for Waterfox Web Browser for Ubuntu and its derivatives.">
+{% seo %}
+  <meta name="description" content="{{ site.description | default: site.github.project_tagline }}">
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
 </head>
 
 <body>
-<script type="text/javascript" src="https://counter4.fcs.ovh/private/counter.js?c=eed10a45b3633491f0db3d5cce9e1897"></script>
-<noscript><a href="https://www.freecounterstat.com" title="counter for website"><img src="https://counter4.fcs.ovh/private/freecounterstat.php?c=eed10a45b3633491f0db3d5cce9e1897" border="0" title="counter for website" alt="counter for website"></a></noscript>
 
   <div class="wrapper">
     <header>
-      <h1 class="title">waterfox-deb</h1>
+      <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1>
     </header>
     <div id="container">
-      <p class="tagline">Unofficial apt repository for Waterfox Web Browser for Ubuntu and its derivatives.</p>
+      <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
       <div id="main" role="main">
         <div class="download-bar">
         <div class="inner">
-          
-          <a href="https://github.com/hawkeye116477/waterfox-deb" class="code">View waterfox-deb on GitHub</a>
+          <a href="https://github.com/hawkeye116477/waterfox-deb" class="code">View {{ site.title | default: site.github.repository_name }} on GitHub</a>
         </div>
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-
 <h1 id="installing">Installing</h2>
 <h2 id="method1">Method 1</h2>
-<p>Download and install deb packages from <a href="https://github.com/hawkeye116477/waterfox-deb/tree/master/pool/main">here</a>.</p>
+<p>Download and install deb packages from <a href="https://github.com/hawkeye116477/waterfox-deb/tree/master/pool/main">https://github.com/hawkeye116477/waterfox-deb/tree/master/pool/main</a>.</p>
 <h2 id="method2">Method 2</h2>
 <p>Run these commands to add this repostory to your APT sources list:
 <pre>$ echo "deb https://hawkeye116477.github.io/waterfox-deb release main" | \
@@ -51,19 +46,23 @@ sudo apt-key add -</pre></p>
 <pre>$ sudo apt-get update</pre></p>
 <p><h2 id="note">Note: Language packs and KDE integration features are available as separate packages to install from apt repository!</h2></p>
 
-<p> </p>
-<p> </p>
-<p><h1 id="source">Source</h2></p>
-<p>Packages were generated with files from <a href="https://github.com/MrAlex94/Waterfox">https://github.com/MrAlex94/Waterfox</a>. Waterfox KDE Plasma Edition contains <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">openSUSE's KDE patches</a> and <a href="https://github.com/manjaro/packages-community/blob/master/firefox-kde/fix-wifi-scanner.diff">fix-wifi-scanner.diff</a>.</p>
 
+<p><h1 id="source">Source</h2></p>
+<p>Waterfox packages were generated with files from <a href="https://www.waterfoxproject.org/downloads">official Waterfox website</a>.</p>
+<p>Waterfox KDE Plasma Edition was generated with files from <a href="https://github.com/MrAlex94/Waterfox">official Waterfox GitHub</a> and contains <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">openSUSE's KDE patches</a> and <a href="https://github.com/manjaro/packages-community/blob/master/firefox-kde/fix-wifi-scanner.diff">fix-wifi-scanner.diff</a>.</p>
+<p>Packages: gcc-6-base, libgcc1 and libstdc++6 are from <a href="https://launchpad.net/ubuntu/yakkety/amd64/libstdc++6/6.2.0-5ubuntu12">official Ubuntu Yakkety repository</a>.</p>
         </article>
       </div>
     </div>
     <footer>
       <div class="owner">
-      
-      <p><a href="https://github.com/hawkeye116477" class="avatar"><img src="https://github.com/hawkeye116477.png" width="48" height="48"></a> <a href="https://github.com/hawkeye116477">hawkeye116477</a> maintains <a href="https://github.com/hawkeye116477/waterfox-deb">waterfox-deb</a></p>
+      {% if site.github.is_project_page %}
+      <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a> <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> maintains <a href="{{ site.github.repository_url }}">{{ site.title | default: site.github.repository_name }}</a></p>
+      {% endif %}
 
+       {% if site.github.is_user_page %}
+      <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}" width="48" height="48"></a>View <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a> on <a href="https://www.github.com">GitHub</a></p>
+      {% endif %}
 
       </div>
       <div class="creds">
@@ -75,7 +74,5 @@ sudo apt-key add -</pre></p>
     <a href="#top">Scroll to top</a>
     <p class="name"></p>
   </div>
-  
 </body>
 </html>
-
