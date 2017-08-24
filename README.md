@@ -1,5 +1,5 @@
 # waterfox-deb
-Unofficial apt repository for Waterfox Web Browser for Ubuntu and its derivatives.
+Unofficial apt repository with deb packages for Waterfox Web Browser for Ubuntu and its derivatives.
 
 ## Installing
 Follow with instructions at: https://hawkeye116477.github.io/waterfox-deb/ .
