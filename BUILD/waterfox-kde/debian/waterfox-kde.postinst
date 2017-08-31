@@ -9,6 +9,8 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
 
     update-alternatives --install /usr/bin/x-www-browser \
         x-www-browser /usr/bin/$APP_NAME 40
+        
+    echo "deb https://dl.bintray.com/hawkeye116477/waterfox-deb release main" | sudo tee /etc/apt/sources.list.d/waterfox-release-hawkeye116477.list
 fi
 
 #DEBHELPER#
