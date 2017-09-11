@@ -9,7 +9,11 @@ pref("extensions.autoDisableScopes", 3);
 // upgrading from a version of Waterfox older than 8.0
 pref("extensions.shownSelectionUI", true);
 
-// Disable e10s, because KDE patches are incompatible with e10s
-pref("browser.tabs.remote.autostart", false);
-pref("browser.tabs.remote.autostart.2", false);
-pref("browser.tabs.remote.force-enable", false);
+// Use LANG environment variable to choose locale
+pref("intl.locale.matchOS", true);
+
+// Fall back to en-US search plugins if none exist for the current locale
+pref("distribution.searchplugins.defaultLocale", "en-US");
+
+// Enable Screenshots extension
+pref("extensions.screenshots.system-disabled", false);
