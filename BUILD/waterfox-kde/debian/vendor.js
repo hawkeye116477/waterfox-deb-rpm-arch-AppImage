@@ -15,5 +15,3 @@ pref("intl.locale.matchOS", true);
 // Fall back to en-US search plugins if none exist for the current locale
 pref("distribution.searchplugins.defaultLocale", "en-US");
 
-// Enable Screenshots extension
-pref("extensions.screenshots.system-disabled", false);
