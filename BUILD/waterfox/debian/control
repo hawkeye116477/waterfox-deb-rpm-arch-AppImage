@@ -13,7 +13,7 @@ Depends: lsb-release, libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject
 Conflicts: waterfox-kde
 Recommends: waterfox-kde
 Provides: www-browser, gnome-www-browser
-Suggests: fonts-lyx, libasound2, pulseaudio, jack
+Suggests: fonts-lyx, libasound2, pulseaudio
 Description: Free, open and private browser
  Waterfox focuses on giving users choice while also helping make the world a better place. Watefox is partners with Ecosia, a search engine that plants trees with its generated revenues. The browser itself is focused on power users, which lets you make the important decisions. There is no plugin whitelist, you can run whichever extensions you like and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .

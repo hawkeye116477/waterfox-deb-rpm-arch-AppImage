@@ -20,8 +20,6 @@ waterfox, waterfox-kde & locales: <a href='https://bintray.com/hawkeye116477/wat
 
 kwaterfoxhelper: <a href='https://bintray.com/hawkeye116477/waterfox-deb/kwaterfoxhelper?source=watch' alt='Get automatic notifications about new "kwaterfoxhelper" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
-## Source
+## Patches
 
-Waterfox packages were generated with files from <a href="https://www.waterfoxproject.org/downloads">official Waterfox website</a>.
-
-Waterfox KDE Plasma Edition was generated with files from <a href="https://github.com/MrAlex94/Waterfox">official Waterfox GitHub</a> and contains <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">openSUSE's KDE patches</a>, <a href="https://raw.githubusercontent.com/manjaro/packages-community/master/firefox-kde/no-crmf.diff">no-crmf.diff</a> and <a href="https://github.com/manjaro/packages-community/blob/master/firefox-kde/fix-wifi-scanner.diff">fix-wifi-scanner.diff</a>.
+Latest Waterfox KDE Plasma Edition contains following patches: <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">openSUSE's KDE patches (firefox-kde.patch & mozilla-kde.patch)</a>, <a href="https://github.com/hawkeye116477/Waterfox/tree/plasma/_Plasma_Build">no-crmf.diff, clip-ft-glyph.diff, disable_e10s.patch, fix_waterfox_browser-kde_xul.patch, harmony-fix.diff, pgo_fix_missing_kdejs.patch, wifi-disentangle.patch, wifi-fix-interface.patch</a> and <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">mozilla-ucontext.patch</a>.
