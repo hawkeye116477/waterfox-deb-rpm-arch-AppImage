@@ -14,6 +14,11 @@ function finalCleanUp(){
     fi
 }
 
+# Create folder where we move our created deb packages
+if [ ! -d "$Dir/debs" ]; then 
+mkdir $Dir/debs
+fi
+
 # Get kwaterfoxhelper version
 if [ ! -d "$Dir/tmp/version/latest_version.txt" ]; then 
     mkdir -p $Dir/tmp/version
@@ -40,6 +45,11 @@ else
     exit 1 
 fi
 
+# Download latest kwaterfoxhelper
+cd $Dir/tmp
+wget https://github.com/hawkeye116477/kwaterfoxhelper/archive/v5.0.1.6.tar.gz
+tar zxvf v$VERSION.tar.gz
+
 # Generate change log template
 CHANGELOGDIR=$Dir/tmp/kwaterfoxhelper-$VERSION/debian/changelog
 if grep -q -E "__VERSION__|__CHANGELOG__|__TIMESTAMP__" "$CHANGELOGDIR" ; then
@@ -52,24 +62,13 @@ else
     exit 1  
 fi
 
-# Change version in postinst script
-POSTINST=$Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.postinst
-if grep -q -E "__VERSION__|" "$POSTINST" ; then
-    sed -i "s|__VERSION__|$VERSION|" "$POSTINST"
-else
-    echo "An error occured when trying to change version in postinst script!"
-    exit 1  
-fi
-
 # Make sure correct permissions are set
 chmod 755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/rules
-chmod  755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.prerm
-chmod  755 $Dir/tmp/kwaterfoxhelper-$VERSION/debian/kwaterfoxhelper.postinst
 
 # Build .deb package
 notify-send "Building deb packages!"
-cd ~/git/waterfox-deb/BUILD/tmp/kwaterfoxhelper-$VERSION
-debuild -us -uc -d
+cd $Dir/tmp/kwaterfoxhelper-$VERSION
+debuild -us -uc
 
 if [ -f $Dir/tmp/kwaterfoxhelper_*_amd64.deb ]; then
     mv $Dir/tmp/*.deb $Dir/debs
