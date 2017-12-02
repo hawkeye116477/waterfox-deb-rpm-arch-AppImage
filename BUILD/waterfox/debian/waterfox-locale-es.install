@@ -1,4 +1,4 @@
-features/langpack-es-AR@firefox.mozilla.org.xpi /opt/waterfox/browser/features
-features/langpack-es-CL@firefox.mozilla.org.xpi /opt/waterfox/browser/features
-features/langpack-es-ES@firefox.mozilla.org.xpi /opt/waterfox/browser/features
-features/langpack-es-MX@firefox.mozilla.org.xpi /opt/waterfox/browser/features
+features/langpack-es-AR@waterfox.xpi /opt/waterfox/browser/features
+features/langpack-es-CL@waterfox.xpi /opt/waterfox/browser/features
+features/langpack-es-ES@waterfox.xpi /opt/waterfox/browser/features
+features/langpack-es-MX@waterfox.xpi /opt/waterfox/browser/features

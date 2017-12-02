@@ -3,4 +3,3 @@ debian/vendor.js /opt/waterfox/browser/defaults/preferences
 debian/wrapper/waterfox /usr/bin
 debian/waterfox.desktop /usr/share/applications
 debian/distribution.ini /opt/waterfox/distribution
-features/screenshots@mozilla.org.xpi /opt/waterfox/browser/features
