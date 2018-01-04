@@ -2,7 +2,7 @@
 
 Run these commands to add this repostory to your APT sources list: 
 
-`echo "deb https://dl.bintray.com/hawkeye116477/waterfox-deb release main" | sudo tee -a /etc/apt/sources.list`
+`echo 'deb https://dl.bintray.com/hawkeye116477/waterfox-deb release main' | sudo tee /etc/apt/sources.list.d/waterfox.list`
 
 And the public GPG key:
 
