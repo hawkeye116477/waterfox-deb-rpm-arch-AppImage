@@ -11,6 +11,9 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
 
     update-alternatives --install /usr/bin/x-www-browser \
         x-www-browser /usr/bin/$APP_NAME 40
+
+    . /usr/share/debconf/confmodule
+    db_get waterfox-kde/locales
 fi
 
 #DEBHELPER#
