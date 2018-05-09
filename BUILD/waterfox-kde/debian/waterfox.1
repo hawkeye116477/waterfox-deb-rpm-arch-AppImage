@@ -1,4 +1,4 @@
-.TH WATERFOX 1 2017-07-01 waterfox
+.TH WATERFOX 1 "May 9, 2018" waterfox "Linux User's Manual"
 .SH NAME
 waterfox \- the free, open and private browser
 
@@ -12,22 +12,6 @@ waterfox \- the free, open and private browser
 .SH OPTIONS
 A summary of the options supported by \fBwaterfox\fR is included below.
 
-.SS "GTK options"
-\fB\-\-gdk-debug=\fR\fIFLAGS\fR
-Gdk debugging flags to set
-.TP
-\fB\-\-gdk-no-debug=\fR\fIFLAGS\fR
-Gdk debugging flags to unset
-.TP
-\fB\-\-gtk-debug=\fR\fIFLAGS\fR
-Gtk+ debugging flags to set
-.TP
-\fB\-\-gtk-no-debug=\fR\fIFLAGS\fR
-Gtk+ debugging flags to unset
-.TP
-\fB\-\-gtk-module=\fR\fIMODULE\fR
-Load an additional Gtk module
-
 .SS "X11 options"
 .TP
 .BI \-\-display= DISPLAY
@@ -35,13 +19,6 @@ X display to use
 .TP
 .B \--sync
 Make X calls synchronous
-.TP
-.B \-\-no-xshm
-Don't use X shared memory extension
-.TP
-.BI \-\-xim-preedit= STYLE
-.TP
-.BI \-\-xim-status= STYLE
 .TP
 .B \-\-g-fatal-warnings
 Make all warnings fatal
@@ -51,55 +28,82 @@ Make all warnings fatal
 .B \-h, \-help
 Show summary of options.
 .TP
-\fB\-height\fR \fIvalue\fR
-Set height of startup window to \fIvalue\fR.
-.TP
-\fB\-width\fR \fIvalue\fR
-Set width of startup window to \fIvalue\fR.
-.TP
 .B \-v, \-version
-Print \fB/usr/bin/waterfox-bin\fR version.
-.TP
-\fB\-CreateProfile\fR \fIprofile\fR
-Create \fIprofile\fR.
+Print Waterfox version.
 .TP
 \fB\-P\fR \fIprofile\fR
 Start with \fIprofile\fR.
 .TP
-.B \-ProfileManager
-Start with profile manager.
+\fB\-\-profile\fR \fIpath\fR
+Start with profile at \fIpath\fR.
 .TP
-\fB\-UILocale\fR \fIlang-region\fR
-Start with \fIlang-region\fR resources.
+\fB\-\-migration\fR
+Start with migration wizard.
 .TP
-\fB\-contentLocale\fR \fIlang-region\fR
-Start with \fIlang-region\fR resources.
+.B \-\-ProfileManager
+Start with ProfileManager.
 .TP
-\fB\-remote\fR \fIcommand\fR
-Execute \fIcommand\fR in an already running Waterfox process.  For more info,
-see: \fIhttp://www.mozilla.org/unix/remote.html\fR
+\fB\-\-no\-remote\fR
+Do not accept or send remote commands; implies \fB--new-instance\fR.
 .TP
-.B \-no-remote
-Don't try to control an already running instance.
+\fB\-\-new\-instance\fR
+Open new instance, not a new window in running instance.
 .TP
-.B \-jsconsole
-Start with Javascript Console
+\fB\-\-UILocale\fR \fIlocale\fR
+Start with \fIlocale\fR resources as UI Locale.
 .TP
-\fB\-chrome\fR \fIurl\fR
-Load the specified chrome.
-.TP
-\fB\-new-window\fR \fIurl\fR
-Open URL in a new window if Waterfox is already running.
-.TP
-\fB\-new-tab\fR \fIurl\fR
-Open URL in a new tab if Waterfox is already running.
-.TP
-\fB\-preferences\fR
-Open Waterfox preferences menu.
-.TP
-.B \-safe-mode
+\fB\-\-save\-mode\fR
 Disables extensions and themes for this session.
 .TP
+\fB\-\-headless\fR
+Run without a GUI.
+.TP
+\fB\-\-marionette\fR
+Enable remote control server.
+.TP
+\fB\-\-browser\fR
+Open a browser window.
+.TP
+\fB\-\-new-window\fR \fIurl\fR
+Open \fIurl\fR in a new window.
+.TP
+\fB\-\-new-tab\fR \fIurl\fR
+Open \fIurl\fR in a new tab.
+.TP
+\fB\-\-private-window\fR \fIurl\fR
+Open \fIurl\fR in a new private window.
+.TP
+\fB\-\-preferences\fR
+Open Preferences dialog.
+.TP
+\fB\-\-search\fR \fIterm\fR
+Search \fIterm\fR with your default search engine.
+.TP
+
+
+\fB\-\-jsconsole\fR
+Open the Browser Console.
+.TP
+\fB\-\-jsdebugger\fR
+Open the Browser Toolbox.
+.TP
+\fB\-\-wait-for-jsdebugger\fR
+Spin event loop until JS debugger connects.  Enables debugging (some) application startup code paths.  Only has an effect when \fI--jsdebugger\fR is also supplied.
+.TP
+\fB\-\-devtools\fR
+Open DevTools on initial load.
+.TP
+\fB\-\-start-debugger-server\fR [ws:][\fIport\fR|\fIpath\fR]
+Start the debugger server on a TCP port or Unix domain socket path. Defaults to TCP port 6000. Use WebSocket protocol if ws: prefix is specified.
+.TP
+\fB\-\-recording\fR \fIfile\fR
+Record drawing for a given URL.
+.TP
+\fB\-\-recording-output\fR \fIfile\fR
+Specify destination file for a drawing recording.
+.TP
+\fB\-\-setDefaultBrowser\fR
+Set this app as the default browser.
 
 .SH FILES
 \fI/usr/bin/waterfox\fR - shell script wrapping
@@ -109,7 +113,7 @@ Disables extensions and themes for this session.
 executable
 
 .SH VERSION
-3.0
+56.1.0
 
 .SH BUGS
 To report a bug, please visit \fIhttps://www.reddit.com/r/waterfox/\fR
