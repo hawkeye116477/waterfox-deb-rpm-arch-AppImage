@@ -68,8 +68,8 @@ else
 fi
 
 # Make sure correct permissions are set
-chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.prerm
-chmod  755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postinst
+chmod 755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.prerm
+chmod 755 $Dir/tmp/waterfox-$VERSION/debian/waterfox.postinst
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/rules
 chmod 755 $Dir/tmp/waterfox-$VERSION/debian/wrapper/waterfox
 
@@ -79,7 +79,7 @@ rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/updater
 rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/updater.ini
 rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/update-settings.ini
 rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/precomplete
-rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/removed-files
+rm -rf $Dir/tmp/waterfox-$VERSION/waterfox/icons
 
 # Build .deb package (Requires devscripts to be installed sudo apt install devscripts). Arch and based Linux needs -d flag.
 notify-send "Building deb packages!"

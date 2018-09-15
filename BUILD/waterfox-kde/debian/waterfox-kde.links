@@ -1,8 +1,9 @@
-# System dictionaries
-usr/share/hunspell opt/waterfox/dictionaries
-
 # Waterfox icon
 opt/waterfox/browser/icons/mozicon128.png usr/share/pixmaps/waterfox.png
 
-# Replace duplicate binary with wrapper
-usr/bin/waterfox opt/waterfox/waterfox-bin
+# System dictionaries
+usr/share/hunspell opt/waterfox/dictionaries
+usr/share/hyphen opt/waterfox/hyphenation
+
+# Wrapper
+opt/waterfox/waterfox-bin.sh usr/bin/waterfox

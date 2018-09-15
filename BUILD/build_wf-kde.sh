@@ -6,6 +6,7 @@ cd $Dir
 
 # Init vars
 VERSION=""
+REL=2
 
 function finalCleanUp(){
     if [ -d "$Dir/tmp" ]; then
@@ -14,10 +15,6 @@ function finalCleanUp(){
     fi
 }
 
-# Create folder where we move our created deb packages
-if [ ! -d "$Dir/debs" ]; then 
-mkdir $Dir/debs
-fi
 
 # Get package version.
 if [ ! -d "$Dir/tmp/version" ]; then 
@@ -34,32 +31,26 @@ else
 fi
 
 # Generate template directories
-if [ ! -d "$Dir/tmp/waterfox-kde-$VERSION" ]; then
-    mkdir $Dir/tmp/waterfox-kde-$VERSION
+if [ ! -d "$Dir/tmp/waterfox-kde" ]; then
+    mkdir $Dir/tmp/waterfox-kde
 fi
 
 # Copy deb templates
 if [ -d "$Dir/waterfox-kde/debian" ]; then
-	cp -r $Dir/waterfox-kde/debian/ $Dir/tmp/waterfox-kde-$VERSION/
+	cp -r $Dir/waterfox-kde/debian $Dir/tmp/waterfox-kde/
 else
     echo "Unable to locate deb templates!"
     exit 1 
 fi
 
 # Copy latest build
-	cd $Dir/tmp/waterfox-kde-$VERSION
-    cp -r ~/git/Waterfox/objdir/dist/waterfox/ $Dir/tmp/waterfox-kde-$VERSION
-	if [ -d "$Dir/tmp/waterfox-kde-$VERSION/waterfox" ]; then
-	mv $Dir/tmp/waterfox-kde-$VERSION/waterfox/browser/features $Dir/tmp/waterfox-kde-$VERSION
-else
-    echo "Unable to Waterfox package files, Please check the build was created and packaged successfully!"
-    exit 1     
-fi
+cd $Dir/tmp
+tar -cJf waterfox-kde_$VERSION.orig.tar.xz  --exclude ./.git --exclude ./.github --exclude ./.mozconfig --exclude ./.mozconfig_android --exclude ./.vscode -C ~/git/Waterfox .	
 
 # Generate change log template
-CHANGELOGDIR=$Dir/tmp/waterfox-kde-$VERSION/debian/changelog
+CHANGELOGDIR=$Dir/tmp/waterfox-kde/debian/changelog
 if grep -q -E "__VERSION__|__TIMESTAMP__" "$CHANGELOGDIR" ; then
-    sed -i "s|__VERSION__|$VERSION|" "$CHANGELOGDIR"
+    sed -i "s|__VERSION__|$VERSION-$REL|" "$CHANGELOGDIR"
     DATE=$(date --rfc-2822)
     sed -i "s|__TIMESTAMP__|$DATE|" "$CHANGELOGDIR"
 else
@@ -67,20 +58,12 @@ else
     exit 1  
 fi
 
-# Make sure correct permissions are set
-chmod 755 $Dir/tmp/waterfox-kde-$VERSION/debian/waterfox-kde.prerm
-chmod 755 $Dir/tmp/waterfox-kde-$VERSION/debian/waterfox-kde.postinst
-chmod 755 $Dir/tmp/waterfox-kde-$VERSION/debian/rules
-chmod 755 $Dir/tmp/waterfox-kde-$VERSION/debian/wrapper/waterfox
 
-# Remove unnecessary files
-rm -rf $Dir/tmp/waterfox-kde-$VERSION/waterfox/dictionaries
-rm -rf $Dir/tmp/waterfox-kde-$VERSION/waterfox/precomplete
-rm -rf $Dir/tmp/waterfox-kde-$VERSION/waterfox/removed-files
-
-# Build .deb package (Requires devscripts to be installed sudo apt install devscripts). Arch and based Linux needs -d flag.
-notify-send "Building deb packages!"
-debuild -us -uc -d
+# Build packages for Launchpad. Arch and based Linux needs -d flag.
+cd $Dir/tmp/waterfox-kde
+notify-send "Building packages!"
+debuild -S -sa -d
+dput myppa $Dir/tmp/waterfox-kde_${VERSION}-${REL}_source.changes
 
 if [ -f $Dir/tmp/waterfox-kde_*_amd64.deb ]; then
     mv $Dir/tmp/*.deb $Dir/debs
@@ -89,5 +72,5 @@ else
    exit 1
 fi
 
-notify-send "Deb package for APT repository complete!"
+notify-send "Packaging complete!"
 finalCleanUp
