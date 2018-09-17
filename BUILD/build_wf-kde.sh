@@ -6,7 +6,11 @@ cd $Dir
 
 # Init vars
 VERSION=""
-REL=2
+REL=""
+
+printf "Type release number: "
+read REL
+echo $REL
 
 function finalCleanUp(){
     if [ -d "$Dir/tmp" ]; then
@@ -14,7 +18,6 @@ function finalCleanUp(){
         rm -rf $Dir/tmp
     fi
 }
-
 
 # Get package version.
 if [ ! -d "$Dir/tmp/version" ]; then 
@@ -64,13 +67,6 @@ cd $Dir/tmp/waterfox-kde
 notify-send "Building packages!"
 debuild -S -sa -d
 dput myppa $Dir/tmp/waterfox-kde_${VERSION}-${REL}_source.changes
-
-if [ -f $Dir/tmp/waterfox-kde_*_amd64.deb ]; then
-    mv $Dir/tmp/*.deb $Dir/debs
-else
-    echo "Unable to move deb packages the file maybe missing or had errors during creation!"
-   exit 1
-fi
 
 notify-send "Packaging complete!"
 finalCleanUp
