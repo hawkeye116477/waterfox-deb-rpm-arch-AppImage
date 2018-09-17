@@ -10,7 +10,6 @@ REL=""
 
 printf "Type release number: "
 read REL
-echo $REL
 
 function finalCleanUp(){
     if [ -d "$Dir/tmp" ]; then
