@@ -1,25 +1,11 @@
+### Apt repository/PPA moved to https://build.opensuse.org/project/show/home:hawkeye116477:waterfox.
+
 ## Adding repository
-
-Run these commands to add this repostory to your APT sources list: 
-
-`echo 'deb https://dl.bintray.com/hawkeye116477/waterfox-deb release main' | sudo tee /etc/apt/sources.list.d/waterfox.list`
-
-And the public GPG key:
-
-`curl https://bintray.com/user/downloadSubjectPublicKey?username=hawkeye116477 | sudo apt-key add -`
-
-You can download and install the packages after you update the APT package index: 
-
-`sudo apt-get update`
+Just click on for example waterfox or waterfox-kde, then click on „download package" and you will see instructions how to add apt repository.
 
 ### Note: Language packs and KDE integration features are available as separate packages to install from apt repository!
 
-## Getting automatic notifications about new versions of packages
-
-waterfox, waterfox-kde & locales: <a href='https://bintray.com/hawkeye116477/waterfox-deb/waterfox?source=watch' alt='Get automatic notifications about new "waterfox" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
-
-kwaterfoxhelper: <a href='https://bintray.com/hawkeye116477/waterfox-deb/kwaterfoxhelper?source=watch' alt='Get automatic notifications about new "kwaterfoxhelper" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
-
 ## Patches
+Latest Waterfox Unity Edition contains following patches: https://build.opensuse.org/source/home:hawkeye116477:waterfox/waterfox/debian.tar.gz.
 
-Latest Waterfox KDE Plasma Edition contains following patches: <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">openSUSE's KDE patches (firefox-kde.patch & mozilla-kde.patch)</a>, <a href="https://github.com/hawkeye116477/Waterfox/tree/plasma/_Plasma_Build">fix_crash_e10s_upload_cancel.patch, fix_waterfox_browser-kde_xul.patch, pgo_fix_missing_kdejs.patch, wifi-disentangle.patch, wifi-fix-interface.patch, 0001-Bug-1384062-Make-SystemResourceMonitor.stop-more-res.patch</a> and <a href="http://www.rosenauer.org/hg/mozilla/file/tip/">mozilla-ucontext.patch</a>.
+Latest Waterfox KDE Plasma Edition contains following patches: https://build.opensuse.org/source/home:hawkeye116477:waterfox/waterfox-kde/debian.tar.gz.

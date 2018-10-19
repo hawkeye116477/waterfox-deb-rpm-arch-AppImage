@@ -14,3 +14,6 @@ pref("intl.locale.matchOS", true);
 
 // Fall back to en-US search plugins if none exist for the current locale
 pref("distribution.searchplugins.defaultLocale", "en-US");
+
+// Use OS regional settings for date and time
+pref("intl.regional_prefs.use_os_locales", true);
