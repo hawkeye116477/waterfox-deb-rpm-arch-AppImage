@@ -1,5 +1,0 @@
-waterfox /opt
-debian/vendor.js /opt/waterfox/browser/defaults/preferences
-debian/wrapper/waterfox /usr/bin
-debian/waterfox.desktop /usr/share/applications
-debian/distribution.ini /opt/waterfox/distribution

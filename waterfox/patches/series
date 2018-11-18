@@ -1,0 +1,3 @@
+waterfox-install-dir.patch -p1
+dont-statically-link-libstdc++.patch -p1
+unity-menubar.patch -p1

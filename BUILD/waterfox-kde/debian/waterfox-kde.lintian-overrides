@@ -1,3 +1,0 @@
-waterfox-kde binary: embedded-library opt/waterfox/libxul.so: libjpeg
-waterfox-kde binary: embedded-library opt/waterfox/libmozsqlite3.so: sqlite
-waterfox-kde binary: image-file-in-opt

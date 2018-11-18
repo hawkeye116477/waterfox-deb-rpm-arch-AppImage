@@ -1,0 +1,29 @@
+waterfox (56.2.5.1-0) xenial; urgency=high
+    * Fix postinst error
+    * Add syspref.js in /etc/waterfox for setting preferences for all users
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 4 Nov 2018 09:57:00 +0200
+
+waterfox (56.2.5-0) xenial; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-23
+        - 2018-24
+        - 2018-27
+
+    * Added AppArmor profile
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 1 Nov 2018 14:10:00 +0200
+
+waterfox (56.2.4-0) xenial; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+        - 2018-23
+        - 2018-24
+
+    * There is now a complete backup of all classic add-ons from the Mozilla Add-On Store, mirrored on the Waterfox CDN. You can use the Classic add-on Archive add-on to view the catalogue. This will be integrated into the next minor Waterfox version (56.3).
+
+    * Moved from /opt to /usr/lib to follow Debian's standards
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 15 Oct 2018 13:48:00 +0200

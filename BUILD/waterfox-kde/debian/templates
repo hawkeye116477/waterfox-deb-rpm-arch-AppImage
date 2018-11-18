@@ -1,4 +1,0 @@
-Template: waterfox-kde/locales
-Type: note
-Description: Waterfox-kde package contains only English (US) language pack.
-    If you want to have another locale, just download and install waterfox-locale-{language-code} package (for example: waterfox-locale-pl or waterfox-locale-en) from https://bintray.com/hawkeye116477/waterfox-deb/waterfox or apt repository.

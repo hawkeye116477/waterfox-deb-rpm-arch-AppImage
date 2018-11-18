@@ -1,3 +1,0 @@
-waterfox-kde-56.2.0.patch -p1
-waterfox-install-dir.patch -p1
-don't-statically-link-libstdc++.patch -p1
