@@ -1,0 +1,22 @@
+waterfox-kde (56.2.5-0) xenial; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-23
+        - 2018-24
+        - 2018-27
+
+    * Added AppArmor profile
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 1 Nov 2018 14:16:00 +0200
+
+waterfox-kde (56.2.4-0) xenial; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-23
+        - 2018-24
+
+    * Moved from /opt to /usr/lib to follow Debian's standards
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 15 Oct 2018 10:36:00 +0200
