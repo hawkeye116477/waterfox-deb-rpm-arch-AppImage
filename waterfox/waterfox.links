@@ -14,3 +14,6 @@ usr/share/hyphen usr/lib/waterfox/hyphenation
 
 # Wrapper
 usr/lib/waterfox/waterfox-bin.sh usr/bin/waterfox
+
+#etc
+etc/waterfox/syspref.js usr/lib/waterfox/browser/defaults/preferences
