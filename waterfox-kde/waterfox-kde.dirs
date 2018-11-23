@@ -6,3 +6,6 @@ usr/share/icons/hicolor/32x32/apps
 usr/share/icons/hicolor/48x48/apps
 usr/share/icons/hicolor/128x128/apps
 usr/share/icons/hicolor/256x256/apps
+usr/lib/waterfox-addons/searchplugins
+usr/lib/waterfox-addons/plugins
+usr/lib/waterfox-addons/extensions
