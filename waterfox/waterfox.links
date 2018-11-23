@@ -17,3 +17,8 @@ usr/lib/waterfox/waterfox-bin.sh usr/bin/waterfox
 
 #etc
 etc/waterfox/syspref.js usr/lib/waterfox/browser/defaults/preferences
+
+#waterfox-addons
+usr/lib/waterfox-addons/searchplugins usr/lib/waterfox/browser/searchplugins
+usr/lib/waterfox-addons/plugins usr/lib/waterfox/browser/plugins
+usr/lib/waterfox-addons/extensions usr/lib/waterfox/browser/extensions
