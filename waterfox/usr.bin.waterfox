@@ -82,7 +82,9 @@
   # waterfox specific
   /etc/waterfox*/ r,
   /etc/waterfox*/** r,
-  
+  /usr/lib/waterfox-addons*/ r,
+  /usr/lib/waterfox-addons*/** r
+
   # firefox specific
   #/etc/xul-ext/** r,
   #/etc/xulrunner-2.0*/ r,
