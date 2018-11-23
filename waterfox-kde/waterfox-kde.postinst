@@ -82,8 +82,6 @@ EOM
 #include <abstractions/ubuntu-browsers.d/text-editors>
 #include <abstractions/ubuntu-browsers.d/ubuntu-integration>
 #include <abstractions/ubuntu-browsers.d/user-files>
-
-/usr/lib/waterfox/kwaterfoxhelper Cxr -> sanitized_helper,
 EOM
             mkdir -p `dirname $ADDONS_APP_PROFILE` 2>/dev/null || true
             mv -f "$tmp" "$ADDONS_APP_PROFILE"

@@ -84,6 +84,8 @@
   /etc/waterfox*/** r,
   /usr/lib/waterfox-addons*/ r,
   /usr/lib/waterfox-addons*/** r
+  # waterfox-kde specific
+  @{MOZ_LIBDIR}/kwaterfoxhelper Cxr -> sanitized_helper,
 
   # firefox specific
   #/etc/xul-ext/** r,
