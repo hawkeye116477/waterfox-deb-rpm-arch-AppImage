@@ -82,8 +82,6 @@
   # waterfox specific
   /etc/waterfox*/ r,
   /etc/waterfox*/** r,
-  # waterfox-kde specific
-  @{MOZ_LIBDIR}/kwaterfoxhelper Cxr -> sanitized_helper,
 
   # firefox specific
   #/etc/xul-ext/** r,
@@ -227,6 +225,7 @@
 
   # Addons
   #include <abstractions/ubuntu-browsers.d/waterfox>
+  @{MOZ_LIBDIR}/kwaterfoxhelper Cxr -> sanitized_helper,
 
   # Site-specific additions and overrides. See local/README for details.
   #include <local/usr.bin.waterfox>

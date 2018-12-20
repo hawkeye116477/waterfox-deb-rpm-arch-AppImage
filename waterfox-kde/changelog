@@ -1,4 +1,16 @@
-waterfox-kde (56.2.5-0) xenial; urgency=high
+waterfox-kde (56.2.6-0) obs; urgency=high
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-30
+
+    * Updated NSS to 3.34
+    * Updated manpage
+    * Added missing symlink for syspref.js
+    * Updated translation of waterfox.desktop to Chinese by pirate486743186
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Dec 2018 11:29:00 +0200
+
+waterfox-kde (56.2.5-0) obs; urgency=high
 
     * Mozilla Foundation Security Advisories patched:
 
@@ -10,7 +22,7 @@ waterfox-kde (56.2.5-0) xenial; urgency=high
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 1 Nov 2018 14:16:00 +0200
 
-waterfox-kde (56.2.4-0) xenial; urgency=high
+waterfox-kde (56.2.4-0) obs; urgency=high
 
     * Mozilla Foundation Security Advisories patched:
 
