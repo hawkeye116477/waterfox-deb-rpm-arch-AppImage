@@ -1,4 +1,3 @@
 waterfox-kde-56.2.4.patch -p1
 waterfox-install-dir.patch -p1
 dont-statically-link-libstdc++.patch -p1
-0001-Revert-Merge-pull-request-843-from-bilgincoskun-sort.patch -p1

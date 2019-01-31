@@ -5,7 +5,7 @@ waterfox-kde (56.2.7-0) obs; urgency=medium
 
     * Fixed HTML5 DRM playback issues on websites such as Amazon Prime.
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 31 Jan 2019 20:15:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 1 Feb 2019 00:15:00 +0200
 
 waterfox-kde (56.2.6-0) obs; urgency=high
     * Mozilla Foundation Security Advisories patched:
