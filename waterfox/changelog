@@ -1,8 +1,11 @@
 waterfox (56.2.7-0) obs; urgency=medium
     * Mozilla Foundation Security Advisories patched
-    * DRM fixes
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 31 Jan 2019 11:48:00 +0200
+        - 2019-02
+
+    * Fixed HTML5 DRM playback issues on websites such as Amazon Prime.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 31 Jan 2019 20:15:00 +0200
 
 waterfox (56.2.6-0) obs; urgency=high
     * Mozilla Foundation Security Advisories patched:
