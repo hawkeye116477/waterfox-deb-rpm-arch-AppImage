@@ -1,3 +1,9 @@
+waterfox-kde (56.2.7.1-0) obs; urgency=medium
+    * Fixed and updated search icons on about:home and about:newtab.
+    * Test out a new user agent to hopefully fix website issues.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 2 Feb 2019 17:17:00 +0200
+
 waterfox-kde (56.2.7-0) obs; urgency=medium
     * Mozilla Foundation Security Advisories patched
 
