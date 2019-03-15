@@ -1,3 +1,14 @@
+waterfox (56.2.8-0) obs; urgency=medium
+    * Waterfox now identifies itself as Firefox 60 ESR. This should fix a lot of website issues. Unfortunately there will be no unique way to identify Waterfox.
+
+        - WhatsApp Web now works, as should Chase et al.
+
+    * Various security fixes.
+    * Corrected the behavior of Element.scrollIntoView which some websites rely on to work.
+    * Disabled Service Workers by default.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 15 Mar 2019 13:29:00 +0200
+
 waterfox (56.2.7.1-0) obs; urgency=medium
     * Fixed and updated search icons on about:home and about:newtab.
     * Test out a new user agent to hopefully fix website issues.
