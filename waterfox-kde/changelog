@@ -1,3 +1,11 @@
+waterfox-kde (56.2.9-0) obs; urgency=medium
+    * Various security fixes.
+    * Switched to twemoji for platforms that do not natively support emoji.
+    * Fixed bug causing issues with add-ons such as Tab Mix Plus.
+    * Fixed issue with Instagram.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 20 Apr 2019 10:55:00 +0200
+
 waterfox-kde (56.2.8-0) obs; urgency=medium
     * Waterfox now identifies itself as Firefox 60 ESR. This should fix a lot of website issues. Unfortunately there will be no unique way to identify Waterfox.
 
