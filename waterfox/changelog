@@ -1,3 +1,14 @@
+waterfox (56.2.10-0) obs; urgency=medium
+    * Latest security fixes up to Firefox ESR 60.7
+    * Added new Mozilla certificates to be able to install add-ons from AMO again
+    * Waterfox now identifies as Waterfox once again!
+
+        - This fixes issues with repeat CAPTCHAs, hooray!
+        - Websites that require a vanilla Firefox user agent will get one, so far: web.whatsapp.com, amazon.*, netflix.com, chase.com. Please request if a website you visit doesn’t recognise the Waterfox user agent.
+        - This should stop YouTube from doing A/B tests that break on Waterfox.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 19 May 2019 15:10:00 +0200
+
 waterfox (56.2.9-0) obs; urgency=medium
     * Various security fixes.
     * Switched to twemoji for platforms that do not natively support emoji.
