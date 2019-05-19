@@ -1,12 +1,3 @@
-#if ! test `lsb_release -sc` = "trusty"; then
-#export CC=clang-6.0
-#export CXX=clang++-6.0
-#else
-#export CC=/usr/lib/gcc-mozilla/bin/gcc
-#export CXX=/usr/lib/gcc-mozilla/bin/g++
-#export CPLUS_INCLUDE_PATH=/usr/lib/gcc-mozilla/include/c++/6:/usr/lib/gcc-mozilla/include/c++/6/x86_64-linux-gnu
-#fi
-
 if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "jessie"; then
 export CC=clang-4.0
 export CXX=clang++-4.0
@@ -35,16 +26,22 @@ ac_add_options --disable-tests
 ac_add_options --disable-verify-mar
 ac_add_options --disable-elf-hack
 
+if test `lsb_release -sc` = "sid"; then
+ac_add_options --disable-stylo
+fi
+
 ac_add_options --enable-application=browser
 ac_add_options --disable-updater
 
 ac_add_options --enable-release
 
-if ! test `lsb_release -sc` = "stretch" && ! test `lsb_release -sc` = "jessie"; then
+if ! test `lsb_release -sc` = "stretch" && ! test `lsb_release -sc` = "jessie" && ! test `lsb_release -sc` = "sid"; then
 ac_add_options --enable-rust-simd # on x86 requires SSE2
 fi
 
+if ! test `lsb_release -sc` = "sid"; then
 ac_add_options --enable-stylo=build
+fi
 
 ac_add_options --with-app-name=waterfox
 ac_add_options --with-app-basename=Waterfox
