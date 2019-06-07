@@ -1,3 +1,9 @@
+waterfox-kde (56.2.10.1-0) obs; urgency=medium
+    * User agent overrides for more domains (Spotify, Slack, Wire and others)
+    * Fixed Bugs: 1466606, 1386277, 1404198 and 1398897
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 07 Jun 2019 18:38:00 +0200
+
 waterfox-kde (56.2.10-0) obs; urgency=medium
     * Latest security fixes up to Firefox ESR 60.7
     * Added new Mozilla certificates to be able to install add-ons from AMO again
