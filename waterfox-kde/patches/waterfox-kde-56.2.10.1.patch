@@ -5128,3 +5128,15 @@ index 8af0a8712588..d3583b03e273 100644
    nsCOMPtr<nsIGIOService> giovfs = do_GetService(NS_GIOSERVICE_CONTRACTID);
    if (!giovfs) {
      return NS_ERROR_FAILURE;
+diff --git a/browser/app/Makefile.in b/browser/app/Makefile.in
+index 5073ce31afee..904e6e97b9da 100644
+--- a/browser/app/Makefile.in
++++ b/browser/app/Makefile.in
+@@ -59,6 +59,7 @@ endif
+ libs:: $(srcdir)/profile/channel-prefs.js
+ 	$(NSINSTALL) -D $(DIST)/bin/defaults/pref
+ 	$(call py_action,preprocessor,-Fsubstitution $(PREF_PPFLAGS) $(ACDEFINES) $^ -o $(DIST)/bin/defaults/pref/channel-prefs.js)
++	cp $(topsrcdir)/../kde.js $(DIST)/bin/defaults/pref/kde.js
+ 
+ ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
+ 
