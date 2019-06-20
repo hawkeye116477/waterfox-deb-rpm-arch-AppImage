@@ -1,4 +1,3 @@
 waterfox-install-dir.patch -p1
 dont-statically-link-libstdc++.patch -p1
-mozbuild.patch -p1
 UnsortedError.patch -p1
