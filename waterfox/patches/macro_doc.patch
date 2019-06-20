@@ -1,0 +1,26 @@
+diff --git a/servo/components/style/lib.rs b/servo/components/style/lib.rs
+index 69ec8c6b589d..1c5f64294ced 100644
+--- a/servo/components/style/lib.rs
++++ b/servo/components/style/lib.rs
+@@ -23,7 +23,7 @@
+ //! [cssparser]: ../cssparser/index.html
+ //! [selectors]: ../selectors/index.html
+ 
+-#![deny(missing_docs)]
++
+ 
+ // FIXME(bholley): We need to blanket-allow unsafe code in order to make the
+ // gecko atom!() macro work. When Rust 1.14 is released [1], we can uncomment
+diff --git a/servo/components/style_traits/lib.rs b/servo/components/style_traits/lib.rs
+index 78bb0e3e0e7d..17c3266faf86 100644
+--- a/servo/components/style_traits/lib.rs
++++ b/servo/components/style_traits/lib.rs
+@@ -9,7 +9,7 @@
+ #![crate_name = "style_traits"]
+ #![crate_type = "rlib"]
+ 
+-#![deny(unsafe_code, missing_docs)]
++#![deny(unsafe_code)]
+ 
+ #![cfg_attr(feature = "servo", feature(plugin))]
+ 
