@@ -5,7 +5,7 @@ waterfox-kde (56.2.11-0) obs; urgency=high
     * Fixed issues where the Gecko Media Plugins were not downloading, preventing websites that required DRM such as Netflix from working.
     * Enabled support for JavaScript modules.
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 19 Jun 2019 23:20:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Jun 2019 14:51:00 +0200
 
 waterfox-kde (56.2.10.1-0) obs; urgency=medium
     * User agent overrides for more domains (Spotify, Slack, Wire and others)
