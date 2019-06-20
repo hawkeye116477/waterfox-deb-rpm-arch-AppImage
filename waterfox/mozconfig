@@ -26,7 +26,7 @@ ac_add_options --disable-tests
 ac_add_options --disable-verify-mar
 ac_add_options --disable-elf-hack
 
-if test `lsb_release -sc` = "sid"; then
+if test `lsb_release -sc` = "bullseye"; then
 ac_add_options --disable-stylo
 fi
 
@@ -35,11 +35,11 @@ ac_add_options --disable-updater
 
 ac_add_options --enable-release
 
-if ! test `lsb_release -sc` = "stretch" && ! test `lsb_release -sc` = "jessie" && ! test `lsb_release -sc` = "sid"; then
+if ! test `lsb_release -sc` = "stretch" && ! test `lsb_release -sc` = "jessie" && ! test `lsb_release -sc` = "bullseye" && ! test `lsb_release -sc` = "buster"; then
 ac_add_options --enable-rust-simd # on x86 requires SSE2
 fi
 
-if ! test `lsb_release -sc` = "sid"; then
+if ! test `lsb_release -sc` = "bullseye"; then
 ac_add_options --enable-stylo=build
 fi
 
