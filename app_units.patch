@@ -1,0 +1,262 @@
+diff --git a/third_party/rust/app_units/.cargo-checksum.json b/third_party/rust/app_units/.cargo-checksum.json
+index 31a3ec78cf62..41772e9c3637 100644
+--- a/third_party/rust/app_units/.cargo-checksum.json
++++ b/third_party/rust/app_units/.cargo-checksum.json
+@@ -1 +1 @@
+-{"files":{"Cargo.toml":"1399354caef7c9cee1da231854345daef0c395050605074397b12ef4491a4825","README.md":"9f048d969f9f8333cdcdb892744cd0816e4f2922c8817fa5e9e07f9472fe1050","src/app_unit.rs":"13f8c33b7ea85943a81a3866d8ad156793ae0723f2e44b7ca9bb5497e8215354","src/lib.rs":"2df7d863c47d8b22f9af66caeafa87e6a206ee713a8aeaa55c5a80a42a92513b"},"package":"b502f30531df49d388ac6efbc8fb25652d54df5cc2bca653361f683c6dd2f075"}
+\ No newline at end of file
++{"files":{"Cargo.toml":"41d47153a6043d3e4599f827888e1ac43c204e52ed5f6998b1e275fcae21a3cc","README.md":"9f048d969f9f8333cdcdb892744cd0816e4f2922c8817fa5e9e07f9472fe1050","src/app_unit.rs":"0f4fde2c0481b6dd021f48c8ef548090e7c577c02c429c41626c2b5e7a006949","src/lib.rs":"2df7d863c47d8b22f9af66caeafa87e6a206ee713a8aeaa55c5a80a42a92513b"},"package":"ed0a4de09a3b8449515e649f3bb84f72ea15fc2d10639beb0776a09b7d308074"}
+\ No newline at end of file
+diff --git a/third_party/rust/app_units/Cargo.toml b/third_party/rust/app_units/Cargo.toml
+index c6d867646589..5fbe898f8e4e 100644
+--- a/third_party/rust/app_units/Cargo.toml
++++ b/third_party/rust/app_units/Cargo.toml
+@@ -12,20 +12,20 @@
+ 
+ [package]
+ name = "app_units"
+-version = "0.5.1"
++version = "0.5.6"
+ authors = ["The Servo Project Developers"]
+ description = "Servo app units type (Au)"
+ documentation = "http://doc.servo.org/app_units/"
+ license = "MPL-2.0"
+ repository = "https://github.com/servo/app_units"
+-[dependencies.heapsize]
+-version = ">=0.3, < 0.5"
++[dependencies.rustc-serialize]
++version = "0.3"
+ 
+ [dependencies.num-traits]
+ version = "0.1.32"
+ 
+-[dependencies.rustc-serialize]
+-version = "0.3"
++[dependencies.heapsize]
++version = ">=0.3, < 0.5"
+ 
+ [dependencies.serde]
+ version = "1.0"
+diff --git a/third_party/rust/app_units/src/app_unit.rs b/third_party/rust/app_units/src/app_unit.rs
+index 63f827ad8fcc..60ea8d49b100 100644
+--- a/third_party/rust/app_units/src/app_unit.rs
++++ b/third_party/rust/app_units/src/app_unit.rs
+@@ -189,19 +189,29 @@ impl Au {
+ 
+     #[inline]
+     fn clamp_self(&mut self) {
+-        *self = self.clamp()
++        *self = Au::clamp(*self)
+     }
+ 
+     #[inline]
+     pub fn scale_by(self, factor: f32) -> Au {
+-        let new_float = ((self.0 as f32) * factor).round();
+-        if new_float > MAX_AU.0 as f32 {
+-            MAX_AU
+-        } else if new_float < MIN_AU.0 as f32 {
+-            MIN_AU
+-        } else {
+-            Au(new_float as i32)
+-        }
++        let new_float = ((self.0 as f64) * factor as f64).round();
++        Au::from_f64_au(new_float)
++    }
++
++    #[inline]
++    /// Scale, but truncate (useful for viewport-relative units)
++    pub fn scale_by_trunc(self, factor: f32) -> Au {
++        let new_float = ((self.0 as f64) * factor as f64).trunc();
++        Au::from_f64_au(new_float)
++    }
++
++    #[inline]
++    pub fn from_f64_au(float: f64) -> Self {
++        // We *must* operate in f64. f32 isn't precise enough
++        // to handle MAX_AU
++        Au(float.min(MAX_AU.0 as f64)
++                .max(MIN_AU.0 as f64)
++            as i32)
+     }
+ 
+     #[inline]
+@@ -244,25 +254,18 @@ impl Au {
+     #[inline]
+     pub fn from_f32_px(px: f32) -> Au {
+         let float = (px * AU_PER_PX as f32).round();
+-        if float > MAX_AU.0 as f32 {
+-            MAX_AU
+-        } else if float < MIN_AU.0 as f32 {
+-            MIN_AU
+-        } else {
+-            Au(float as i32)
+-        }
++        Au::from_f64_au(float as f64)
+     }
+ 
+     #[inline]
+     pub fn from_f64_px(px: f64) -> Au {
+         let float = (px * AU_PER_PX as f64).round();
+-        if float > MAX_AU.0 as f64 {
+-            MAX_AU
+-        } else if float < MIN_AU.0 as f64 {
+-            MIN_AU
+-        } else {
+-            Au(float as i32)
+-        }
++        Au::from_f64_au(float)
++    }
++
++    #[inline]
++    pub fn abs(self) -> Self {
++        Au(self.0.abs())
+     }
+ }
+ 
+@@ -307,6 +310,12 @@ fn scale() {
+     assert_eq!(Au(12).scale_by(1.5), Au(18));
+     assert_eq!(Au(12).scale_by(1.7), Au(20));
+     assert_eq!(Au(12).scale_by(1.8), Au(22));
++    assert_eq!(Au(12).scale_by_trunc(1.8), Au(21));
++}
++
++#[test]
++fn abs() {
++    assert_eq!(Au(-10).abs(), Au(10));
+ }
+ 
+ #[test]
+diff --git a/toolkit/library/gtest/rust/Cargo.lock b/toolkit/library/gtest/rust/Cargo.lock
+index f703337efa91..b5d09738ca40 100644
+--- a/toolkit/library/gtest/rust/Cargo.lock
++++ b/toolkit/library/gtest/rust/Cargo.lock
+@@ -15,7 +15,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
+ name = "app_units"
+-version = "0.5.1"
++version = "0.5.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ dependencies = [
+  "heapsize 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -933,7 +933,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ name = "style"
+ version = "0.0.1"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "arraydeque 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+  "arrayvec 0.3.23 (registry+https://github.com/rust-lang/crates.io-index)",
+  "atomic_refcell 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -987,7 +987,7 @@ dependencies = [
+ name = "style_traits"
+ version = "0.0.1"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bitflags 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "cssparser 0.18.2 (registry+https://github.com/rust-lang/crates.io-index)",
+  "euclid 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1195,7 +1195,7 @@ dependencies = [
+ name = "webrender"
+ version = "0.48.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bincode 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bit-set 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1222,7 +1222,7 @@ dependencies = [
+ name = "webrender_api"
+ version = "0.48.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bincode 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "byteorder 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "core-foundation 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1239,7 +1239,7 @@ dependencies = [
+ name = "webrender_bindings"
+ version = "0.1.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "euclid 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
+  "gleam 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
+  "rayon 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1269,7 +1269,7 @@ dependencies = [
+ [metadata]
+ "checksum aho-corasick 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0638fd549427caa90c499814196d1b9e3725eb4d15d7339d6de073a680ed0ca2"
+ "checksum ansi_term 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "23ac7c30002a5accbf7e8987d0632fa6de155b7c3d39d0067317a391e00a2ef6"
+-"checksum app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b502f30531df49d388ac6efbc8fb25652d54df5cc2bca653361f683c6dd2f075"
++"checksum app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)" = "ed0a4de09a3b8449515e649f3bb84f72ea15fc2d10639beb0776a09b7d308074"
+ "checksum arraydeque 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "96e774cadb24c2245225280c6799793f9802b918a58a79615e9490607489a717"
+ "checksum arrayvec 0.3.23 (registry+https://github.com/rust-lang/crates.io-index)" = "699e63a93b79d717e8c3b5eb1b28b7780d0d6d9e59a72eb769291c83b0c8dc67"
+ "checksum aster 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4ccfdf7355d9db158df68f976ed030ab0f6578af811f5a7bb6dcf221ec24e0e0"
+diff --git a/toolkit/library/rust/Cargo.lock b/toolkit/library/rust/Cargo.lock
+index 06bb601d289d..a5702a6c7ae3 100644
+--- a/toolkit/library/rust/Cargo.lock
++++ b/toolkit/library/rust/Cargo.lock
+@@ -15,7 +15,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
+ name = "app_units"
+-version = "0.5.1"
++version = "0.5.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ dependencies = [
+  "heapsize 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -920,7 +920,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ name = "style"
+ version = "0.0.1"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "arraydeque 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+  "arrayvec 0.3.23 (registry+https://github.com/rust-lang/crates.io-index)",
+  "atomic_refcell 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -974,7 +974,7 @@ dependencies = [
+ name = "style_traits"
+ version = "0.0.1"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bitflags 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "cssparser 0.18.2 (registry+https://github.com/rust-lang/crates.io-index)",
+  "euclid 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1182,7 +1182,7 @@ dependencies = [
+ name = "webrender"
+ version = "0.48.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bincode 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bit-set 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1209,7 +1209,7 @@ dependencies = [
+ name = "webrender_api"
+ version = "0.48.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "bincode 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "byteorder 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "core-foundation 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1226,7 +1226,7 @@ dependencies = [
+ name = "webrender_bindings"
+ version = "0.1.0"
+ dependencies = [
+- "app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
++ "app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+  "euclid 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
+  "gleam 0.4.7 (registry+https://github.com/rust-lang/crates.io-index)",
+  "rayon 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -1256,7 +1256,7 @@ dependencies = [
+ [metadata]
+ "checksum aho-corasick 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "0638fd549427caa90c499814196d1b9e3725eb4d15d7339d6de073a680ed0ca2"
+ "checksum ansi_term 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "23ac7c30002a5accbf7e8987d0632fa6de155b7c3d39d0067317a391e00a2ef6"
+-"checksum app_units 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b502f30531df49d388ac6efbc8fb25652d54df5cc2bca653361f683c6dd2f075"
++"checksum app_units 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)" = "ed0a4de09a3b8449515e649f3bb84f72ea15fc2d10639beb0776a09b7d308074"
+ "checksum arraydeque 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "96e774cadb24c2245225280c6799793f9802b918a58a79615e9490607489a717"
+ "checksum arrayvec 0.3.23 (registry+https://github.com/rust-lang/crates.io-index)" = "699e63a93b79d717e8c3b5eb1b28b7780d0d6d9e59a72eb769291c83b0c8dc67"
+ "checksum aster 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)" = "4ccfdf7355d9db158df68f976ed030ab0f6578af811f5a7bb6dcf221ec24e0e0"
