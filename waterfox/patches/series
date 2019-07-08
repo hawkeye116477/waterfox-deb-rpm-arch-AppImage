@@ -1,1 +1,2 @@
 dont-statically-link-libstdc++.patch -p1
+gitignore.patch -p1
