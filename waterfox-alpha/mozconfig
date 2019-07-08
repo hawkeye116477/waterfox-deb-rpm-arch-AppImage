@@ -1,10 +1,14 @@
 if test `lsb_release -sc` = "stretch"; then
 export CC=clang-4.0
 export CXX=clang++-4.0
-else
+elif test `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
+else
+export CC=clang
+export CXX=clang++
 fi
+
 ac_add_options --prefix=/usr
 ac_add_options --enable-optimize="-O3 -march=core2 -mtune=generic -w"
 ac_add_options --enable-eme=widevine
@@ -20,7 +24,6 @@ mk_add_options AUTOCLOBBER=1
 
 ac_add_options --disable-debug
 ac_add_options --disable-crashreporter
-ac_add_options --disable-maintenance-service
 ac_add_options --disable-profiling
 ac_add_options --disable-signmar
 ac_add_options --disable-tests
@@ -35,7 +38,6 @@ ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
 
-ac_add_options --enable-stylo=build
 ac_add_options --enable-lto
 ac_add_options --enable-hardening
 ac_add_options --with-app-name=waterfox
