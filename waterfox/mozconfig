@@ -1,9 +1,12 @@
-if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "jessie"; then
+if test `lsb_release -sc` = "stretch"; then
 export CC=clang-4.0
 export CXX=clang++-4.0
-else
+elif `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
+else
+export CC=clang
+export CXX=clang++
 fi
 
 ac_add_options --prefix=/usr
