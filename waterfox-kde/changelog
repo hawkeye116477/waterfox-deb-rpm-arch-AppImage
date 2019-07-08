@@ -1,4 +1,4 @@
-waterfox (56.2.11.1-0) obs; urgency=medium
+waterfox-kde (56.2.11.1-0) obs; urgency=medium
     * Fixed Bug 1555523
     * Fixed compiling with elf-hack and rust-simd, so that should improve performance a little
     * Fixed bugs related with HiDPI icons
