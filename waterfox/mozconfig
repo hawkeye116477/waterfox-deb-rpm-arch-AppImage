@@ -1,7 +1,7 @@
 if test `lsb_release -sc` = "stretch"; then
 export CC=clang-4.0
 export CXX=clang++-4.0
-elif `lsb_release -sc` = "xenial"; then
+elif test `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
 else
