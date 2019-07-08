@@ -1,0 +1,3 @@
+gitignore.patch -p1
+unity-menubar.patch -p1
+waterfox-alpha-install-dir.patch -p1

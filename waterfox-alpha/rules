@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export SHELL=/bin/bash
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -f .mozconfig
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_configure:
+	cp debian/mozconfig mozconfig
+
+override_dh_auto_build:
+	./mach build
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-alpha-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-alpha ./mach install
+	rm -rf $$(pwd)/debian/waterfox-alpha/usr/lib/waterfox-alpha/browser/features
+	rm -rf $$(pwd)/debian/waterfox-alpha/usr/lib/waterfox-alpha/waterfox-bin
+	rm -rf $$(pwd)/debian/waterfox-alpha/usr/lib/waterfox-alpha/dictionaries
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox-alpha/waterfox
+
+override_dh_builddeb:
+	dh_builddeb -- -Z xz

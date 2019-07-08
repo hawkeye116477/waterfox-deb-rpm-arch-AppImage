@@ -1,0 +1,3 @@
+waterfox-alpha binary: embedded-library usr/lib/waterfox-alpha/libxul.so: libjpeg
+waterfox-alpha binary: embedded-library usr/lib/waterfox-alpha/libmozsqlite3.so: sqlite
+waterfox-alpha binary: image-file-in-usr-lib
