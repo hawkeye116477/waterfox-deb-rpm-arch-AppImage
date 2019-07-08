@@ -1,3 +1,11 @@
+waterfox (56.2.11.1-0) obs; urgency=medium
+    * Fixed Bug 1555523
+    * Fixed compiling with elf-hack and rust-simd, so that should improve performance a little
+    * Fixed bugs related with HiDPI icons
+    * Version is not changed on about dialog for now
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 08 Jul 2019 15:09:00 +0200
+
 waterfox (56.2.11-0) obs; urgency=high
     * Security fix for CVE-2019-11707.
     * Fixed issues that prevented themes from AMO installing.
