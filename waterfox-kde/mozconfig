@@ -1,9 +1,12 @@
 if test `lsb_release -sc` = "stretch"; then
 export CC=clang-4.0
 export CXX=clang++-4.0
-else
+elif test `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
+else
+export CC=clang
+export CXX=clang++
 fi
 ac_add_options --prefix=/usr
 ac_add_options --enable-optimize
@@ -30,7 +33,9 @@ ac_add_options --disable-updater
 
 ac_add_options --enable-release
 
-ac_add_options --enable-rust-simd # on x86 requires SSE2
+if ! test `lsb_release -sc` = "stretch"; then
+ac_add_options --enable-rust-simd
+fi
 
 ac_add_options --enable-stylo=build
 

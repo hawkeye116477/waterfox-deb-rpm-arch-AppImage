@@ -26,7 +26,7 @@ override_dh_auto_install:
 	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox/dictionaries
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l /opt/waterfox/waterfox
+	dh_shlibdeps -l /usr/lib/waterfox/waterfox
 
 override_dh_builddeb:
 	dh_builddeb -- -Z xz
