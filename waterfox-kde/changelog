@@ -1,3 +1,9 @@
+waterfox-kde (56.2.12-0) obs; urgency=medium
+    * Patches for mfsa2019-22.
+    * Updated Twemoji Mozilla to 0.4.0 (twemoji 11.4.0).
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 10 Jul 2019 22:19:00 +0200
+
 waterfox-kde (56.2.11.1-0) obs; urgency=medium
     * Fixed Bug 1555523
     * Fixed compiling with elf-hack and rust-simd, so that should improve performance a little
