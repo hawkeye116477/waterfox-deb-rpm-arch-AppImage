@@ -9,11 +9,11 @@ export NM=llvm-nm
 export RANLIB=llvm-ranlib
 
 if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
-export PATH=/usr/lib/nodejs-mozilla/bin/:$PATH
+export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
 if test `lsb_release -sc` = "xenial"; then
-export PATH=/usr/lib/nasm-mozilla/bin/:$PATH
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
 ac_add_options --prefix=/usr
