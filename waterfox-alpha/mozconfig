@@ -16,6 +16,10 @@ if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionc"; then
 export PATH=/usr/lib/nodejs-mozilla/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "xenial"; then
+export PATH=/usr/lib/nasm-mozilla/bin/:$PATH
+fi
+
 ac_add_options --prefix=/usr
 ac_add_options --enable-optimize="-O3 -march=core2 -mtune=generic -w"
 ac_add_options --enable-eme=widevine

@@ -1,9 +1,6 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-# LTO needs more open files
-ulimit -n 4096
-
 %:
 	dh $@
 
@@ -16,6 +13,9 @@ override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
 override_dh_auto_build:
+	# LTO needs more open files
+	ulimit -n 4096
+
 	./mach build
 
 override_dh_auto_install:
