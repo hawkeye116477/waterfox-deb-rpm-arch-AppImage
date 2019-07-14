@@ -1,7 +1,4 @@
-if test `lsb_release -sc` = "stretch"; then
-export CC=clang-4.0
-export CXX=clang++-4.0
-elif test `lsb_release -sc` = "xenial"; then
+if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
 else
@@ -33,16 +30,12 @@ ac_add_options --disable-updater
 
 ac_add_options --enable-release
 
-if ! test `lsb_release -sc` = "stretch"; then
 ac_add_options --enable-rust-simd
-fi
-
 ac_add_options --enable-stylo=build
 
 ac_add_options --with-app-name=waterfox
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/unofficial
-ac_add_options --with-distribution-id=org.waterfoxproject
 
 export MOZ_GECKO_PROFILER=
 export MOZ_ENABLE_PROFILER_SPS=
