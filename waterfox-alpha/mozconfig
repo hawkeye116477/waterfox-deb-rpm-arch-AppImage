@@ -1,9 +1,19 @@
 if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
 export CC=clang-6.0
 export CXX=clang++-6.0
+export AR=llvm-6.0-ar
+export NM=llvm-6.0-nm
+export RANLIB=llvm-6.0-ranlib
 else
 export CC=clang
 export CXX=clang++
+export AR=llvm-ar
+export NM=llvm-nm
+export RANLIB=llvm-ranlib
+fi
+
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionc"; then
+export PATH=/usr/lib/nodejs-mozilla/bin/:$PATH
 fi
 
 ac_add_options --prefix=/usr
