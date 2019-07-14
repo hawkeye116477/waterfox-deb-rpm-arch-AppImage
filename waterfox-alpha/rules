@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-export SHELL=/bin/bash
+# LTO needs more open files
+ulimit -n 4096
 
 %:
 	dh $@
