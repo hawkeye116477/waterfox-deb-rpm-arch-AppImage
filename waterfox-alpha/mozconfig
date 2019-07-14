@@ -12,7 +12,7 @@ export NM=llvm-nm
 export RANLIB=llvm-ranlib
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionc"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export PATH=/usr/lib/nodejs-mozilla/bin/:$PATH
 fi
 
