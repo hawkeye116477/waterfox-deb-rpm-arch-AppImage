@@ -47,11 +47,9 @@ ac_add_options --enable-rust-simd
 
 #ac_add_options --enable-lto
 #ac_add_options --enable-hardening
-ac_add_options --enable-stdcxx-compat
-ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-name=waterfox-alpha
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/unofficial
-ac_add_options --with-distribution-id=org.waterfoxproject
 
 export MOZ_GECKO_PROFILER=
 export MOZ_ENABLE_PROFILER_SPS=
