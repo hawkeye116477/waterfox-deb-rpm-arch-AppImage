@@ -12,12 +12,9 @@ override_dh_auto_clean:
 override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
-.ONESHELL:
 override_dh_auto_build:
 	# LTO needs more open files
-	ulimit -n 4096;
-
-	./mach build
+	ulimit -n 4096; ./mach build
 
 override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-alpha-bin.sh
@@ -25,7 +22,7 @@ override_dh_auto_install:
 	rm -rf $$(pwd)/debian/waterfox-alpha/usr/lib/waterfox-alpha/dictionaries
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l /usr/lib/waterfox-alpha/waterfox
+	dh_shlibdeps -l /usr/lib/waterfox-alpha/waterfox-alpha
 
 override_dh_builddeb:
 	dh_builddeb -- -Z xz
