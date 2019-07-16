@@ -12,9 +12,10 @@ override_dh_auto_clean:
 override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
+.ONESHELL:
 override_dh_auto_build:
 	# LTO needs more open files
-	ulimit -n 4096
+	ulimit -n 4096;
 
 	./mach build
 
