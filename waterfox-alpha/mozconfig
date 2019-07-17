@@ -8,6 +8,11 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 
+if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
+export CFLAGS=-flto
+export LDFLAGS=-flto
+fi
+
 if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
