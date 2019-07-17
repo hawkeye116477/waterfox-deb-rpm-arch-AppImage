@@ -161,7 +161,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
-Exec=waterfox -new-window
+Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-alpha -new-window"
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -182,4 +182,4 @@ Name[sl]=Odpri novo okno zasebnega brskanja
 Name[tr]=Yeni bir pencere aç
 Name[uk]=Відкрити нове вікно у потайливому режимі
 Name[zh_TW]=開啟新隱私瀏覽視窗
-Exec=waterfox -private-window
+Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-alpha -private-window"
