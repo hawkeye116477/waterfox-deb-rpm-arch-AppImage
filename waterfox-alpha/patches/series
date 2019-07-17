@@ -1,7 +1,8 @@
 unity-menubar.patch -p1
 fix-build-after-y2038-changes-in-glibc.patch -p1
-addon_versions_addon_manager.patch
-bookmark_star_button.patch
-privacy.patch
-utf8.patch
-zoom_cursor.patch
+addon_versions_addon_manager.patch -p1
+bookmark_star_button.patch -p1
+privacy.patch -p1
+utf8.patch -p1
+zoom_cursor.patch -p1
+mozilla-nongnome-proxies.patch -p1
