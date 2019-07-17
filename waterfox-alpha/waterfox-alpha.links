@@ -14,7 +14,7 @@ usr/share/hunspell usr/lib/waterfox-alpha/dictionaries
 usr/share/hyphen usr/lib/waterfox-alpha/hyphenation
 
 # Wrapper
-usr/lib/waterfox-alpha/waterfox-bin.sh usr/bin/waterfox-alpha
+usr/lib/waterfox-alpha/waterfox-alpha-bin.sh usr/bin/waterfox-alpha
 
 # System Wide Settings
 etc/waterfox-alpha/syspref.js usr/lib/waterfox-alpha/browser/defaults/preferences/syspref.js
