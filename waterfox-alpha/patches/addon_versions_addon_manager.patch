@@ -1,0 +1,196 @@
+From e7067930190871ccecc71d4a534d6e20e32b9f27 Mon Sep 17 00:00:00 2001
+From: laniakea64 <laniakea64@users.noreply.github.com>
+Date: Wed, 19 Jun 2019 08:37:56 -0400
+Subject: [PATCH 1/3] Port https://github.com/MrAlex94/Waterfox/pull/566 'Show
+ addon version in addon manager addon list' to v68
+
+---
+ .../mozapps/extensions/content/extensions.css |  7 ++++
+ .../mozapps/extensions/content/extensions.xml | 37 +++++++++++++++++++
+ 2 files changed, 44 insertions(+)
+
+diff --git a/toolkit/mozapps/extensions/content/extensions.css b/toolkit/mozapps/extensions/content/extensions.css
+index f77b9bc741bf..2d0793d90058 100644
+--- a/toolkit/mozapps/extensions/content/extensions.css
++++ b/toolkit/mozapps/extensions/content/extensions.css
+@@ -212,3 +212,10 @@ richlistitem:not([selected]) * {
+ #pluginFlashBlockingCheckbox .checkbox-label-box {
+   display: none; /*see bug 1508724*/
+ }
++
++/* Hacky method for smaller window size with addon version */
++@media screen and (max-width: 850px) {
++  .version{
++    display: none;
++  }
++}
+diff --git a/toolkit/mozapps/extensions/content/extensions.xml b/toolkit/mozapps/extensions/content/extensions.xml
+index 01a7237b6623..ddacfffb7fc8 100644
+--- a/toolkit/mozapps/extensions/content/extensions.xml
++++ b/toolkit/mozapps/extensions/content/extensions.xml
+@@ -579,6 +579,7 @@
+                 <xul:label anonid="name" class="name" crop="end" flex="1"
+                            tooltip="addonitem-tooltip" xbl:inherits="xbl:text=name"/>
+                 <xul:label anonid="legacy" class="legacy-warning" value="&addon.legacy.label;" is="text-link"/>
++                <xul:label anonid="version" class="version"/>
+                 <xul:label class="disabled-postfix" value="&addon.disabled.postfix;"/>
+                 <xul:label class="update-postfix" value="&addon.update.postfix;"/>
+                 <xul:spacer flex="5000"/> <!-- Necessary to make the name crop -->
+@@ -758,6 +759,9 @@
+         document.getAnonymousElementByAttribute(this, "anonid",
+                                                 "info");
+       </field>
++      <field name="_version">
++        document.getAnonymousElementByAttribute(this, "anonid", "version");
++      </field>
+       <field name="_icon">
+         document.getAnonymousElementByAttribute(this, "anonid", "icon");
+       </field>
+@@ -890,6 +894,11 @@
+           else
+             this._icon.src = "";
+ 
++          if (shouldShowVersionNumber(this.mAddon))
++            this._version.value = this.mAddon.version;
++          else
++            this._version.hidden = true;
++
+           if (this.mAddon.description)
+             this._description.value = this.mAddon.description;
+           else
+@@ -1168,6 +1177,14 @@
+         ]]></body>
+       </method>
+ 
++      <method name="_updateUpgradeInfo">
++        <body><![CDATA[
++          // Only update the version string if we're displaying the upgrade info
++          if (this.hasAttribute("upgrade") && shouldShowVersionNumber(this.mAddon))
++            this._version.value = this.mManualUpdate.version;
++        ]]></body>
++      </method>
++
+       <method name="_fetchReleaseNotes">
+         <parameter name="aURI"/>
+         <body><![CDATA[
+@@ -1417,6 +1434,7 @@
+ 
+           this.mManualUpdate = aInstall;
+           this._showStatus("update-available");
++          this._updateUpgradeInfo();
+         ]]></body>
+       </method>
+ 
+@@ -1603,6 +1621,7 @@
+         <xul:vbox class="fade name-outer-container" flex="1">
+           <xul:hbox class="name-container">
+             <xul:label anonid="name" class="name" crop="end" tooltip="addonitem-tooltip"/>
++            <xul:label anonid="version" class="version" hidden="true"/>
+           </xul:hbox>
+         </xul:vbox>
+         <xul:vbox class="install-status-container">
+@@ -1624,6 +1643,9 @@
+       <field name="_name">
+         document.getAnonymousElementByAttribute(this, "anonid", "name");
+       </field>
++      <field name="_version">
++        document.getAnonymousElementByAttribute(this, "anonid", "version");
++      </field>
+       <field name="_warning">
+         document.getAnonymousElementByAttribute(this, "anonid", "warning");
+       </field>
+@@ -1651,6 +1673,14 @@
+             this._icon.src = this.mAddon.iconURL ||
+                              (this.mInstall ? this.mInstall.iconURL : "");
+             this._name.value = this.mAddon.name;
++
++            if (this.mAddon.version) {
++              this._version.value = this.mAddon.version;
++              this._version.hidden = false;
++            } else {
++              this._version.hidden = true;
++            }
++
+           } else {
+             this._icon.src = this.mInstall.iconURL;
+             // AddonInstall.name isn't always available - fallback to filename
+@@ -1666,6 +1696,13 @@
+                           .QueryInterface(Ci.nsIURL);
+               this._name.value = url.fileName;
+             }
++
++            if (this.mInstall.version) {
++              this._version.value = this.mInstall.version;
++              this._version.hidden = false;
++            } else {
++              this._version.hidden = true;
++            }
+           }
+ 
+           if (this.mInstall.state == AddonManager.STATE_DOWNLOAD_FAILED) {
+
+From 5b6387149835cd393c25ff613b7ba50b439bb6cf Mon Sep 17 00:00:00 2001
+From: Panda <PandaCodex@users.noreply.github.com>
+Date: Fri, 18 May 2018 13:42:14 +1000
+Subject: [PATCH 2/3] Hidden preference to toggle addon version in addon
+ manager
+
+Puts Show addon version in addon manager addon list behind user preference, currently on by default
+Relation: https://github.com/MrAlex94/Waterfox/pull/566
+---
+ toolkit/mozapps/extensions/content/extensions.xml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/toolkit/mozapps/extensions/content/extensions.xml b/toolkit/mozapps/extensions/content/extensions.xml
+index ddacfffb7fc8..36fab0981f01 100644
+--- a/toolkit/mozapps/extensions/content/extensions.xml
++++ b/toolkit/mozapps/extensions/content/extensions.xml
+@@ -894,7 +894,8 @@
+           else
+             this._icon.src = "";
+ 
+-          if (shouldShowVersionNumber(this.mAddon))
++          if (shouldShowVersionNumber(this.mAddon) && 
++            Services.prefs.getBoolPref("extensions.addonVersionInfo", true))
+             this._version.value = this.mAddon.version;
+           else
+             this._version.hidden = true;
+
+From d198d1547eddb407394bd17c2dde455836e49938 Mon Sep 17 00:00:00 2001
+From: laniakea64 <laniakea64@users.noreply.github.com>
+Date: Wed, 19 Jun 2019 08:40:01 -0400
+Subject: [PATCH 3/3] htmlaboutaddons: Show addon version in addon manager
+ addon list
+
+Also fixes version number displayed in updates list.
+---
+ toolkit/mozapps/extensions/content/aboutaddons.js | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/toolkit/mozapps/extensions/content/aboutaddons.js b/toolkit/mozapps/extensions/content/aboutaddons.js
+index 5a78e9a2288a..54ea7143d408 100644
+--- a/toolkit/mozapps/extensions/content/aboutaddons.js
++++ b/toolkit/mozapps/extensions/content/aboutaddons.js
+@@ -1701,15 +1701,19 @@ class AddonCard extends HTMLElement {
+ 
+     // Update the name.
+     let name = card.querySelector(".addon-name");
++    let showVersionInName = Services.prefs.getBoolPref("extensions.addonVersionInfo", true);
++    let versionString = this.updateInstall && this.matches('[current-view="updates"] addon-card') ?
++                        this.updateInstall.version : addon.version;
++    let addonNameWithVersion = showVersionInName ? `${addon.name} ${versionString}` : addon.name;
+     if (addon.isActive) {
+-      name.textContent = addon.name;
++      name.textContent = addonNameWithVersion;
+       name.removeAttribute("data-l10n-id");
+     } else {
+       document.l10n.setAttributes(name, "addon-name-disabled", {
+-        name: addon.name,
++        name: addonNameWithVersion,
+       });
+     }
+-    name.title = `${addon.name} ${addon.version}`;
++    name.title = showVersionInName ? addon.name : `${addon.name} ${versionString}`;
+ 
+     // Set the items in the more options menu.
+     this.options.update(this, addon, this.updateInstall);
