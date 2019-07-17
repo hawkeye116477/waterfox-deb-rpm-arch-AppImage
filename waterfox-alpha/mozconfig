@@ -8,11 +8,6 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 
-if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
-export CFLAGS=-flto
-export LDFLAGS=-flto
-fi
-
 if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
@@ -50,11 +45,14 @@ ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
 
+if ! test `lsb_release -sc` = "xenial"; then
 ac_add_options --enable-lto
 ac_add_options --enable-hardening
+fi
+
 ac_add_options --with-app-name=waterfox-alpha
 ac_add_options --with-app-basename=Waterfox
-ac_add_options --with-branding=browser/branding/unofficial
+ac_add_options --with-branding=browser/branding/alpha
 
 export MOZ_GECKO_PROFILER=
 export MOZ_ENABLE_PROFILER_SPS=
