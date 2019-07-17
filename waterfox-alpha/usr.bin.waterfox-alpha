@@ -8,11 +8,11 @@
 #include <tunables/global>
 
 # We want to confine the binaries that match:
-#  /usr/lib/waterfox-alpha/waterfox
-#  /usr/lib/waterfox-alpha/waterfox
+#  /usr/lib/waterfox-alpha/waterfox-alpha
+#  /usr/lib/waterfox-alpha/waterfox-alpha
 # but not:
-#  /usr/lib/waterfox-alpha/waterfox.sh
-/usr/lib/waterfox-alpha/waterfox{,*[^s][^h]} {
+#  /usr/lib/waterfox-alpha/waterfox-alpha.sh
+/usr/lib/waterfox-alpha/waterfox-alpha{,*[^s][^h]} {
   #include <abstractions/audio>
   #include <abstractions/cups-client>
   #include <abstractions/dbus-strict>
