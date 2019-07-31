@@ -45,7 +45,7 @@ ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
 
-if ! test `lsb_release -sc` = "xenial"; then
+if ! test `lsb_release -sc` = "xenial" && ! test `lsb_release -sc` = "stretch"; then
 ac_add_options --enable-lto
 ac_add_options --enable-hardening
 fi
