@@ -1,6 +1,8 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+export MOZ_NOSPAM=1
+
 %:
 	dh $@
 
@@ -14,7 +16,7 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	# LTO needs more open files
-	ulimit -n 4096; ./mach build
+	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1600x1200x24" ./mach build
 
 override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-alpha-bin.sh

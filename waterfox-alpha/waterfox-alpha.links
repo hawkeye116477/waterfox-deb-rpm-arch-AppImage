@@ -6,10 +6,6 @@ usr/lib/waterfox-alpha/browser/chrome/icons/default/default64.png usr/share/icon
 usr/lib/waterfox-alpha/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-alpha.png
 usr/lib/waterfox-alpha/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-alpha.png
 
-# System dictionaries
-usr/share/hunspell usr/lib/waterfox-alpha/dictionaries
-usr/share/hyphen usr/lib/waterfox-alpha/hyphenation
-
 # Wrapper
 usr/lib/waterfox-alpha/waterfox-alpha-bin.sh usr/bin/waterfox-alpha
 

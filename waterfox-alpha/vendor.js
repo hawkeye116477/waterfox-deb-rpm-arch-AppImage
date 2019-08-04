@@ -14,3 +14,6 @@ pref("distribution.searchplugins.defaultLocale", "en-US");
 
 // Use OS regional settings for date and time
 pref("intl.regional_prefs.use_os_locales", true);
+
+// Use system's dictionaries
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
