@@ -28,3 +28,6 @@ override_dh_shlibdeps:
 
 override_dh_builddeb:
 	dh_builddeb -- -Z xz
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xdebian/waterfox-alpha/usr/lib/waterfox-alpha/browser/features/formautofill@mozilla.org.xpi

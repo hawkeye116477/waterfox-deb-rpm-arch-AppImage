@@ -37,7 +37,6 @@ ac_add_options --disable-verify-mar
 ac_add_options --disable-dmd
 
 ac_add_options --enable-application=browser
-ac_add_options --enable-ccache=ccache
 ac_add_options --disable-updater
 
 ac_add_options --enable-rust-simd
