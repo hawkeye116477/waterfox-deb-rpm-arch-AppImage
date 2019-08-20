@@ -30,7 +30,6 @@ ac_add_options --disable-updater
 
 ac_add_options --enable-release
 
-
 ac_add_options --enable-rust-simd
 ac_add_options --enable-stylo=build
 

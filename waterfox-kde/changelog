@@ -1,3 +1,21 @@
+waterfox-kde (56.2.13-0) obs; urgency=medium
+    * Updated Gecko Media Plugin components
+
+        - Waterfox now supports the latest version of the Widevine CDM (v10). This should last for a while until Google sunsets this version.
+        - A few memory leaks were fixed due to this upgrade.
+
+    * Upgraded from Widevine CDM 1.4.9.1088 to Widevine CDM 4.10.1440.19.
+    * Upgraded from OpenH264 1.6 to OpenH264 1.8.1.
+
+        - This should result in less crashing and better performance
+
+    * Support filtering streaming response data via webRequest API
+    * Support access keys in extension menus
+    * User agent overrides are now much easier to add - with the options to have an automatic updating list depending on how users feel about this.
+    * If upgrading from previous versions of Waterfox, you will be asked to re-enable DRM. After re-enabling, if videos with DRM do not work please restart Waterfox and videos should start to work again.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 20 Aug 2019 10:06:00 +0200
+
 waterfox-kde (56.2.12-0) obs; urgency=medium
     * Patches for mfsa2019-22.
     * Updated Twemoji Mozilla to 0.4.0 (twemoji 11.4.0).
