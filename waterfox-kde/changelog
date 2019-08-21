@@ -14,7 +14,7 @@ waterfox-kde (56.2.13-0) obs; urgency=medium
     * User agent overrides are now much easier to add - with the options to have an automatic updating list depending on how users feel about this.
     * If upgrading from previous versions of Waterfox, you will be asked to re-enable DRM. After re-enabling, if videos with DRM do not work please restart Waterfox and videos should start to work again.
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 21 Aug 2019 14:48:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 21 Aug 2019 18:12:00 +0200
 
 waterfox-kde (56.2.12-0) obs; urgency=medium
     * Patches for mfsa2019-22.

@@ -6,7 +6,7 @@ export CC=clang
 export CXX=clang++
 fi
 ac_add_options --prefix=/usr
-ac_add_options --enable-optimize
+ac_add_options --enable-optimize="-O2 -msse3 -march=x86-64 -mtune=generic -w"
 ac_add_options --enable-eme=widevine
 ac_add_options --target=x86_64-pc-linux-gnu
 ac_add_options --enable-pulseaudio
