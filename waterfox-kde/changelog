@@ -1,3 +1,8 @@
+waterfox-kde (56.2.14-0) obs; urgency=medium
+    * Security patches from ESR 60.9
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 03 Sep 2019 18:38:00 +0200
+
 waterfox-kde (56.2.13-0) obs; urgency=medium
     * Updated Gecko Media Plugin components
 
