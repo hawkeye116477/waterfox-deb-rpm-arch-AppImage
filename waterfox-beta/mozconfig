@@ -1,10 +1,6 @@
-if test `lsb_release -sc` = "xenial"; then
+if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
 export PATH=/usr/lib/llvm-6.0/bin/:$PATH
 fi
-
-if test `lsb_release -sc` = "stretch"; then
-export PATH=/usr/lib/llvm-7/bin/:$PATH
-
 
 export CC=clang
 export CXX=clang++
