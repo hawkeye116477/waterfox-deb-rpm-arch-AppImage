@@ -19,15 +19,15 @@ override_dh_auto_build:
 	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1600x1200x24" ./mach build
 
 override_dh_auto_install:
-	chmod +x $$(pwd)/debian/waterfox-alpha-bin.sh
-	DESTDIR=$$(pwd)/debian/waterfox-alpha ./mach install
-	rm -rf $$(pwd)/debian/waterfox-alpha/usr/lib/waterfox-alpha/dictionaries
+	chmod +x $$(pwd)/debian/waterfox-beta-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-beta ./mach install
+	rm -rf $$(pwd)/debian/waterfox-beta/usr/lib/waterfox-beta/dictionaries
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l /usr/lib/waterfox-alpha/waterfox-alpha
+	dh_shlibdeps -l /usr/lib/waterfox-beta/waterfox-beta
 
 override_dh_builddeb:
 	dh_builddeb -- -Z xz
 
 override_dh_strip_nondeterminism:
-	dh_strip_nondeterminism -Xdebian/waterfox-alpha/usr/lib/waterfox-alpha/browser/features/formautofill@mozilla.org.xpi
+	dh_strip_nondeterminism -Xdebian/waterfox-beta/usr/lib/waterfox-beta/browser/features/formautofill@mozilla.org.xpi

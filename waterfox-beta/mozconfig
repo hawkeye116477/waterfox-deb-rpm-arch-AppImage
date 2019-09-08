@@ -1,6 +1,10 @@
-if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
+if test `lsb_release -sc` = "xenial"; then
 export PATH=/usr/lib/llvm-6.0/bin/:$PATH
 fi
+
+if test `lsb_release -sc` = "stretch"; then
+export PATH=/usr/lib/llvm-7/bin/:$PATH
+
 
 export CC=clang
 export CXX=clang++
@@ -45,7 +49,7 @@ ac_add_options --enable-lto
 ac_add_options --enable-hardening
 ac_add_options --enable-linker=lld
 
-ac_add_options --with-app-name=waterfox-alpha
+ac_add_options --with-app-name=waterfox-beta
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/alpha
 

@@ -2,9 +2,9 @@
 
 set -e
 
-MOZ_LIBDIR=/usr/lib/waterfox-alpha
-MOZ_APP_NAME=waterfox-alpha
-MOZ_PKG_NAME=waterfox-alpha
+MOZ_LIBDIR=/usr/lib/waterfox-beta
+MOZ_APP_NAME=waterfox-beta
+MOZ_PKG_NAME=waterfox-beta
 
 # Move a conffile without triggering a dpkg question
 finish_mv_conffile() {
@@ -52,7 +52,7 @@ if [ "$1" = "configure" ] ; then
         test -e "$LOCAL_APP_PROFILE" || {
             tmp=`mktemp`
             cat <<EOM > "$tmp"
-# Site-specific additions and overrides for usr.bin.waterfox-alpha
+# Site-specific additions and overrides for usr.bin.waterfox-beta
 # For more details, please see /etc/apparmor.d/local/README.
 EOM
             mkdir `dirname $LOCAL_APP_PROFILE` 2>/dev/null || true
@@ -102,7 +102,7 @@ EOM
     finish_rm_conffile "/etc/${MOZ_PKG_NAME}/profile/chrome/userChrome-example.css"
     finish_rm_conffile "/etc/${MOZ_PKG_NAME}/profile/chrome/userContent-example.css"
 
-    finish_mv_conffile "/etc/${MOZ_PKG_NAME}/pref/waterfox-alpha.js" "/etc/${MOZ_PKG_NAME}/syspref.js"
+    finish_mv_conffile "/etc/${MOZ_PKG_NAME}/pref/waterfox-beta.js" "/etc/${MOZ_PKG_NAME}/syspref.js"
 fi
 
 echo "Please restart all running instances of $MOZ_APP_NAME, or you will experience problems."

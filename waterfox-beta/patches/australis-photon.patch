@@ -1,0 +1,106 @@
+From f58fddd74e12b5905373859da3799ec3e0654abd Mon Sep 17 00:00:00 2001
+From: laniakea64 <laniakea64@users.noreply.github.com>
+Date: Mon, 26 Aug 2019 23:35:56 -0400
+Subject: [PATCH] Get the Australis-Photon themes working as intended and fix
+ consistency issues
+
+---
+ browser/components/BrowserGlue.jsm            | 36 +++++++++++++++++++
+ .../customizableui/CustomizeMode.jsm          | 12 -------
+ .../extensions/internal/AddonSettings.jsm     |  6 ----
+ 3 files changed, 36 insertions(+), 18 deletions(-)
+
+diff --git a/browser/components/BrowserGlue.jsm b/browser/components/BrowserGlue.jsm
+index edc84a683e94..326d182399cb 100644
+--- a/browser/components/BrowserGlue.jsm
++++ b/browser/components/BrowserGlue.jsm
+@@ -1119,6 +1119,10 @@ BrowserGlue.prototype = {
+       "browser.contentblocking.features.strict",
+       this._setPrefExpectationsAndUpdate
+     );
++    Services.prefs.removeObserver(
++      "extensions.activeThemeID",
++      this._applyAustralisStyle
++    );
+   },
+ 
+   // runs on startup, before the first command line handler is invoked
+@@ -1636,6 +1640,38 @@ BrowserGlue.prototype = {
+       "browser.contentblocking.features.strict",
+       this._setPrefExpectationsAndUpdate
+     );
++
++    this._applyAustralisStyle();
++    Services.prefs.addObserver(
++      "extensions.activeThemeID",
++      this._applyAustralisStyle
++    );
++  },
++
++  _applyAustralisStyle() {
++    let sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
++                        .getService(Components.interfaces.nsIStyleSheetService);
++    let ios = Components.classes["@mozilla.org/network/io-service;1"]
++                        .getService(Components.interfaces.nsIIOService);
++    let australisDefault = ios.newURI("chrome://browser/skin/australis-default.css", null, null),
++        australisLight = ios.newURI("chrome://browser/skin/australis-light.css", null, null),
++        australisDark = ios.newURI("chrome://browser/skin/australis-dark.css", null, null);
++
++    sss.unregisterSheet(australisDefault, sss.USER_SHEET);
++    sss.unregisterSheet(australisLight, sss.USER_SHEET);
++    sss.unregisterSheet(australisDark, sss.USER_SHEET);
++
++    let activeThemeID = Services.prefs.getCharPref("extensions.activeThemeID", "default-theme@mozilla.org");
++
++    if (activeThemeID == "default-theme@mozilla.org") {
++      sss.loadAndRegisterSheet(australisDefault, sss.USER_SHEET);
++    }
++    else if (activeThemeID == "firefox-compact-light@mozilla.org") {
++      sss.loadAndRegisterSheet(australisLight, sss.USER_SHEET);
++    }
++    else if (activeThemeID == "firefox-compact-dark@mozilla.org") {
++      sss.loadAndRegisterSheet(australisDark, sss.USER_SHEET);
++    }
+   },
+ 
+   _updateAutoplayPref() {
+diff --git a/browser/components/customizableui/CustomizeMode.jsm b/browser/components/customizableui/CustomizeMode.jsm
+index 62ef17dbc6f1..90ccced1c2b6 100644
+--- a/browser/components/customizableui/CustomizeMode.jsm
++++ b/browser/components/customizableui/CustomizeMode.jsm
+@@ -1470,18 +1470,6 @@ CustomizeMode.prototype = {
+       // so the restore defaults / undo reset button is updated correctly.
+       this._nextThemeChangeUserTriggered = true;
+       panel.hidePopup();
+-      let sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
+-                          .getService(Components.interfaces.nsIStyleSheetService);
+-      let ios = Components.classes["@mozilla.org/network/io-service;1"]
+-                          .getService(Components.interfaces.nsIIOService);
+-      let australisDark = ios.newURI("chrome://browser/skin/australis-dark.css", null, null);
+-      if (Services.prefs.getCharPref("extensions.activeThemeID", "default-theme@mozilla.org") == "default-theme@mozilla.org") {
+-        sss.unregisterSheet(australisDark, sss.USER_SHEET);
+-      } else if (Services.prefs.getCharPref("extensions.activeThemeID", "default-theme@mozilla.org") == "firefox-compact-light@mozilla.org") {
+-        sss.unregisterSheet(australisDark, sss.USER_SHEET);
+-      } else if (Services.prefs.getCharPref("extensions.activeThemeID", "default-theme@mozilla.org") == "firefox-compact-dark@mozilla.org") {
+-        sss.loadAndRegisterSheet(australisDark, sss.USER_SHEET);
+-      }
+     };
+ 
+     let doc = this.window.document;
+diff --git a/toolkit/mozapps/extensions/internal/AddonSettings.jsm b/toolkit/mozapps/extensions/internal/AddonSettings.jsm
+index f212fafa30f1..70c0f65ffe16 100644
+--- a/toolkit/mozapps/extensions/internal/AddonSettings.jsm
++++ b/toolkit/mozapps/extensions/internal/AddonSettings.jsm
+@@ -64,12 +64,6 @@ if (AppConstants.MOZ_ALLOW_LEGACY_EXTENSIONS || Cu.isInAutomation) {
+ 
+ if (AppConstants.MOZ_DEV_EDITION) {
+   makeConstant("DEFAULT_THEME_ID", "firefox-compact-dark@mozilla.org");
+-  let sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
+-                      .getService(Components.interfaces.nsIStyleSheetService);
+-  let ios = Components.classes["@mozilla.org/network/io-service;1"]
+-                      .getService(Components.interfaces.nsIIOService);
+-  let australisDark = ios.newURI("chrome://browser/skin/australis-dark.css", null, null);
+-  sss.loadAndRegisterSheet(australisDark, sss.USER_SHEET);
+ } else {
+   makeConstant("DEFAULT_THEME_ID", "default-theme@mozilla.org");
+ }

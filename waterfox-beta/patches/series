@@ -1,0 +1,5 @@
+unity-menubar.patch -p1
+mozilla-nongnome-proxies.patch -p1
+australis-photon.patch -p1
+silence_crash_reporter.patch -p1
+pocket.patch -p1

@@ -1,0 +1,13 @@
+# Icons
+usr/lib/waterfox-beta/browser/chrome/icons/default/default16.png usr/share/icons/hicolor/16x16/apps/waterfox-beta.png
+usr/lib/waterfox-beta/browser/chrome/icons/default/default32.png usr/share/icons/hicolor/32x32/apps/waterfox-beta.png
+usr/lib/waterfox-beta/browser/chrome/icons/default/default48.png usr/share/icons/hicolor/48x48/apps/waterfox-beta.png
+usr/lib/waterfox-beta/browser/chrome/icons/default/default64.png usr/share/icons/hicolor/64x64/apps/waterfox-beta.png
+usr/lib/waterfox-beta/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-beta.png
+usr/lib/waterfox-beta/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-beta.png
+
+# Wrapper
+usr/lib/waterfox-beta/waterfox-beta-bin.sh usr/bin/waterfox-beta
+
+# System Wide Settings
+etc/waterfox-beta/syspref.js usr/lib/waterfox-beta/browser/defaults/preferences/syspref.js

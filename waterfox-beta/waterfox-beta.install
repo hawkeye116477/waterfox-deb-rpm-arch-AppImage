@@ -1,0 +1,6 @@
+debian/vendor.js usr/lib/waterfox-beta/browser/defaults/preferences
+debian/waterfox-beta.desktop usr/share/applications
+debian/distribution.ini usr/lib/waterfox-beta/distribution
+debian/waterfox-beta-bin.sh usr/lib/waterfox-beta
+debian/usr.bin.waterfox-beta etc/apparmor.d
+debian/syspref.js etc/waterfox-beta

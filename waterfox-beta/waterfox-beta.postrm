@@ -2,7 +2,7 @@
 
 set -e
 
-MOZ_PKG_NAME=waterfox-alpha
+MOZ_PKG_NAME=waterfox-beta
 
 abort_mv_conffile() {
     local CONFFILE="$1"
@@ -33,11 +33,11 @@ purge_conffile() {
 }
 
 if [ "$1" = "purge" ]; then
-    APP_PROFILE="usr.bin.waterfox-alpha"
+    APP_PROFILE="usr.bin.waterfox-beta"
     rm -f /etc/apparmor.d/force-complain/$APP_PROFILE || true
     rm -f /etc/apparmor.d/disable/$APP_PROFILE || true
     rm -f /etc/apparmor.d/local/$APP_PROFILE || true
-    rm -f "/etc/apparmor.d/abstractions/ubuntu-browsers.d/waterfox-alpha" || true
+    rm -f "/etc/apparmor.d/abstractions/ubuntu-browsers.d/waterfox-beta" || true
     rmdir /etc/apparmor.d/local 2>/dev/null || true
 
     purge_conffile "/etc/${MOZ_PKG_NAME}/profile/bookmarks.html"
@@ -56,7 +56,7 @@ if [ "$1" = "abort-install" -o "$1" = "abort-upgrade" ] ; then
     abort_rm_conffile "/etc/${MOZ_PKG_NAME}/profile/chrome/userChrome-example.css"
     abort_rm_conffile "/etc/${MOZ_PKG_NAME}/profile/chrome/userContent-example.css"
 
-    abort_mv_conffile "/etc/${MOZ_PKG_NAME}/pref/waterfox-alpha.js"
+    abort_mv_conffile "/etc/${MOZ_PKG_NAME}/pref/waterfox-beta.js"
 fi
 
 #DEBHELPER#

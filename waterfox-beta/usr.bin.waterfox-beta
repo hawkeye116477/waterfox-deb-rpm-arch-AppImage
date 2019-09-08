@@ -3,16 +3,16 @@
 # Original Author: Jamie Strandboge <jamie@canonical.com>
 
 # Declare an apparmor variable to help with overrides
-@{MOZ_LIBDIR}=/usr/lib/waterfox-alpha
+@{MOZ_LIBDIR}=/usr/lib/waterfox-beta
 
 #include <tunables/global>
 
 # We want to confine the binaries that match:
-#  /usr/lib/waterfox-alpha/waterfox-alpha
-#  /usr/lib/waterfox-alpha/waterfox-alpha
+#  /usr/lib/waterfox-beta/waterfox-beta
+#  /usr/lib/waterfox-beta/waterfox-beta
 # but not:
-#  /usr/lib/waterfox-alpha/waterfox-alpha.sh
-/usr/lib/waterfox-alpha/waterfox-alpha{,*[^s][^h]} {
+#  /usr/lib/waterfox-beta/waterfox-beta.sh
+/usr/lib/waterfox-beta/waterfox-beta{,*[^s][^h]} {
   #include <abstractions/audio>
   #include <abstractions/cups-client>
   #include <abstractions/dbus-strict>
@@ -80,8 +80,8 @@
   /etc/wildmidi/wildmidi.cfg r,
 
   # waterfox specific
-  /etc/waterfox-alpha*/ r,
-  /etc/waterfox-alpha*/** r,
+  /etc/waterfox-beta*/ r,
+  /etc/waterfox-beta*/** r,
 
   # firefox specific
   #/etc/xul-ext/** r,
@@ -224,8 +224,8 @@
   }
 
   # Addons
-  #include <abstractions/ubuntu-browsers.d/waterfox-alpha>
+  #include <abstractions/ubuntu-browsers.d/waterfox-beta>
 
   # Site-specific additions and overrides. See local/README for details.
-  #include <local/usr.bin.waterfox-alpha>
+  #include <local/usr.bin.waterfox-beta>
 }

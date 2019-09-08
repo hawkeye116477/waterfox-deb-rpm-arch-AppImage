@@ -3,11 +3,11 @@
 set -e
 
 APP_DIR="/etc/apparmor.d"
-APP_PROFILE="usr.bin.waterfox-alpha"
+APP_PROFILE="usr.bin.waterfox-beta"
 APP_CONFFILE="$APP_DIR/$APP_PROFILE"
 APP_DISABLE="$APP_DIR/disable/$APP_PROFILE"
-MOZ_PKG_NAME=waterfox-alpha
-MOZ_LIBDIR=/usr/lib/waterfox-alpha
+MOZ_PKG_NAME=waterfox-beta
+MOZ_LIBDIR=/usr/lib/waterfox-beta
 
 # Prepare to move a conffile without triggering a dpkg question
 prepare_mv_conffile() {
@@ -81,7 +81,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ] ; then
     prepare_rm_conffile "${MOZ_PKG_NAME}" "/etc/${MOZ_PKG_NAME}/profile/chrome/userChrome-example.css"
     prepare_rm_conffile "${MOZ_PKG_NAME}" "/etc/${MOZ_PKG_NAME}/profile/chrome/userContent-example.css"
 
-    prepare_mv_conffile "${MOZ_PKG_NAME}" "/etc/${MOZ_PKG_NAME}/pref/waterfox-alpha.js"
+    prepare_mv_conffile "${MOZ_PKG_NAME}" "/etc/${MOZ_PKG_NAME}/pref/waterfox-beta.js"
 
 fi
 

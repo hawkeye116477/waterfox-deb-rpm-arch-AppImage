@@ -2,7 +2,7 @@
 
 set -e
 
-APP_NAME=waterfox-alpha
+APP_NAME=waterfox-beta
 
 if [ "$1" = "remove" ] ; then
     update-alternatives --remove gnome-www-browser /usr/bin/$APP_NAME
