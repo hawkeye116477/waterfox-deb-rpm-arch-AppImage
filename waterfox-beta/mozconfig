@@ -43,7 +43,11 @@ ac_add_options --enable-rust-simd
 
 ac_add_options --enable-lto
 ac_add_options --enable-hardening
+if test `lsb_release -sc` = "stretch";
+ac_add_options --enable-linker=lld
+else
 ac_add_options --enable-linker=gold
+fi
 
 ac_add_options --with-app-name=waterfox-beta
 ac_add_options --with-app-basename=Waterfox
