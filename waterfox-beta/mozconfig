@@ -41,10 +41,11 @@ ac_add_options --disable-updater
 
 ac_add_options --enable-rust-simd
 
-ac_add_options --enable-lto
-ac_add_options --enable-hardening
 if ! test `lsb_release -sc` = "stretch"; then
 ac_add_options --enable-linker=gold
+ac_add_options --enable-lto
+ac_add_options --enable-hardening
+export MOZ_PGO=1
 fi
 
 ac_add_options --with-app-name=waterfox-beta
@@ -52,4 +53,4 @@ ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/alpha
 
 ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
-export MOZ_PGO=1
+
