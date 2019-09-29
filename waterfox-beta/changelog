@@ -1,3 +1,8 @@
+waterfox-beta (68.0b1-1) obs; urgency=low
+    * Fixed desktop file
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 29 Sep 2019 18:31:00 +0200
+
 waterfox-beta (68.0b1-0) obs; urgency=low
     *
 

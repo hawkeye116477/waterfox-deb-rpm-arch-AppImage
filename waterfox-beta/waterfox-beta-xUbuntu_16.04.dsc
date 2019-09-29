@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox-beta
 Binary: waterfox-beta
 Architecture: amd64
-Version: 68.0b1-0
+Version: 68.0b1-1
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://www.waterfox.net
 Standards-Version: 3.9.1

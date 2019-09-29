@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Waterfox Beta
+Name=Waterfox Current
 Comment=Browse the World Wide Web
 Comment[ar]=تصفح الشبكة العنكبوتية العالمية
 Comment[ast]=Restola pela Rede
@@ -112,14 +112,14 @@ Keywords[uk]=Internet;WWW;Browser;Web;Explorer;Інтернет;мережа;п�
 Keywords[vi]=Internet;WWW;Browser;Web;Explorer;Trình duyệt;Trang web;
 Keywords[zh_CN]=Internet;WWW;Browser;Web;Explorer;网页;浏览;上网;水狐;Waterfox;wf;互联网;网站;
 Keywords[zh_TW]=Internet;WWW;Browser;Web;Explorer;網際網路;網路;瀏覽器;上網;網頁;水狐;
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-beta %u"
+Exec=waterfox-beta %u
 Terminal=false
 X-MuiltpleArgs=false
 Type=Application
 Icon=waterfox-beta
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-StartupWMClass=WaterfoxBeta
+StartupWMClass=WaterfoxCurrent
 StartupNotify=true
 Actions=NewWindow;NewPrivateWindow;
 
@@ -161,7 +161,7 @@ Name[uk]=Відкрити нове вікно
 Name[vi]=Mở cửa sổ mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開啟新視窗
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-beta -new-window"
+Exec=waterfox-beta -new-window
 
 [Desktop Action NewPrivateWindow]
 Name=Open a New Private Window
@@ -182,4 +182,4 @@ Name[sl]=Odpri novo okno zasebnega brskanja
 Name[tr]=Yeni bir pencere aç
 Name[uk]=Відкрити нове вікно у потайливому режимі
 Name[zh_TW]=開啟新隱私瀏覽視窗
-Exec=/usr/bin/sh -c "GTK_USE_PORTAL=1 waterfox-beta -private-window"
+Exec=waterfox-beta -private-window
