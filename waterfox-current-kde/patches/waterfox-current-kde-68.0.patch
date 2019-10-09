@@ -1475,7 +1475,7 @@ index 5d00d401aeb3..8a3b91f0c4b7 100644
 +            .createInstance(Components.interfaces.nsIProcess);
 +          process.init(shellObj);
 +          var args = ["--file", "kdeglobals", "--group", "General", "--key",
-+              "BrowserApplication", "waterfox"];
++              "BrowserApplication", "waterfox-current"];
 +          process.run(false, args, args.length);
 +        }
        } catch (ex) {
