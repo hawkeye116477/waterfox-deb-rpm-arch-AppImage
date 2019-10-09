@@ -1,0 +1,3 @@
+waterfox-current binary: embedded-library usr/lib/waterfox-current/libxul.so: libjpeg
+waterfox-current binary: embedded-library usr/lib/waterfox-current/libmozsqlite3.so: sqlite
+waterfox-current binary: image-file-in-usr-lib

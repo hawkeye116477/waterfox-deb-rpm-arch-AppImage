@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export MOZ_NOSPAM=1
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -f .mozconfig
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_configure:
+	cp debian/mozconfig mozconfig
+
+override_dh_auto_build:
+	# LTO needs more open files
+	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1600x1200x24" ./mach build
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-current-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-current-kde ./mach install
+	rm -rf $$(pwd)/debian/waterfox-current-kde/usr/lib/waterfox-current/dictionaries
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox-current/waterfox-current
+
+override_dh_builddeb:
+	dh_builddeb -- -Z xz
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xdebian/waterfox-current-kde/usr/lib/waterfox-current/browser/features/formautofill@mozilla.org.xpi

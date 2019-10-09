@@ -1,0 +1,6 @@
+debian/vendor.js usr/lib/waterfox-current/browser/defaults/preferences
+debian/waterfox-current.desktop usr/share/applications
+debian/distribution.ini usr/lib/waterfox-current/distribution
+debian/waterfox-current-bin.sh usr/lib/waterfox-current
+debian/usr.bin.waterfox-current etc/apparmor.d
+debian/syspref.js etc/waterfox-current

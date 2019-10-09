@@ -1,0 +1,13 @@
+# Icons
+usr/lib/waterfox-current/browser/chrome/icons/default/default16.png usr/share/icons/hicolor/16x16/apps/waterfox-current.png
+usr/lib/waterfox-current/browser/chrome/icons/default/default32.png usr/share/icons/hicolor/32x32/apps/waterfox-current.png
+usr/lib/waterfox-current/browser/chrome/icons/default/default48.png usr/share/icons/hicolor/48x48/apps/waterfox-current.png
+usr/lib/waterfox-current/browser/chrome/icons/default/default64.png usr/share/icons/hicolor/64x64/apps/waterfox-current.png
+usr/lib/waterfox-current/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-current.png
+usr/lib/waterfox-current/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-current.png
+
+# Wrapper
+usr/lib/waterfox-current/waterfox-current-bin.sh usr/bin/waterfox-current
+
+# System Wide Settings
+etc/waterfox-current/syspref.js usr/lib/waterfox-current/browser/defaults/preferences/syspref.js
