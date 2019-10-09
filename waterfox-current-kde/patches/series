@@ -1,2 +1,3 @@
 mozilla-nongnome-proxies.patch -p1
-waterfox-current-kde-68.0.patch
+waterfox-current-kde-68.0.patch -p1
+repo_changeset.patch -p1

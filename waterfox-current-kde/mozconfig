@@ -58,3 +58,6 @@ ac_add_options --with-branding=browser/branding/waterfox
 
 ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 
+export MOZ_BUILD_DATE=20191005114658
+export MOZ_SOURCE_REPO="https://github.com/MrAlex94/Waterfox"
+export MOZ_SOURCE_CHANGESET=150863514609c2e46596b6706b4f777b56e44a0a
