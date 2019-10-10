@@ -2,10 +2,10 @@
 # -*- makefile -*-
 
 export MOZ_NOSPAM:=1
-export MOZ_BUILD_DATE:="20191005114658"
+export MOZ_BUILD_DATE:=20191005114658
 export MOZ_SOURCE_REPO:="https://github.com/MrAlex94/Waterfox"
-export MOZ_SOURCE_CHANGESET:="150863514609c2e46596b6706b4f777b56e44a0a"
-export LDFLAGS+=" -Wl,--no-keep-memory"
+export MOZ_SOURCE_CHANGESET:=150863514609c2e46596b6706b4f777b56e44a0a
+export LDFLAGS+=-Wl,--no-keep-memory
 
 %:
 	dh $@
