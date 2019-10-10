@@ -4,18 +4,6 @@ Wolfgang Rosenauer <wolfgang@rosenauer.org>
 Lubos Lunak <lunak@suse.com>
 Original patches => http://www.rosenauer.org/hg/mozilla/file/firefox68
 
-diff --git a/browser/app/Makefile.in b/browser/app/Makefile.in
-index d02b664772af..b7afea2af0e4 100644
---- a/browser/app/Makefile.in
-+++ b/browser/app/Makefile.in
-@@ -57,6 +57,7 @@ endif
- libs:: $(srcdir)/profile/channel-prefs.js
- 	$(NSINSTALL) -D $(DIST)/bin/defaults/pref
- 	$(call py_action,preprocessor,-Fsubstitution $(PREF_PPFLAGS) $(ACDEFINES) $^ -o $(DIST)/bin/defaults/pref/channel-prefs.js)
-+	cp $(topsrcdir)/kde.js $(DIST)/bin/defaults/pref/kde.js
- 
- ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
- 
 diff --git a/browser/base/content/browser-kde.xul b/browser/base/content/browser-kde.xul
 new file mode 100644
 index 000000000000..aaf92d43a473
@@ -1737,19 +1725,6 @@ index 000000000000..26b5dbac47dd
 +nsUnixShellServiceConstructor(nsISupports *aOuter, REFNSIID aIID, void **aResult);
 +
 +#endif // nsunixshellservice_h____
-diff --git a/browser/installer/package-manifest.in b/browser/installer/package-manifest.in
-index 9a161f0508aa..70aa8fd0a48a 100644
---- a/browser/installer/package-manifest.in
-+++ b/browser/installer/package-manifest.in
-@@ -300,6 +300,8 @@
- ; gre location for now.
- @RESPATH@/defaults/pref/channel-prefs.js
- 
-+@RESPATH@/defaults/pref/kde.js
-+
- ; Services (gre) prefs
- @RESPATH@/defaults/pref/services-sync.js
- 
 diff --git a/dom/xul/XULPopupElement.cpp b/dom/xul/XULPopupElement.cpp
 index 049c5900f3ab..97ec1312370a 100644
 --- a/dom/xul/XULPopupElement.cpp
@@ -1793,14 +1768,6 @@ index 8e82cd3908e7..3ccaafd9369b 100644
  FINAL_LIBRARY = 'xul'
  
  if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
-diff --git a/kde.js b/kde.js
-new file mode 100644
-index 000000000000..b0d3e5d20437
---- /dev/null
-+++ b/kde.js
-@@ -0,0 +1,2 @@
-+pref("browser.preferences.instantApply", false);
-+pref("browser.backspace_action", 0);
 diff --git a/layout/build/moz.build b/layout/build/moz.build
 index 1b0cf193886b..ff87c23448e2 100644
 --- a/layout/build/moz.build
