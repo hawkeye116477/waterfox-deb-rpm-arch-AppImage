@@ -3,7 +3,7 @@ export PATH=/usr/lib/llvm-6.0/bin/:$PATH
 fi
 
 if test `lsb_release -sc` = "stretch"; then
-export PATH=/usr/lib/llvm-4.0/bin/:$PATH
+export PATH=/usr/lib/llvm-7/bin/:$PATH
 fi
 
 export CC=clang
