@@ -1,4 +1,4 @@
-Source: waterfox-current-kde
+Source: waterfox-current
 Section: web
 Priority: optional
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
@@ -6,12 +6,39 @@ Build-Depends: debhelper (>= 9), autoconf2.13, libgtk-3-dev (>= 3.4), libgconf2-
 Standards-Version: 3.9.1
 Homepage: https://www.waterfox.net/
 
-Package: waterfox-current-kde
+Package: waterfox-current
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, kwaterfoxhelper
-Suggests: fonts-lyx, pulseaudio
-Provides: www-browser, gnome-www-browser
-Description: Free, open and private browser
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper
+Provides: www-browser, gnome-www-browser, waterfox-current-kde-edition
+Replaces: waterfox-alpha, waterfox-beta
+Breaks: waterfox-alpha, waterfox-beta
+Description: Free, open and private browser with special patches for better integration with KDE
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
  Waterfox is powered by Mozilla Firefox source code.
+ .
+ Note: KDE integration works correctly only if kwaterfoxhelper is installed.
+
+Package: waterfox-current-kde
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-current, kwaterfoxhelper
+Suggests: plasma-browser-integration
+Description: KDE Plasma integration for Waterfox Current
+ For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
+
+Package: waterfox-alpha
+Depends: waterfox-current, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-beta
+Depends: waterfox-current, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: Transitional package
+ This is a transitional package. It can safely be removed.

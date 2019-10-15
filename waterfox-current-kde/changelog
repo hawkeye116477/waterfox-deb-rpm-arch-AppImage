@@ -1,4 +1,6 @@
-waterfox-current-kde (68.0-1) obs; urgency=low
-    *
+waterfox-current (2019.10-1) obs; urgency=low
+    * Various config updates. (Thanks to Peacock365)
+    * Fixes for themes.
+    * Added special patches for KDE from openSUSE (works only if additional helper is installed)
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 11 Oct 2019 15:01:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 15 Oct 2019 21:30:00 +0200
