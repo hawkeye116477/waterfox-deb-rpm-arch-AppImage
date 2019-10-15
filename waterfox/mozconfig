@@ -1,12 +1,16 @@
-if test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "xenial"; then
-export CC=clang-6.0
-export CXX=clang++-6.0
-else
+if test `lsb_release -sc` = "xenial"; then
+export PATH=/usr/lib/llvm-6.0/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "stretch"; then
+export PATH=/usr/lib/llvm-7/bin/:$PATH
+fi
+
 export CC=clang
 export CXX=clang++
-fi
+
 ac_add_options --prefix=/usr
-ac_add_options --enable-optimize="-O2 -msse3 -march=x86-64 -mtune=generic -w"
+ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
 ac_add_options --enable-eme=widevine
 ac_add_options --target=x86_64-pc-linux-gnu
 ac_add_options --enable-pulseaudio
@@ -31,7 +35,8 @@ ac_add_options --disable-updater
 ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
-ac_add_options --enable-stylo=build
+ac_add_options --enable-av1
+ac_add_options --disable-stylo
 
 ac_add_options --with-app-name=waterfox
 ac_add_options --with-app-basename=Waterfox
