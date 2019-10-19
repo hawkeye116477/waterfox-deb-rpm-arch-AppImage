@@ -36,7 +36,7 @@ ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
 ac_add_options --enable-av1
-ac_add_options --disable-stylo=build
+ac_add_options --disable-stylo
 
 ac_add_options --with-app-name=waterfox
 ac_add_options --with-app-basename=Waterfox
