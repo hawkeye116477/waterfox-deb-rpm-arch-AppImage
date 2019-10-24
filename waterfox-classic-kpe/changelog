@@ -1,0 +1,148 @@
+waterfox-classic-kpe (2019.10-0) obs; urgency=medium
+    * Various website rending issues fixed. (Thanks to hawkeye116477)
+    * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
+    * Various config updates. (Thanks to Peacock365)
+    * Fixed displaying some emojis
+    * Added the path to the running binary to about:support
+    * Security fixes from mfsa 2019-33
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 24 Oct 2019 22:07:00 +0200
+
+waterfox (56.2.14-0) obs; urgency=medium
+    * Security patches from ESR 60.9
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 03 Sep 2019 18:38:00 +0200
+
+waterfox (56.2.13-0) obs; urgency=medium
+    * Updated Gecko Media Plugin components
+
+        - Waterfox now supports the latest version of the Widevine CDM (v10). This should last for a while until Google sunsets this version.
+        - A few memory leaks were fixed due to this upgrade.
+
+    * Upgraded from Widevine CDM 1.4.9.1088 to Widevine CDM 4.10.1440.19.
+    * Upgraded from OpenH264 1.6 to OpenH264 1.8.1.
+
+        - This should result in less crashing and better performance
+
+    * Support filtering streaming response data via webRequest API
+    * Support access keys in extension menus
+    * User agent overrides are now much easier to add - with the options to have an automatic updating list depending on how users feel about this.
+    * If upgrading from previous versions of Waterfox, you will be asked to re-enable DRM. After re-enabling, if videos with DRM do not work please restart Waterfox and videos should start to work again.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 21 Aug 2019 18:12:00 +0200
+
+waterfox (56.2.12-0) obs; urgency=medium
+    * Patches for mfsa2019-22.
+    * Updated Twemoji Mozilla to 0.4.0 (twemoji 11.4.0).
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 14 Jul 2019 21:19:00 +0200
+
+waterfox (56.2.11.1-0) obs; urgency=medium
+    * Fixed Bug 1555523
+    * Fixed compiling with elf-hack and rust-simd, so that should improve performance a little
+    * Fixed bugs related with HiDPI icons
+    * Version is not changed on about dialog for now
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 08 Jul 2019 16:34:00 +0200
+
+waterfox (56.2.11-0) obs; urgency=high
+    * Security fix for CVE-2019-11707.
+    * Fixed issues that prevented themes from AMO installing.
+    * Added some more overrides for popular websites.
+    * Fixed issues where the Gecko Media Plugins were not downloading, preventing websites that required DRM such as Netflix from working.
+    * Enabled support for JavaScript modules.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Jun 2019 14:51:00 +0200
+
+waterfox (56.2.10.1-0) obs; urgency=medium
+    * User agent overrides for more domains (Spotify, Slack, Wire and others)
+    * Fixed Bugs: 1466606, 1386277, 1404198 and 1398897
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 07 Jun 2019 18:36:00 +0200
+
+waterfox (56.2.10-0) obs; urgency=medium
+    * Latest security fixes up to Firefox ESR 60.7
+    * Added new Mozilla certificates to be able to install add-ons from AMO again
+    * Waterfox now identifies as Waterfox once again!
+
+        - This fixes issues with repeat CAPTCHAs, hooray!
+        - Websites that require a vanilla Firefox user agent will get one, so far: web.whatsapp.com, amazon.*, netflix.com, chase.com. Please request if a website you visit doesn’t recognise the Waterfox user agent.
+        - This should stop YouTube from doing A/B tests that break on Waterfox.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 19 May 2019 15:10:00 +0200
+
+waterfox (56.2.9-0) obs; urgency=medium
+    * Various security fixes.
+    * Switched to twemoji for platforms that do not natively support emoji.
+    * Fixed bug causing issues with add-ons such as Tab Mix Plus.
+    * Fixed issue with Instagram.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 20 Apr 2019 10:55:00 +0200
+
+waterfox (56.2.8-0) obs; urgency=medium
+    * Waterfox now identifies itself as Firefox 60 ESR. This should fix a lot of website issues. Unfortunately there will be no unique way to identify Waterfox.
+
+        - WhatsApp Web now works, as should Chase et al.
+
+    * Various security fixes.
+    * Corrected the behavior of Element.scrollIntoView which some websites rely on to work.
+    * Disabled Service Workers by default.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 15 Mar 2019 13:29:00 +0200
+
+waterfox (56.2.7.1-0) obs; urgency=medium
+    * Fixed and updated search icons on about:home and about:newtab.
+    * Test out a new user agent to hopefully fix website issues.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 2 Feb 2019 17:17:00 +0200
+
+waterfox (56.2.7-0) obs; urgency=medium
+    * Mozilla Foundation Security Advisories patched
+
+        - 2019-02
+
+    * Fixed HTML5 DRM playback issues on websites such as Amazon Prime.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 1 Feb 2019 00:15:00 +0200
+
+waterfox (56.2.6-0) obs; urgency=high
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-30
+
+    * Updated NSS to 3.34
+    * Updated manpage
+    * Added missing symlink for syspref.js
+    * Updated translation of waterfox.desktop to Chinese by pirate486743186
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Dec 2018 11:29:00 +0200
+
+waterfox (56.2.5.1-0) obs; urgency=high
+    * Fix postinst error
+    * Add syspref.js in /etc/waterfox for setting preferences for all users
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 4 Nov 2018 09:57:00 +0200
+
+waterfox (56.2.5-0) obs; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+
+        - 2018-23
+        - 2018-24
+        - 2018-27
+
+    * Added AppArmor profile
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 1 Nov 2018 14:10:00 +0200
+
+waterfox (56.2.4-0) obs; urgency=high
+
+    * Mozilla Foundation Security Advisories patched:
+        - 2018-23
+        - 2018-24
+
+    * There is now a complete backup of all classic add-ons from the Mozilla Add-On Store, mirrored on the Waterfox CDN. You can use the Classic add-on Archive add-on to view the catalogue. This will be integrated into the next minor Waterfox version (56.3).
+
+    * Moved from /opt to /usr/lib to follow Debian's standards
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 15 Oct 2018 13:48:00 +0200

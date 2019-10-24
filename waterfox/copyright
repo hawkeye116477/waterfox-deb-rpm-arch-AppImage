@@ -1,9 +1,0 @@
-This package was debianized by hawkeye116477 <hawkeye116477@gmail.com>.
-
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Waterfox Web Browser
-Source: https://github.com/MrAlex94/Waterfox.git
-
-Files: *
-Copyright: Copyright 2018 All rights belongs to Waterfox Project and other respective owners.
-License: MPL-2.0
