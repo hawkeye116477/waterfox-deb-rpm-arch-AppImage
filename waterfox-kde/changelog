@@ -2,8 +2,11 @@ waterfox-kde (2019.10-0) obs; urgency=medium
     * Various website rending issues fixed. (Thanks to hawkeye116477)
     * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
     * Various config updates. (Thanks to Peacock365)
+    * Fixed displaying some emojis
+    * Added the path to the running binary to about:support
+    * Security fixes from mfsa 2019-33
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 15 Sep 2019 23:39:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 24 Oct 2019 09:12:00 +0200
 
 waterfox-kde (56.2.14-0) obs; urgency=medium
     * Security patches from ESR 60.9
