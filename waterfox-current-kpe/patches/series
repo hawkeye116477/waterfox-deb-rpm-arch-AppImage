@@ -1,3 +1,6 @@
 mozilla-nongnome-proxies.patch -p1
 waterfox-current-kde-68.0.patch -p1
 gitignore.patch
+icon_mish_mash.patch
+allow_run_current_when_classic.patch
+disable_some_telemetry.patch
