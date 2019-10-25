@@ -1,1 +1,1 @@
-extensions/langpack-zh-CN@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-zh-CN@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions

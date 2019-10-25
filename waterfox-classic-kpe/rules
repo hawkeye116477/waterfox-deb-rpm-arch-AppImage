@@ -21,7 +21,7 @@ override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-classic-bin.sh
 	cp debian/kde.js obj-x86_64-pc-linux-gnu/dist/bin/defaults/pref
 	DESTDIR=$$(pwd)/debian/waterfox-classic-kpe ./mach install
-	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox/browser/features
+	mv $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox/browser/features/ $$(pwd)
 	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox/waterfox-bin
 	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox/dictionaries
 

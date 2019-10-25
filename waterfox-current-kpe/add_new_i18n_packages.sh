@@ -21,7 +21,7 @@ EOT
 touch $SCRIPT_PATH/${_pkgname}.install
 
     cat <<EOT > $SCRIPT_PATH/${_pkgname}.install
-extensions/langpack-${_locale_file}@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-${_locale_file}@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
 EOT
 done
 

@@ -1,4 +1,4 @@
-waterfox-kde-56.2.10.1.patch -p1
+waterfox-classic-kde-2019.10.patch -p1
 dont-statically-link-libstdc++.patch -p1
 gitignore.patch -p1
 restore_ua_overrides.patch -p1

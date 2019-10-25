@@ -9,8 +9,8 @@ Homepage: https://www.waterfox.net/
 Package: waterfox-classic-kpe
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: waterfox
-Breaks: waterfox
+Replaces: waterfox, waterfox-kde
+Breaks: waterfox, waterfox-kde
 Suggests: fonts-lyx, pulseaudio
 Provides: www-browser, gnome-www-browser, waterfox-classic
 Description: Free, open and private browser with openSUSE's patches for better integration with KDE
@@ -22,26 +22,26 @@ Description: Free, open and private browser with openSUSE's patches for better i
 
 Package: waterfox-classic-kde
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic, kwaterfoxhelper
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe, kwaterfoxhelper
 Suggests: plasma-browser-integration
 Description: KDE Plasma integration for Waterfox Classic
  For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
 
 Package: waterfox
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-kde
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-classic-i18n-ach
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ach
 Breaks: waterfox-locale-ach
 Description: Acholi language pack for Waterfox Classic
@@ -49,7 +49,7 @@ Description: Acholi language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-af
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-af
 Breaks: waterfox-locale-af
 Description: Afrikaans language pack for Waterfox Classic
@@ -57,7 +57,7 @@ Description: Afrikaans language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-an
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-an
 Breaks: waterfox-locale-an
 Description: Aragonese language pack for Waterfox Classic
@@ -65,7 +65,7 @@ Description: Aragonese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ar
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ar
 Breaks: waterfox-locale-ar
 Description: Arabic language pack for Waterfox Classic
@@ -73,7 +73,7 @@ Description: Arabic language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-as
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-as
 Breaks: waterfox-locale-as
 Description: Assamese language pack for Waterfox Classic
@@ -81,7 +81,7 @@ Description: Assamese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ast
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ast
 Breaks: waterfox-locale-ast
 Description: Asturian language pack for Waterfox Classic
@@ -89,7 +89,7 @@ Description: Asturian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-az
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-az
 Breaks: waterfox-locale-az
 Description: Azerbaijani language pack for Waterfox Classic
@@ -97,7 +97,7 @@ Description: Azerbaijani language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-bg
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-bg
 Breaks: waterfox-locale-bg
 Description: Bulgarian language pack for Waterfox Classic
@@ -105,7 +105,7 @@ Description: Bulgarian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-bn-bd
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-bn-bd
 Breaks: waterfox-locale-bn-bd
 Description: Bengali (Bangladesh) language pack for Waterfox Classic
@@ -113,7 +113,7 @@ Description: Bengali (Bangladesh) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-bn-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-bn-in
 Breaks: waterfox-locale-bn-in
 Description: Bengali (India) language pack for Waterfox Classic
@@ -121,7 +121,7 @@ Description: Bengali (India) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-br
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-br
 Breaks: waterfox-locale-br
 Description: Breton language pack for Waterfox Classic
@@ -129,7 +129,7 @@ Description: Breton language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-bs
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-bs
 Breaks: waterfox-locale-bs
 Description: Bosnian language pack for Waterfox Classic
@@ -137,7 +137,7 @@ Description: Bosnian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ca
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ca
 Breaks: waterfox-locale-ca
 Description: Catalan; Valencian language pack for Waterfox Classic
@@ -145,7 +145,7 @@ Description: Catalan; Valencian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-cak
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-cak
 Breaks: waterfox-locale-cak
 Description: Kaqchikel language pack for Waterfox Classic
@@ -153,7 +153,7 @@ Description: Kaqchikel language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-cs
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-cs
 Breaks: waterfox-locale-cs
 Description: Czech language pack for Waterfox Classic
@@ -161,7 +161,7 @@ Description: Czech language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-cy
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-cy
 Breaks: waterfox-locale-cy
 Description: Welsh language pack for Waterfox Classic
@@ -169,7 +169,7 @@ Description: Welsh language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-da
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-da
 Breaks: waterfox-locale-da
 Description: Danish language pack for Waterfox Classic
@@ -177,7 +177,7 @@ Description: Danish language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-de
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-de
 Breaks: waterfox-locale-de
 Description: German language pack for Waterfox Classic
@@ -185,7 +185,7 @@ Description: German language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-dsb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-dsb
 Breaks: waterfox-locale-dsb
 Description: Lower Sorbian language pack for Waterfox Classic
@@ -193,7 +193,7 @@ Description: Lower Sorbian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-el
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-el
 Breaks: waterfox-locale-el
 Description: Greek language pack for Waterfox Classic
@@ -201,7 +201,7 @@ Description: Greek language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-en-gb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-en-gb
 Breaks: waterfox-locale-en-gb
 Description: English (British) language pack for Waterfox Classic
@@ -209,7 +209,7 @@ Description: English (British) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-en-za
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-en-za
 Breaks: waterfox-locale-en-za
 Description: English (South African) language pack for Waterfox Classic
@@ -217,7 +217,7 @@ Description: English (South African) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-eo
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-eo
 Breaks: waterfox-locale-eo
 Description: Esperanto language pack for Waterfox Classic
@@ -225,7 +225,7 @@ Description: Esperanto language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-es-ar
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-es-ar
 Breaks: waterfox-locale-es-ar
 Description: Spanish (Argentina) language pack for Waterfox Classic
@@ -233,7 +233,7 @@ Description: Spanish (Argentina) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-es-cl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-es-cl
 Breaks: waterfox-locale-es-cl
 Description: Spanish (Chile) language pack for Waterfox Classic
@@ -241,7 +241,7 @@ Description: Spanish (Chile) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-es-es
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-es-es
 Breaks: waterfox-locale-es-es
 Description: Spanish (Spain) language pack for Waterfox Classic
@@ -249,7 +249,7 @@ Description: Spanish (Spain) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-es-mx
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-es-mx
 Breaks: waterfox-locale-es-mx
 Description: Spanish (Mexico) language pack for Waterfox Classic
@@ -257,7 +257,7 @@ Description: Spanish (Mexico) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-et
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-et
 Breaks: waterfox-locale-et
 Description: Estonian language pack for Waterfox Classic
@@ -265,7 +265,7 @@ Description: Estonian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-eu
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-eu
 Breaks: waterfox-locale-eu
 Description: Basque language pack for Waterfox Classic
@@ -273,7 +273,7 @@ Description: Basque language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-fa
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-fa
 Breaks: waterfox-locale-fa
 Description: Persian language pack for Waterfox Classic
@@ -281,7 +281,7 @@ Description: Persian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ff
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ff
 Breaks: waterfox-locale-ff
 Description: Fulah language pack for Waterfox Classic
@@ -289,7 +289,7 @@ Description: Fulah language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-fi
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-fi
 Breaks: waterfox-locale-fi
 Description: Finnish language pack for Waterfox Classic
@@ -297,7 +297,7 @@ Description: Finnish language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-fr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-fr
 Breaks: waterfox-locale-fr
 Description: French language pack for Waterfox Classic
@@ -305,7 +305,7 @@ Description: French language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-fy-nl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-fy-nl
 Breaks: waterfox-locale-fy-nl
 Description: fy language pack for Waterfox Classic
@@ -313,7 +313,7 @@ Description: fy language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ga-ie
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ga-ie
 Breaks: waterfox-locale-ga-ie
 Description: Irish (Ireland) language pack for Waterfox Classic
@@ -321,7 +321,7 @@ Description: Irish (Ireland) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-gd
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-gd
 Breaks: waterfox-locale-gd
 Description: Scottish Gaelic language pack for Waterfox Classic
@@ -329,7 +329,7 @@ Description: Scottish Gaelic language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-gl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-gl
 Breaks: waterfox-locale-gl
 Description: Galician language pack for Waterfox Classic
@@ -337,7 +337,7 @@ Description: Galician language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-gn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-gn
 Breaks: waterfox-locale-gn
 Description: Guarani language pack for Waterfox Classic
@@ -345,7 +345,7 @@ Description: Guarani language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-gu-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-gu-in
 Breaks: waterfox-locale-gu-in
 Description: Gujarati (India) language pack for Waterfox Classic
@@ -353,7 +353,7 @@ Description: Gujarati (India) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-he
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-he
 Breaks: waterfox-locale-he
 Description: Hebrew language pack for Waterfox Classic
@@ -361,7 +361,7 @@ Description: Hebrew language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-hi-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-hi-in
 Breaks: waterfox-locale-hi-in
 Description: Hindi (India) language pack for Waterfox Classic
@@ -369,7 +369,7 @@ Description: Hindi (India) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-hr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-hr
 Breaks: waterfox-locale-hr
 Description: Croatian language pack for Waterfox Classic
@@ -377,7 +377,7 @@ Description: Croatian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-hsb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-hsb
 Breaks: waterfox-locale-hsb
 Description: Upper Sorbian language pack for Waterfox Classic
@@ -385,7 +385,7 @@ Description: Upper Sorbian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-hu
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-hu
 Breaks: waterfox-locale-hu
 Description: Hungarian language pack for Waterfox Classic
@@ -393,7 +393,7 @@ Description: Hungarian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-hy-am
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-hy-am
 Breaks: waterfox-locale-hy-am
 Description: Armenian (Armenia) language pack for Waterfox Classic
@@ -401,7 +401,7 @@ Description: Armenian (Armenia) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-id
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-id
 Breaks: waterfox-locale-id
 Description: Indonesian language pack for Waterfox Classic
@@ -409,7 +409,7 @@ Description: Indonesian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-is
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-is
 Breaks: waterfox-locale-is
 Description: Icelandic language pack for Waterfox Classic
@@ -417,7 +417,7 @@ Description: Icelandic language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-it
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-it
 Breaks: waterfox-locale-it
 Description: Italian language pack for Waterfox Classic
@@ -425,7 +425,7 @@ Description: Italian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ja
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ja
 Breaks: waterfox-locale-ja
 Description: Japanese language pack for Waterfox Classic
@@ -433,7 +433,7 @@ Description: Japanese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-kk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-kk
 Breaks: waterfox-locale-kk
 Description: Kazakh language pack for Waterfox Classic
@@ -441,7 +441,7 @@ Description: Kazakh language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-km
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-km
 Breaks: waterfox-locale-km
 Description: Central Khmer language pack for Waterfox Classic
@@ -449,7 +449,7 @@ Description: Central Khmer language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-kn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-kn
 Breaks: waterfox-locale-kn
 Description: Kannada language pack for Waterfox Classic
@@ -457,7 +457,7 @@ Description: Kannada language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ko
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ko
 Breaks: waterfox-locale-ko
 Description: Korean language pack for Waterfox Classic
@@ -465,7 +465,7 @@ Description: Korean language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-lij
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-lij
 Breaks: waterfox-locale-lij
 Description: Ligurian language pack for Waterfox Classic
@@ -473,7 +473,7 @@ Description: Ligurian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-lt
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-lt
 Breaks: waterfox-locale-lt
 Description: Lithuanian language pack for Waterfox Classic
@@ -481,7 +481,7 @@ Description: Lithuanian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-lv
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-lv
 Breaks: waterfox-locale-lv
 Description: Latvian language pack for Waterfox Classic
@@ -489,7 +489,7 @@ Description: Latvian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-mai
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-mai
 Breaks: waterfox-locale-mai
 Description: Maithili language pack for Waterfox Classic
@@ -497,7 +497,7 @@ Description: Maithili language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-mk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-mk
 Breaks: waterfox-locale-mk
 Description: Macedonian language pack for Waterfox Classic
@@ -505,7 +505,7 @@ Description: Macedonian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ml
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ml
 Breaks: waterfox-locale-ml
 Description: Malayalam language pack for Waterfox Classic
@@ -513,7 +513,7 @@ Description: Malayalam language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-mr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-mr
 Breaks: waterfox-locale-mr
 Description: Marathi language pack for Waterfox Classic
@@ -521,7 +521,7 @@ Description: Marathi language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ms
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ms
 Breaks: waterfox-locale-ms
 Description: Malay language pack for Waterfox Classic
@@ -529,7 +529,7 @@ Description: Malay language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-nb-no
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-nb-no
 Breaks: waterfox-locale-nb-no
 Description: Norwegian (Bokmål) language pack for Waterfox Classic
@@ -537,7 +537,7 @@ Description: Norwegian (Bokmål) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-nl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-nl
 Breaks: waterfox-locale-nl
 Description: Dutch; Flemish language pack for Waterfox Classic
@@ -545,7 +545,7 @@ Description: Dutch; Flemish language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-nn-no
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-nn-no
 Breaks: waterfox-locale-nn-no
 Description: Norwegian (Nynorsk) language pack for Waterfox Classic
@@ -553,7 +553,7 @@ Description: Norwegian (Nynorsk) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-or
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-or
 Breaks: waterfox-locale-or
 Description: Oriya language pack for Waterfox Classic
@@ -561,7 +561,7 @@ Description: Oriya language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-pa-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-pa-in
 Breaks: waterfox-locale-pa-in
 Description: Punjabi (India) language pack for Waterfox Classic
@@ -569,7 +569,7 @@ Description: Punjabi (India) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-pl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-pl
 Breaks: waterfox-locale-pl
 Description: Polish language pack for Waterfox Classic
@@ -577,7 +577,7 @@ Description: Polish language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-pt-br
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-pt-br
 Breaks: waterfox-locale-pt-br
 Description: Portuguese (Brazilian) language pack for Waterfox Classic
@@ -585,7 +585,7 @@ Description: Portuguese (Brazilian) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-pt-pt
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-pt-pt
 Breaks: waterfox-locale-pt-pt
 Description: Portuguese (Portugal) language pack for Waterfox Classic
@@ -593,7 +593,7 @@ Description: Portuguese (Portugal) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-rm
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-rm
 Breaks: waterfox-locale-rm
 Description: Romansh language pack for Waterfox Classic
@@ -601,7 +601,7 @@ Description: Romansh language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ro
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ro
 Breaks: waterfox-locale-ro
 Description: Romanian language pack for Waterfox Classic
@@ -609,7 +609,7 @@ Description: Romanian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ru
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ru
 Breaks: waterfox-locale-ru
 Description: Russian language pack for Waterfox Classic
@@ -617,7 +617,7 @@ Description: Russian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-si
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-si
 Breaks: waterfox-locale-si
 Description: Sinhala; Sinhalese language pack for Waterfox Classic
@@ -625,7 +625,7 @@ Description: Sinhala; Sinhalese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-sk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-sk
 Breaks: waterfox-locale-sk
 Description: Slovak language pack for Waterfox Classic
@@ -633,7 +633,7 @@ Description: Slovak language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-sl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-sl
 Breaks: waterfox-locale-sl
 Description: Slovenian language pack for Waterfox Classic
@@ -641,7 +641,7 @@ Description: Slovenian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-son
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-son
 Breaks: waterfox-locale-son
 Description: Songhai language pack for Waterfox Classic
@@ -649,7 +649,7 @@ Description: Songhai language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-sq
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-sq
 Breaks: waterfox-locale-sq
 Description: Albanian language pack for Waterfox Classic
@@ -657,7 +657,7 @@ Description: Albanian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-sr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-sr
 Breaks: waterfox-locale-sr
 Description: Serbian language pack for Waterfox Classic
@@ -665,7 +665,7 @@ Description: Serbian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-sv-se
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-sv-se
 Breaks: waterfox-locale-sv-se
 Description: Swedish (Sweden) language pack for Waterfox Classic
@@ -673,7 +673,7 @@ Description: Swedish (Sweden) language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-ta
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-ta
 Breaks: waterfox-locale-ta
 Description: Tamil language pack for Waterfox Classic
@@ -681,7 +681,7 @@ Description: Tamil language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-te
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-te
 Breaks: waterfox-locale-te
 Description: Telugu language pack for Waterfox Classic
@@ -689,7 +689,7 @@ Description: Telugu language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-th
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-th
 Breaks: waterfox-locale-th
 Description: Thai language pack for Waterfox Classic
@@ -697,7 +697,7 @@ Description: Thai language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-tr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-tr
 Breaks: waterfox-locale-tr
 Description: Turkish language pack for Waterfox Classic
@@ -705,7 +705,7 @@ Description: Turkish language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-uk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-uk
 Breaks: waterfox-locale-uk
 Description: Ukrainian language pack for Waterfox Classic
@@ -713,7 +713,7 @@ Description: Ukrainian language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-uz
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-uz
 Breaks: waterfox-locale-uz
 Description: Uzbek language pack for Waterfox Classic
@@ -721,7 +721,7 @@ Description: Uzbek language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-vi
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-vi
 Breaks: waterfox-locale-vi
 Description: Vietnamese language pack for Waterfox Classic
@@ -729,7 +729,7 @@ Description: Vietnamese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-xh
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-xh
 Breaks: waterfox-locale-xh
 Description: Xhosa language pack for Waterfox Classic
@@ -737,7 +737,7 @@ Description: Xhosa language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-zh-cn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-zh-cn
 Breaks: waterfox-locale-zh-cn
 Description: Simplified Chinese language pack for Waterfox Classic
@@ -745,7 +745,7 @@ Description: Simplified Chinese language pack for Waterfox Classic
 
 Package: waterfox-classic-i18n-zh-tw
 Architecture: any
-Depends: ${misc:Depends}, waterfox-classic (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
 Replaces: waterfox-locale-zh-tw
 Breaks: waterfox-locale-zh-tw
 Description: Traditional Chinese language pack for Waterfox Classic

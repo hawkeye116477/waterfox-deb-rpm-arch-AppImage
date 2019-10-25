@@ -1,1 +1,1 @@
-extensions/langpack-pa-IN@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-pa-IN@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions

@@ -14,7 +14,7 @@ for _lang in "${_languages[@]}"; do
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $_pkgname
 Architecture: any
-Depends: \${misc:Depends}, waterfox-classic (>= \${source:Version})
+Depends: \${misc:Depends}, waterfox-classic-kpe (>= \${source:Version})
 Replaces: $_pkgname_trans
 Breaks: $_pkgname_trans
 Description: $_locale_desc language pack for Waterfox Classic

@@ -1,1 +1,1 @@
-extensions/langpack-ga-IE@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-ga-IE@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions

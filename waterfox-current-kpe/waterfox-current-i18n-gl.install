@@ -1,1 +1,1 @@
-extensions/langpack-gl@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-gl@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions

@@ -1,1 +1,1 @@
-extensions/langpack-hy-AM@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
+debian/i18n/langpack-hy-AM@waterfox-current.xpi /usr/lib/waterfox-current/browser/extensions
