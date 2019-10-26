@@ -439,11 +439,11 @@ Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
 Description: Norwegian (Nynorsk) language pack for Waterfox Current
  This package contains Norwegian (Nynorsk) translations for Waterfox Current
 
-Package: waterfox-current-i18n-or
+Package: waterfox-current-i18n-oc
 Architecture: any
 Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
-Description: Oriya language pack for Waterfox Current
- This package contains Oriya translations for Waterfox Current
+Description: Occitan (post 1500) language pack for Waterfox Current
+ This package contains Occitan (post 1500) translations for Waterfox Current
 
 Package: waterfox-current-i18n-pa-in
 Architecture: any
