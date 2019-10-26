@@ -1,4 +1,4 @@
-waterfox-classic-kpe (2019.10-2) obs; urgency=medium
+waterfox-classic-kpe (2019.10-3) obs; urgency=medium
     * Various website rending issues fixed. (Thanks to hawkeye116477)
     * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
     * Various config updates. (Thanks to Peacock365)
