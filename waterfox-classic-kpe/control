@@ -35,7 +35,7 @@ Description: Transitional package
 
 Package: waterfox-kde
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kde
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
