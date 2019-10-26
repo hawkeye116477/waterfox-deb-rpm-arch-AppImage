@@ -28,12 +28,14 @@ Description: KDE Plasma integration for Waterfox Classic
 Package: waterfox
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe
+Section: oldlibs
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-kde
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-classic-kpe, waterfox-classic-kde
+Section: oldlibs
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
