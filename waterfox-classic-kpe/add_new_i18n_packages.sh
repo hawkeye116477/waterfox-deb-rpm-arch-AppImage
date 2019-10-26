@@ -38,13 +38,13 @@ Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 EOT
-done
 
 touch $SCRIPT_PATH/${_pkgname}.install
 
     cat <<EOT > $SCRIPT_PATH/${_pkgname}.install
-features/langpack-${_locale_file}@waterfox.xpi /usr/lib/waterfox/browser/features
+features/langpack-${_locale_file}@waterfox.xpi /usr/lib/waterfox-classic/browser/features
 EOT
+done
 
 mapfile -t trans_languages < <(cat $SCRIPT_PATH/locales.transitional)
 

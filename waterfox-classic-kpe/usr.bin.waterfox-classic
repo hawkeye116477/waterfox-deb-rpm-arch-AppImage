@@ -3,16 +3,16 @@
 # Original Author: Jamie Strandboge <jamie@canonical.com>
 
 # Declare an apparmor variable to help with overrides
-@{MOZ_LIBDIR}=/usr/lib/waterfox
+@{MOZ_LIBDIR}=/usr/lib/waterfox-classic
 
 #include <tunables/global>
 
 # We want to confine the binaries that match:
-#  /usr/lib/waterfox/waterfox
-#  /usr/lib/waterfox/waterfox
+#  /usr/lib/waterfox-classic/waterfox-classic
+#  /usr/lib/waterfox-classic/waterfox-classic
 # but not:
-#  /usr/lib/waterfox/waterfox.sh
-/usr/lib/waterfox/waterfox{,*[^s][^h]} {
+#  /usr/lib/waterfox-classic/waterfox-classic-bin.sh
+/usr/lib/waterfox-classic/waterfox-classic{,*[^s][^h]} {
   #include <abstractions/audio>
   #include <abstractions/cups-client>
   #include <abstractions/dbus-strict>
@@ -80,8 +80,8 @@
   /etc/wildmidi/wildmidi.cfg r,
 
   # waterfox specific
-  /etc/waterfox*/ r,
-  /etc/waterfox*/** r,
+  /etc/waterfox-classic*/ r,
+  /etc/waterfox-classic*/** r,
 
   # firefox specific
   #/etc/xul-ext/** r,
@@ -104,7 +104,7 @@
   # TODO: investigate
   deny /usr/bin/gconftool-2 x,
 
-  # These are needed when a new user starts waterfox and waterfox.sh is used
+  # These are needed when a new user starts waterfox-classic and waterfox-classic-bin.sh is used
   @{MOZ_LIBDIR}/** ixr,
   /usr/bin/basename ixr,
   /usr/bin/dirname ixr,

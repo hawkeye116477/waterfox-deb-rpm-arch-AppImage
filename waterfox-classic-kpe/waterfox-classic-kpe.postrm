@@ -37,7 +37,7 @@ if [ "$1" = "purge" ]; then
     rm -f /etc/apparmor.d/force-complain/$APP_PROFILE || true
     rm -f /etc/apparmor.d/disable/$APP_PROFILE || true
     rm -f /etc/apparmor.d/local/$APP_PROFILE || true
-    rm -f "/etc/apparmor.d/abstractions/ubuntu-browsers.d/waterfox" || true
+    rm -f "/etc/apparmor.d/abstractions/ubuntu-browsers.d/waterfox-classic" || true
     rmdir /etc/apparmor.d/local 2>/dev/null || true
 
     purge_conffile "/etc/${MOZ_PKG_NAME}/profile/bookmarks.html"

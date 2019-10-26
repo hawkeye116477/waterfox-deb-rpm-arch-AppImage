@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/lib/waterfox/waterfox "$@"
+exec /usr/lib/waterfox-classic/waterfox-classic "$@"
