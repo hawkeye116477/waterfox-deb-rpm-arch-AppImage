@@ -1345,7 +1345,7 @@ index c1e2e15fdb26..7e41c722d5c3 100644
 +            .createInstance(Components.interfaces.nsIProcess);
 +          process.init(shellObj);
 +          var args = ["--file", "kdeglobals", "--group", "General", "--key",
-+              "BrowserApplication", "waterfox-classic"];
++              "BrowserApplication", "waterfox"];
 +          process.run(false, args, args.length);
 +        }
        } catch (ex) {
