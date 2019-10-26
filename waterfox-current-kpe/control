@@ -11,8 +11,6 @@ Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper
 Provides: www-browser, gnome-www-browser, waterfox-current
-Replaces: waterfox-alpha, waterfox-beta
-Breaks: waterfox-alpha, waterfox-beta
 Description: Free, open and private browser with better integration with KDE
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
