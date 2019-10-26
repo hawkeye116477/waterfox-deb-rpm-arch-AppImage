@@ -15,6 +15,8 @@ for _lang in "${_languages[@]}"; do
 Package: $_pkgname
 Architecture: any
 Depends: \${misc:Depends}, waterfox-classic-kpe (>= \${source:Version})
+Replaces: $_pkgname_trans (<< 2019.10-4)
+Breaks: $_pkgname_trans (<< 2019.10-4)
 Description: $_locale_desc language pack for Waterfox Classic
  This package contains $_locale_desc translations for Waterfox Classic.
 

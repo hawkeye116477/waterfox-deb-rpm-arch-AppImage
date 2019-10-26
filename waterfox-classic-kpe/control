@@ -44,534 +44,712 @@ Description: Transitional package
 Package: waterfox-classic-i18n-ach
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ach (<< 2019.10-4)
+Breaks: waterfox-locale-ach (<< 2019.10-4)
 Description: Acholi language pack for Waterfox Classic
  This package contains Acholi translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-af
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-af (<< 2019.10-4)
+Breaks: waterfox-locale-af (<< 2019.10-4)
 Description: Afrikaans language pack for Waterfox Classic
  This package contains Afrikaans translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-an
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-an (<< 2019.10-4)
+Breaks: waterfox-locale-an (<< 2019.10-4)
 Description: Aragonese language pack for Waterfox Classic
  This package contains Aragonese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ar
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ar (<< 2019.10-4)
+Breaks: waterfox-locale-ar (<< 2019.10-4)
 Description: Arabic language pack for Waterfox Classic
  This package contains Arabic translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-as
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-as (<< 2019.10-4)
+Breaks: waterfox-locale-as (<< 2019.10-4)
 Description: Assamese language pack for Waterfox Classic
  This package contains Assamese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ast
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ast (<< 2019.10-4)
+Breaks: waterfox-locale-ast (<< 2019.10-4)
 Description: Asturian language pack for Waterfox Classic
  This package contains Asturian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-az
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-az (<< 2019.10-4)
+Breaks: waterfox-locale-az (<< 2019.10-4)
 Description: Azerbaijani language pack for Waterfox Classic
  This package contains Azerbaijani translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-bg
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-bg (<< 2019.10-4)
+Breaks: waterfox-locale-bg (<< 2019.10-4)
 Description: Bulgarian language pack for Waterfox Classic
  This package contains Bulgarian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-bn-bd
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-bn-bd (<< 2019.10-4)
+Breaks: waterfox-locale-bn-bd (<< 2019.10-4)
 Description: Bengali (Bangladesh) language pack for Waterfox Classic
  This package contains Bengali (Bangladesh) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-bn-in
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-bn-in (<< 2019.10-4)
+Breaks: waterfox-locale-bn-in (<< 2019.10-4)
 Description: Bengali (India) language pack for Waterfox Classic
  This package contains Bengali (India) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-br
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-br (<< 2019.10-4)
+Breaks: waterfox-locale-br (<< 2019.10-4)
 Description: Breton language pack for Waterfox Classic
  This package contains Breton translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-bs
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-bs (<< 2019.10-4)
+Breaks: waterfox-locale-bs (<< 2019.10-4)
 Description: Bosnian language pack for Waterfox Classic
  This package contains Bosnian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ca
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ca (<< 2019.10-4)
+Breaks: waterfox-locale-ca (<< 2019.10-4)
 Description: Catalan; Valencian language pack for Waterfox Classic
  This package contains Catalan; Valencian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-cak
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-cak (<< 2019.10-4)
+Breaks: waterfox-locale-cak (<< 2019.10-4)
 Description: Kaqchikel language pack for Waterfox Classic
  This package contains Kaqchikel translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-cs
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-cs (<< 2019.10-4)
+Breaks: waterfox-locale-cs (<< 2019.10-4)
 Description: Czech language pack for Waterfox Classic
  This package contains Czech translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-cy
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-cy (<< 2019.10-4)
+Breaks: waterfox-locale-cy (<< 2019.10-4)
 Description: Welsh language pack for Waterfox Classic
  This package contains Welsh translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-da
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-da (<< 2019.10-4)
+Breaks: waterfox-locale-da (<< 2019.10-4)
 Description: Danish language pack for Waterfox Classic
  This package contains Danish translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-de
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-de (<< 2019.10-4)
+Breaks: waterfox-locale-de (<< 2019.10-4)
 Description: German language pack for Waterfox Classic
  This package contains German translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-dsb
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-dsb (<< 2019.10-4)
+Breaks: waterfox-locale-dsb (<< 2019.10-4)
 Description: Lower Sorbian language pack for Waterfox Classic
  This package contains Lower Sorbian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-el
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-el (<< 2019.10-4)
+Breaks: waterfox-locale-el (<< 2019.10-4)
 Description: Greek language pack for Waterfox Classic
  This package contains Greek translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-en-gb
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-en-gb (<< 2019.10-4)
+Breaks: waterfox-locale-en-gb (<< 2019.10-4)
 Description: English (British) language pack for Waterfox Classic
  This package contains English (British) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-en-za
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-en-za (<< 2019.10-4)
+Breaks: waterfox-locale-en-za (<< 2019.10-4)
 Description: English (South African) language pack for Waterfox Classic
  This package contains English (South African) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-eo
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-eo (<< 2019.10-4)
+Breaks: waterfox-locale-eo (<< 2019.10-4)
 Description: Esperanto language pack for Waterfox Classic
  This package contains Esperanto translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-es-ar
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-es-ar (<< 2019.10-4)
+Breaks: waterfox-locale-es-ar (<< 2019.10-4)
 Description: Spanish (Argentina) language pack for Waterfox Classic
  This package contains Spanish (Argentina) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-es-cl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-es-cl (<< 2019.10-4)
+Breaks: waterfox-locale-es-cl (<< 2019.10-4)
 Description: Spanish (Chile) language pack for Waterfox Classic
  This package contains Spanish (Chile) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-es-es
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-es-es (<< 2019.10-4)
+Breaks: waterfox-locale-es-es (<< 2019.10-4)
 Description: Spanish (Spain) language pack for Waterfox Classic
  This package contains Spanish (Spain) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-es-mx
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-es-mx (<< 2019.10-4)
+Breaks: waterfox-locale-es-mx (<< 2019.10-4)
 Description: Spanish (Mexico) language pack for Waterfox Classic
  This package contains Spanish (Mexico) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-et
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-et (<< 2019.10-4)
+Breaks: waterfox-locale-et (<< 2019.10-4)
 Description: Estonian language pack for Waterfox Classic
  This package contains Estonian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-eu
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-eu (<< 2019.10-4)
+Breaks: waterfox-locale-eu (<< 2019.10-4)
 Description: Basque language pack for Waterfox Classic
  This package contains Basque translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-fa
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-fa (<< 2019.10-4)
+Breaks: waterfox-locale-fa (<< 2019.10-4)
 Description: Persian language pack for Waterfox Classic
  This package contains Persian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ff
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ff (<< 2019.10-4)
+Breaks: waterfox-locale-ff (<< 2019.10-4)
 Description: Fulah language pack for Waterfox Classic
  This package contains Fulah translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-fi
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-fi (<< 2019.10-4)
+Breaks: waterfox-locale-fi (<< 2019.10-4)
 Description: Finnish language pack for Waterfox Classic
  This package contains Finnish translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-fr
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-fr (<< 2019.10-4)
+Breaks: waterfox-locale-fr (<< 2019.10-4)
 Description: French language pack for Waterfox Classic
  This package contains French translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-fy-nl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-fy-nl (<< 2019.10-4)
+Breaks: waterfox-locale-fy-nl (<< 2019.10-4)
 Description: fy language pack for Waterfox Classic
  This package contains fy translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ga-ie
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ga-ie (<< 2019.10-4)
+Breaks: waterfox-locale-ga-ie (<< 2019.10-4)
 Description: Irish (Ireland) language pack for Waterfox Classic
  This package contains Irish (Ireland) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-gd
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-gd (<< 2019.10-4)
+Breaks: waterfox-locale-gd (<< 2019.10-4)
 Description: Scottish Gaelic language pack for Waterfox Classic
  This package contains Scottish Gaelic translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-gl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-gl (<< 2019.10-4)
+Breaks: waterfox-locale-gl (<< 2019.10-4)
 Description: Galician language pack for Waterfox Classic
  This package contains Galician translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-gn
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-gn (<< 2019.10-4)
+Breaks: waterfox-locale-gn (<< 2019.10-4)
 Description: Guarani language pack for Waterfox Classic
  This package contains Guarani translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-gu-in
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-gu-in (<< 2019.10-4)
+Breaks: waterfox-locale-gu-in (<< 2019.10-4)
 Description: Gujarati (India) language pack for Waterfox Classic
  This package contains Gujarati (India) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-he
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-he (<< 2019.10-4)
+Breaks: waterfox-locale-he (<< 2019.10-4)
 Description: Hebrew language pack for Waterfox Classic
  This package contains Hebrew translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-hi-in
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-hi-in (<< 2019.10-4)
+Breaks: waterfox-locale-hi-in (<< 2019.10-4)
 Description: Hindi (India) language pack for Waterfox Classic
  This package contains Hindi (India) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-hr
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-hr (<< 2019.10-4)
+Breaks: waterfox-locale-hr (<< 2019.10-4)
 Description: Croatian language pack for Waterfox Classic
  This package contains Croatian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-hsb
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-hsb (<< 2019.10-4)
+Breaks: waterfox-locale-hsb (<< 2019.10-4)
 Description: Upper Sorbian language pack for Waterfox Classic
  This package contains Upper Sorbian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-hu
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-hu (<< 2019.10-4)
+Breaks: waterfox-locale-hu (<< 2019.10-4)
 Description: Hungarian language pack for Waterfox Classic
  This package contains Hungarian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-hy-am
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-hy-am (<< 2019.10-4)
+Breaks: waterfox-locale-hy-am (<< 2019.10-4)
 Description: Armenian (Armenia) language pack for Waterfox Classic
  This package contains Armenian (Armenia) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-id
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-id (<< 2019.10-4)
+Breaks: waterfox-locale-id (<< 2019.10-4)
 Description: Indonesian language pack for Waterfox Classic
  This package contains Indonesian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-is
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-is (<< 2019.10-4)
+Breaks: waterfox-locale-is (<< 2019.10-4)
 Description: Icelandic language pack for Waterfox Classic
  This package contains Icelandic translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-it
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-it (<< 2019.10-4)
+Breaks: waterfox-locale-it (<< 2019.10-4)
 Description: Italian language pack for Waterfox Classic
  This package contains Italian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ja
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ja (<< 2019.10-4)
+Breaks: waterfox-locale-ja (<< 2019.10-4)
 Description: Japanese language pack for Waterfox Classic
  This package contains Japanese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-kk
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-kk (<< 2019.10-4)
+Breaks: waterfox-locale-kk (<< 2019.10-4)
 Description: Kazakh language pack for Waterfox Classic
  This package contains Kazakh translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-km
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-km (<< 2019.10-4)
+Breaks: waterfox-locale-km (<< 2019.10-4)
 Description: Central Khmer language pack for Waterfox Classic
  This package contains Central Khmer translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-kn
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-kn (<< 2019.10-4)
+Breaks: waterfox-locale-kn (<< 2019.10-4)
 Description: Kannada language pack for Waterfox Classic
  This package contains Kannada translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ko
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ko (<< 2019.10-4)
+Breaks: waterfox-locale-ko (<< 2019.10-4)
 Description: Korean language pack for Waterfox Classic
  This package contains Korean translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-lij
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-lij (<< 2019.10-4)
+Breaks: waterfox-locale-lij (<< 2019.10-4)
 Description: Ligurian language pack for Waterfox Classic
  This package contains Ligurian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-lt
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-lt (<< 2019.10-4)
+Breaks: waterfox-locale-lt (<< 2019.10-4)
 Description: Lithuanian language pack for Waterfox Classic
  This package contains Lithuanian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-lv
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-lv (<< 2019.10-4)
+Breaks: waterfox-locale-lv (<< 2019.10-4)
 Description: Latvian language pack for Waterfox Classic
  This package contains Latvian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-mai
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-mai (<< 2019.10-4)
+Breaks: waterfox-locale-mai (<< 2019.10-4)
 Description: Maithili language pack for Waterfox Classic
  This package contains Maithili translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-mk
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-mk (<< 2019.10-4)
+Breaks: waterfox-locale-mk (<< 2019.10-4)
 Description: Macedonian language pack for Waterfox Classic
  This package contains Macedonian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ml
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ml (<< 2019.10-4)
+Breaks: waterfox-locale-ml (<< 2019.10-4)
 Description: Malayalam language pack for Waterfox Classic
  This package contains Malayalam translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-mr
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-mr (<< 2019.10-4)
+Breaks: waterfox-locale-mr (<< 2019.10-4)
 Description: Marathi language pack for Waterfox Classic
  This package contains Marathi translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ms
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ms (<< 2019.10-4)
+Breaks: waterfox-locale-ms (<< 2019.10-4)
 Description: Malay language pack for Waterfox Classic
  This package contains Malay translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-nb-no
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-nb-no (<< 2019.10-4)
+Breaks: waterfox-locale-nb-no (<< 2019.10-4)
 Description: Norwegian (Bokmål) language pack for Waterfox Classic
  This package contains Norwegian (Bokmål) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-nl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-nl (<< 2019.10-4)
+Breaks: waterfox-locale-nl (<< 2019.10-4)
 Description: Dutch; Flemish language pack for Waterfox Classic
  This package contains Dutch; Flemish translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-nn-no
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-nn-no (<< 2019.10-4)
+Breaks: waterfox-locale-nn-no (<< 2019.10-4)
 Description: Norwegian (Nynorsk) language pack for Waterfox Classic
  This package contains Norwegian (Nynorsk) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-or
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-or (<< 2019.10-4)
+Breaks: waterfox-locale-or (<< 2019.10-4)
 Description: Oriya language pack for Waterfox Classic
  This package contains Oriya translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-pa-in
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-pa-in (<< 2019.10-4)
+Breaks: waterfox-locale-pa-in (<< 2019.10-4)
 Description: Punjabi (India) language pack for Waterfox Classic
  This package contains Punjabi (India) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-pl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-pl (<< 2019.10-4)
+Breaks: waterfox-locale-pl (<< 2019.10-4)
 Description: Polish language pack for Waterfox Classic
  This package contains Polish translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-pt-br
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-pt-br (<< 2019.10-4)
+Breaks: waterfox-locale-pt-br (<< 2019.10-4)
 Description: Portuguese (Brazilian) language pack for Waterfox Classic
  This package contains Portuguese (Brazilian) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-pt-pt
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-pt-pt (<< 2019.10-4)
+Breaks: waterfox-locale-pt-pt (<< 2019.10-4)
 Description: Portuguese (Portugal) language pack for Waterfox Classic
  This package contains Portuguese (Portugal) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-rm
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-rm (<< 2019.10-4)
+Breaks: waterfox-locale-rm (<< 2019.10-4)
 Description: Romansh language pack for Waterfox Classic
  This package contains Romansh translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ro
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ro (<< 2019.10-4)
+Breaks: waterfox-locale-ro (<< 2019.10-4)
 Description: Romanian language pack for Waterfox Classic
  This package contains Romanian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ru
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ru (<< 2019.10-4)
+Breaks: waterfox-locale-ru (<< 2019.10-4)
 Description: Russian language pack for Waterfox Classic
  This package contains Russian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-si
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-si (<< 2019.10-4)
+Breaks: waterfox-locale-si (<< 2019.10-4)
 Description: Sinhala; Sinhalese language pack for Waterfox Classic
  This package contains Sinhala; Sinhalese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-sk
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-sk (<< 2019.10-4)
+Breaks: waterfox-locale-sk (<< 2019.10-4)
 Description: Slovak language pack for Waterfox Classic
  This package contains Slovak translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-sl
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-sl (<< 2019.10-4)
+Breaks: waterfox-locale-sl (<< 2019.10-4)
 Description: Slovenian language pack for Waterfox Classic
  This package contains Slovenian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-son
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-son (<< 2019.10-4)
+Breaks: waterfox-locale-son (<< 2019.10-4)
 Description: Songhai language pack for Waterfox Classic
  This package contains Songhai translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-sq
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-sq (<< 2019.10-4)
+Breaks: waterfox-locale-sq (<< 2019.10-4)
 Description: Albanian language pack for Waterfox Classic
  This package contains Albanian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-sr
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-sr (<< 2019.10-4)
+Breaks: waterfox-locale-sr (<< 2019.10-4)
 Description: Serbian language pack for Waterfox Classic
  This package contains Serbian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-sv-se
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-sv-se (<< 2019.10-4)
+Breaks: waterfox-locale-sv-se (<< 2019.10-4)
 Description: Swedish (Sweden) language pack for Waterfox Classic
  This package contains Swedish (Sweden) translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-ta
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-ta (<< 2019.10-4)
+Breaks: waterfox-locale-ta (<< 2019.10-4)
 Description: Tamil language pack for Waterfox Classic
  This package contains Tamil translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-te
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-te (<< 2019.10-4)
+Breaks: waterfox-locale-te (<< 2019.10-4)
 Description: Telugu language pack for Waterfox Classic
  This package contains Telugu translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-th
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-th (<< 2019.10-4)
+Breaks: waterfox-locale-th (<< 2019.10-4)
 Description: Thai language pack for Waterfox Classic
  This package contains Thai translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-tr
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-tr (<< 2019.10-4)
+Breaks: waterfox-locale-tr (<< 2019.10-4)
 Description: Turkish language pack for Waterfox Classic
  This package contains Turkish translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-uk
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-uk (<< 2019.10-4)
+Breaks: waterfox-locale-uk (<< 2019.10-4)
 Description: Ukrainian language pack for Waterfox Classic
  This package contains Ukrainian translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-uz
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-uz (<< 2019.10-4)
+Breaks: waterfox-locale-uz (<< 2019.10-4)
 Description: Uzbek language pack for Waterfox Classic
  This package contains Uzbek translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-vi
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-vi (<< 2019.10-4)
+Breaks: waterfox-locale-vi (<< 2019.10-4)
 Description: Vietnamese language pack for Waterfox Classic
  This package contains Vietnamese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-xh
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-xh (<< 2019.10-4)
+Breaks: waterfox-locale-xh (<< 2019.10-4)
 Description: Xhosa language pack for Waterfox Classic
  This package contains Xhosa translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-zh-cn
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-zh-cn (<< 2019.10-4)
+Breaks: waterfox-locale-zh-cn (<< 2019.10-4)
 Description: Simplified Chinese language pack for Waterfox Classic
  This package contains Simplified Chinese translations for Waterfox Classic.
 
 Package: waterfox-classic-i18n-zh-tw
 Architecture: any
 Depends: ${misc:Depends}, waterfox-classic-kpe (>= ${source:Version})
+Replaces: waterfox-locale-zh-tw (<< 2019.10-4)
+Breaks: waterfox-locale-zh-tw (<< 2019.10-4)
 Description: Traditional Chinese language pack for Waterfox Classic
  This package contains Traditional Chinese translations for Waterfox Classic.
 
