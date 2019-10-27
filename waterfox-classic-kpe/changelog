@@ -1,4 +1,4 @@
-waterfox-classic-kpe (2019.10-4) obs; urgency=medium
+waterfox-classic-kpe (2019.10-5) obs; urgency=medium
     * Various website rending issues fixed. (Thanks to hawkeye116477)
     * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
     * Various config updates. (Thanks to Peacock365)
@@ -6,7 +6,7 @@ waterfox-classic-kpe (2019.10-4) obs; urgency=medium
     * Added the path to the running binary to about:support
     * Security fixes from mfsa 2019-33
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 26 Oct 2019 16:08:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 27 Oct 2019 08:40:00 +0200
 
 waterfox (56.2.14-0) obs; urgency=medium
     * Security patches from ESR 60.9

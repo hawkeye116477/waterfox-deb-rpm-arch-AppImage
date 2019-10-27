@@ -225,7 +225,7 @@
 
   # Addons
   #include <abstractions/ubuntu-browsers.d/waterfox-classic>
-  @{MOZ_LIBDIR}/kwaterfoxhelper Cxr -> sanitized_helper,
+  /usr/lib/waterfox/kwaterfoxhelper Cxr -> sanitized_helper,
 
   # Site-specific additions and overrides. See local/README for details.
   #include <local/usr.bin.waterfox-classic>
