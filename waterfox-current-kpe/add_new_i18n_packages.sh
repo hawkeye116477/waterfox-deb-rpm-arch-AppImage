@@ -13,7 +13,7 @@ for _lang in "${_languages[@]}"; do
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $_pkgname
 Architecture: any
-Depends: \${misc:Depends}, waterfox-current (>= \${source:Version})
+Depends: \${misc:Depends}, waterfox-current-kpe (>= \${source:Version})
 Description: $_locale_desc language pack for Waterfox Current
  This package contains $_locale_desc translations for Waterfox Current
 

@@ -11,8 +11,8 @@ Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper
 Provides: www-browser, gnome-www-browser, waterfox-current
-Replaces: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0)
-Breaks: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0)
+Replaces: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)
+Breaks: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)
 Description: Free, open and private browser with better integration with KDE
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
@@ -45,552 +45,552 @@ Description: Transitional package
 
 Package: waterfox-current-i18n-ach
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Acholi language pack for Waterfox Current
  This package contains Acholi translations for Waterfox Current
 
 Package: waterfox-current-i18n-af
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Afrikaans language pack for Waterfox Current
  This package contains Afrikaans translations for Waterfox Current
 
 Package: waterfox-current-i18n-an
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Aragonese language pack for Waterfox Current
  This package contains Aragonese translations for Waterfox Current
 
 Package: waterfox-current-i18n-ar
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Arabic language pack for Waterfox Current
  This package contains Arabic translations for Waterfox Current
 
 Package: waterfox-current-i18n-ast
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Asturian language pack for Waterfox Current
  This package contains Asturian translations for Waterfox Current
 
 Package: waterfox-current-i18n-az
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Azerbaijani language pack for Waterfox Current
  This package contains Azerbaijani translations for Waterfox Current
 
 Package: waterfox-current-i18n-be
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Belarusian language pack for Waterfox Current
  This package contains Belarusian translations for Waterfox Current
 
 Package: waterfox-current-i18n-bg
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Bulgarian language pack for Waterfox Current
  This package contains Bulgarian translations for Waterfox Current
 
 Package: waterfox-current-i18n-bn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Bengali language pack for Waterfox Current
  This package contains Bengali translations for Waterfox Current
 
 Package: waterfox-current-i18n-br
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Breton language pack for Waterfox Current
  This package contains Breton translations for Waterfox Current
 
 Package: waterfox-current-i18n-bs
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Bosnian language pack for Waterfox Current
  This package contains Bosnian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ca
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Catalan; Valencian language pack for Waterfox Current
  This package contains Catalan; Valencian translations for Waterfox Current
 
 Package: waterfox-current-i18n-cak
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Kaqchikel language pack for Waterfox Current
  This package contains Kaqchikel translations for Waterfox Current
 
 Package: waterfox-current-i18n-cs
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Czech language pack for Waterfox Current
  This package contains Czech translations for Waterfox Current
 
 Package: waterfox-current-i18n-cy
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Welsh language pack for Waterfox Current
  This package contains Welsh translations for Waterfox Current
 
 Package: waterfox-current-i18n-da
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Danish language pack for Waterfox Current
  This package contains Danish translations for Waterfox Current
 
 Package: waterfox-current-i18n-de
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: German language pack for Waterfox Current
  This package contains German translations for Waterfox Current
 
 Package: waterfox-current-i18n-dsb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Lower Sorbian language pack for Waterfox Current
  This package contains Lower Sorbian translations for Waterfox Current
 
 Package: waterfox-current-i18n-el
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Greek language pack for Waterfox Current
  This package contains Greek translations for Waterfox Current
 
 Package: waterfox-current-i18n-en-ca
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: English (Canadian) language pack for Waterfox Current
  This package contains English (Canadian) translations for Waterfox Current
 
 Package: waterfox-current-i18n-en-gb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: English (British) language pack for Waterfox Current
  This package contains English (British) translations for Waterfox Current
 
 Package: waterfox-current-i18n-eo
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Esperanto language pack for Waterfox Current
  This package contains Esperanto translations for Waterfox Current
 
 Package: waterfox-current-i18n-es-ar
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Spanish (Argentina) language pack for Waterfox Current
  This package contains Spanish (Argentina) translations for Waterfox Current
 
 Package: waterfox-current-i18n-es-cl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Spanish (Chile) language pack for Waterfox Current
  This package contains Spanish (Chile) translations for Waterfox Current
 
 Package: waterfox-current-i18n-es-es
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Spanish (Spain) language pack for Waterfox Current
  This package contains Spanish (Spain) translations for Waterfox Current
 
 Package: waterfox-current-i18n-es-mx
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Spanish (Mexico) language pack for Waterfox Current
  This package contains Spanish (Mexico) translations for Waterfox Current
 
 Package: waterfox-current-i18n-et
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Estonian language pack for Waterfox Current
  This package contains Estonian translations for Waterfox Current
 
 Package: waterfox-current-i18n-eu
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Basque language pack for Waterfox Current
  This package contains Basque translations for Waterfox Current
 
 Package: waterfox-current-i18n-fa
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Persian language pack for Waterfox Current
  This package contains Persian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ff
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Fulah language pack for Waterfox Current
  This package contains Fulah translations for Waterfox Current
 
 Package: waterfox-current-i18n-fi
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Finnish language pack for Waterfox Current
  This package contains Finnish translations for Waterfox Current
 
 Package: waterfox-current-i18n-fr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: French language pack for Waterfox Current
  This package contains French translations for Waterfox Current
 
 Package: waterfox-current-i18n-fy-nl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Western Frisian language pack for Waterfox Current
  This package contains Western Frisian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ga-ie
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Irish (Ireland) language pack for Waterfox Current
  This package contains Irish (Ireland) translations for Waterfox Current
 
 Package: waterfox-current-i18n-gd
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Scottish Gaelic language pack for Waterfox Current
  This package contains Scottish Gaelic translations for Waterfox Current
 
 Package: waterfox-current-i18n-gl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Galician language pack for Waterfox Current
  This package contains Galician translations for Waterfox Current
 
 Package: waterfox-current-i18n-gn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Guarani language pack for Waterfox Current
  This package contains Guarani translations for Waterfox Current
 
 Package: waterfox-current-i18n-gu-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Gujarati (India) language pack for Waterfox Current
  This package contains Gujarati (India) translations for Waterfox Current
 
 Package: waterfox-current-i18n-he
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Hebrew language pack for Waterfox Current
  This package contains Hebrew translations for Waterfox Current
 
 Package: waterfox-current-i18n-hi-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Hindi (India) language pack for Waterfox Current
  This package contains Hindi (India) translations for Waterfox Current
 
 Package: waterfox-current-i18n-hr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Croatian language pack for Waterfox Current
  This package contains Croatian translations for Waterfox Current
 
 Package: waterfox-current-i18n-hsb
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Upper Sorbian language pack for Waterfox Current
  This package contains Upper Sorbian translations for Waterfox Current
 
 Package: waterfox-current-i18n-hu
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Hungarian language pack for Waterfox Current
  This package contains Hungarian translations for Waterfox Current
 
 Package: waterfox-current-i18n-hy-am
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Armenian (Armenia) language pack for Waterfox Current
  This package contains Armenian (Armenia) translations for Waterfox Current
 
 Package: waterfox-current-i18n-ia
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Interlingua language pack for Waterfox Current
  This package contains Interlingua translations for Waterfox Current
 
 Package: waterfox-current-i18n-id
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Indonesian language pack for Waterfox Current
  This package contains Indonesian translations for Waterfox Current
 
 Package: waterfox-current-i18n-is
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Icelandic language pack for Waterfox Current
  This package contains Icelandic translations for Waterfox Current
 
 Package: waterfox-current-i18n-it
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Italian language pack for Waterfox Current
  This package contains Italian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ja
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Japanese language pack for Waterfox Current
  This package contains Japanese translations for Waterfox Current
 
 Package: waterfox-current-i18n-ka
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Georgian language pack for Waterfox Current
  This package contains Georgian translations for Waterfox Current
 
 Package: waterfox-current-i18n-kab
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Kabyle language pack for Waterfox Current
  This package contains Kabyle translations for Waterfox Current
 
 Package: waterfox-current-i18n-kk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Kazakh language pack for Waterfox Current
  This package contains Kazakh translations for Waterfox Current
 
 Package: waterfox-current-i18n-km
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Central Khmer language pack for Waterfox Current
  This package contains Central Khmer translations for Waterfox Current
 
 Package: waterfox-current-i18n-kn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Kannada language pack for Waterfox Current
  This package contains Kannada translations for Waterfox Current
 
 Package: waterfox-current-i18n-ko
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Korean language pack for Waterfox Current
  This package contains Korean translations for Waterfox Current
 
 Package: waterfox-current-i18n-lij
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Ligurian language pack for Waterfox Current
  This package contains Ligurian translations for Waterfox Current
 
 Package: waterfox-current-i18n-lt
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Lithuanian language pack for Waterfox Current
  This package contains Lithuanian translations for Waterfox Current
 
 Package: waterfox-current-i18n-lv
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Latvian language pack for Waterfox Current
  This package contains Latvian translations for Waterfox Current
 
 Package: waterfox-current-i18n-mk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Macedonian language pack for Waterfox Current
  This package contains Macedonian translations for Waterfox Current
 
 Package: waterfox-current-i18n-mr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Marathi language pack for Waterfox Current
  This package contains Marathi translations for Waterfox Current
 
 Package: waterfox-current-i18n-ms
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Malay language pack for Waterfox Current
  This package contains Malay translations for Waterfox Current
 
 Package: waterfox-current-i18n-my
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Myanmar language pack for Waterfox Current
  This package contains Myanmar translations for Waterfox Current
 
 Package: waterfox-current-i18n-nb-no
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Norwegian (Bokmål) language pack for Waterfox Current
  This package contains Norwegian (Bokmål) translations for Waterfox Current
 
 Package: waterfox-current-i18n-ne-np
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Nepali language pack for Waterfox Current
  This package contains Nepali translations for Waterfox Current
 
 Package: waterfox-current-i18n-nl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Dutch; Flemish language pack for Waterfox Current
  This package contains Dutch; Flemish translations for Waterfox Current
 
 Package: waterfox-current-i18n-nn-no
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Norwegian (Nynorsk) language pack for Waterfox Current
  This package contains Norwegian (Nynorsk) translations for Waterfox Current
 
 Package: waterfox-current-i18n-oc
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Occitan (post 1500) language pack for Waterfox Current
  This package contains Occitan (post 1500) translations for Waterfox Current
 
 Package: waterfox-current-i18n-pa-in
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Punjabi (India) language pack for Waterfox Current
  This package contains Punjabi (India) translations for Waterfox Current
 
 Package: waterfox-current-i18n-pl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Polish language pack for Waterfox Current
  This package contains Polish translations for Waterfox Current
 
 Package: waterfox-current-i18n-pt-br
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Portuguese (Brazilian) language pack for Waterfox Current
  This package contains Portuguese (Brazilian) translations for Waterfox Current
 
 Package: waterfox-current-i18n-pt-pt
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Portuguese (Portugal) language pack for Waterfox Current
  This package contains Portuguese (Portugal) translations for Waterfox Current
 
 Package: waterfox-current-i18n-rm
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Romansh language pack for Waterfox Current
  This package contains Romansh translations for Waterfox Current
 
 Package: waterfox-current-i18n-ro
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Romanian language pack for Waterfox Current
  This package contains Romanian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ru
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Russian language pack for Waterfox Current
  This package contains Russian translations for Waterfox Current
 
 Package: waterfox-current-i18n-si
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Sinhala; Sinhalese language pack for Waterfox Current
  This package contains Sinhala; Sinhalese translations for Waterfox Current
 
 Package: waterfox-current-i18n-sk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Slovak language pack for Waterfox Current
  This package contains Slovak translations for Waterfox Current
 
 Package: waterfox-current-i18n-sl
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Slovenian language pack for Waterfox Current
  This package contains Slovenian translations for Waterfox Current
 
 Package: waterfox-current-i18n-son
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Songhai language pack for Waterfox Current
  This package contains Songhai translations for Waterfox Current
 
 Package: waterfox-current-i18n-sq
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Albanian language pack for Waterfox Current
  This package contains Albanian translations for Waterfox Current
 
 Package: waterfox-current-i18n-sr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Serbian language pack for Waterfox Current
  This package contains Serbian translations for Waterfox Current
 
 Package: waterfox-current-i18n-sv-se
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Swedish (Sweden) language pack for Waterfox Current
  This package contains Swedish (Sweden) translations for Waterfox Current
 
 Package: waterfox-current-i18n-ta
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Tamil language pack for Waterfox Current
  This package contains Tamil translations for Waterfox Current
 
 Package: waterfox-current-i18n-te
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Telugu language pack for Waterfox Current
  This package contains Telugu translations for Waterfox Current
 
 Package: waterfox-current-i18n-th
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Thai language pack for Waterfox Current
  This package contains Thai translations for Waterfox Current
 
 Package: waterfox-current-i18n-tr
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Turkish language pack for Waterfox Current
  This package contains Turkish translations for Waterfox Current
 
 Package: waterfox-current-i18n-uk
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Ukrainian language pack for Waterfox Current
  This package contains Ukrainian translations for Waterfox Current
 
 Package: waterfox-current-i18n-ur
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Urdu language pack for Waterfox Current
  This package contains Urdu translations for Waterfox Current
 
 Package: waterfox-current-i18n-uz
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Uzbek language pack for Waterfox Current
  This package contains Uzbek translations for Waterfox Current
 
 Package: waterfox-current-i18n-vi
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Vietnamese language pack for Waterfox Current
  This package contains Vietnamese translations for Waterfox Current
 
 Package: waterfox-current-i18n-xh
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Xhosa language pack for Waterfox Current
  This package contains Xhosa translations for Waterfox Current
 
 Package: waterfox-current-i18n-zh-cn
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Simplified Chinese language pack for Waterfox Current
  This package contains Simplified Chinese translations for Waterfox Current
 
 Package: waterfox-current-i18n-zh-tw
 Architecture: any
-Depends: ${misc:Depends}, waterfox-current (>= ${source:Version})
+Depends: ${misc:Depends}, waterfox-current-kpe (>= ${source:Version})
 Description: Traditional Chinese language pack for Waterfox Current
  This package contains Traditional Chinese translations for Waterfox Current
