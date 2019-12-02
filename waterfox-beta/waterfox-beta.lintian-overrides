@@ -1,3 +1,0 @@
-waterfox-beta binary: embedded-library usr/lib/waterfox-beta/libxul.so: libjpeg
-waterfox-beta binary: embedded-library usr/lib/waterfox-beta/libmozsqlite3.so: sqlite
-waterfox-beta binary: image-file-in-usr-lib

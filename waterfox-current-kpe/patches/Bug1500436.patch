@@ -1,0 +1,49 @@
+From 18f79ef30b39992d97fb1eec2e198b7159eceff9 Mon Sep 17 00:00:00 2001
+From: Mike Hommey <mh+mozilla@glandium.org>
+Date: Wed, 26 Jun 2019 21:44:00 +0000
+Subject: [PATCH] Bug 1500436 - Redirect node.js's stderr to a pipe. r=froydnj
+ a=RyanVM
+
+This works around https://github.com/nodejs/node/issues/14752, which
+causes problems with make.
+
+Differential Revision: https://phabricator.services.mozilla.com/D35986
+
+--HG--
+extra : source : 562655fedb9df034ae1f8c32cd730f6498d501a7
+---
+ python/mozbuild/mozbuild/action/node.py | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/python/mozbuild/mozbuild/action/node.py b/python/mozbuild/mozbuild/action/node.py
+index de4e094a9471..73f13ac48503 100644
+--- a/python/mozbuild/mozbuild/action/node.py
++++ b/python/mozbuild/mozbuild/action/node.py
+@@ -52,14 +52,25 @@ def execute_node_cmd(node_cmd_list):
+         print('Executing "{}"'.format(printable_cmd), file=sys.stderr)
+         sys.stderr.flush()
+ 
+-        output = subprocess.check_output(node_cmd_list)
++        # We need to redirect stderr to a pipe because
++        # https://github.com/nodejs/node/issues/14752 causes issues with make.
++        proc = subprocess.Popen(
++            node_cmd_list, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++
++        stdout, stderr = proc.communicate()
++        retcode = proc.wait()
++
++        if retcode != 0:
++            print(stderr, file=sys.stderr)
++            sys.stderr.flush()
++            sys.exit(retcode)
+ 
+         # Process the node script output
+         #
+         # XXX Starting with an empty list means that node scripts can
+         # (intentionally or inadvertently) remove deps.  Do we want this?
+         deps = []
+-        for line in output.splitlines():
++        for line in stdout.splitlines():
+             if 'dep:' in line:
+                 deps.append(line.replace('dep:', ''))
+             else:
