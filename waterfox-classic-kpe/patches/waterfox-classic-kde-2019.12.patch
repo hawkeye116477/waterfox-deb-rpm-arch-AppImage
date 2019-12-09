@@ -6,10 +6,10 @@ Original patches => http://www.rosenauer.org/hg/mozilla/file/firefox56
 
 diff --git a/browser/base/content/browser-kde.xul b/browser/base/content/browser-kde.xul
 new file mode 100644
-index 000000000000..f4ffd8cb9c4f
+index 000000000000..69be0b01909b
 --- /dev/null
 +++ b/browser/base/content/browser-kde.xul
-@@ -0,0 +1,1261 @@
+@@ -0,0 +1,1265 @@
 +#filter substitution
 +<?xml version="1.0"?>
 +# -*- Mode: HTML -*-
@@ -92,8 +92,12 @@ index 000000000000..f4ffd8cb9c4f
 +      <menuitem id="context_reloadTab" label="&reloadTab.label;" accesskey="&reloadTab.accesskey;"
 +                oncommand="gBrowser.reloadTab(TabContextMenu.contextTab);"/>
 +      <menuitem id="context_toggleMuteTab" oncommand="TabContextMenu.contextTab.toggleMuteAudio();"/>
-+      <menuitem id="context_duplicateTab" label="Duplicate Tab" accesskey="D"
++      <menuitem id="context_duplicateTab" label="&duplicateTab.label;" accesskey="D"
 +                oncommand="duplicateTabIn(TabContextMenu.contextTab, 'tab');"/>
++      <menuitem id="context_copyCurrentTabUrl" label="&copyTabURL.label;"
++                oncommand="copyCurrentTabUrl(TabContextMenu.contextTab.linkedBrowser.currentURI.spec);"/>
++      <menuitem id="context_copyAllTabUrls" label="&copyAllTabURLs.label;"
++                oncommand="copyAllTabUrls();"/>
 +      <menuseparator/>
 +      <menuitem id="context_pinTab" label="&pinTab.label;"
 +                accesskey="&pinTab.accesskey;"
@@ -106,7 +110,7 @@ index 000000000000..f4ffd8cb9c4f
 +                tbattr="tabbrowser-multiple"
 +                oncommand="gBrowser.replaceTabWithWindow(TabContextMenu.contextTab);"/>
 +#ifdef E10S_TESTING_ONLY
-+      <menuitem id="context_openNonRemoteWindow" label="Open in new non-e10s window"
++      <menuitem id="context_openNonRemoteWindow" label="&openNewNone10sWindow.label;"
 +                tbattr="tabbrowser-remote"
 +                hidden="true"
 +                oncommand="gBrowser.openNonRemoteWindow(TabContextMenu.contextTab);"/>
@@ -1316,7 +1320,7 @@ index ef0da3dddcf5..5e72b39eb650 100644
      { &kNS_FEEDSNIFFER_CID, false, nullptr, nsFeedSnifferConstructor },
      { &kNS_BROWSER_ABOUT_REDIRECTOR_CID, false, nullptr, AboutRedirector::Create },
 diff --git a/browser/components/preferences/in-content/main.js b/browser/components/preferences/in-content/main.js
-index c1e2e15fdb26..7e41c722d5c3 100644
+index c89fe4928660..54c466d1bd93 100644
 --- a/browser/components/preferences/in-content/main.js
 +++ b/browser/components/preferences/in-content/main.js
 @@ -46,6 +46,13 @@ var gMainPane = {
@@ -1333,7 +1337,7 @@ index c1e2e15fdb26..7e41c722d5c3 100644
      this.buildContentProcessCountMenuList();
      this.updateDefaultPerformanceSettingsPref();
  
-@@ -918,6 +925,17 @@ var gMainPane = {
+@@ -932,6 +939,17 @@ var gMainPane = {
          return;
        try {
          shellSvc.setDefaultBrowser(true, false);
@@ -1659,7 +1663,7 @@ index 000000000000..26b5dbac47dd
 +
 +#endif // nsunixshellservice_h____
 diff --git a/browser/installer/package-manifest.in b/browser/installer/package-manifest.in
-index d5f12ce064bc..d141491fcc9a 100644
+index 52a686a67b0c..e0b1498b642e 100644
 --- a/browser/installer/package-manifest.in
 +++ b/browser/installer/package-manifest.in
 @@ -675,6 +675,8 @@
