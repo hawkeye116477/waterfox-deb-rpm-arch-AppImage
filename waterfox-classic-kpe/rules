@@ -28,8 +28,5 @@ override_dh_auto_install:
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-classic/waterfox-classic
 
-override_dh_builddeb:
-	dh_builddeb -- -Z xz
-
 override_dh_strip_nondeterminism:
 	dh_strip_nondeterminism -Xdebian/waterfox-classic-kpe/usr/lib/waterfox-classic/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi

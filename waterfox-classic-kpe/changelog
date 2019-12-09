@@ -1,3 +1,21 @@
+waterfox-classic-kpe (2019.12-0) obs; urgency=medium
+    * New features:
+        * Restart button in PanelUI and Menu
+        * Copy current tab URL
+        * Copy all tab URLs
+        * New advanced settings in Features tab
+    * Added settings for blocking notifications and exceptions
+    * Added settings for disabling loading images automatically and exceptions
+    * Added settings for disabling JavaScript with exceptions and advanced settings
+    * Added new privacy settings
+    * Added possibility to disable search bar on new tab page
+    * Containers support enabled
+    * Added support for new emoji in Unicode/Emoji 12
+    * Storage API enabled
+    * Security patches
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 09 Dec 2019 14:54:00 +0200
+
 waterfox-classic-kpe (2019.10-5) obs; urgency=medium
     * Various website rending issues fixed. (Thanks to hawkeye116477)
     * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)

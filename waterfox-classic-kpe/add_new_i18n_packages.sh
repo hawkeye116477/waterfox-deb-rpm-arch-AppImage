@@ -15,36 +15,19 @@ for _lang in "${_languages[@]}"; do
 Package: $_pkgname
 Architecture: any
 Depends: \${misc:Depends}, waterfox-classic-kpe (>= \${source:Version})
-Replaces: $_pkgname_trans (<< 2019.10-4)
-Breaks: $_pkgname_trans (<< 2019.10-4)
+Replaces: $_pkgname_trans (<< 2019.10-6)
+Breaks: $_pkgname_trans (<< 2019.10-6)
 Description: $_locale_desc language pack for Waterfox Classic
  This package contains $_locale_desc translations for Waterfox Classic.
 
 EOT
 done
 
-for _lang in "${_languages[@]}"; do
-  _locale_file=$(echo $_lang | awk -F: '{print $1}')
-  _locale_pkg=$(echo $_lang | awk -F: '{print tolower($1)}')
-  _locale_desc=$(echo $_lang | awk -F: '{print $2}')
-  _pkgname=waterfox-classic-i18n-$_locale_pkg
-  _pkgname_trans=waterfox-locale-$_locale_pkg
-    cat <<EOT >> $SCRIPT_PATH/control
-Package: $_pkgname_trans
-Architecture: any
-Section: oldlibs
-Depends: \${misc:Depends}, $_pkgname
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-EOT
-
 touch $SCRIPT_PATH/${_pkgname}.install
 
     cat <<EOT > $SCRIPT_PATH/${_pkgname}.install
 features/langpack-${_locale_file}@waterfox.xpi /usr/lib/waterfox-classic/browser/features
 EOT
-done
 
 mapfile -t trans_languages < <(cat $SCRIPT_PATH/locales.transitional)
 
