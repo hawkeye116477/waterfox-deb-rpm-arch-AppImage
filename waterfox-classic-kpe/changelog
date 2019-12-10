@@ -14,7 +14,7 @@ waterfox-classic-kpe (2019.12-0) obs; urgency=medium
     * Storage API enabled
     * Security patches
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 09 Dec 2019 14:54:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 10 Dec 2019 19:30:00 +0200
 
 waterfox-classic-kpe (2019.10-5) obs; urgency=medium
     * Various website rending issues fixed. (Thanks to hawkeye116477)
