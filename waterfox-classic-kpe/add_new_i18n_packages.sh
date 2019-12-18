@@ -50,7 +50,7 @@ mapfile -t trans_languages < <(cat $SCRIPT_PATH/locales.transitional)
 
 for trans_lang in "${trans_languages[@]}"; do
   trans_pkg=$(echo $trans_lang | awk -F: '{print $1}' | sed 's/^/waterfox-locale-/')
-  depends=$(echo $trans_lang | awk -F: '{print $2}' | sed 's/^/waterfox-classic-i18n-/' | sed 's/,/, waterfox-classic-i18n-/g')
+  depends=$(echo $trans_lang | awk -F: '{print tolower ($2)}' | sed 's/^/waterfox-classic-i18n-/' | sed 's/,/, waterfox-classic-i18n-/g')
 
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $trans_pkg

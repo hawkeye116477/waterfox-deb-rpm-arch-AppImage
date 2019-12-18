@@ -1379,97 +1379,97 @@ Description: Transitional package
 Package: waterfox-locale-bn
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-bn-BD, waterfox-classic-i18n-bn-IN
+Depends: ${misc:Depends}, waterfox-classic-i18n-bn-bd, waterfox-classic-i18n-bn-in
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-en
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-en-GB, waterfox-classic-i18n-en-ZA
+Depends: ${misc:Depends}, waterfox-classic-i18n-en-gb, waterfox-classic-i18n-en-za
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-es
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-es-AR, waterfox-classic-i18n-es-CL, waterfox-classic-i18n-es-ES, waterfox-classic-i18n-es-MX
+Depends: ${misc:Depends}, waterfox-classic-i18n-es-ar, waterfox-classic-i18n-es-cl, waterfox-classic-i18n-es-es, waterfox-classic-i18n-es-mx
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-fy
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-fy-NL
+Depends: ${misc:Depends}, waterfox-classic-i18n-fy-nl
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-ga
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-ga-IE
+Depends: ${misc:Depends}, waterfox-classic-i18n-ga-ie
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-gu
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-gu-IN
+Depends: ${misc:Depends}, waterfox-classic-i18n-gu-in
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-hy
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-hy-AM
+Depends: ${misc:Depends}, waterfox-classic-i18n-hy-am
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-nb
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-nb-NO
+Depends: ${misc:Depends}, waterfox-classic-i18n-nb-no
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-nn
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-nn-NO
+Depends: ${misc:Depends}, waterfox-classic-i18n-nn-no
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-pa
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-pa-IN
+Depends: ${misc:Depends}, waterfox-classic-i18n-pa-in
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-pt
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-pt-BR, waterfox-classic-i18n-pt-PT
+Depends: ${misc:Depends}, waterfox-classic-i18n-pt-br, waterfox-classic-i18n-pt-pt
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-sv
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-sv-SE
+Depends: ${misc:Depends}, waterfox-classic-i18n-sv-se
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-zh-hans
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-zh-CN
+Depends: ${misc:Depends}, waterfox-classic-i18n-zh-cn
 Description: Transitional package
  This is a transitional package. It can safely be removed.
 
 Package: waterfox-locale-zh-hant
 Architecture: any
 Section: oldlibs
-Depends: ${misc:Depends}, waterfox-classic-i18n-zh-TW
+Depends: ${misc:Depends}, waterfox-classic-i18n-zh-tw
 Description: Transitional package
  This is a transitional package. It can safely be removed.
