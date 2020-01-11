@@ -1,3 +1,12 @@
+waterfox-classic-kpe (2020.01-0) obs; urgency=high
+    * Very important security patches (CVE-2019-17026)
+    * Updated timezone data for internationalization functions
+    * Enabled unprefixed Fullscreen API
+    * Various website rending issues fixed (Kinguin, Intel, Epic Games and others)
+    * Fixed problems related with uBO html filters
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 11 Jan 2020 10:42:00 +0200
+
 waterfox-classic-kpe (2019.12-2) obs; urgency=medium
     * Fixed depends for some transitional packages
 
