@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox-current-kpe
 Binary: waterfox-current-kpe
 Architecture: amd64
-Version: 2019.10-1
+Version: 2020.01-0
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://www.waterfox.net
 Standards-Version: 3.9.1
@@ -12,4 +12,4 @@ Package-List:
 Files:
  0000000000000000000000000000000 1 waterfox-current-kpe.orig.tar.gz
  0000000000000000000000000000000 1 waterfox-current-kpe.debian.tar.gz
-Debtransform-Tar: waterfox-current-kpe.tar.gz
+Debtransform-Tar: waterfox-current-kpe-2020.01.tar.gz
