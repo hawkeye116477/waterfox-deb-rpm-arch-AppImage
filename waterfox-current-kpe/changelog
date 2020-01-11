@@ -1,3 +1,25 @@
+waterfox-current-kpe (2020.01-0) obs; urgency=high
+    * Very important security patches (CVE-2019-17026)
+    * Enabled containers
+    * Enabled playback of encrypted VP9 video in fMP4 container
+    * Disabled establishing connection to links the mouse hovers over
+    * Enabled user profile customizations and SVG properties
+    * New features:
+        * Restart button in PanelUI and Menu
+        * Copy current tab URL
+        * Copy all tab URLs
+        * New advanced settings in Features tab
+    * Added settings for disabling loading images automatically and exceptions
+    * Added settings for disabling JavaScript with exceptions and advanced settings
+    * Added new privacy settings
+    * Added possibility to show status bar
+    * Added possibility to change Tab Bar, Bookmarks Toolbar and Window Controls position
+    * Added optional all-new settings layout
+    * Added support for new emoji in Unicode/Emoji 12
+    * Added possibility to set browser's logo as menu icon
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 11 Jan 2020 13:52:00 +0200
+
 waterfox-current-kpe (2019.10-1) obs; urgency=low
     * Various config updates. (Thanks to Peacock365)
     * Fixes for themes.

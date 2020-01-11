@@ -21,6 +21,3 @@ pref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla
 
 // Use LANG environment variable to choose locale
 pref("intl.locale.requested", "");
-
-// Enable playback of encrypted VP9 video in fMP4 container
-pref("media.eme.vp9-in-mp4.enabled", true);
