@@ -1,3 +1,9 @@
+waterfox-current-kpe (2020.01.1-0) obs; urgency=medium
+    * Fixed graphical issues
+    * Added StartPage as an option
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jan 2020 15:18:00 +0200
+
 waterfox-current-kpe (2020.01-0) obs; urgency=high
     * Very important security patches (CVE-2019-17026)
     * Enabled containers
