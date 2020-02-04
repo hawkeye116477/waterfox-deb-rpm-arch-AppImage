@@ -12,4 +12,3 @@ Package-List:
 Files:
  0000000000000000000000000000000 1 waterfox-current-kpe.orig.tar.gz
  0000000000000000000000000000000 1 waterfox-current-kpe.debian.tar.gz
-Debtransform-Tar: waterfox-current-kpe-2020.01.tar.gz
