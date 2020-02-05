@@ -3,7 +3,7 @@ waterfox-classic-kpe (2020.01.1-0) obs; urgency=medium
     * Added DNS resolution to webextensions api
     * Fixed problems with fonts
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jan 2020 15:18:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Feb 2020 12:17:00 +0200
 
 waterfox-classic-kpe (2020.01-0) obs; urgency=high
     * Very important security patches (CVE-2019-17026)
