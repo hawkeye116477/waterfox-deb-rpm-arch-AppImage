@@ -1,3 +1,8 @@
+waterfox-current-kpe (2020.02-0) obs; urgency=medium
+    * Latest security advisories from Mozilla (mfsa2020-06)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 13 Feb 2020 20:32:00 +0200
+
 waterfox-current-kpe (2020.01.1-0) obs; urgency=medium
     * Fixed graphical issues
     * Added StartPage as an option
