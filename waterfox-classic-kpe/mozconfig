@@ -11,8 +11,8 @@ export CXX=clang++
 
 ac_add_options --prefix=/usr
 ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
+
 ac_add_options --enable-eme=widevine
-ac_add_options --target=x86_64-pc-linux-gnu
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-alsa
 
