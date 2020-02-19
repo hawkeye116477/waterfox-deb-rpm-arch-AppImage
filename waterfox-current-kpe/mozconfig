@@ -21,8 +21,18 @@ export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
 ac_add_options --prefix=/usr
+if ! test `dpkg --print-architecture` = "armhf"; then
 ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
 ac_add_options --enable-eme=widevine
+ac_add_options --enable-rust-simd
+fi
+
+if test `dpkg --print-architecture` = "armhf"; then
+ac_add_options --disable-debug-symbols
+ac_add_options --with-fpu=vfpv3-d16
+ac_add_options --with-float-abi=hard
+fi
+
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-alsa
 ac_add_options --enable-jack
@@ -43,11 +53,9 @@ ac_add_options --disable-gconf
 ac_add_options --enable-application=browser
 ac_add_options --disable-updater
 
-ac_add_options --enable-rust-simd
-
-ac_add_options --enable-linker=gold
 ac_add_options --enable-lto
 ac_add_options --enable-hardening
+ac_add_options --enable-linker=gold
 export MOZ_PGO=1
 
 ac_add_options --with-app-name=waterfox-current
