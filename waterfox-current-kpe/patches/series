@@ -6,3 +6,4 @@ mozilla-ntlm-full-path.patch -p1
 mozilla-1566876-webrtc-ind.patch -p1
 mozilla-disable-wasm-emulate-arm-unaligned-fp-access.patch -p1
 armhf-clang-no-integrated-as-for-neon.patch -p1
+armhf-reduce-linker-memory-use.patch -p1
