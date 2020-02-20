@@ -1,0 +1,30 @@
+Description: do not build various components with LLVM's integrated assembler,
+ which on armhf is built without NEON support
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1561819
+
+--- a/media/libjpeg/moz.build
++++ b/media/libjpeg/moz.build
+@@ -192,6 +192,10 @@ if CONFIG['CPU_ARCH'] == 'x86_64':
+     ASFLAGS += ['-I%s/media/libjpeg/simd/nasm/' % TOPSRCDIR]
+     ASFLAGS += ['-I%s/media/libjpeg/simd/x86_64/' % TOPSRCDIR]
+ 
++# The integrated assembler fails to build simd/arm/jsimd_neon.S because it doesn't have NEON
++if CONFIG['CC_TYPE'] == 'clang' and CONFIG['CPU_ARCH'] == 'arm':
++    ASFLAGS += ['-fno-integrated-as']
++
+ # We allow warnings for third-party code that can be updated from upstream.
+ AllowCompilerWarnings()
+ 
+--- a/gfx/ycbcr/moz.build
++++ b/gfx/ycbcr/moz.build
+@@ -60,6 +60,9 @@ if CONFIG['CPU_ARCH'] == 'arm' and CONFI
+     SOURCES += [
+         'yuv_convert_arm.cpp',
+     ]
++    # The integrated assembler fails to build yuv_convert_arm.cpp because it doesn't have NEON
++    if CONFIG['CC_TYPE'] == 'clang':
++        CXXFLAGS += ['-fno-integrated-as']
+ 
+ LOCAL_INCLUDES += ['/media/libyuv/libyuv/include']
+ 

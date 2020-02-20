@@ -28,9 +28,8 @@ ac_add_options --enable-rust-simd
 fi
 
 if test `dpkg --print-architecture` = "armhf"; then
+ac_add_options --enable-optimize="-g -O2"
 ac_add_options --disable-debug-symbols
-ac_add_options --with-fpu=vfpv3-d16
-ac_add_options --with-float-abi=hard
 fi
 
 ac_add_options --enable-pulseaudio
