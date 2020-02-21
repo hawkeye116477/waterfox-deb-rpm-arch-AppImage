@@ -1,3 +1,12 @@
+waterfox-classic-kpe (2020.02.1-0) obs; urgency=medium
+    * Implemented asynchronous iterators
+    * Fixed an issue with form elements sometimes being incorrectly disabled.
+    * Added sourcestamp info
+    * Disabled SSL error reporting
+    * Fixed crashes on sites with Java applets
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 21 Feb 2020 10:43:00 +0200
+
 waterfox-classic-kpe (2020.02-0) obs; urgency=medium
     * Latest security advisories from Mozilla (mfsa2020-06)
 

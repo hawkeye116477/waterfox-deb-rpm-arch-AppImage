@@ -46,3 +46,4 @@ ac_add_options --with-branding=browser/branding/unofficial
 export MOZ_GECKO_PROFILER=
 export MOZ_ENABLE_PROFILER_SPS=
 export MOZ_PROFILING=
+export MOZ_INCLUDE_SOURCE_INFO=1

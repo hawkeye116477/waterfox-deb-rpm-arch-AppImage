@@ -2,6 +2,11 @@
 # -*- makefile -*-
 
 export SHELL=/bin/bash
+export MOZ_SOURCE_CHANGESET=$$(source debian/tar_stamps && echo "$RELEASE_TAG")
+export SOURCE_REPO=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
+export source_repo=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
+export MOZ_SOURCE_REPO=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
+export MOZ_SOURCE_STAMP=$$(source debian/tar_stamps && echo "$RELEASE_TAG")
 
 %:
 	dh $@
