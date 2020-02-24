@@ -2,11 +2,11 @@
 # -*- makefile -*-
 
 export SHELL=/bin/bash
-export MOZ_SOURCE_CHANGESET=$$(source debian/tar_stamps && echo "$RELEASE_TAG")
-export SOURCE_REPO=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
-export source_repo=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
-export MOZ_SOURCE_REPO=$$(source debian/tar_stamps && echo "$RELEASE_REPO")
-export MOZ_SOURCE_STAMP=$$(source debian/tar_stamps && echo "$RELEASE_TAG")
+export MOZ_SOURCE_CHANGESET=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
+export SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export source_repo=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export MOZ_SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export MOZ_SOURCE_STAMP=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
 
 %:
 	dh $@
@@ -20,6 +20,7 @@ override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
 override_dh_auto_build:
+	echo $$MOZ_SOURCE_CHANGESET
 	./mach build
 
 override_dh_auto_install:
