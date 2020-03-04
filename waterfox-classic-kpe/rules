@@ -7,6 +7,7 @@ export SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
 export source_repo=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
 export MOZ_SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
 export MOZ_SOURCE_STAMP=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
+export TODAY_DATE=$(date +%Y-%m-%d)
 
 %:
 	dh $@
@@ -20,7 +21,6 @@ override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
 override_dh_auto_build:
-	echo $$MOZ_SOURCE_CHANGESET
 	./mach build
 
 override_dh_auto_install:
@@ -30,6 +30,8 @@ override_dh_auto_install:
 	mv $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/browser/features/ $$(pwd)
 	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/waterfox-classic-bin
 	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/dictionaries
+	sed -i 's/__DATE__"/$$TODAY_DATE/g' $$(pwd)/debian/waterfox-classic.appdata.xml.in
+	sed -e 's/__VERSION__/$$sourceversion/g' $$(pwd)/debian/waterfox-classic.appdata.xml.in > $$(pwd)/debian/waterfox-classic-kpe/usr/share/metainfo/waterfox-classic.appdata.xml
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-classic/waterfox-classic

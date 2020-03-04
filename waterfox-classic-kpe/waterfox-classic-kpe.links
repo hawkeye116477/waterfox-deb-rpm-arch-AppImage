@@ -9,10 +9,6 @@ usr/lib/waterfox-classic/browser/chrome/icons/default/default128.png usr/share/i
 usr/lib/waterfox-classic/browser/chrome/icons/default/default256.png usr/share/icons/hicolor/256x256/apps/waterfox-classic.png
 usr/lib/waterfox-classic/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-classic.png
 
-# System dictionaries
-usr/share/hunspell usr/lib/waterfox-classic/dictionaries
-usr/share/hyphen usr/lib/waterfox-classic/hyphenation
-
 # Wrapper
 usr/lib/waterfox-classic/waterfox-classic-bin.sh usr/bin/waterfox-classic
 

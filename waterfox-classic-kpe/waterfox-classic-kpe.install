@@ -5,3 +5,4 @@ debian/waterfox-classic-bin.sh usr/lib/waterfox-classic
 debian/kde.js usr/lib/waterfox-classic/browser/defaults/preferences
 debian/usr.bin.waterfox-classic etc/apparmor.d
 debian/syspref.js etc/waterfox-classic
+debian/spellcheck.js usr/lib/waterfox-classic/browser/defaults/preferences

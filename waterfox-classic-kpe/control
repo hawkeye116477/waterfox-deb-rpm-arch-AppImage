@@ -13,12 +13,12 @@ Suggests: fonts-lyx, pulseaudio
 Provides: www-browser, gnome-www-browser, waterfox-classic
 Replaces: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
 Breaks: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
-Description: Free, open and private browser with openSUSE's patches for better integration with KDE
- Waterfox focuses on giving users choice while also helping make the world a better place. Watefox is partners with Ecosia, a search engine that plants trees with its generated revenues. The browser itself is focused on power users, which lets you make the important decisions. There is no plugin whitelist, you can run whichever extensions you like and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
+Description: Customizable privacy-conscious web browser with primary support for legacy extensions and better integration with KDE
+ Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
  Waterfox is powered by Mozilla Firefox source code.
  .
- Note: Package works good also on other desktop environments and KDE Plasma integration features may not work if kwaterfoxhelper isn't installed. For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
+ Note: Package contains integration improvements for KDE made by openSUSE, but works good also on other desktop environments and KDE Plasma integration features may not work if kwaterfoxhelper isn't installed. For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
 
 Package: waterfox-classic-kde
 Architecture: amd64
