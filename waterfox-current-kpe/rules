@@ -42,7 +42,7 @@ override_dh_auto_install:
 	rm -rf $$(pwd)/debian/waterfox-current-kpe/usr/lib/waterfox-current/dictionaries
 	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-current.appdata.xml.in
 	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-current.appdata.xml.in > $$(pwd)/debian/waterfox-current-kpe/usr/share/metainfo/waterfox-current.appdata.xml
-	mv $$(pwd)/debian/waterfox-current-wayland.sh $$(pwd)/debian/waterfox-current-wayland/usr/bin/waterfox-current-wayland
+	mv $$(pwd)/debian/waterfox-current-wayland-bin.sh $$(pwd)/debian/waterfox-current-wayland/usr/bin/waterfox-current-wayland
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-current/waterfox-current
