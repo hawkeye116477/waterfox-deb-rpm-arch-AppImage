@@ -4,7 +4,6 @@ usr/lib/waterfox-current/browser/chrome/icons/default/default32.png usr/share/ic
 usr/lib/waterfox-current/browser/chrome/icons/default/default48.png usr/share/icons/hicolor/48x48/apps/waterfox-current.png
 usr/lib/waterfox-current/browser/chrome/icons/default/default64.png usr/share/icons/hicolor/64x64/apps/waterfox-current.png
 usr/lib/waterfox-current/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-current.png
-usr/lib/waterfox-current/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-current.png
 
 # Wrapper
 usr/lib/waterfox-current/waterfox-current-bin.sh usr/bin/waterfox-current

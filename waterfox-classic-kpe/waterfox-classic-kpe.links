@@ -7,7 +7,6 @@ usr/lib/waterfox-classic/browser/chrome/icons/default/default48.png usr/share/ic
 usr/lib/waterfox-classic/browser/chrome/icons/default/default64.png usr/share/icons/hicolor/64x64/apps/waterfox-classic.png
 usr/lib/waterfox-classic/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-classic.png
 usr/lib/waterfox-classic/browser/chrome/icons/default/default256.png usr/share/icons/hicolor/256x256/apps/waterfox-classic.png
-usr/lib/waterfox-classic/browser/chrome/icons/default/default128.png usr/share/pixmaps/waterfox-classic.png
 
 # Wrapper
 usr/lib/waterfox-classic/waterfox-classic-bin.sh usr/bin/waterfox-classic

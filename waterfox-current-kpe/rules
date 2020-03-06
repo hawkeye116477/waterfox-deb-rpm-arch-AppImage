@@ -10,6 +10,12 @@ ifeq ($(DEB_ARCH),armhf)
 endif
 
 export LDFLAGS
+export TODAY_DATE=$(date +%Y-%m-%d)
+export MOZ_SOURCE_CHANGESET=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
+export SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export source_repo=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export MOZ_SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
+export MOZ_SOURCE_STAMP=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
 
 %:
 	dh $@
@@ -34,12 +40,12 @@ override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-current-bin.sh
 	DESTDIR=$$(pwd)/debian/waterfox-current-kpe ./mach install
 	rm -rf $$(pwd)/debian/waterfox-current-kpe/usr/lib/waterfox-current/dictionaries
+	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-current.appdata.xml.in
+	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-current.appdata.xml.in > $$(pwd)/debian/waterfox-current-kpe/usr/share/metainfo/waterfox-current.appdata.xml
+	mv $$(pwd)/debian/waterfox-current-wayland.sh $$(pwd)/debian/waterfox-current-wayland/usr/bin/waterfox-current-wayland
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-current/waterfox-current
-
-override_dh_builddeb:
-	dh_builddeb -- -Z xz
 
 override_dh_strip_nondeterminism:
 	dh_strip_nondeterminism -Xdebian/waterfox-current-kpe/usr/lib/waterfox-current/browser/features/formautofill@mozilla.org.xpi
