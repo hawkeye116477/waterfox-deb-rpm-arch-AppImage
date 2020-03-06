@@ -28,7 +28,7 @@ Description: KDE Plasma integration for Waterfox Current
  For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
 
 Package: waterfox-current-wayland
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-current
 Description: Waterfox Current Wayland launcher
  This package contains launcher and desktop file to run Waterfox Current natively on Wayland.
