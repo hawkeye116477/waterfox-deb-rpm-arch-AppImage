@@ -3,12 +3,6 @@
 
 export MOZ_NOSPAM:=1
 LDFLAGS+=-Wl,--no-keep-memory
-DEB_ARCH := $(shell dpkg --print-architecture)
-
-ifeq ($(DEB_ARCH),armhf)
-	LDFLAGS += -Wl,--reduce-memory-overheads
-endif
-
 export LDFLAGS
 export TODAY_DATE=$(date +%Y-%m-%d)
 export MOZ_SOURCE_CHANGESET=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
@@ -30,11 +24,7 @@ override_dh_auto_configure:
 
 override_dh_auto_build:
 	# LTO needs more open files
-ifeq ($(DEB_ARCH),amd64)
 	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
-else
-	./mach build
-endif
 
 override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-current-bin.sh

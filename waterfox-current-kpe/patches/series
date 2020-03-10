@@ -3,7 +3,3 @@ waterfox-current-kde-2020.01.1.patch -p1
 gitignore.patch -p1
 icon_mish_mash.patch -p1
 mozilla-ntlm-full-path.patch -p1
-mozilla-1566876-webrtc-ind.patch -p1
-Bug-1526653-Include-struct-definitions-for-user_vfp-.patch -p1
-Work-around-GCC-ICE-on-arm.patch -p1
-mozilla-bmo1463035.patch -p1

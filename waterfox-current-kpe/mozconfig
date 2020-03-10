@@ -6,19 +6,11 @@ if test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-7/bin/:$PATH
 fi
 
-if test `dpkg --print-architecture` = "amd64"; then
 export CC=clang
 export CXX=clang++
 export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
-fi
-
-if test `dpkg --print-architecture` = "armhf"; then
-export CC=gcc
-export CXX=g++
-export RUSTFLAGS="-Cdebuginfo=0"
-fi
 
 if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
@@ -29,29 +21,19 @@ export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
 ac_add_options --prefix=/usr
-if ! test `dpkg --print-architecture` = "armhf"; then
+
 ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
 ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 ac_add_options --enable-linker=gold
 export MOZ_PGO=1
-fi
-
-if test `dpkg --print-architecture` = "armhf"; then
-ac_add_options --enable-optimize="-g -O2 -fno-schedule-insns"
-ac_add_options --disable-elf-hack
-ac_add_options --disable-tests
-fi
 
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-alsa
 ac_add_options --enable-jack
 
-#X=$(($(getconf _NPROCESSORS_ONLN 2>/dev/null || getconf NPROCESSORS_ONLN)*3/2))
-
 mk_add_options AUTOCLOBBER=1
-#mk_add_options MOZ_MAKE_FLAGS=-j${X%.*}
 
 ac_add_options --disable-debug
 ac_add_options --disable-crashreporter
