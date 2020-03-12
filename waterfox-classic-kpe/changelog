@@ -1,4 +1,5 @@
 waterfox-classic-kpe (2020.03-0) obs; urgency=medium
+    * Latest security advisories from Mozilla
     * Fixed various websites not loading properly (Thanks to hawkeye116477 for the gargantuan effort)
     * Logo now has Classic tag to differentiate from Current
     * Fixed DRM issues (Netflix, Prime Video etc)
