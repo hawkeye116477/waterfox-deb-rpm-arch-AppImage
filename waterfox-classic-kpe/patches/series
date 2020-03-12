@@ -1,3 +1,5 @@
-waterfox-classic-kde-2019.12.patch -p1
+classic-kde-2020.03.patch -p1
+classic-kde-xul-2020.03.patch -p1
 dont-statically-link-libstdc++.patch -p1
 gitignore.patch -p1
+dark-mode.patch -p1

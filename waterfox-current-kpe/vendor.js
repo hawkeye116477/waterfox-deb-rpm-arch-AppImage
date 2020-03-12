@@ -17,6 +17,3 @@ pref("intl.regional_prefs.use_os_locales", true);
 
 // Use LANG environment variable to choose locale
 pref("intl.locale.requested", "");
-
-// Fix help links
-pref("app.support.baseURL", "https://support.mozilla.org/1/firefox/%VERSION%/%OS%/%LOCALE%/");

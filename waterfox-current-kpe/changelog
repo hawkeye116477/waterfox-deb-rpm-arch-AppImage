@@ -1,3 +1,12 @@
+waterfox-current-kpe (2020.03-0) obs; urgency=medium
+    * Latest security advisories from Mozilla
+    * Fixed various bugs
+    * Updated ANGLE library for better GPU performance
+    * Now using the standard Waterfox logo
+    * Added AppStream metadata
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Mar 2020 16:24:00 +0200
+
 waterfox-current-kpe (2020.02-0) obs; urgency=medium
     * Latest security advisories from Mozilla (mfsa2020-06)
 

@@ -1,3 +1,15 @@
+waterfox-classic-kpe (2020.03-0) obs; urgency=medium
+    * Fixed various websites not loading properly (Thanks to hawkeye116477 for the gargantuan effort)
+    * Logo now has Classic tag to differentiate from Current
+    * Fixed DRM issues (Netflix, Prime Video etc)
+    * Various privacy settings update
+    * Made ES6 modules working for webextesions
+    * Added missing strings to language packages (migration dialog)
+    * Fixed issues related with dark system's themes
+    * Added AppStream metadata
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Mar 2020 16:24:00 +0200
+
 waterfox-classic-kpe (2020.02.1-0) obs; urgency=medium
     * Implemented asynchronous iterators
     * Fixed an issue with form elements sometimes being incorrectly disabled.

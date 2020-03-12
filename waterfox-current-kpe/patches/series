@@ -1,5 +1,5 @@
 mozilla-nongnome-proxies.patch -p1
-waterfox-current-kde-2020.01.1.patch -p1
 gitignore.patch -p1
-icon_mish_mash.patch -p1
 mozilla-ntlm-full-path.patch -p1
+current-kde-2020.03.patch -p1
+current-kde-xul-2020.03.patch -p1
