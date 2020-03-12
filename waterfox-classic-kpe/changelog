@@ -1,3 +1,8 @@
+waterfox-classic-kpe (2020.03-1) obs; urgency=medium
+    * Fixed crash when using NoScript
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Mar 2020 22:02:00 +0200
+
 waterfox-classic-kpe (2020.03-0) obs; urgency=medium
     * Latest security advisories from Mozilla
     * Fixed various websites not loading properly (Thanks to hawkeye116477 for the gargantuan effort)
