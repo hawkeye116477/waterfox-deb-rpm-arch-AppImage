@@ -30,4 +30,6 @@
 [Click to see other source files for Waterfox Current AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-current-appimage)
 
 ## Patches
-Latest Waterfox KDE Plasma Edition contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches).
+Latest Waterfox Classic KDE Plasma Edition contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches).
+
+Latest Waterfox Current KDE Plasma Edition contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-current-kpe/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-current-kpe/patches).
