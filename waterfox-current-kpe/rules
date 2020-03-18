@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+export SHELL=/bin/bash
 export MOZ_NOSPAM:=1
 export LDFLAGS+=-Wl,--no-keep-memory
 export TODAY_DATE=$(shell date +%Y-%m-%d)
