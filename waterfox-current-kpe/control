@@ -9,7 +9,7 @@ Homepage: https://www.waterfox.net/
 Package: waterfox-current-kpe
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-current-wayland
+Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-current-wayland, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox-current
 Replaces: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)
 Breaks: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)

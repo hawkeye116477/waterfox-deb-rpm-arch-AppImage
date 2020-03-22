@@ -9,7 +9,7 @@ Homepage: https://www.waterfox.net/
 Package: waterfox-classic-kpe
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: fonts-lyx, pulseaudio
+Suggests: fonts-lyx, pulseaudio, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox-classic
 Replaces: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
 Breaks: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
