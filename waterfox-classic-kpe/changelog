@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2020.04-0) obs; urgency=medium
+    * Security fixes (mfsa2020-13)
+    * Enabled Shutdown Decoder
+    * Added user-agent override for Amazon Prime Video
+    * Implemented titlebar rendering
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 Apr 2020 22:31:00 +0200
+
 waterfox-classic-kpe (2020.03.1-0) obs; urgency=medium
     * Fixed crash when using NoScript
 

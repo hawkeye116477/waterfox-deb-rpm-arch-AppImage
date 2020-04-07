@@ -1,3 +1,8 @@
+waterfox-current-kpe (2020.04-0) obs; urgency=medium
+    * Various stability and security fixes (mfsa2020-13)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 Apr 2020 22:28:00 +0200
+
 waterfox-current-kpe (2020.03-0) obs; urgency=medium
     * Latest security advisories from Mozilla
     * Fixed various bugs
