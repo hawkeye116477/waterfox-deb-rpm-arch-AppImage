@@ -18,9 +18,9 @@ Description: Customizable privacy-conscious web browser with primary support for
  .
  Waterfox is powered by Mozilla Firefox source code.
  .
- Note 1: This package contains integration improvements for KDE made by openSUSE, but works good also on other desktop environments and KDE Plasma integration features may not work if kwaterfoxhelper isn't installed. For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
+ NOTE 1: This package contains integration improvements for KDE made by openSUSE, but works good also on other desktop environments and KDE Plasma integration features may not work if kwaterfoxhelper isn't installed. For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
  .
- Note 2: Language packs are available as separate packages to install from apt repository!
+ NOTE 2: Language packs are available as separate packages to install from apt repository!
 
 Package: waterfox-classic-kde
 Architecture: amd64
