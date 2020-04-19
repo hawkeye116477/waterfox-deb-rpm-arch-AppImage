@@ -1,4 +1,0 @@
-Template: waterfox-classic-kpe/locales
-Type: note
-Description: Waterfox-classic-kpe package contains only English (US) language pack.
-    If you want to have another locale, just download and install waterfox-classic-i18n-{language-code} package (for example: waterfox-classic-i18n-pl or waterfox-classic-i18n-en-gb) from apt repository.

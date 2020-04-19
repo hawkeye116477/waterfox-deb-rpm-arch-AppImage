@@ -13,7 +13,7 @@ for _lang in "${_languages[@]}"; do
   _pkgname_trans=waterfox-locale-$_locale_pkg
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $_pkgname
-Architecture: any
+Architecture: all
 Depends: \${misc:Depends}, waterfox-classic-kpe (>= \${source:Version})
 Replaces: $_pkgname_trans (<< 2019.10-4)
 Breaks: $_pkgname_trans (<< 2019.10-4)
@@ -31,7 +31,7 @@ for _lang in "${_languages[@]}"; do
   _pkgname_trans=waterfox-locale-$_locale_pkg
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $_pkgname_trans
-Architecture: any
+Architecture: all
 Section: oldlibs
 Depends: \${misc:Depends}, $_pkgname
 Description: Transitional package
@@ -54,7 +54,7 @@ for trans_lang in "${trans_languages[@]}"; do
 
     cat <<EOT >> $SCRIPT_PATH/control
 Package: $trans_pkg
-Architecture: any
+Architecture: all
 Section: oldlibs
 Depends: \${misc:Depends}, ${depends}
 Description: Transitional package
