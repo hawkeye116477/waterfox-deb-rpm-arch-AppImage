@@ -1,3 +1,10 @@
+waterfox-current-kpe (2020.05-0) obs; urgency=medium
+    * Various stability and security fixes
+    * Added support for Java and Silverlight. Please use at your own risk.
+    * Added support for importing Firefox profile.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 May 2020 17:59:00 +0200
+
 waterfox-current-kpe (2020.04-0) obs; urgency=medium
     * Various stability and security fixes (mfsa2020-13)
 

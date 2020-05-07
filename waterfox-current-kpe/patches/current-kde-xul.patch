@@ -1,3 +1,9 @@
+How to update this patch:
+1. cp browser/base/content/browser.xul browser/base/content/browser-kde.xul
+2. Find editBookmarkPanelDoneButton
+3. Replace #ifndef with #ifdef in the line above (this hanges the button order from Gnome-style to KDE-style)
+4. git add --all && git diff --cached > current-kde-xul.patch
+
 diff --git a/browser/base/content/browser-kde.xul b/browser/base/content/browser-kde.xul
 new file mode 100644
 index 000000000000..0ea5a44ef08d

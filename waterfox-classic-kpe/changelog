@@ -1,3 +1,8 @@
+waterfox-classic-kpe (2020.05-0) obs; urgency=medium
+    * Latest security advisories patched (best effort)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 May 2020 17:52:00 +0200
+
 waterfox-classic-kpe (2020.04-0) obs; urgency=medium
     * Security fixes (mfsa2020-13)
     * Enabled Shutdown Decoder
