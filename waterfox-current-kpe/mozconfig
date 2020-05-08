@@ -16,7 +16,7 @@ if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
-if test `lsb_release -sc` = "xenial"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
