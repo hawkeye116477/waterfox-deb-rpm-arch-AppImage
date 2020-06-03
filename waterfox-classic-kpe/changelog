@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2020.06-0) obs; urgency=medium
+    * Updated timezone data for internationalization functions
+    * On-going work for implementing ShadowDOM v1, aligning the way DOM works as-needed
+    * Implemented JavaScript globalThis proposal
+    * Various stability and security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 03 June 2020 19:02:00 +0200
+
 waterfox-classic-kpe (2020.05-0) obs; urgency=medium
     * Latest security advisories patched (best effort)
 
