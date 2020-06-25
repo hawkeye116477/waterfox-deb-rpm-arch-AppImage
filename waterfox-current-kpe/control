@@ -11,8 +11,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-current-wayland, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox-current
-Replaces: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)
-Breaks: waterfox-alpha (<< 2019.10-0), waterfox-beta (<< 2019.10-0), waterfox-current-kde (<< 2019.10-0)
+Replaces: waterfox-alpha (<< ${source:Version}), waterfox-beta (<< ${source:Version}), waterfox-current-kde (<< ${source:Version})
+Breaks: waterfox-alpha (<< ${source:Version}), waterfox-beta (<< ${source:Version}), waterfox-current-kde (<< ${source:Version})
 Description: Customizable privacy-conscious web browser with primary support for webextensions and better integration with KDE
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including modified bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
@@ -34,22 +34,6 @@ Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-current
 Description: Waterfox Current Wayland launcher
  This package contains launcher and desktop file to run Waterfox Current natively on Wayland.
-
-Package: waterfox-alpha
-Depends: waterfox-current, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-beta
-Depends: waterfox-current, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-current-i18n-ach
 Architecture: all
