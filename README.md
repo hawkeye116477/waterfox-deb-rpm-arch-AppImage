@@ -1,13 +1,13 @@
 ## Adding repository/direct download
 
-* If you're using KDE:
+* If you're using Debian or Ubuntu with KDE:
 
 [Click to see instructions for waterfox-classic-kde.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-classic-kde)
 
 [Click to see instructions for waterfox-current-kde.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-current-kde)
 
 
-* If you're using other environment than KDE (Gnome, XFCE, etc):
+* If you're using other environment than KDE (Gnome, XFCE, etc) or other distro than Debian or Ubuntu:
 
 [Click to see instructions for waterfox-classic-kpe.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-classic-kpe)
 
