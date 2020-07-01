@@ -1,3 +1,9 @@
+waterfox-current-kpe (2020.07-0) obs; urgency=medium
+    * Fixed CSD for Pop! OS
+    * Various stability and security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 01 Jul 2020 11:30:00 +0200
+
 waterfox-current-kpe (2020.06-0) obs; urgency=medium
     * Various stability and security fixes (mfsa2020-21)
     * Added support for importing Waterfox Classic profile.

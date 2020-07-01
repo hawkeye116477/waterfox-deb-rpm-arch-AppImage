@@ -1,3 +1,9 @@
+waterfox-classic-kpe (2020.07-0) obs; urgency=medium
+    * Fixed CSD for Pop! OS
+    * Various stability and security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 01 Jul 2020 11:26:00 +0200
+
 waterfox-classic-kpe (2020.06-0) obs; urgency=medium
     * Updated timezone data for internationalization functions
     * On-going work for implementing ShadowDOM v1, aligning the way DOM works as-needed
