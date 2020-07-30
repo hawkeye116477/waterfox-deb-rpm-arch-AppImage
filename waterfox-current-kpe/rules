@@ -4,12 +4,12 @@
 export SHELL=/bin/bash
 export MOZ_NOSPAM:=1
 export LDFLAGS+=-Wl,--no-keep-memory
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-current-kpe.obsinfo)
+export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-current-kpe.obsinfo)
+export SOURCE_REPO=https://github.com/MrAlex94/Waterfox
+export source_repo=https://github.com/MrAlex94/Waterfox
+export MOZ_SOURCE_REPO=https://github.com/MrAlex94/Waterfox
 export TODAY_DATE=$(shell date +%Y-%m-%d)
-export MOZ_SOURCE_CHANGESET=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
-export SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
-export source_repo=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
-export MOZ_SOURCE_REPO=$(shell source debian/tar_stamps && echo "$$RELEASE_REPO")
-export MOZ_SOURCE_STAMP=$(shell source debian/tar_stamps && echo "$$RELEASE_TAG")
 
 %:
 	dh $@
