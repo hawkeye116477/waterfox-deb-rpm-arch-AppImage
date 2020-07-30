@@ -1,4 +1,4 @@
-waterfox-classic-kpe (2020.07.1-0) obs; urgency=medium
+waterfox-classic-kpe (2020.07.1-1) obs; urgency=medium
     * Implemented ShadowRoot.activeElement
     * Various website rendering issues fixed
     * Disabled TLS1.3 0-RTT
