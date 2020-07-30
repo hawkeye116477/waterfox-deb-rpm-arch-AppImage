@@ -1,3 +1,10 @@
+waterfox-current-kpe (2020.07.1-0) obs; urgency=medium
+    * Fixed problems with overlay extensions
+    * Disabled TLS1.3 0-RTT
+    * Various stability and security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jul 2020 10:44:00 +0200
+
 waterfox-current-kpe (2020.07-0) obs; urgency=medium
     * Fixed CSD for Pop! OS
     * Various stability and security fixes

@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2020.07.1-0) obs; urgency=medium
+    * Implemented ShadowRoot.activeElement
+    * Various website rendering issues fixed
+    * Disabled TLS1.3 0-RTT
+    * Latest security advisories patched (best effort)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jul 2020 10:40:00 +0200
+
 waterfox-classic-kpe (2020.07-0) obs; urgency=medium
     * Fixed CSD for Pop! OS
     * Various stability and security fixes
@@ -68,7 +76,7 @@ waterfox-classic-kpe (2020.01-0) obs; urgency=high
     * Very important security patches (CVE-2019-17026)
     * Updated timezone data for internationalization functions
     * Enabled unprefixed Fullscreen API
-    * Various website rending issues fixed (Kinguin, Intel, Epic Games and others)
+    * Various website rendering issues fixed (Kinguin, Intel, Epic Games and others)
     * Fixed problems related with uBO html filters
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 11 Jan 2020 10:42:00 +0200
