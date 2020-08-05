@@ -1,4 +1,11 @@
+waterfox-classic-kpe (2020.07.2-0) obs; urgency=low
+
+    * Fixed startpage search issues
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Aug 2020 12:28:00 +0200
+
 waterfox-classic-kpe (2020.07.1-1) obs; urgency=medium
+
     * Implemented ShadowRoot.activeElement
     * Various website rendering issues fixed
     * Disabled TLS1.3 0-RTT
@@ -7,12 +14,14 @@ waterfox-classic-kpe (2020.07.1-1) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jul 2020 10:40:00 +0200
 
 waterfox-classic-kpe (2020.07-0) obs; urgency=medium
+
     * Fixed CSD for Pop! OS
     * Various stability and security fixes
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 01 Jul 2020 11:26:00 +0200
 
 waterfox-classic-kpe (2020.06-0) obs; urgency=medium
+
     * Updated timezone data for internationalization functions
     * On-going work for implementing ShadowDOM v1, aligning the way DOM works as-needed
     * Implemented JavaScript globalThis proposal
@@ -21,11 +30,13 @@ waterfox-classic-kpe (2020.06-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 03 Jun 2020 19:02:00 +0200
 
 waterfox-classic-kpe (2020.05-0) obs; urgency=medium
+
     * Latest security advisories patched (best effort)
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 May 2020 17:52:00 +0200
 
 waterfox-classic-kpe (2020.04-0) obs; urgency=medium
+
     * Security fixes (mfsa2020-13)
     * Enabled Shutdown Decoder
     * Added user-agent override for Amazon Prime Video
@@ -34,11 +45,13 @@ waterfox-classic-kpe (2020.04-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 Apr 2020 22:31:00 +0200
 
 waterfox-classic-kpe (2020.03.1-0) obs; urgency=medium
+
     * Fixed crash when using NoScript
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 13 Mar 2020 00:05:00 +0200
 
 waterfox-classic-kpe (2020.03-0) obs; urgency=medium
+
     * Latest security advisories from Mozilla
     * Fixed various websites not loading properly (Thanks to hawkeye116477 for the gargantuan effort)
     * Logo now has Classic tag to differentiate from Current
@@ -52,6 +65,7 @@ waterfox-classic-kpe (2020.03-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Mar 2020 16:24:00 +0200
 
 waterfox-classic-kpe (2020.02.1-0) obs; urgency=medium
+
     * Implemented asynchronous iterators
     * Fixed an issue with form elements sometimes being incorrectly disabled.
     * Added sourcestamp info
@@ -61,11 +75,13 @@ waterfox-classic-kpe (2020.02.1-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 21 Feb 2020 10:43:00 +0200
 
 waterfox-classic-kpe (2020.02-0) obs; urgency=medium
+
     * Latest security advisories from Mozilla (mfsa2020-06)
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 13 Feb 2020 20:36:00 +0200
 
 waterfox-classic-kpe (2020.01.1-0) obs; urgency=medium
+
     * Various media library updates
     * Added DNS resolution to webextensions api
     * Fixed problems with fonts
@@ -73,6 +89,7 @@ waterfox-classic-kpe (2020.01.1-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Feb 2020 12:17:00 +0200
 
 waterfox-classic-kpe (2020.01-0) obs; urgency=high
+
     * Very important security patches (CVE-2019-17026)
     * Updated timezone data for internationalization functions
     * Enabled unprefixed Fullscreen API
@@ -82,11 +99,13 @@ waterfox-classic-kpe (2020.01-0) obs; urgency=high
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 11 Jan 2020 10:42:00 +0200
 
 waterfox-classic-kpe (2019.12-2) obs; urgency=medium
+
     * Fixed depends for some transitional packages
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 19 Dec 2019 16:59:00 +0200
 
 waterfox-classic-kpe (2019.12-0) obs; urgency=medium
+
     * New features:
         * Restart button in PanelUI and Menu
         * Copy current tab URL
@@ -105,6 +124,7 @@ waterfox-classic-kpe (2019.12-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 10 Dec 2019 19:30:00 +0200
 
 waterfox-classic-kpe (2019.10-5) obs; urgency=medium
+
     * Various website rending issues fixed. (Thanks to hawkeye116477)
     * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
     * Various config updates. (Thanks to Peacock365)
@@ -115,11 +135,13 @@ waterfox-classic-kpe (2019.10-5) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 27 Oct 2019 08:40:00 +0200
 
 waterfox (56.2.14-0) obs; urgency=medium
+
     * Security patches from ESR 60.9
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 03 Sep 2019 18:38:00 +0200
 
 waterfox (56.2.13-0) obs; urgency=medium
+
     * Updated Gecko Media Plugin components
 
         - Waterfox now supports the latest version of the Widevine CDM (v10). This should last for a while until Google sunsets this version.
@@ -138,12 +160,14 @@ waterfox (56.2.13-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 21 Aug 2019 18:12:00 +0200
 
 waterfox (56.2.12-0) obs; urgency=medium
+
     * Patches for mfsa2019-22.
     * Updated Twemoji Mozilla to 0.4.0 (twemoji 11.4.0).
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 14 Jul 2019 21:19:00 +0200
 
 waterfox (56.2.11.1-0) obs; urgency=medium
+
     * Fixed Bug 1555523
     * Fixed compiling with elf-hack and rust-simd, so that should improve performance a little
     * Fixed bugs related with HiDPI icons
@@ -152,6 +176,7 @@ waterfox (56.2.11.1-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 08 Jul 2019 16:34:00 +0200
 
 waterfox (56.2.11-0) obs; urgency=high
+
     * Security fix for CVE-2019-11707.
     * Fixed issues that prevented themes from AMO installing.
     * Added some more overrides for popular websites.
@@ -161,12 +186,14 @@ waterfox (56.2.11-0) obs; urgency=high
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Jun 2019 14:51:00 +0200
 
 waterfox (56.2.10.1-0) obs; urgency=medium
+
     * User agent overrides for more domains (Spotify, Slack, Wire and others)
     * Fixed Bugs: 1466606, 1386277, 1404198 and 1398897
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 07 Jun 2019 18:36:00 +0200
 
 waterfox (56.2.10-0) obs; urgency=medium
+
     * Latest security fixes up to Firefox ESR 60.7
     * Added new Mozilla certificates to be able to install add-ons from AMO again
     * Waterfox now identifies as Waterfox once again!
@@ -178,6 +205,7 @@ waterfox (56.2.10-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 19 May 2019 15:10:00 +0200
 
 waterfox (56.2.9-0) obs; urgency=medium
+
     * Various security fixes.
     * Switched to twemoji for platforms that do not natively support emoji.
     * Fixed bug causing issues with add-ons such as Tab Mix Plus.
@@ -186,6 +214,7 @@ waterfox (56.2.9-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 20 Apr 2019 10:55:00 +0200
 
 waterfox (56.2.8-0) obs; urgency=medium
+
     * Waterfox now identifies itself as Firefox 60 ESR. This should fix a lot of website issues. Unfortunately there will be no unique way to identify Waterfox.
 
         - WhatsApp Web now works, as should Chase et al.
@@ -197,12 +226,14 @@ waterfox (56.2.8-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 15 Mar 2019 13:29:00 +0200
 
 waterfox (56.2.7.1-0) obs; urgency=medium
+
     * Fixed and updated search icons on about:home and about:newtab.
     * Test out a new user agent to hopefully fix website issues.
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 2 Feb 2019 17:17:00 +0200
 
 waterfox (56.2.7-0) obs; urgency=medium
+
     * Mozilla Foundation Security Advisories patched
 
         - 2019-02
@@ -212,6 +243,7 @@ waterfox (56.2.7-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 1 Feb 2019 00:15:00 +0200
 
 waterfox (56.2.6-0) obs; urgency=high
+
     * Mozilla Foundation Security Advisories patched:
 
         - 2018-30
@@ -224,6 +256,7 @@ waterfox (56.2.6-0) obs; urgency=high
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 20 Dec 2018 11:29:00 +0200
 
 waterfox (56.2.5.1-0) obs; urgency=high
+
     * Fix postinst error
     * Add syspref.js in /etc/waterfox for setting preferences for all users
 

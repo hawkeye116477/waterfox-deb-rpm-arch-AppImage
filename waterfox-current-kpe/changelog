@@ -1,4 +1,11 @@
+waterfox-current-kpe (2020.07.2-0) obs; urgency=medium
+
+    * Various stability fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Aug 2020 12:28:00 +0200
+
 waterfox-current-kpe (2020.07.1-0) obs; urgency=medium
+
     * Fixed problems with overlay extensions
     * Disabled TLS1.3 0-RTT
     * Various stability and security fixes
@@ -6,12 +13,14 @@ waterfox-current-kpe (2020.07.1-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 30 Jul 2020 10:44:00 +0200
 
 waterfox-current-kpe (2020.07-0) obs; urgency=medium
+
     * Fixed CSD for Pop! OS
     * Various stability and security fixes
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 01 Jul 2020 11:30:00 +0200
 
 waterfox-current-kpe (2020.06-0) obs; urgency=medium
+
     * Various stability and security fixes (mfsa2020-21)
     * Added support for importing Waterfox Classic profile.
     * Fixed issues with overlay extensions
@@ -19,6 +28,7 @@ waterfox-current-kpe (2020.06-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 03 Jun 2020 19:02:00 +0200
 
 waterfox-current-kpe (2020.05-0) obs; urgency=medium
+
     * Various stability and security fixes
     * Added support for Java and Silverlight. Please use at your own risk.
     * Added support for importing Firefox profile.
@@ -26,11 +36,13 @@ waterfox-current-kpe (2020.05-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 May 2020 17:59:00 +0200
 
 waterfox-current-kpe (2020.04-0) obs; urgency=medium
+
     * Various stability and security fixes (mfsa2020-13)
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 Apr 2020 22:28:00 +0200
 
 waterfox-current-kpe (2020.03-0) obs; urgency=medium
+
     * Latest security advisories from Mozilla
     * Fixed various bugs
     * Updated ANGLE library for better GPU performance
@@ -40,17 +52,20 @@ waterfox-current-kpe (2020.03-0) obs; urgency=medium
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Mar 2020 16:24:00 +0200
 
 waterfox-current-kpe (2020.02-0) obs; urgency=medium
+
     * Latest security advisories from Mozilla (mfsa2020-06)
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 13 Feb 2020 20:32:00 +0200
 
 waterfox-current-kpe (2020.01.1-0) obs; urgency=medium
+
     * Fixed graphical issues
     * Added StartPage as an option
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 04 Feb 2020 15:09:00 +0200
 
 waterfox-current-kpe (2020.01-0) obs; urgency=high
+
     * Very important security patches (CVE-2019-17026)
     * Enabled containers
     * Enabled playback of encrypted VP9 video in fMP4 container
@@ -72,6 +87,7 @@ waterfox-current-kpe (2020.01-0) obs; urgency=high
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 11 Jan 2020 16:40:00 +0200
 
 waterfox-current-kpe (2019.10-1) obs; urgency=low
+
     * Various config updates. (Thanks to Peacock365)
     * Fixes for themes.
     * Added special patches for KDE from openSUSE (improvements for Plasma works best only if additional helper is installed)
