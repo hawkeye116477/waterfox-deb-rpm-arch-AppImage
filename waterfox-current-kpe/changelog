@@ -1,3 +1,9 @@
+waterfox-current-kpe (2020.07.2.1-0) obs; urgency=medium
+
+    * Performance fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 07 Aug 2020 19:38:00 +0200
+
 waterfox-current-kpe (2020.07.2-0) obs; urgency=medium
 
     * Various stability fixes
