@@ -3,3 +3,4 @@ gitignore.patch -p1
 mozilla-ntlm-full-path.patch -p1
 current-kde.patch -p1
 current-kde-xul.patch -p1
+Bug1654465.patch -p1
