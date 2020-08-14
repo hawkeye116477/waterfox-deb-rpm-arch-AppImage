@@ -1,3 +1,10 @@
+waterfox-current-kpe (2020.07.2.1-1) obs; urgency=medium
+
+    * Reverted problematic changes (problems with search bar or address bar after using CUI should disappear)
+    * Fixed some about pages text color for GTK dark themes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 14 Aug 2020 18:26:00 +0200
+
 waterfox-current-kpe (2020.07.2.1-0) obs; urgency=medium
 
     * Performance fixes

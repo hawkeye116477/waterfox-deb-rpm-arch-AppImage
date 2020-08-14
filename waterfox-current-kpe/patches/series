@@ -4,3 +4,5 @@ mozilla-ntlm-full-path.patch -p1
 current-kde.patch -p1
 current-kde-xul.patch -p1
 Bug1654465.patch -p1
+revert_problematic_changes.patch -p1
+about_text_color.patch -p1
