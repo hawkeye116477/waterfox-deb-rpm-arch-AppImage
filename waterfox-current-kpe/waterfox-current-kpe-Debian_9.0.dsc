@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox-current-kpe
 Binary: waterfox-current-kpe
 Architecture: any
-Version: 2020.07.2.1-0
+Version: 2020.07.2.1-1
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://www.waterfox.net
 Standards-Version: 3.9.7
