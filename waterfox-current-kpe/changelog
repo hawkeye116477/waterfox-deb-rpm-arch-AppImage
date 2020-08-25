@@ -1,3 +1,10 @@
+waterfox-current-kpe (2020.08-0) obs; urgency=low
+
+    * Added support for ResizeObserver
+    * Security updates
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 25 Aug 2020 11:59:00 +0200
+
 waterfox-current-kpe (2020.07.2.1-1) obs; urgency=medium
 
     * Reverted problematic changes (problems with search bar or address bar after using CUI should disappear)
