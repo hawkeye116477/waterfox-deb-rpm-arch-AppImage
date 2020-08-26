@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2020.08.1-0) obs; urgency=low
+
+    * Fix for existing password database not being used
+    * Support for <link disabled>
+    * Disabled http-equiv cookies draft
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 26 Aug 2020 19:57:00 +0200
+
 waterfox-classic-kpe (2020.08-0) obs; urgency=low
 
     * Added user-agent override for swedbank.se
