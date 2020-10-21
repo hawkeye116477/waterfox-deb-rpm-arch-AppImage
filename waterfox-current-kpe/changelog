@@ -1,3 +1,9 @@
+waterfox-current-kpe (2020.10-0) obs; urgency=medium
+
+    * Latest security advisories patched
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 21 Oct 2020 20:12:00 +0200
+
 waterfox-current-kpe (2020.09-0) obs; urgency=medium
 
     * Latest security advisories patched
