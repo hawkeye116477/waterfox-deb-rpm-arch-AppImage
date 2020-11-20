@@ -1,0 +1,12 @@
+# Icons
+usr/lib/waterfox-g3/browser/chrome/icons/default/default16.png usr/share/icons/hicolor/16x16/apps/waterfox-g3.png
+usr/lib/waterfox-g3/browser/chrome/icons/default/default32.png usr/share/icons/hicolor/32x32/apps/waterfox-g3.png
+usr/lib/waterfox-g3/browser/chrome/icons/default/default48.png usr/share/icons/hicolor/48x48/apps/waterfox-g3.png
+usr/lib/waterfox-g3/browser/chrome/icons/default/default64.png usr/share/icons/hicolor/64x64/apps/waterfox-g3.png
+usr/lib/waterfox-g3/browser/chrome/icons/default/default128.png usr/share/icons/hicolor/128x128/apps/waterfox-g3.png
+
+# Wrapper
+usr/lib/waterfox-g3/waterfox-g3-bin.sh usr/bin/waterfox-g3
+
+# System Wide Settings
+etc/waterfox-g3/syspref.js usr/lib/waterfox-g3/browser/defaults/preferences/syspref.js

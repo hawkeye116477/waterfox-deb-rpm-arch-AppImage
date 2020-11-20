@@ -1,0 +1,7 @@
+diff --git a/third_party/rust/packed_simd/perf-guide/.gitignore b/third_party/rust/packed_simd/perf-guide/.gitignore
+new file mode 100644
+index 000000000000..5a0bf0317d75
+--- /dev/null
++++ b/third_party/rust/packed_simd/perf-guide/.gitignore
+@@ -0,0 +1 @@
++/book

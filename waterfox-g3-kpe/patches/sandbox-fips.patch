@@ -1,0 +1,25 @@
+From 791f904765f547ddbb09d93c991502d6f4ab85d7 Mon Sep 17 00:00:00 2001
+From: "unknown@unknown.com" <unknown@unknown.com>
+Date: Fri, 20 Nov 2020 15:39:40 +0100
+Subject: [PATCH] allow Firefox to access addtional process information
+
+Reference: http://bugzilla.suse.com/show_bug.cgi?id=1167132
+---
+ security/sandbox/linux/broker/SandboxBrokerPolicyFactory.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/security/sandbox/linux/broker/SandboxBrokerPolicyFactory.cpp b/security/sandbox/linux/broker/SandboxBrokerPolicyFactory.cpp
+index 91e1b1cfc10a..b92490cdd9e4 100644
+--- a/security/sandbox/linux/broker/SandboxBrokerPolicyFactory.cpp
++++ b/security/sandbox/linux/broker/SandboxBrokerPolicyFactory.cpp
+@@ -294,6 +294,7 @@ SandboxBrokerPolicyFactory::SandboxBrokerPolicyFactory() {
+ 
+   // Read permissions
+   policy->AddPath(rdonly, "/dev/urandom");
++  policy->AddPath(rdonly, "/proc/sys/crypto/fips_enabled");
+   policy->AddPath(rdonly, "/proc/cpuinfo");
+   policy->AddPath(rdonly, "/proc/meminfo");
+   policy->AddDir(rdonly, "/sys/devices/cpu");
+-- 
+2.28.0
+

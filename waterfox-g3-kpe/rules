@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export SHELL=/bin/bash
+export MOZ_NOSPAM:=1
+export LDFLAGS+=-Wl,--no-keep-memory
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g3-kpe.obsinfo)
+export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g3-kpe.obsinfo)
+export SOURCE_REPO=https://github.com/MrAlex94/Waterfox
+export source_repo=https://github.com/MrAlex94/Waterfox
+export MOZ_SOURCE_REPO=https://github.com/MrAlex94/Waterfox
+export TODAY_DATE=$(shell date +%Y-%m-%d)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -f .mozconfig
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_configure:
+	cp debian/mozconfig mozconfig
+
+override_dh_auto_build:
+	# LTO needs more open files
+	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-g3-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-g3-kpe ./mach install
+	rm -rf $$(pwd)/debian/waterfox-g3-kpe/usr/lib/waterfox-g3/dictionaries
+	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-g3.appdata.xml.in
+	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-g3.appdata.xml.in > $$(pwd)/debian/waterfox-g3-kpe/usr/share/metainfo/waterfox-g3.appdata.xml
+	mv $$(pwd)/debian/waterfox-g3-wayland-bin.sh $$(pwd)/debian/waterfox-g3-wayland/usr/bin/waterfox-g3-wayland
+	mv $$(pwd)/browser/extensions/*.xpi $$(pwd)/features
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox-g3/waterfox-g3
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xdebian/waterfox-g3-kpe/usr/lib/waterfox-g3/browser/features/formautofill@mozilla.org.xpi
