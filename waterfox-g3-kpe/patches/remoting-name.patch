@@ -1,0 +1,24 @@
+From 76a062dee991e1c914bb3b35fff55ea5b3a5154a Mon Sep 17 00:00:00 2001
+Date: Sun, 22 Nov 2020 18:15:05 +0100
+Subject: [PATCH] Remoting name
+
+---
+ browser/branding/waterfox/configure.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/browser/branding/waterfox/configure.sh b/browser/branding/waterfox/configure.sh
+index a983f45e724e..2e756d9ea8ff 100644
+--- a/browser/branding/waterfox/configure.sh
++++ b/browser/branding/waterfox/configure.sh
+@@ -3,7 +3,7 @@
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ 
+ MOZ_APP_DISPLAYNAME=Waterfox
+-MOZ_APP_REMOTINGNAME=waterfox
++MOZ_APP_REMOTINGNAME=waterfox-g3
+ MOZ_DEV_EDITION=1
+ MOZ_TELEMETRY_REPORTING=
+ MOZ_SERVICES_HEALTHREPORT=
+-- 
+2.29.2
+

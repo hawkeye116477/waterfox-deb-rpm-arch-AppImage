@@ -7,3 +7,6 @@ Use-remoting-name-for-GDK-application-names.patch -p1
 libavcodec58_91.patch -p1
 sandbox-fips.patch -p1
 git-sourcestamp.patch -p1
+mobile-cleanup.patch -p1
+notification-text-color.patch -p1
+remoting-name.patch -p1

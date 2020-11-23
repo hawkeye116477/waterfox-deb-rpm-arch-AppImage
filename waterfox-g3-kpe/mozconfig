@@ -8,7 +8,7 @@ fi
 
 # n/a = Debian Unstable
 if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye"; then
-export PATH=/usr/lib/llvm-10/bin/:$PATH
+export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
 export CC=clang
@@ -17,11 +17,11 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
@@ -43,10 +43,8 @@ mk_add_options AUTOCLOBBER=1
 ac_add_options --disable-debug
 ac_add_options --disable-crashreporter
 ac_add_options --disable-profiling
-ac_add_options --disable-signmar
 ac_add_options --disable-verify-mar
 ac_add_options --disable-dmd
-ac_add_options --disable-gconf
 ac_add_options --disable-geckodriver
 
 ac_add_options --enable-application=browser

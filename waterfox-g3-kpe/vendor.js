@@ -1,5 +1,6 @@
 // Disable default browser checking
 pref("browser.shell.checkDefaultBrowser", false);
+pref("browser.defaultbrowser.notificationbar", false);
 
 // Don't disable extensions in the application directory
 pref("extensions.autoDisableScopes", 11);
