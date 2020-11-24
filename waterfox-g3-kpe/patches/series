@@ -10,3 +10,4 @@ git-sourcestamp.patch -p1
 mobile-cleanup.patch -p1
 notification-text-color.patch -p1
 remoting-name.patch -p1
+lang.patch -p1

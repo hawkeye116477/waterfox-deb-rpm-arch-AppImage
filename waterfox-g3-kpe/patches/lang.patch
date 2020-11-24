@@ -1,0 +1,24 @@
+diff --git a/browser/app/profile/firefox.js b/browser/app/profile/firefox.js
+index 12f6a85efc8a..0cfb94371bed 100644
+--- a/browser/app/profile/firefox.js
++++ b/browser/app/profile/firefox.js
+@@ -1894,14 +1894,8 @@ pref("app.normandy.onsync_skew_sec", -1, locked);
+ pref("browser.ssb.enabled", false);
+ 
+ // Multi-lingual preferences
+-#if defined(RELEASE_OR_BETA) && !defined(MOZ_DEV_EDITION)
+-  pref("intl.multilingual.enabled", true);
+-  pref("intl.multilingual.downloadEnabled", true);
+-#else
+-  pref("intl.multilingual.enabled", true, locked);
+-  // AMO only serves language packs for release and beta versions.
+-  pref("intl.multilingual.downloadEnabled", false, locked);
+-#endif
++pref("intl.multilingual.enabled", true);
++pref("intl.multilingual.downloadEnabled", false, locked);
+ 
+ // Simulate conditions that will happen when the browser
+ // is running with Fission enabled. This is meant to assist
+-- 
+2.29.2
+

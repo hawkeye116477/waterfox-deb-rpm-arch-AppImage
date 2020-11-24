@@ -2,8 +2,9 @@
 pref("browser.shell.checkDefaultBrowser", false);
 pref("browser.defaultbrowser.notificationbar", false);
 
-// Don't disable extensions in the application directory
-pref("extensions.autoDisableScopes", 11);
+// Don't disable extensions dropped in to a system
+// location, or those owned by the application
+pref("extensions.autoDisableScopes", 3);
 
 // Don't display the one-off addon selection dialog when
 // upgrading from a version of Waterfox older than 8.0
