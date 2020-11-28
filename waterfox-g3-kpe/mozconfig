@@ -57,7 +57,6 @@ ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/waterfox
 ac_add_options --with-unsigned-addon-scopes=app,system
 ac_add_options --allow-addon-sideload
-export MOZ_APP_REMOTINGNAME=waterfox-g3
 
 ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 

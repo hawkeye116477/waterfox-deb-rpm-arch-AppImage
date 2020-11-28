@@ -1,3 +1,13 @@
+waterfox-g3-kpe (0.1-0) obs; urgency=medium
+
+    * Fixed an issue where users would upgrade and their old profile would not be used.
+    * Fixed an issue where users could not change their default profile.
+    * Fixed an issue where add-ons were not correctly initialising, causing browser     * instability.
+    * Fixed an issue where the incorrect update channel was being used (no user changes needed).
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 23 Nov 2020 18:41:00 +0200
+
+
 waterfox-g3-kpe (0.0-0) obs; urgency=medium
 
     * First release of Third Generation Waterfox
