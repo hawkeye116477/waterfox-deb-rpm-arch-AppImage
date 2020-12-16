@@ -8,6 +8,8 @@ waterfox-g3-kpe (0.2-0) obs; urgency=medium
     * Disabled all connections to firefox.settings.services.mozilla.com. If this causes issues with web features, this may need to be investigated further.
     * Updated to Gecko 78.6.
 
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 16 Dec 2020 21:03:00 +0200
+
 waterfox-g3-kpe (0.1-0) obs; urgency=medium
 
     * Fixed an issue where users would upgrade and their old profile would not be used.
