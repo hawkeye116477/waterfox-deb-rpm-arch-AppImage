@@ -1,4 +1,3 @@
-unity-menubar.patch -p1
 g3-kde.patch -p1
 mozilla-nongnome-proxies.patch -p1
 mozilla-ntlm-full-path.patch -p1
@@ -6,8 +5,4 @@ gitignore.patch -p1
 Use-remoting-name-for-GDK-application-names.patch -p1
 libavcodec58_91.patch -p1
 sandbox-fips.patch -p1
-git-sourcestamp.patch -p1
-mobile-cleanup.patch -p1
-notification-text-color.patch -p1
 remoting-name.patch -p1
-lang.patch -p1
