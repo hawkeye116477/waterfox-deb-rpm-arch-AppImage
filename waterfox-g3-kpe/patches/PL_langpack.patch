@@ -1,0 +1,66 @@
+diff --git a/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties b/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties
+index 5c4cb34da933..d2a5d46a21e8 100644
+--- a/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties
++++ b/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties
+@@ -13,3 +13,9 @@ extension.firefox-compact-dark@mozilla.org.description=Motyw o ciemnych kolorac
+ # LOCALIZATION NOTE (extension.firefox-alpenglow@mozilla.org.name): This is displayed in about:addons -> Appearance
+ extension.firefox-alpenglow@mozilla.org.name=Waterfox Alpenglow
+ extension.firefox-alpenglow@mozilla.org.description=Kolorowe przyciski, menu i okna.
++
++# LOCALIZATION NOTE (abyss@waterfox.net.name): This is displayed in about:addons -> Appearance
++extension.abyss@waterfox.net.name=Abyss
++extension.abyss@waterfox.net.description=Ciemny motyw dla Waterfoksa
++extension.floe@waterfox.net.name=Floe
++extension.floe@waterfox.net.description=Jasny motyw dla Waterfoksa
+diff --git a/browser/locales/l10n/pl/browser/chrome/browser/browser.properties b/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
+index a305b5ec7bee..303af9ba296f 100644
+--- a/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
++++ b/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
+@@ -1065,3 +1065,8 @@ livebookmarkMigration.title                      = %S - dynamiczne zakładki
+ # LOCALIZATION NOTE (gnomeSearchProviderSearch):
+ # Used for search by Gnome Shell activity screen, %S is a searched string.
+ gnomeSearchProviderSearch=Wyszukaj „%S” w Internecie
++
++# LOCALIZATION NOTE (getUserMedia.shareWarning.message): NB: inserted via innerHTML, so please don't use <, > or & in this string.
++# %1$S is brandShortName (eg. )
++# %2$S will be the 'learn more' link
++getUserMedia.shareWarning.message = %1$S udostępniaj wyłącznie stronom, którym ufasz. Udostępnianie umożliwia podejrzanym stronom przeglądanie sieci jako Ty i kradzież danych prywatnych. %2$S
+diff --git a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
+index f3c9af24db97..12a39e078f36 100644
+--- a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
++++ b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
+@@ -51,3 +51,8 @@
+ <!ENTITY done.label                     "Poniższe elementy zostały zaimportowane:">
+ 
+ <!ENTITY closeSourceBrowser.label       "Przed przejściem dalej proszę upewnić się, że wybrana przeglądarka jest wyłączona.">
++
++<!ENTITY importFromLFirefox.label       "Lokalny Firefox">
++<!ENTITY importFromLFirefox.accesskey   "L">
++<!ENTITY importFromWaterfoxClassic.label "Waterfox Classic">
++<!ENTITY importFromWaterfoxClassic.accesskey   "W">
+diff --git a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties
+index 470f48195ff9..a543c9b9f3fa 100644
+--- a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties
++++ b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties
+@@ -74,3 +74,18 @@ importedEdgeReadingList=Do przeczytania (z Edge)
+ 
+ 128_firefox=Okna i karty
+ 
++
++sourceNameLfirefox=Lfirefox
++sourceNameWaterfoxClassic=Waterfox Classic
++1_lfirefox=Opcje
++1_waterfoxclassic=Opcje
++2_lfirefox=Ciasteczka
++2_waterfoxclassic=Ciasteczka
++4_lfirefox=Historia
++4_waterfoxclassic=Historia
++8_lfirefox=Zapamiętane dane formularzy
++8_waterfoxclassic=Zapamiętane dane formularzy
++16_lfirefox=Zachowane hasła
++16_waterfoxclassic=Zachowane hasła
++32_lfirefox=Zakładki
++32_waterfoxclassic=Zakładki
+-- 
+2.29.2
+

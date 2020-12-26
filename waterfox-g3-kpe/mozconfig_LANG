@@ -1,0 +1,7 @@
+ac_add_options --with-app-name=waterfox-g3
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=browser/branding/waterfox
+mk_add_options MOZ_OBJDIR=$topsrcdir/../obj_LANG
+ac_add_options --prefix=/usr
+ac_add_options --with-l10n-base=$topsrcdir/browser/locales/l10n
+ac_add_options --disable-updater

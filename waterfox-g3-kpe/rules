@@ -18,6 +18,10 @@ endif
 
 export LDFLAGS
 
+export GK_VER=$(shell cat browser/config/version.txt)
+
+export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
+
 %:
 	dh $@
 
@@ -30,8 +34,19 @@ override_dh_auto_configure:
 	cp debian/mozconfig mozconfig
 
 override_dh_auto_build:
+	# Build browser
 	# LTO needs more open files
-	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
+	ulimit -n 4096; export MOZCONFIG=mozconfig; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
+
+	# Build langpacks
+	mkdir -p $$(pwd)/features
+	# langpack-build can not be done in parallel easily (see https://bugzilla.mozilla.org/show_bug.cgi?id=1660943)
+	# Therefore, we have to have a separate obj-dir for each language
+	# We do this, by creating a mozconfig-template with the necessary switches
+	# and a placeholder obj-dir, which gets copied and modified for each language
+	sed -r '/^(ja-JP-mac|en-US|)$$/d;s/ .*$$//' ./browser/locales/shipped-locales \
+    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g3-$$GK_VER.$$locale.langpack.xpi \
+	$$(pwd)/features/langpack-$$locale@l10n.waterfox.net.xpi' -- {}
 
 override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-g3-bin.sh
@@ -41,8 +56,6 @@ override_dh_auto_install:
 	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-g3.appdata.xml.in
 	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-g3.appdata.xml.in > $$(pwd)/debian/waterfox-g3-kpe/usr/share/metainfo/waterfox-g3.appdata.xml
 	mv $$(pwd)/debian/waterfox-g3-wayland-bin.sh $$(pwd)/debian/waterfox-g3-wayland/usr/bin/waterfox-g3-wayland
-	mkdir -p  $$(pwd)/features
-	mv $$(pwd)/browser/extensions/*.xpi $$(pwd)/features
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-g3/waterfox-g3
