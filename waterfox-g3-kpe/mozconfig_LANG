@@ -1,3 +1,25 @@
+if test `lsb_release -sc` = "xenial"; then
+export PATH=/usr/lib/llvm-8/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "stretch"; then
+export PATH=/usr/lib/llvm-7/bin/:$PATH
+fi
+
+# n/a = Debian Unstable
+if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye"; then
+export PATH=/usr/lib/llvm-11/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal"; then
+export NODEJS=/usr/lib/nodejs-mozilla/bin/node
+fi
+
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
+
+
 ac_add_options --with-app-name=waterfox-g3
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/waterfox
