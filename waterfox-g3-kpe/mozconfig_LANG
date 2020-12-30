@@ -11,7 +11,7 @@ if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
