@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2021.01.1-0) obs; urgency=medium
+
+    * Latest security patches, backported from Firefox ESR 78.7
+    * Added 'Open the Profile Manager' entry to desktop file
+    * Updated translations in desktop file
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 28 Jan 2021 12:13:00 +0200
+
 waterfox-classic-kpe (2020.12-0) obs; urgency=medium
 
     * Latest security advisories patched
