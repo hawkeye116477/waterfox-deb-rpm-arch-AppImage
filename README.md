@@ -30,6 +30,8 @@
 
 [Click to see instructions for Waterfox Current.](https://appimage.github.io/Waterfox_Current/)
 
+[Click to see instructions for Waterfox G3.](https://appimage.github.io/Waterfox_Third_Generation/)
+
 ## Other source files
 
 [Click to see other source files for waterfox-classic-kpe.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-classic-kpe)
