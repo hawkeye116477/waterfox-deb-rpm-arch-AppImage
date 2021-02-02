@@ -5,10 +5,10 @@ Lubos Lunak <lunak@suse.com>
 Original patches => http://www.rosenauer.org/hg/mozilla/file/firefox78
 
 diff --git a/browser/components/preferences/main.js b/browser/components/preferences/main.js
-index 9098cc761a5d..a2232a16bbfa 100644
+index 9c87f5a973c8..f9b019686552 100644
 --- a/browser/components/preferences/main.js
 +++ b/browser/components/preferences/main.js
-@@ -340,6 +340,13 @@ var gMainPane = {
+@@ -366,6 +366,13 @@ var gMainPane = {
        }, backoffTimes[this._backoffIndex]);
      }
  
@@ -22,7 +22,7 @@ index 9098cc761a5d..a2232a16bbfa 100644
      this.initBrowserContainers();
      this.buildContentProcessCountMenuList();
  
-@@ -1305,6 +1312,17 @@ var gMainPane = {
+@@ -1378,6 +1385,17 @@ var gMainPane = {
        }
        try {
          shellSvc.setDefaultBrowser(true, false);
