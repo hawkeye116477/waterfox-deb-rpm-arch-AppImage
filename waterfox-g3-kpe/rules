@@ -18,7 +18,7 @@ endif
 
 export LDFLAGS
 
-export GK_VER=$(shell cat browser/config/version.txt)
+export WF_VER=$(shell cat browser/config/version_display.txt)
 
 export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
 
@@ -45,7 +45,7 @@ override_dh_auto_build:
 	# We do this, by creating a mozconfig-template with the necessary switches
 	# and a placeholder obj-dir, which gets copied and modified for each language
 	sed -r '/^(ja-JP-mac|en-US|)$$/d;s/ .*$$//' ./browser/locales/shipped-locales \
-    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g3-$$GK_VER.$$locale.langpack.xpi \
+    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g3-$$WF_VER.$$locale.langpack.xpi \
 	$$(pwd)/extensions/langpack-$$locale@l10n.waterfox.net.xpi' -- {}
 
 override_dh_auto_install:
