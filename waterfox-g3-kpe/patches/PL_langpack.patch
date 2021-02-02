@@ -1,3 +1,156 @@
+diff --git a/browser/locales/l10n/pl/browser/browser/preferences/permissions.ftl b/browser/locales/l10n/pl/browser/browser/preferences/permissions.ftl
+index 51b4cca9a639..e53fed6bffa2 100644
+--- a/browser/locales/l10n/pl/browser/browser/preferences/permissions.ftl
++++ b/browser/locales/l10n/pl/browser/browser/preferences/permissions.ftl
+@@ -170,3 +170,17 @@ permissions-site-microphone-desc = Następujące strony prosiły o dostęp do m
+ permissions-site-microphone-disable-label =
+     .label = Blokowanie nowych próśb o dostęp do mikrofonu
+ permissions-site-microphone-disable-desc = Uniemożliwi to witrynom spoza listy powyżej proszenie o dostęp do mikrofonu. Zablokowanie dostępu do mikrofonu może spowodować, że niektóre funkcje witryny nie będą działać.
++
++## Advanced JS Settings
++
++advancedJSDialog =
++    .title = Zaawansowane ustawienia JavaScript
++
++allowScripts =
++    .value = Pozwól skryptom na:
++
++moveResizePopupWindows =
++    .label = Przesuwanie lub zmienianie rozmiaru wyskakujących okien
++
++disableContextMenus =
++    .label = Wyłączanie lub zamienianie menu kontekstowego
+diff --git a/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl b/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
+index 5ac28192de7b..21133f100216 100644
+--- a/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
++++ b/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
+@@ -141,6 +141,28 @@ startup-restore-previous-session =
+     .accesskey = P
+ startup-restore-warn-on-quit =
+     .label = Ostrzeganie przy zamykaniu przeglądarki
++
++restart-paneluibtn =
++    .label = Wyświetlaj przycisk restartu na panelu
++
++clean-fast-restart-cache =
++    .label = Czyść pamięć podręczną szybkiego restartu podczas restartu przeglądarki
++
++restart-reqconfirmation =
++    .label = Wymagaj potwierdzenia restartu
++
++duplicate-tab-options =
++    .label = Wyświetlaj opcję 'duplikuj kartę'
++
++copy-tab-url-options =
++    .label = Wyświetlaj opcję 'kopiuj adres URL karty'
++
++copy-active-tab-url-options =
++    .label = Kopiuj adres URL jedynie z aktywnej karty
++
++copy-all-tab-urls-options =
++    .label = Wyświetlaj opcję 'kopiuj adresy URL wszystkich kart'
++
+ disable-extension =
+     .label = Wyłącz rozszerzenie
+ tabs-group-header = Karty
+@@ -1143,3 +1165,83 @@ choose-download-folder-title = Wybór folderu dla pobieranych plików
+ #   $service-name (String) - Name of a cloud storage provider like Dropbox, Google Drive, etc...
+ save-files-to-cloud-storage =
+     .label = Wysyłanie plików do usługi { $service-name }
++
++restart-header = Opcja restart w menu
++
++tabContextMenu-header = Menu kontekstowe kart
++
++statusBar-header = Pasek stanu
++
++show-status-bar =
++    .label = Wyświetlaj pasek stanu
++
++show-status-overlay =
++    .label = Wyświetlaj nakładkę z informacjami o stanie
++
++hide-status-bar =
++    .label = Nigdy nie wyświetlaj stanu
++
++show-btn-range =
++    .label = Używaj przycisków w kontrolce zakresu
++
++show-links =
++    .label = Wyświetlaj linki
++
++tab-bar-position = Położenie paska kart
++
++tab-top-above-ab =
++    .label = Na górze nad paskiem adresu
++
++tab-top-under-ab =
++    .label = Na górze pod paskiem adresu
++
++tab-bottom =
++    .label = Na dole
++
++
++window-controls-position-header = Pozycja kontrolek okna
++
++left-side =
++    .label = Po lewej
++
++right-side =
++    .label = Po prawej
++
++bookmarks-bar-position-header = Położenie paska zakładek
++
++top-bookmarks =
++    .label = Na górze
++
++pane-windowAppearance-title = Wygląd okna
++
++pane-menu-title = Menu
++
++menu-icon-style-header = Styl ikony menu
++
++menu-icon =
++    .label = Ikona menu
++
++browser-icon =
++    .label = Ikona programu { -brand-short-name }
++
++sendRefererHeaderopt0 =
++    .label = Nigdy nie będzie wysyłał nagłówka odsyłającego
++
++sendRefererHeaderopt1 =
++    .label = Będzie wysyłał nagłówek odsyłający, jedynie podczas klikania na linki i podobne elementy
++
++sendRefererHeaderopt2 =
++    .label = Będzie wysyłał nagłówek odsyłający w przypadku wszystkich żądań (Domyślnie)
++
++webrtcp2preference =
++    .label = Włącz połączenie WebRTC P2P
++
++loadImages-checkbox =
++    .label = Automatycznie wczytuj obrazy
++
++enableJavaScript-checkbox =
++    .label = Włącz obsługę JavaScript
++
++webrtc-header = Połączenie WebRTC P2P
++
++ref-header = Nagłówek HTTP odsyłający
+diff --git a/browser/locales/l10n/pl/browser/browser/tabContextMenu.ftl b/browser/locales/l10n/pl/browser/browser/tabContextMenu.ftl
+index f43115fd78b8..7eecf59658e5 100644
+--- a/browser/locales/l10n/pl/browser/browser/tabContextMenu.ftl
++++ b/browser/locales/l10n/pl/browser/browser/tabContextMenu.ftl
+@@ -99,3 +99,9 @@ tab-context-move-tabs =
+            *[many] Przenieś karty
+         }
+     .accesskey = r
++
++copy-tab-url =
++    .label = Kopiuj adres URL karty
++
++copy-all-tab-urls =
++    .label = Kopiuj adresy URL wszystkich kart
 diff --git a/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties b/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties
 index 5c4cb34da933..d2a5d46a21e8 100644
 --- a/browser/locales/l10n/pl/browser/chrome/browser/app-extension-fields.properties
@@ -12,11 +165,23 @@ index 5c4cb34da933..d2a5d46a21e8 100644
 +extension.abyss@waterfox.net.description=Ciemny motyw dla Waterfoksa
 +extension.floe@waterfox.net.name=Floe
 +extension.floe@waterfox.net.description=Jasny motyw dla Waterfoksa
+diff --git a/browser/locales/l10n/pl/browser/chrome/browser/browser.dtd b/browser/locales/l10n/pl/browser/chrome/browser/browser.dtd
+index 527c47e906c6..33ffa3b78706 100644
+--- a/browser/locales/l10n/pl/browser/chrome/browser/browser.dtd
++++ b/browser/locales/l10n/pl/browser/chrome/browser/browser.dtd
+@@ -290,3 +290,7 @@ you can use these alternative items. Otherwise, their values should be empty.  -
+      used as a textual label for the indicator used by assistive technology
+      users. -->
+ <!ENTITY accessibilityIndicator.tooltip "Aktywne usługi ułatwień dostępu">
++
++<!ENTITY restartMenu.label "Uruchom ponownie">
++
++<!ENTITY statusText.label "Opis stanu">
 diff --git a/browser/locales/l10n/pl/browser/chrome/browser/browser.properties b/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
-index a305b5ec7bee..303af9ba296f 100644
+index a305b5ec7bee..f2baeccbc814 100644
 --- a/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
 +++ b/browser/locales/l10n/pl/browser/chrome/browser/browser.properties
-@@ -1065,3 +1065,8 @@ livebookmarkMigration.title                      = %S - dynamiczne zakładki
+@@ -1065,3 +1065,11 @@ livebookmarkMigration.title                      = %S - dynamiczne zakładki
  # LOCALIZATION NOTE (gnomeSearchProviderSearch):
  # Used for search by Gnome Shell activity screen, %S is a searched string.
  gnomeSearchProviderSearch=Wyszukaj „%S” w Internecie
@@ -25,19 +190,9 @@ index a305b5ec7bee..303af9ba296f 100644
 +# %1$S is brandShortName (eg. )
 +# %2$S will be the 'learn more' link
 +getUserMedia.shareWarning.message = %1$S udostępniaj wyłącznie stronom, którym ufasz. Udostępnianie umożliwia podejrzanym stronom przeglądanie sieci jako Ty i kradzież danych prywatnych. %2$S
-diff --git a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
-index f3c9af24db97..12a39e078f36 100644
---- a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
-+++ b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.dtd
-@@ -51,3 +51,8 @@
- <!ENTITY done.label                     "Poniższe elementy zostały zaimportowane:">
- 
- <!ENTITY closeSourceBrowser.label       "Przed przejściem dalej proszę upewnić się, że wybrana przeglądarka jest wyłączona.">
 +
-+<!ENTITY importFromLFirefox.label       "Lokalny Firefox">
-+<!ENTITY importFromLFirefox.accesskey   "L">
-+<!ENTITY importFromWaterfoxClassic.label "Waterfox Classic">
-+<!ENTITY importFromWaterfoxClassic.accesskey   "W">
++restartPromptTitle.label = Restart przeglądarki %S
++restartPromptQuestion.label = Czy na pewno chcesz ponownie uruchomić przeglądarkę %S?
 diff --git a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties b/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties
 index 470f48195ff9..a543c9b9f3fa 100644
 --- a/browser/locales/l10n/pl/browser/chrome/browser/migration/migration.properties
@@ -62,5 +217,5 @@ index 470f48195ff9..a543c9b9f3fa 100644
 +32_lfirefox=Zakładki
 +32_waterfoxclassic=Zakładki
 -- 
-2.29.2
+2.30.0
 
