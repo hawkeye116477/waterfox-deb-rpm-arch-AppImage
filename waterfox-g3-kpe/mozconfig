@@ -1,4 +1,4 @@
-if test `lsb_release -sc` = "xenial"; then
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
 export PATH=/usr/lib/llvm-8/bin/:$PATH
 fi
 
@@ -7,7 +7,7 @@ export PATH=/usr/lib/llvm-7/bin/:$PATH
 fi
 
 # n/a = Debian Unstable
-if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye"; then
+if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
