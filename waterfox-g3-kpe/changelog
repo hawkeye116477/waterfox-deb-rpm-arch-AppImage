@@ -1,3 +1,18 @@
+waterfox-g3-kpe (1.0-0) obs; urgency=medium
+
+    * Migrated from Bing Translation API v2 to v3. You can manually add a key to enable this feature in about:config.
+    * Fixed issue with Profile Imports. You can now import from Firefox and Waterfox Classic once again!
+    * Updated to Gecko 78.7 (includes security patches).
+    * Add initial support for the Chrome Web Store and Opera Web Store. Improvements still to be made, but the first step to full support has now landed.
+    * You can refresh your Waterfox profile in about:support. Useful if Waterfox is running slow or broken on websites.
+    * Tab positions are now back! You can have browser tabs appear underneath the address bar or at the bottom of the display window. Available in about:preferences.
+    * Status bar is now back, available in about:preferences.
+    * Restart button is now back on the main menu.
+    * Added 'Open the Profile Manager' entry to desktop file
+    * Updated translations in desktop file
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 02 Feb 2021 15:55:00 +0200
+
 waterfox-g3-kpe (0.2-1) obs; urgency=medium
 
     * Fixed language packages

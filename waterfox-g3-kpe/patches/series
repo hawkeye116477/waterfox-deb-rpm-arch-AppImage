@@ -6,6 +6,4 @@ Use-remoting-name-for-GDK-application-names.patch -p1
 libavcodec58_91.patch -p1
 sandbox-fips.patch -p1
 remoting-name.patch -p1
-langpacks_id.patch -p1
 PL_langpack.patch -p1
-rust_1.48.patch -p1
