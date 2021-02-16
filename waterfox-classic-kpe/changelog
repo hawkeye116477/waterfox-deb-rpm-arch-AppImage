@@ -1,3 +1,13 @@
+waterfox-classic-kpe (2021.02-0) obs; urgency=medium
+
+    * Latest security patches
+    * Fixed a JavaScript performance issue
+    * Implemented JSON superset and well-formed JSON stringify (ES2019)
+    * Updated timezone data for internationalization functions.
+    * Polly extension is now integrated with official package (however I left that as a choice to install, if you want it, then just install waterfox-ext-polly from apt)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 16 Feb 2021 12:46:00 +0200
+
 waterfox-classic-kpe (2021.01.1-0) obs; urgency=medium
 
     * Latest security patches, backported from Firefox ESR 78.7
