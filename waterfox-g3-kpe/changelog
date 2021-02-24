@@ -1,3 +1,13 @@
+waterfox-g3-kpe (1.1-0) obs; urgency=medium
+
+    * Updated to Gecko 78.8 (includes security patches).
+    * Improved support for the Chrome Web Store.
+    * Fixed issues where installing more than 2 add-ons from the CWS or OWS would result in name garbling and inability to use them.
+    * Improvement to the styling of tabs and status bar elements.
+    * Improvement in the support of global menu
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 24 Feb 2021 15:09:00 +0200
+
 waterfox-g3-kpe (1.0-0) obs; urgency=medium
 
     * Migrated from Bing Translation API v2 to v3. You can manually add a key to enable this feature in about:config.
