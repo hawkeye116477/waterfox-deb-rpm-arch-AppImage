@@ -9,6 +9,11 @@ export source_repo=https://github.com/MrAlex94/Waterfox
 export MOZ_SOURCE_REPO=https://github.com/MrAlex94/Waterfox
 export TODAY_DATE=$(shell date +%Y-%m-%d)
 
+distrelease := $(shell lsb_release -sc)
+ifeq ($(distrelease),$(filter $(distrelease),stretch xenial))
+LDFLAGS += -static-libstdc++
+endif
+
 %:
 	dh $@
 
