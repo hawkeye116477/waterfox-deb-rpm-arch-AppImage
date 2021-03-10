@@ -21,7 +21,7 @@
 ------
 ### Note 1: KPE means KDE Plasma Edition, but package is compatible with other DE also and doesn't depend on KDE libs. Hovewer for KDE I recommend installing package waterfox-classic-kde, which also installs other depends required for proper working of KDE integration features.
 
-### Note 2: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_16.04/amd64](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_16.04/amd64).
+### Note 2: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_16.04/all](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_16.04/all).
 
 
 ## Downloading and installing AppImage packages
