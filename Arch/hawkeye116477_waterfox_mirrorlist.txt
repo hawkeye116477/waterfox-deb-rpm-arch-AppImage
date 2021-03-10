@@ -1,0 +1,20 @@
+# Randomly pick one of the mirrors below
+# This currently not works well, cuz often it redirects to repos which haven't specific version
+# Server = https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+
+## Country : Netherlands
+Server = http://ftp1.nluug.nl/os/Linux/distr/opensuse/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+Server = http://ftp2.nluug.nl/os/Linux/distr/opensuse/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+
+## Country : Sweden
+Server = http://ftp.lysator.liu.se/pub/opensuse/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+
+## Country : United_States
+Server = https://provo-mirror.opensuse.org/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+
+## Country : Germany
+Server = https://ftp.gwdg.de/pub/opensuse/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+Server = http://widehat.opensuse.org/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
+
+## Main repository
+Server = https://downloadcontent.opensuse.org/repositories/home:/hawkeye116477:/waterfox/Arch/$arch
