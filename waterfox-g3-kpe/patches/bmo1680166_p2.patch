@@ -1,0 +1,44 @@
+From 81e56870ee5efc7ceb6831d82de15d36464d81b1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Emilio=20Cobos=20=C3=81lvarez?= <emilio@crisal.io>
+Date: Wed, 2 Dec 2020 14:29:47 +0100
+Subject: [PATCH 2/2] Bug 1680166 - GCC is smarter than clang, so ignore the
+ warning properly.
+
+CLOSED TREE
+
+MANUAL PUSH: Base toolchain build bustage.
+---
+ security/sandbox/linux/gtest/TestBroker.cpp | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+diff --git a/security/sandbox/linux/gtest/TestBroker.cpp b/security/sandbox/linux/gtest/TestBroker.cpp
+index 29f9fde5841b..46cdad0e88c1 100644
+--- a/security/sandbox/linux/gtest/TestBroker.cpp
++++ b/security/sandbox/linux/gtest/TestBroker.cpp
+@@ -217,13 +217,17 @@ TEST_F(SandboxBrokerTest, Stat) {
+   EXPECT_EQ(realStat.st_ino, brokeredStat.st_ino);
+   EXPECT_EQ(realStat.st_rdev, brokeredStat.st_rdev);
+ 
+-  // Add some indirection to avoid -Wnonnull warnings.
+-  [&](const char* aPath) {
+-    EXPECT_EQ(-1, statsyscall(aPath, &realStat));
+-    EXPECT_EQ(errno, EFAULT);
++#if defined(__clang__) || defined(__GNUC__)
++#  pragma GCC diagnostic push
++#  pragma GCC diagnostic ignored "-Wnonnull"
++#endif
++  EXPECT_EQ(-1, statsyscall(nullptr, &realStat));
++  EXPECT_EQ(errno, EFAULT);
+ 
+-    EXPECT_EQ(-EFAULT, Stat(aPath, &brokeredStat));
+-  }(nullptr);
++  EXPECT_EQ(-EFAULT, Stat(nullptr, &brokeredStat));
++#if defined(__clang__) || defined(__GNUC__)
++#  pragma GCC diagnostic pop
++#endif
+ 
+   EXPECT_EQ(-ENOENT, Stat("/var/empty/qwertyuiop", &brokeredStat));
+   EXPECT_EQ(-EACCES, Stat("/dev", &brokeredStat));
+-- 
+2.30.1
+
