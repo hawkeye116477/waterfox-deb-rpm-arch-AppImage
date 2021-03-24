@@ -1,3 +1,14 @@
+waterfox-g3-kpe (2.0-0) obs; urgency=medium
+
+    * Automatically switch between dark and light theme depending on system settings in Preferences > Language and Apprearance
+    * Choose your preferred language in Preferences > Language and Apprearance
+    * Startpage will now show search suggestions if set as default search engine
+    * Improved the user experience when installing a Chrome/Opera web extension.
+    * Upgraded to Gecko 78.9
+    * Reduced connections made to Mozilla settings service
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 24 Mar 2021 23:07:00 +0200
+
 waterfox-g3-kpe (1.1-0) obs; urgency=medium
 
     * Updated to Gecko 78.8 (includes security patches).

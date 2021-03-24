@@ -21,13 +21,16 @@ index 51b4cca9a639..e53fed6bffa2 100644
 +disableContextMenus =
 +    .label = Wyłączanie lub zamienianie menu kontekstowego
 diff --git a/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl b/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
-index 5ac28192de7b..21133f100216 100644
+index 5ac28192de7b..2662a79ef9a4 100644
 --- a/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
 +++ b/browser/locales/l10n/pl/browser/browser/preferences/preferences.ftl
-@@ -141,6 +141,28 @@ startup-restore-previous-session =
+@@ -141,6 +141,31 @@ startup-restore-previous-session =
      .accesskey = P
  startup-restore-warn-on-quit =
      .label = Ostrzeganie przy zamykaniu przeglądarki
++
++theme-auto-change =
++    .label = Automatycznie przełączaj motyw na podstawie ustawień systemu operacyjnego
 +
 +restart-paneluibtn =
 +    .label = Wyświetlaj przycisk restartu na panelu
@@ -53,10 +56,12 @@ index 5ac28192de7b..21133f100216 100644
  disable-extension =
      .label = Wyłącz rozszerzenie
  tabs-group-header = Karty
-@@ -1143,3 +1165,83 @@ choose-download-folder-title = Wybór folderu dla pobieranych plików
+@@ -1143,3 +1168,85 @@ choose-download-folder-title = Wybór folderu dla pobieranych plików
  #   $service-name (String) - Name of a cloud storage provider like Dropbox, Google Drive, etc...
  save-files-to-cloud-storage =
      .label = Wysyłanie plików do usługi { $service-name }
++
++theme-header = Motyw
 +
 +restart-header = Opcja restart w menu
 +
@@ -216,6 +221,3 @@ index 470f48195ff9..a543c9b9f3fa 100644
 +16_waterfoxclassic=Zachowane hasła
 +32_lfirefox=Zakładki
 +32_waterfoxclassic=Zakładki
--- 
-2.30.0
-
