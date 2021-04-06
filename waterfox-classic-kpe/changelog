@@ -1,3 +1,14 @@
+waterfox-classic-kpe (2021.03-0) obs; urgency=medium
+
+    * Added support for detecting dark mode
+    * Implemented Performance Observer and queueMicrotask()
+    * Fixed CSS Grid Layout issues
+    * Fixed Fetch API issues
+    * Security patches from latest ESR
+    * Updated media codecs for better performance and security
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 06 Apr 2021 23:51:00 +0200
+
 waterfox-classic-kpe (2021.02-1) obs; urgency=medium
 
     * Fixed Xenial and Stretch issues

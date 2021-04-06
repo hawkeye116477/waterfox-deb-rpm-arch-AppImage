@@ -6,6 +6,10 @@ if test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-7/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
+
 export CC=clang
 export CXX=clang++
 
@@ -36,7 +40,6 @@ ac_add_options --disable-updater
 ac_add_options --enable-release
 
 ac_add_options --enable-rust-simd
-ac_add_options --enable-av1
 ac_add_options --enable-hardening
 
 ac_add_options --disable-stylo
