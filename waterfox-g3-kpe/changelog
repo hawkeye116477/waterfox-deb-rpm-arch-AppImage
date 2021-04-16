@@ -1,3 +1,10 @@
+waterfox-g3-kpe (2.1-0) obs; urgency=medium
+
+    * Resolved an issue where the Abyss theme would display the active tab with incorrect colouring when the position was switched to under the address bar.
+    * Upgraded to Gecko 78.10
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 16 Apr 2021 12:42:00 +0200
+
 waterfox-g3-kpe (2.0-0) obs; urgency=medium
 
     * Automatically switch between dark and light theme depending on system settings in Preferences > Language and Apprearance
