@@ -1,0 +1,22 @@
+ExpandFlags: module:rust-toolset-rhel8
+ExpandFlags: module:llvm-toolset-rhel8
+ExpandFlags: module:python27-2.7
+ExpandFlags: module:nodejs-12
+ExpandFlags: module:python36-3.6
+ExpandFlags: module:llvm-toolset-7.0-rhel8
+
+
+%if 0%{?debian} == 9
+Prefer: clang-7 llvm-7-dev libclang-7-dev libstdc++6 nasm-mozilla nodejs-mozilla rust
+%elif 0%{?%debian_version} == 1001 || 0%{?%debian_version} == 9999 || 0%{?ubuntu} == 2004
+Prefer: clang-11 llvm-11-dev libclang-11-dev libstdc++6
+%elif 0%{?ubuntu} == 1604 || 0%{?ubuntu} == 1804
+Prefer: clang-8 llvm-8-dev libclang-8-dev libstdc++6 nasm-mozilla nodejs-mozilla
+Substitute: rustc rust=
+Substitute: cargo rust=
+%else
+Prefer: clang llvm libclang-dev libstdc++6 nasm nodejs
+%endif
+
+
+Prefer: bzr glibc-langpack-en libusb1 libfam0 libavcodec58 pinentry-qt

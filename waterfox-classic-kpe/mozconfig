@@ -44,6 +44,10 @@ ac_add_options --enable-hardening
 
 ac_add_options --disable-stylo
 
+if test `lsb_release -sc` = "hirsute"; then
+ac_add_options --disable-elf-hack
+fi
+
 ac_add_options --with-app-name=waterfox-classic
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=browser/branding/unofficial
