@@ -1,0 +1,20 @@
+diff --git a/netwerk/base/nsIOService.cpp b/netwerk/base/nsIOService.cpp
+index 7b4233f8178d..a8021803fb33 100644
+--- a/netwerk/base/nsIOService.cpp
++++ b/netwerk/base/nsIOService.cpp
+@@ -1259,13 +1259,13 @@ nsIOService::SetConnectivityInternal(bool aConnectivity)
+ NS_IMETHODIMP
+ nsIOService::AllowPort(int32_t inPort, const char *scheme, bool *_retval)
+ {
+-    int16_t port = inPort;
++    int32_t port = inPort;
+     if (port == -1) {
+         *_retval = true;
+         return NS_OK;
+     }
+ 
+-    if (port || port >= std::numeric_limits<uint16_t>::max()) {
++    if (port <= 0 || port >= std::numeric_limits<uint16_t>::max()) {
+         *_retval = false;
+         return NS_OK;
+     }

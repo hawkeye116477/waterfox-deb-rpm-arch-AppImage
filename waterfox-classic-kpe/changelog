@@ -1,3 +1,10 @@
+waterfox-classic-kpe (2021.04.1-0) obs; urgency=medium
+
+    * Security patches from latest ESR
+    * Few useful user-agent overrides
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 26 Apr 2021 12:38:00 +0200
+
 waterfox-classic-kpe (2021.03-0) obs; urgency=medium
 
     * Added support for detecting dark mode
