@@ -7,7 +7,7 @@ export PATH=/usr/lib/llvm-7/bin/:$PATH
 fi
 
 # n/a = Debian Unstable
-if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "hirsute"; then
+if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
@@ -31,7 +31,13 @@ ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
 ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
+
+if test `lsb_release -sc` = "hirsute"; then
+ac_add_options --enable-linker=lld
+else
 ac_add_options --enable-linker=gold
+fi
+
 export MOZ_PGO=1
 
 ac_add_options --enable-pulseaudio
