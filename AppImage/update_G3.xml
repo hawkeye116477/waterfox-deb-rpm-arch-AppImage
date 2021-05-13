@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="78.9.0" detailsURL="https://www.waterfox.net/blog/waterfox-2020.10-release" displayVersion="G3.2.0" extensionVersion="78.9.0" platformVersion="78.9.0" version="78.9.0">
+    <update type="major" appVersion="78.10.0" detailsURL="https://www.waterfox.net/blog/waterfox-G3.2.1" displayVersion="G3.2.1" extensionVersion="78.10.0" platformVersion="78.10.0" version="78.10.0">
         <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g3-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
