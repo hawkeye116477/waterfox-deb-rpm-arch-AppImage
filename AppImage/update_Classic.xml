@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="56.5" buildID="20210426110341" detailsURL="https://www.waterfox.net/blog/waterfox-2021.04-release" displayVersion="2021.04.1" extensionVersion="56.5" platformVersion="56.5" version="56.5">
-        <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage"/>
+    <update type="major" appVersion="56.5" buildID="20210430161844" detailsURL="https://www.waterfox.net/blog/waterfox-2021.04-release" displayVersion="2021.04.1" extensionVersion="56.5" platformVersion="56.5" version="56.5">
+        <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-classic-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
