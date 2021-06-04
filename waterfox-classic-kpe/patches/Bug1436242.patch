@@ -1,0 +1,53 @@
+From: Jed Davis <jld@mozilla.com>
+Date: 1526943705 -0600
+Subject: Bug 1436242 - Avoid undefined behavior in IPC fd-passing code.  r=froydnj
+
+MozReview-Commit-ID: 3szIPUssgF5
+
+diff --git a/ipc/chromium/src/chrome/common/ipc_channel_posix.cc b/ipc/chromium/src/chrome/common/ipc_channel_posix.cc
+--- a/ipc/chromium/src/chrome/common/ipc_channel_posix.cc
++++ b/ipc/chromium/src/chrome/common/ipc_channel_posix.cc
+@@ -418,20 +418,37 @@ bool Channel::ChannelImpl::ProcessIncomi
+     const int* fds;
+     unsigned num_fds;
+     unsigned fds_i = 0;  // the index of the first unused descriptor
+ 
+     if (input_overflow_fds_.empty()) {
+       fds = wire_fds;
+       num_fds = num_wire_fds;
+     } else {
+-      const size_t prev_size = input_overflow_fds_.size();
+-      input_overflow_fds_.resize(prev_size + num_wire_fds);
+-      memcpy(&input_overflow_fds_[prev_size], wire_fds,
+-             num_wire_fds * sizeof(int));
++      // This code may look like a no-op in the case where
++      // num_wire_fds == 0, but in fact:
++      //
++      // 1. wire_fds will be nullptr, so passing it to memcpy is
++      // undefined behavior according to the C standard, even though
++      // the memcpy length is 0.
++      //
++      // 2. prev_size will be an out-of-bounds index for
++      // input_overflow_fds_; this is undefined behavior according to
++      // the C++ standard, even though the element only has its
++      // pointer taken and isn't accessed (and the corresponding
++      // operation on a C array would be defined).
++      //
++      // UBSan makes #1 a fatal error, and assertions in libstdc++ do
++      // the same for #2 if enabled.
++      if (num_wire_fds > 0) {
++        const size_t prev_size = input_overflow_fds_.size();
++        input_overflow_fds_.resize(prev_size + num_wire_fds);
++        memcpy(&input_overflow_fds_[prev_size], wire_fds,
++               num_wire_fds * sizeof(int));
++      }
+       fds = &input_overflow_fds_[0];
+       num_fds = input_overflow_fds_.size();
+     }
+ 
+     // The data for the message we're currently reading consists of any data
+     // stored in incoming_message_ followed by data in input_buf_ (followed by
+     // other messages).
+ 
+
+
