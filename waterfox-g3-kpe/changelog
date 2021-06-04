@@ -1,3 +1,12 @@
+waterfox-g3-kpe (2.2-0) obs; urgency=medium
+
+    * Resolved varying Abyss and Floe theme issues
+    * Added user-agent override for xfinity.com
+    * Bookmark toolbar context menu can now be used after visiting about:preferences
+    * Upgraded to Gecko 78.11
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 04 Jun 2021 14:31:00 +0200
+
 waterfox-g3-kpe (2.1-0) obs; urgency=medium
 
     * Resolved an issue where the Abyss theme would display the active tab with incorrect colouring when the position was switched to under the address bar.
