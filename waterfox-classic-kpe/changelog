@@ -1,3 +1,14 @@
+waterfox-classic-kpe (2021.06-0) obs; urgency=medium
+
+    * Added CSS values smooth, high-quality and pixelated to the image-rendering keyword
+    * Added support for the scrollbar-color CSS keyword
+    * Added fixes for SVG sizing
+    * Fixed a website layout issue with table-styled elements potentially overlapping when placed inside a flexbox.
+    * Security patches from latest ESR
+    * Updated Widevine CDM to 4.10.2209
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 04 Jun 2021 12:49:00 +0200
+
 waterfox-classic-kpe (2021.04.1-0) obs; urgency=medium
 
     * Security patches from latest ESR
