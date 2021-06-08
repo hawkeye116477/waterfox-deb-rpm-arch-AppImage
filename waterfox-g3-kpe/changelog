@@ -1,3 +1,10 @@
+waterfox-g3-kpe (2.3-0) obs; urgency=medium
+
+    * Resolved an issue where Abyss or Floe would not be set upon restart of the browser.
+    * Resolved an issue where Yahoo! was being set as default search unprompted.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 08 Jun 2021 11:42:00 +0200
+
 waterfox-g3-kpe (2.2-0) obs; urgency=medium
 
     * Resolved varying Abyss and Floe theme issues
@@ -5,7 +12,7 @@ waterfox-g3-kpe (2.2-0) obs; urgency=medium
     * Bookmark toolbar context menu can now be used after visiting about:preferences
     * Upgraded to Gecko 78.11
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 04 Jun 2021 14:31:00 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 04 Jun 2021 14:31:00 +0200
 
 waterfox-g3-kpe (2.1-0) obs; urgency=medium
 
