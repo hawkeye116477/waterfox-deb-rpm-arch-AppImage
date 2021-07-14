@@ -1,3 +1,21 @@
+waterfox-classic-kpe (2021.07-0) obs; urgency=medium
+
+    * Redirects for requests that require preflight are now allowed
+    * Implemented missing calculation support for stroke-dashoffset
+    * Disabled the <menuitem> html tag by default. If you still need this, you can re-enable it with the preference dom.menuitem.enabled in about:config
+    * Changed behavior for <img> without src
+    * Updated ResizeObserver to match the current spec
+    * Added improvements for Web Animations API
+    * Improved tables support
+    * Added user agent overrides for websites that didn't recognise Waterfox Classic
+    * Fixed an issue with CSP .nonce attributes on elements
+    * Fixed an issue with textarea placeholders
+    * Fixed issues with -moz-appearance and -webkit-appearance
+    * Fixed various crashes
+    * Added security patches from latest ESR
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 14 Jul 2021 16:12:00 +0200
+
 waterfox-classic-kpe (2021.06-0) obs; urgency=medium
 
     * Added CSS values smooth, high-quality and pixelated to the image-rendering keyword

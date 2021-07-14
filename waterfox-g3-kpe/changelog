@@ -1,3 +1,12 @@
+waterfox-g3-kpe (2.4-0) obs; urgency=medium
+
+    * Ecosia is now selectable as a search option
+    * You should now be able to install Chrome and Opera extensions without issues once more
+    * Added security patches from latest ESR
+    * Refactored various features to be more performant
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 14 Jul 2021 16:13:00 +0200
+
 waterfox-g3-kpe (2.3-0) obs; urgency=medium
 
     * Resolved an issue where Abyss or Floe would not be set upon restart of the browser.
