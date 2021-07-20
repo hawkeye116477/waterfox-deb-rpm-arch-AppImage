@@ -1,3 +1,9 @@
+waterfox-g3-kpe (2.4.1-0) obs; urgency=low
+
+    * Fixed rendering of preferences page
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 20 Jul 2021 18:39:00 +0200
+
 waterfox-g3-kpe (2.4-0) obs; urgency=medium
 
     * Ecosia is now selectable as a search option
