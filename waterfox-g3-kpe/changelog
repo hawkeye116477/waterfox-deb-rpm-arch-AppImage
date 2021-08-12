@@ -1,3 +1,9 @@
+waterfox-g3-kpe (2.5-0) obs; urgency=low
+
+    * Latest Mozilla Foundation Security Advisories patched.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 12 Aug 2021 19:03:00 +0200
+
 waterfox-g3-kpe (2.4.1-0) obs; urgency=low
 
     * Fixed rendering of preferences page
