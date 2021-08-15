@@ -2,7 +2,7 @@
 # -*- makefile -*-
 
 export SHELL=/bin/bash
-LDFLAGS += -Wl,--no-keep-memory
+LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
 export MOZ_NOSPAM:=1
 export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g3-kpe.obsinfo)
 export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g3-kpe.obsinfo)

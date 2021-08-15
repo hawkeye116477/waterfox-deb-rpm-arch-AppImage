@@ -19,6 +19,7 @@ if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || tes
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
+ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g3
 ac_add_options --with-app-basename=Waterfox

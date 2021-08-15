@@ -33,11 +33,10 @@ ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
 if test `lsb_release -sc` = "hirsute"; then
-ac_add_options --enable-linker=lld
 ac_add_options --disable-elf-hack
-else
-ac_add_options --enable-linker=gold
 fi
+
+ac_add_options --enable-linker=lld
 
 export MOZ_PGO=1
 
@@ -48,6 +47,7 @@ ac_add_options --enable-jack
 mk_add_options AUTOCLOBBER=1
 
 ac_add_options --disable-debug
+ac_add_options --disable-debug-symbols
 ac_add_options --disable-crashreporter
 ac_add_options --disable-profiling
 ac_add_options --disable-verify-mar
