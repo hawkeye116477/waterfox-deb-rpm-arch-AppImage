@@ -32,7 +32,7 @@ ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
-if test `lsb_release -sc` = "hirsute"; then
+if test `lsb_release -sc` = "hirsute" || test `lsb_release -sc` = "stretch" ; then
 ac_add_options --disable-elf-hack
 fi
 
