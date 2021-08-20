@@ -10,5 +10,5 @@ Build-Depends: debhelper (>= 9), autoconf2.13, libgtk-3-dev (>= 3.4), libdbus-gl
 Package-List:
  waterfox-classic-kpe deb web optional arch=any
 Files:
- 0000000000000000000000000000000 1 waterfox-classic-kpe.orig.tar.gz
- 0000000000000000000000000000000 1 waterfox-classic-kpe.debian.tar.gz
+ 0000000000000000000000000000000 1 waterfox-classic-kpe.orig.tar.xz
+ 0000000000000000000000000000000 1 waterfox-classic-kpe.debian.tar.xz

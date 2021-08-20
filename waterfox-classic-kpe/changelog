@@ -1,3 +1,23 @@
+waterfox-classic-kpe (2021.08-0) obs; urgency=medium
+
+    * Aligned document.open() with the overhauled specification
+    * Fixed issues with PerformanceObserver
+    * Fixed issues with -moz-appearance and -webkit-appearance
+    * Implemented promise.allSettled()
+    * Implemented the origin-clean algorithm for canvases
+    * Added SVG image support for createImageBitmap
+    * Implemented EventTarget as a constructor.
+    * Updated the lz4 library
+    * Updated the ICU library
+    * Fixed various crashes
+    * Blocked particularly old versions of Mesa/Nouveau drivers due to issues
+    * Changed the default Firefox Compatibility version number to 68.0
+    * Updated user-agent overrides
+    * Addressed CVE-2018-5113
+    * Added security patches from latest ESR
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 20 Aug 2021 13:06:00 +0200
+
 waterfox-classic-kpe (2021.07-0) obs; urgency=medium
 
     * Redirects for requests that require preflight are now allowed
