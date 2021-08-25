@@ -4,9 +4,9 @@
 export SHELL=/bin/bash
 export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-classic-kpe.obsinfo)
 export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-classic-kpe.obsinfo)
-export SOURCE_REPO=https://github.com/MrAlex94/Waterfox
-export source_repo=https://github.com/MrAlex94/Waterfox
-export MOZ_SOURCE_REPO=https://github.com/MrAlex94/Waterfox
+export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export source_repo=https://github.com/WaterfoxCo/Waterfox
+export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export TODAY_DATE=$(shell date +%Y-%m-%d)
 
 distrelease := $(shell lsb_release -sc)
