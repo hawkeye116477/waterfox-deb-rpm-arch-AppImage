@@ -1,3 +1,10 @@
+waterfox-classic-kpe (2021.08.1-0) obs; urgency=low
+
+    * Fixed problems with restoring session cookies.
+    * Fixed problem which disabled some extensions
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 31 Aug 2021 23:26:00 +0200
+
 waterfox-classic-kpe (2021.08-0) obs; urgency=medium
 
     * Aligned document.open() with the overhauled specification
