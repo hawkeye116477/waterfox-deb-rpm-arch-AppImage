@@ -1,0 +1,38 @@
+kwaterfoxhelper (5.0.7-1) xenial; urgency=medium
+
+  * Excluded kwaterfoxhelper from session management (boo#1176852)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 03 Feb 2021 14:24:00 +0200
+
+kwaterfoxhelper (5.0.6-1) xenial; urgency=low
+
+  * Changed way of determining browser's name
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 13 Oct 2019 11:08:00 +0200
+
+kwaterfoxhelper (5.0.5-0) xenial; urgency=low
+
+  * Added checking if it's started from Waterfox Classic or Current
+  * Restored compatibility with KIO lower than 5.31.0
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 12 Oct 2019 13:36:00 +0200
+
+kwaterfoxhelper (5.0.4-0) bionic; urgency=low
+
+  * Cache helper protocols (boo#1037806)
+  * Use new style connect
+  * Don't use deprecated KRun:runUrl without flags, use with flags
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 20 Jul 2019 15:53:00 +0200
+
+kwaterfoxhelper (5.0.3-0) xenial; urgency=low
+
+  * Improved HiDPI support
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 09 Dec 2018 16:46:00 +0200
+
+kwaterfoxhelper (5.0.2-0) xenial; urgency=medium
+
+  * Moved to /usr/lib/waterfox to follow Debian's standards
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 15 Oct 2018 09:58:00 +0200
