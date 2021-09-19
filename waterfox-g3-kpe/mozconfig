@@ -32,12 +32,12 @@ ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
-#if test `lsb_release -sc` = "hirsute" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster"; then
-#ac_add_options --disable-elf-hack
-#ac_add_options --enable-linker=lld
-#fi
-
+if test `lsb_release -sc` = "hirsute"; then
+ac_add_options --disable-elf-hack
+ac_add_options --enable-linker=lld
+else
 ac_add_options --enable-linker=gold
+fi
 
 export MOZ_PGO=1
 
