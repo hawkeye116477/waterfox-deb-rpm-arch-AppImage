@@ -12,3 +12,5 @@ Package-List:
 Files:
  0000000000000000000000000000000 1 waterfox-g3-kpe.orig.tar.xz
  0000000000000000000000000000000 1 waterfox-g3-kpe.debian.tar.gz
+# https://github.com/openSUSE/obs-build/pull/147
+DEBTRANSFORM-RELEASE: 1
