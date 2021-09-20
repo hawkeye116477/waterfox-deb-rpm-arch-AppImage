@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2021.09-0) obs; urgency=medium
+
+    * New RegExp engine in SpiderMonkey, adding support for Unicode escape sequences, lookbehind references, and named captures
+    * Scrollbar preferences can be toggled in about:preferences now
+    * Added security patches from latest ESR
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 20 Sep 2021 16:29:10 +0200
+
 waterfox-classic-kpe (2021.08.1-0) obs; urgency=low
 
     * Fixed problems with restoring session cookies.
