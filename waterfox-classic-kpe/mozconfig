@@ -49,7 +49,7 @@ ac_add_options --enable-hardening
 
 ac_add_options --disable-stylo
 
-if test `lsb_release -sc` = "hirsute"; then
+if test `lsb_release -sc` = "hirsute" || test `lsb_release -sc` = "n/a"; then
 ac_add_options --disable-elf-hack
 fi
 
