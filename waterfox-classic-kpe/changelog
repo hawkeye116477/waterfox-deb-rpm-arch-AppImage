@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2021.10-0) obs; urgency=medium
+
+    * Updated RegExp engine, with resulting perfomance improvement in JavaScript
+    * Fixed crashes for users on newer Linux distributions
+    * TLS 1.3 compatibility mode is now enabled by default
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 13 Oct 2021 11:01:09 +0200
+
 waterfox-classic-kpe (2021.09-0) obs; urgency=medium
 
     * New RegExp engine in SpiderMonkey, adding support for Unicode escape sequences, lookbehind references, and named captures
