@@ -1,0 +1,8 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Waterfox
+Source: https://github.com/WaterfoxCo/Waterfox.git
+Comment: This package was debianized by hawkeye116477 <hawkeye116477@gmail.com>.
+
+Files: *
+Copyright: Copyright 2021, all rights belongs to Waterfox Ltd and other respective owners.
+License: MPL-2.0

@@ -1,0 +1,31 @@
+diff --git a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+--- a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
++++ b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+@@ -22,23 +22,27 @@ class FFmpegDecoderModule {
+   static already_AddRefed<PlatformDecoderModule> Create(FFmpegLibWrapper*);
+ };
+ 
+ static FFmpegLibWrapper sLibAV;
+ 
+ static const char* sLibs[] = {
+ // clang-format off
+ #if defined(XP_DARWIN)
++  "libavcodec.58.134.dylib",
++  "libavcodec.58.91.dylib",
+   "libavcodec.58.dylib",
+   "libavcodec.57.dylib",
+   "libavcodec.56.dylib",
+   "libavcodec.55.dylib",
+   "libavcodec.54.dylib",
+   "libavcodec.53.dylib",
+ #else
++  "libavcodec.so.58.134",
++  "libavcodec.so.58.91",
+   "libavcodec.so.58",
+   "libavcodec-ffmpeg.so.58",
+   "libavcodec-ffmpeg.so.57",
+   "libavcodec-ffmpeg.so.56",
+   "libavcodec.so.57",
+   "libavcodec.so.56",
+   "libavcodec.so.55",
+   "libavcodec.so.54",

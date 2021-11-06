@@ -1,0 +1,8 @@
+waterfox-g4-kpe (0.2.1-0) obs; urgency=medium
+
+    * Based on Gecko 91
+    * "Lepton" theme based on an improved Photon theme.
+    * You can now import specific Gecko-based profiles (Firefox, Waterfox etc.) from File > Import From Another Browswer
+    * Limited as many outgoing connections as possible to keep the browser operational
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 06 Nov 2021 13:26:58 +0100
