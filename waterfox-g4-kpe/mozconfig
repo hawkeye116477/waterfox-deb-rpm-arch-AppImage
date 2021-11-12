@@ -1,14 +1,20 @@
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
-export PATH=/usr/lib/llvm-8/bin/:$PATH
-fi
-
-if test `lsb_release -sc` = "stretch"; then
-export PATH=/usr/lib/llvm-7/bin/:$PATH
-fi
+# For successfull LTO build, we need to use matching LLVM version
 
 # n/a = Debian Unstable
-if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal"; then
+if test `lsb_release -sc` = "n/a"; then
+export PATH=/usr/lib/llvm-13/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "bionic"; then
+export PATH=/usr/lib/llvm-10/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "focal"; then
+export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
 export CC=clang
@@ -16,12 +22,13 @@ export CXX=clang++
 export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
+export MACH_USE_SYSTEM_PYTHON=1
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
@@ -32,12 +39,9 @@ ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
-if test `lsb_release -sc` = "hirsute"; then
-ac_add_options --disable-elf-hack
 ac_add_options --enable-linker=lld
-else
-ac_add_options --enable-linker=gold
-fi
+
+ac_add_options --disable-elf-hack
 
 export MOZ_PGO=1
 
@@ -54,6 +58,7 @@ ac_add_options --disable-profiling
 ac_add_options --disable-verify-mar
 ac_add_options --disable-dmd
 ac_add_options --disable-geckodriver
+ac_add_options --disable-bootstrap
 
 ac_add_options --enable-application=browser
 ac_add_options --disable-updater
@@ -68,7 +73,7 @@ ac_add_options --allow-addon-sideload
 
 ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 
-export MOZ_REQUIRE_SIGNING=0
+export MOZ_REQUIRE_SIGNING=
 export MOZ_INCLUDE_SOURCE_INFO=1
 ac_add_options "MOZ_ALLOW_LEGACY_EXTENSIONS=1"
 

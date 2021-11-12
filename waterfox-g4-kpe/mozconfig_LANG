@@ -1,25 +1,31 @@
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
-export PATH=/usr/lib/llvm-8/bin/:$PATH
-fi
-
-if test `lsb_release -sc` = "stretch"; then
-export PATH=/usr/lib/llvm-7/bin/:$PATH
-fi
-
 # n/a = Debian Unstable
-if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal"; then
+if test `lsb_release -sc` = "n/a"; then
+export PATH=/usr/lib/llvm-13/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic"; then
+export PATH=/usr/lib/llvm-10/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "focal"; then
+export PATH=/usr/lib/llvm-12/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
-ac_add_options --enable-linker=gold
+export MACH_USE_SYSTEM_PYTHON=1
+
+ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g4
 ac_add_options --with-app-basename=Waterfox
@@ -28,3 +34,4 @@ mk_add_options MOZ_OBJDIR=$topsrcdir/../obj_LANG
 ac_add_options --prefix=/usr
 ac_add_options --with-l10n-base=$topsrcdir/browser/locales/l10n
 ac_add_options --disable-updater
+ac_add_options --disable-bootstrap
