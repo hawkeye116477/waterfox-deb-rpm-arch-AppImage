@@ -1,0 +1,45 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index fae4794d9478..373f65885b90 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -3756,8 +3756,6 @@ dependencies = [
+ [[package]]
+ name = "prost-derive"
+ version = "0.6.1"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "537aa19b95acde10a12fec4301466386f757403de4cd4e5b4fa78fb5ecb18f72"
+ dependencies = [
+  "anyhow",
+  "itertools",
+diff --git a/Cargo.toml b/Cargo.toml
+index 171de100291a..856a0e0efdf0 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -81,3 +81,6 @@ rev = "b7cfd39b531680217537cfcf5294a22077a0a58d"
+ [patch.crates-io.cranelift-wasm]
+ git = "https://github.com/bytecodealliance/wasmtime"
+ rev = "b7cfd39b531680217537cfcf5294a22077a0a58d"
++
++[patch.crates-io.prost-derive]
++path = "third_party/rust/prost-derive"
+diff --git a/third_party/rust/prost-derive/src/lib.rs b/third_party/rust/prost-derive/src/lib.rs
+index c3596212a507..c7d18d592c13 100644
+--- a/third_party/rust/prost-derive/src/lib.rs
++++ b/third_party/rust/prost-derive/src/lib.rs
+@@ -104,11 +104,8 @@ fn try_message(input: TokenStream) -> Result<TokenStream, Error> {
+ 
+     let merge = fields.iter().map(|&(ref field_ident, ref field)| {
+         let merge = field.merge(quote!(value));
+-        let tags = field
+-            .tags()
+-            .into_iter()
+-            .map(|tag| quote!(#tag))
+-            .intersperse(quote!(|));
++        let tags = field.tags().into_iter().map(|tag| quote!(#tag));
++        let tags = Itertools::intersperse(tags, quote!(|));
+         quote! {
+             #(#tags)* => {
+                 let mut value = &mut self.#field_ident;
+-- 
+2.33.0
+
