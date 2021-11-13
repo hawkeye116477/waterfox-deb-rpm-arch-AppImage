@@ -2,7 +2,7 @@ Source: waterfox-g3-kpe
 Section: web
 Priority: optional
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
-Build-Depends: debhelper (>= 9), autoconf2.13, libgtk-3-dev (>= 3.4), libdbus-glib-1-dev, libpulse-dev, libasound2-dev, yasm (>= 1.1), build-essential, libgtk2.0-dev (>= 2.14), libxt-dev, python3 (>= 3.5), zip, unzip, cargo (>= 0.42), libgl1-mesa-dev, libnotify-dev (>= 0.4), binutils-avr, libfreetype6-dev (>= 2.0.1), libfontconfig1-dev, pkg-config, libtinfo-dev, clang (>= 5.0) | clang-5.0 | clang-6.0 | clang-7 | clang-8 | clang-10 | clang-11, llvm-dev (>= 5.0) | llvm-5.0-dev | llvm-6.0-dev | llvm-7-dev | llvm-8-dev | llvm-10-dev | llvm-11-dev, binutils | lld (>= 5.0), rustc (>= 1.41.0), libxext-dev, libglib2.0-dev (>= 2.18), libpango1.0-dev (>= 1.14.0), libstartup-notification0-dev, libcurl4-openssl-dev, libiw-dev, mesa-common-dev, libxrender-dev, dbus-x11, xvfb, libx11-dev, libx11-xcb-dev, libfile-fcntllock-perl, apt-utils, locales, autotools-dev, libjpeg-dev, zlib1g-dev, libreadline-dev, dpkg-dev (>= 1.16.1.1~), libevent-dev (>= 1.4.1), libjsoncpp-dev, xfonts-base, xauth, lsb-release, cbindgen (>= 0.14.3), nodejs (>= 10.21) | nodejs-mozilla (>= 10.21), libjack-dev, nasm (>= 2.14) | nasm-mozilla (>= 2.14), libclang-dev (>= 5.0) | libclang-6.0-dev | libclang-7-dev | libclang-8-dev | libclang-10-dev | libclang-11-dev, libstdc++6 (>= 7.0) | gcc-mozilla (>= 7), bc
+Build-Depends: debhelper (>= 9), autoconf2.13, libgtk-3-dev (>= 3.4), libdbus-glib-1-dev, libpulse-dev, libasound2-dev, yasm (>= 1.1), build-essential, libgtk2.0-dev (>= 2.14), libxt-dev, python3 (>= 3.5), zip, unzip, cargo (>= 0.42), libgl1-mesa-dev, libnotify-dev (>= 0.4), binutils-avr, libfreetype6-dev (>= 2.0.1), libfontconfig1-dev, pkg-config, libtinfo-dev, clang (>= 5.0) | clang-8 | clang-10 | clang-11 | clang-12 | clang-13, llvm-dev (>= 5.0) | llvm-8-dev | llvm-10-dev | llvm-11-dev | llvm-12-dev | llvm-13-dev, binutils | lld (>= 5.0), rustc (>= 1.41.0), libxext-dev, libglib2.0-dev (>= 2.18), libpango1.0-dev (>= 1.14.0), libstartup-notification0-dev, libcurl4-openssl-dev, libiw-dev, mesa-common-dev, libxrender-dev, dbus-x11, xvfb, libx11-dev, libx11-xcb-dev, libfile-fcntllock-perl, apt-utils, locales, autotools-dev, libjpeg-dev, zlib1g-dev, libreadline-dev, dpkg-dev (>= 1.16.1.1~), libevent-dev (>= 1.4.1), libjsoncpp-dev, xfonts-base, xauth, lsb-release, cbindgen (>= 0.14.3), nodejs (>= 10.21) | nodejs-mozilla (>= 10.21), libjack-dev, nasm (>= 2.14) | nasm-mozilla (>= 2.14), libclang-dev (>= 5.0) | libclang-8-dev | libclang-10-dev | libclang-11-dev | libclang-12-dev | libclang-13-dev, libstdc++6 (>= 7.0) | gcc-mozilla (>= 7), bc
 Standards-Version: 3.9.7
 Homepage: https://www.waterfox.net/
 
@@ -11,6 +11,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-g3-wayland, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox-g3
+Breaks: waterfox-current-kpe (<< 2020.10-0)
+Replaces: waterfox-current-kpe (<< 2020.10-0)
 Description: Customizable privacy-conscious web browser with primary support for webextensions and better integration with KDE
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including modified bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
@@ -23,6 +25,8 @@ Description: Customizable privacy-conscious web browser with primary support for
 Package: waterfox-g3-kde
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-g3, kwaterfoxhelper
+Breaks: waterfox-current-kde (<< 2020.10-0)
+Replaces: waterfox-current-kde (<< 2020.10-0)
 Suggests: plasma-browser-integration
 Description: KDE Plasma integration for Waterfox Third Generation
  For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
@@ -33,560 +37,1413 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-g3
 Description: Waterfox Third Generation Wayland launcher
  This package contains launcher and desktop file to run Waterfox Third Generation natively on Wayland.
 
+Package: waterfox-current-kpe
+Depends: waterfox-g3-kpe, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-kde
+Depends: waterfox-g3-kde, ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: oldlibs
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
 Package: waterfox-g3-i18n-ach
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ach (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ach (<< 2020.10-0)
 Description: Acholi language pack for Waterfox G3
  This package contains Acholi translations for Waterfox G3
 
 Package: waterfox-g3-i18n-af
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-af (<< 2020.10-0)
+Breaks: waterfox-current-i18n-af (<< 2020.10-0)
 Description: Afrikaans language pack for Waterfox G3
  This package contains Afrikaans translations for Waterfox G3
 
 Package: waterfox-g3-i18n-an
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-an (<< 2020.10-0)
+Breaks: waterfox-current-i18n-an (<< 2020.10-0)
 Description: Aragonese language pack for Waterfox G3
  This package contains Aragonese translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ar (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ar (<< 2020.10-0)
 Description: Arabic language pack for Waterfox G3
  This package contains Arabic translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ast
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ast (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ast (<< 2020.10-0)
 Description: Asturian language pack for Waterfox G3
  This package contains Asturian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-az
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-az (<< 2020.10-0)
+Breaks: waterfox-current-i18n-az (<< 2020.10-0)
 Description: Azerbaijani language pack for Waterfox G3
  This package contains Azerbaijani translations for Waterfox G3
 
 Package: waterfox-g3-i18n-be
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-be (<< 2020.10-0)
+Breaks: waterfox-current-i18n-be (<< 2020.10-0)
 Description: Belarusian language pack for Waterfox G3
  This package contains Belarusian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-bg
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-bg (<< 2020.10-0)
+Breaks: waterfox-current-i18n-bg (<< 2020.10-0)
 Description: Bulgarian language pack for Waterfox G3
  This package contains Bulgarian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-bn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-bn (<< 2020.10-0)
+Breaks: waterfox-current-i18n-bn (<< 2020.10-0)
 Description: Bengali language pack for Waterfox G3
  This package contains Bengali translations for Waterfox G3
 
 Package: waterfox-g3-i18n-br
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-br (<< 2020.10-0)
+Breaks: waterfox-current-i18n-br (<< 2020.10-0)
 Description: Breton language pack for Waterfox G3
  This package contains Breton translations for Waterfox G3
 
 Package: waterfox-g3-i18n-bs
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-bs (<< 2020.10-0)
+Breaks: waterfox-current-i18n-bs (<< 2020.10-0)
 Description: Bosnian language pack for Waterfox G3
  This package contains Bosnian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ca
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ca (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ca (<< 2020.10-0)
 Description: Catalan language pack for Waterfox G3
  This package contains Catalan translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ca-valencia
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ca-valencia (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ca-valencia (<< 2020.10-0)
 Description:  Català (Valencià) language pack for Waterfox G3
  This package contains  Català (Valencià) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-cak
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-cak (<< 2020.10-0)
+Breaks: waterfox-current-i18n-cak (<< 2020.10-0)
 Description: Kaqchikel language pack for Waterfox G3
  This package contains Kaqchikel translations for Waterfox G3
 
 Package: waterfox-g3-i18n-cs
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-cs (<< 2020.10-0)
+Breaks: waterfox-current-i18n-cs (<< 2020.10-0)
 Description: Czech language pack for Waterfox G3
  This package contains Czech translations for Waterfox G3
 
 Package: waterfox-g3-i18n-cy
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-cy (<< 2020.10-0)
+Breaks: waterfox-current-i18n-cy (<< 2020.10-0)
 Description: Welsh language pack for Waterfox G3
  This package contains Welsh translations for Waterfox G3
 
 Package: waterfox-g3-i18n-da
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-da (<< 2020.10-0)
+Breaks: waterfox-current-i18n-da (<< 2020.10-0)
 Description: Danish language pack for Waterfox G3
  This package contains Danish translations for Waterfox G3
 
 Package: waterfox-g3-i18n-de
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-de (<< 2020.10-0)
+Breaks: waterfox-current-i18n-de (<< 2020.10-0)
 Description: German language pack for Waterfox G3
  This package contains German translations for Waterfox G3
 
 Package: waterfox-g3-i18n-dsb
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-dsb (<< 2020.10-0)
+Breaks: waterfox-current-i18n-dsb (<< 2020.10-0)
 Description: Lower Sorbian language pack for Waterfox G3
  This package contains Lower Sorbian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-el
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-el (<< 2020.10-0)
+Breaks: waterfox-current-i18n-el (<< 2020.10-0)
 Description: Greek language pack for Waterfox G3
  This package contains Greek translations for Waterfox G3
 
 Package: waterfox-g3-i18n-en-ca
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-en-ca (<< 2020.10-0)
+Breaks: waterfox-current-i18n-en-ca (<< 2020.10-0)
 Description: English (Canadian) language pack for Waterfox G3
  This package contains English (Canadian) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-en-gb
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-en-gb (<< 2020.10-0)
+Breaks: waterfox-current-i18n-en-gb (<< 2020.10-0)
 Description: English (British) language pack for Waterfox G3
  This package contains English (British) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-eo
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-eo (<< 2020.10-0)
+Breaks: waterfox-current-i18n-eo (<< 2020.10-0)
 Description: Esperanto language pack for Waterfox G3
  This package contains Esperanto translations for Waterfox G3
 
 Package: waterfox-g3-i18n-es-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-es-ar (<< 2020.10-0)
+Breaks: waterfox-current-i18n-es-ar (<< 2020.10-0)
 Description: Spanish (Argentina) language pack for Waterfox G3
  This package contains Spanish (Argentina) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-es-cl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-es-cl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-es-cl (<< 2020.10-0)
 Description: Spanish (Chile) language pack for Waterfox G3
  This package contains Spanish (Chile) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-es-es
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-es-es (<< 2020.10-0)
+Breaks: waterfox-current-i18n-es-es (<< 2020.10-0)
 Description: Spanish (Spain) language pack for Waterfox G3
  This package contains Spanish (Spain) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-es-mx
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-es-mx (<< 2020.10-0)
+Breaks: waterfox-current-i18n-es-mx (<< 2020.10-0)
 Description: Spanish (Mexico) language pack for Waterfox G3
  This package contains Spanish (Mexico) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-et
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-et (<< 2020.10-0)
+Breaks: waterfox-current-i18n-et (<< 2020.10-0)
 Description: Estonian language pack for Waterfox G3
  This package contains Estonian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-eu
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-eu (<< 2020.10-0)
+Breaks: waterfox-current-i18n-eu (<< 2020.10-0)
 Description: Basque language pack for Waterfox G3
  This package contains Basque translations for Waterfox G3
 
 Package: waterfox-g3-i18n-fa
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-fa (<< 2020.10-0)
+Breaks: waterfox-current-i18n-fa (<< 2020.10-0)
 Description: Persian language pack for Waterfox G3
  This package contains Persian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ff
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ff (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ff (<< 2020.10-0)
 Description: Fulah language pack for Waterfox G3
  This package contains Fulah translations for Waterfox G3
 
 Package: waterfox-g3-i18n-fi
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-fi (<< 2020.10-0)
+Breaks: waterfox-current-i18n-fi (<< 2020.10-0)
 Description: Finnish language pack for Waterfox G3
  This package contains Finnish translations for Waterfox G3
 
 Package: waterfox-g3-i18n-fr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-fr (<< 2020.10-0)
+Breaks: waterfox-current-i18n-fr (<< 2020.10-0)
 Description: French language pack for Waterfox G3
  This package contains French translations for Waterfox G3
 
 Package: waterfox-g3-i18n-fy-nl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-fy-nl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-fy-nl (<< 2020.10-0)
 Description: Western Frisian language pack for Waterfox G3
  This package contains Western Frisian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ga-ie
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ga-ie (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ga-ie (<< 2020.10-0)
 Description: Irish (Ireland) language pack for Waterfox G3
  This package contains Irish (Ireland) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-gd
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-gd (<< 2020.10-0)
+Breaks: waterfox-current-i18n-gd (<< 2020.10-0)
 Description: Scottish Gaelic language pack for Waterfox G3
  This package contains Scottish Gaelic translations for Waterfox G3
 
 Package: waterfox-g3-i18n-gl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-gl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-gl (<< 2020.10-0)
 Description: Galician language pack for Waterfox G3
  This package contains Galician translations for Waterfox G3
 
 Package: waterfox-g3-i18n-gn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-gn (<< 2020.10-0)
+Breaks: waterfox-current-i18n-gn (<< 2020.10-0)
 Description: Guarani language pack for Waterfox G3
  This package contains Guarani translations for Waterfox G3
 
 Package: waterfox-g3-i18n-gu-in
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-gu-in (<< 2020.10-0)
+Breaks: waterfox-current-i18n-gu-in (<< 2020.10-0)
 Description: Gujarati (India) language pack for Waterfox G3
  This package contains Gujarati (India) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-he
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-he (<< 2020.10-0)
+Breaks: waterfox-current-i18n-he (<< 2020.10-0)
 Description: Hebrew language pack for Waterfox G3
  This package contains Hebrew translations for Waterfox G3
 
 Package: waterfox-g3-i18n-hi-in
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-hi-in (<< 2020.10-0)
+Breaks: waterfox-current-i18n-hi-in (<< 2020.10-0)
 Description: Hindi (India) language pack for Waterfox G3
  This package contains Hindi (India) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-hr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-hr (<< 2020.10-0)
+Breaks: waterfox-current-i18n-hr (<< 2020.10-0)
 Description: Croatian language pack for Waterfox G3
  This package contains Croatian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-hsb
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-hsb (<< 2020.10-0)
+Breaks: waterfox-current-i18n-hsb (<< 2020.10-0)
 Description: Upper Sorbian language pack for Waterfox G3
  This package contains Upper Sorbian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-hu
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-hu (<< 2020.10-0)
+Breaks: waterfox-current-i18n-hu (<< 2020.10-0)
 Description: Hungarian language pack for Waterfox G3
  This package contains Hungarian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-hy-am
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-hy-am (<< 2020.10-0)
+Breaks: waterfox-current-i18n-hy-am (<< 2020.10-0)
 Description: Armenian (Armenia) language pack for Waterfox G3
  This package contains Armenian (Armenia) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ia
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ia (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ia (<< 2020.10-0)
 Description: Interlingua language pack for Waterfox G3
  This package contains Interlingua translations for Waterfox G3
 
 Package: waterfox-g3-i18n-id
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-id (<< 2020.10-0)
+Breaks: waterfox-current-i18n-id (<< 2020.10-0)
 Description: Indonesian language pack for Waterfox G3
  This package contains Indonesian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-is
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-is (<< 2020.10-0)
+Breaks: waterfox-current-i18n-is (<< 2020.10-0)
 Description: Icelandic language pack for Waterfox G3
  This package contains Icelandic translations for Waterfox G3
 
 Package: waterfox-g3-i18n-it
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-it (<< 2020.10-0)
+Breaks: waterfox-current-i18n-it (<< 2020.10-0)
 Description: Italian language pack for Waterfox G3
  This package contains Italian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ja
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ja (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ja (<< 2020.10-0)
 Description: Japanese language pack for Waterfox G3
  This package contains Japanese translations for Waterfox G3
 
 Package: waterfox-g3-i18n-kab
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-kab (<< 2020.10-0)
+Breaks: waterfox-current-i18n-kab (<< 2020.10-0)
 Description: Kabyle language pack for Waterfox G3
  This package contains Kabyle translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ka
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ka (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ka (<< 2020.10-0)
 Description: Georgian language pack for Waterfox G3
  This package contains Georgian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-kk
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-kk (<< 2020.10-0)
+Breaks: waterfox-current-i18n-kk (<< 2020.10-0)
 Description: Kazakh language pack for Waterfox G3
  This package contains Kazakh translations for Waterfox G3
 
 Package: waterfox-g3-i18n-km
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-km (<< 2020.10-0)
+Breaks: waterfox-current-i18n-km (<< 2020.10-0)
 Description: Central Khmer language pack for Waterfox G3
  This package contains Central Khmer translations for Waterfox G3
 
 Package: waterfox-g3-i18n-kn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-kn (<< 2020.10-0)
+Breaks: waterfox-current-i18n-kn (<< 2020.10-0)
 Description: Kannada language pack for Waterfox G3
  This package contains Kannada translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ko
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ko (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ko (<< 2020.10-0)
 Description: Korean language pack for Waterfox G3
  This package contains Korean translations for Waterfox G3
 
 Package: waterfox-g3-i18n-lij
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-lij (<< 2020.10-0)
+Breaks: waterfox-current-i18n-lij (<< 2020.10-0)
 Description: Ligurian language pack for Waterfox G3
  This package contains Ligurian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-lt
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-lt (<< 2020.10-0)
+Breaks: waterfox-current-i18n-lt (<< 2020.10-0)
 Description: Lithuanian language pack for Waterfox G3
  This package contains Lithuanian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-lv
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-lv (<< 2020.10-0)
+Breaks: waterfox-current-i18n-lv (<< 2020.10-0)
 Description: Latvian language pack for Waterfox G3
  This package contains Latvian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-mk
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-mk (<< 2020.10-0)
+Breaks: waterfox-current-i18n-mk (<< 2020.10-0)
 Description: Macedonian language pack for Waterfox G3
  This package contains Macedonian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-mr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-mr (<< 2020.10-0)
+Breaks: waterfox-current-i18n-mr (<< 2020.10-0)
 Description: Marathi language pack for Waterfox G3
  This package contains Marathi translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ms
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ms (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ms (<< 2020.10-0)
 Description: Malay language pack for Waterfox G3
  This package contains Malay translations for Waterfox G3
 
 Package: waterfox-g3-i18n-my
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-my (<< 2020.10-0)
+Breaks: waterfox-current-i18n-my (<< 2020.10-0)
 Description: Myanmar language pack for Waterfox G3
  This package contains Myanmar translations for Waterfox G3
 
 Package: waterfox-g3-i18n-nb-no
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-nb-no (<< 2020.10-0)
+Breaks: waterfox-current-i18n-nb-no (<< 2020.10-0)
 Description: Norwegian (Bokmål) language pack for Waterfox G3
  This package contains Norwegian (Bokmål) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ne-np
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ne-np (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ne-np (<< 2020.10-0)
 Description: Nepali language pack for Waterfox G3
  This package contains Nepali translations for Waterfox G3
 
 Package: waterfox-g3-i18n-nl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-nl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-nl (<< 2020.10-0)
 Description: Dutch; Flemish language pack for Waterfox G3
  This package contains Dutch; Flemish translations for Waterfox G3
 
 Package: waterfox-g3-i18n-nn-no
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-nn-no (<< 2020.10-0)
+Breaks: waterfox-current-i18n-nn-no (<< 2020.10-0)
 Description: Norwegian (Nynorsk) language pack for Waterfox G3
  This package contains Norwegian (Nynorsk) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-oc
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-oc (<< 2020.10-0)
+Breaks: waterfox-current-i18n-oc (<< 2020.10-0)
 Description: Occitan (post 1500) language pack for Waterfox G3
  This package contains Occitan (post 1500) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-pa-in
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-pa-in (<< 2020.10-0)
+Breaks: waterfox-current-i18n-pa-in (<< 2020.10-0)
 Description: Punjabi (India) language pack for Waterfox G3
  This package contains Punjabi (India) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-pl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-pl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-pl (<< 2020.10-0)
 Description: Polish language pack for Waterfox G3
  This package contains Polish translations for Waterfox G3
 
 Package: waterfox-g3-i18n-pt-br
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-pt-br (<< 2020.10-0)
+Breaks: waterfox-current-i18n-pt-br (<< 2020.10-0)
 Description: Portuguese (Brazilian) language pack for Waterfox G3
  This package contains Portuguese (Brazilian) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-pt-pt
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-pt-pt (<< 2020.10-0)
+Breaks: waterfox-current-i18n-pt-pt (<< 2020.10-0)
 Description: Portuguese (Portugal) language pack for Waterfox G3
  This package contains Portuguese (Portugal) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-rm
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-rm (<< 2020.10-0)
+Breaks: waterfox-current-i18n-rm (<< 2020.10-0)
 Description: Romansh language pack for Waterfox G3
  This package contains Romansh translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ro
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ro (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ro (<< 2020.10-0)
 Description: Romanian language pack for Waterfox G3
  This package contains Romanian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ru
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ru (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ru (<< 2020.10-0)
 Description: Russian language pack for Waterfox G3
  This package contains Russian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-si
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-si (<< 2020.10-0)
+Breaks: waterfox-current-i18n-si (<< 2020.10-0)
 Description: Sinhala; Sinhalese language pack for Waterfox G3
  This package contains Sinhala; Sinhalese translations for Waterfox G3
 
 Package: waterfox-g3-i18n-sk
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-sk (<< 2020.10-0)
+Breaks: waterfox-current-i18n-sk (<< 2020.10-0)
 Description: Slovak language pack for Waterfox G3
  This package contains Slovak translations for Waterfox G3
 
 Package: waterfox-g3-i18n-sl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-sl (<< 2020.10-0)
+Breaks: waterfox-current-i18n-sl (<< 2020.10-0)
 Description: Slovenian language pack for Waterfox G3
  This package contains Slovenian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-son
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-son (<< 2020.10-0)
+Breaks: waterfox-current-i18n-son (<< 2020.10-0)
 Description: Songhai language pack for Waterfox G3
  This package contains Songhai translations for Waterfox G3
 
 Package: waterfox-g3-i18n-sq
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-sq (<< 2020.10-0)
+Breaks: waterfox-current-i18n-sq (<< 2020.10-0)
 Description: Albanian language pack for Waterfox G3
  This package contains Albanian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-sr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-sr (<< 2020.10-0)
+Breaks: waterfox-current-i18n-sr (<< 2020.10-0)
 Description: Serbian language pack for Waterfox G3
  This package contains Serbian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-sv-se
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-sv-se (<< 2020.10-0)
+Breaks: waterfox-current-i18n-sv-se (<< 2020.10-0)
 Description: Swedish (Sweden) language pack for Waterfox G3
  This package contains Swedish (Sweden) translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ta
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ta (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ta (<< 2020.10-0)
 Description: Tamil language pack for Waterfox G3
  This package contains Tamil translations for Waterfox G3
 
 Package: waterfox-g3-i18n-te
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-te (<< 2020.10-0)
+Breaks: waterfox-current-i18n-te (<< 2020.10-0)
 Description: Telugu language pack for Waterfox G3
  This package contains Telugu translations for Waterfox G3
 
 Package: waterfox-g3-i18n-th
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-th (<< 2020.10-0)
+Breaks: waterfox-current-i18n-th (<< 2020.10-0)
 Description: Thai language pack for Waterfox G3
  This package contains Thai translations for Waterfox G3
 
 Package: waterfox-g3-i18n-tr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-tr (<< 2020.10-0)
+Breaks: waterfox-current-i18n-tr (<< 2020.10-0)
 Description: Turkish language pack for Waterfox G3
  This package contains Turkish translations for Waterfox G3
 
 Package: waterfox-g3-i18n-uk
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-uk (<< 2020.10-0)
+Breaks: waterfox-current-i18n-uk (<< 2020.10-0)
 Description: Ukrainian language pack for Waterfox G3
  This package contains Ukrainian translations for Waterfox G3
 
 Package: waterfox-g3-i18n-ur
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-ur (<< 2020.10-0)
+Breaks: waterfox-current-i18n-ur (<< 2020.10-0)
 Description: Urdu language pack for Waterfox G3
  This package contains Urdu translations for Waterfox G3
 
 Package: waterfox-g3-i18n-uz
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-uz (<< 2020.10-0)
+Breaks: waterfox-current-i18n-uz (<< 2020.10-0)
 Description: Uzbek language pack for Waterfox G3
  This package contains Uzbek translations for Waterfox G3
 
 Package: waterfox-g3-i18n-vi
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-vi (<< 2020.10-0)
+Breaks: waterfox-current-i18n-vi (<< 2020.10-0)
 Description: Vietnamese language pack for Waterfox G3
  This package contains Vietnamese translations for Waterfox G3
 
 Package: waterfox-g3-i18n-xh
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-xh (<< 2020.10-0)
+Breaks: waterfox-current-i18n-xh (<< 2020.10-0)
 Description: Xhosa language pack for Waterfox G3
  This package contains Xhosa translations for Waterfox G3
 
 Package: waterfox-g3-i18n-zh-cn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-zh-cn (<< 2020.10-0)
+Breaks: waterfox-current-i18n-zh-cn (<< 2020.10-0)
 Description: Simplified Chinese language pack for Waterfox G3
  This package contains Simplified Chinese translations for Waterfox G3
 
 Package: waterfox-g3-i18n-zh-tw
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g3-kpe (>= ${source:Version})
+Replaces: waterfox-current-i18n-zh-tw (<< 2020.10-0)
+Breaks: waterfox-current-i18n-zh-tw (<< 2020.10-0)
 Description: Traditional Chinese language pack for Waterfox G3
  This package contains Traditional Chinese translations for Waterfox G3
+
+Package: waterfox-current-i18n-ach
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ach
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-af
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-af
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-an
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-an
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ar
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ar
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ast
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ast
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-az
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-az
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-be
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-be
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-bg
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-bg
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-bn
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-bn
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-br
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-br
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-bs
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-bs
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ca
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ca
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ca-valencia
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ca-valencia
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-cak
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-cak
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-cs
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-cs
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-cy
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-cy
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-da
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-da
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-de
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-de
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-dsb
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-dsb
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-el
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-el
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-en-ca
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-en-ca
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-en-gb
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-en-gb
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-eo
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-eo
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-es-ar
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-es-ar
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-es-cl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-es-cl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-es-es
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-es-es
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-es-mx
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-es-mx
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-et
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-et
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-eu
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-eu
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-fa
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-fa
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ff
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ff
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-fi
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-fi
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-fr
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-fr
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-fy-nl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-fy-nl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ga-ie
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ga-ie
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-gd
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-gd
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-gl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-gl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-gn
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-gn
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-gu-in
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-gu-in
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-he
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-he
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-hi-in
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-hi-in
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-hr
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-hr
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-hsb
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-hsb
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-hu
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-hu
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-hy-am
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-hy-am
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ia
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ia
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-id
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-id
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-is
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-is
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-it
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-it
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ja
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ja
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-kab
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-kab
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ka
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ka
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-kk
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-kk
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-km
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-km
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-kn
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-kn
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ko
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ko
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-lij
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-lij
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-lt
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-lt
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-lv
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-lv
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-mk
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-mk
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-mr
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-mr
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ms
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ms
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-my
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-my
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-nb-no
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-nb-no
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ne-np
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ne-np
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-nl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-nl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-nn-no
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-nn-no
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-oc
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-oc
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-pa-in
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-pa-in
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-pl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-pl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-pt-br
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-pt-br
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-pt-pt
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-pt-pt
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-rm
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-rm
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ro
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ro
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ru
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ru
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-si
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-si
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-sk
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-sk
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-sl
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-sl
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-son
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-son
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-sq
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-sq
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-sr
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-sr
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-sv-se
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-sv-se
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ta
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ta
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-te
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-te
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-th
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-th
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-tr
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-tr
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-uk
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-uk
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-ur
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-ur
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-uz
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-uz
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-vi
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-vi
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-xh
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-xh
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-zh-cn
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-zh-cn
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: waterfox-current-i18n-zh-tw
+Architecture: all
+Section: oldlibs
+Depends: ${misc:Depends}, waterfox-g3-i18n-zh-tw
+Description: Transitional package
+ This is a transitional package. It can safely be removed.
