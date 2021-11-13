@@ -5,7 +5,7 @@ if test `lsb_release -sc` = "n/a"; then
 export PATH=/usr/lib/llvm-13/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "impish"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
