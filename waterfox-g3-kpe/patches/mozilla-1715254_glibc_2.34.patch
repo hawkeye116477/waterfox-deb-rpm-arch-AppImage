@@ -1,0 +1,54 @@
+
+# HG changeset patch
+# User Alexandre Lissy <lissyx+mozillians@lissyx.dyndns.org>
+# Date 1623246328 0
+# Node ID ecb4011a0c76a1c7040054a44712e277f3dc24a1
+# Parent  9ec189804055442e5cc98d69dd01b71e90ed0cb5
+Bug 1715254 - Deny clone3 to force glibc fallback r=gcp
+
+Differential Revision: https://phabricator.services.mozilla.com/D117297
+
+diff --git a/security/sandbox/linux/SandboxFilter.cpp b/security/sandbox/linux/SandboxFilter.cpp
+--- a/security/sandbox/linux/SandboxFilter.cpp
++++ b/security/sandbox/linux/SandboxFilter.cpp
+@@ -853,16 +853,19 @@ class SandboxPolicyCommon : public Sandb
+         // Yield
+       case __NR_sched_yield:
+         return Allow();
+ 
+         // Thread creation.
+       case __NR_clone:
+         return ClonePolicy(InvalidSyscall());
+ 
++      case __NR_clone3:
++        return Error(ENOSYS);
++
+         // More thread creation.
+ #ifdef __NR_set_robust_list
+       case __NR_set_robust_list:
+         return Allow();
+ #endif
+ #ifdef ANDROID
+       case __NR_set_tid_address:
+         return Allow();
+@@ -1499,16 +1502,19 @@ class ContentSandboxPolicy : public Sand
+         // the child would inherit the seccomp-bpf policy and almost
+         // certainly die from an unexpected SIGSYS.  We also can't have
+         // fork() crash, currently, because there are too many system
+         // libraries/plugins that try to run commands.  But they can
+         // usually do something reasonable on error.
+       case __NR_clone:
+         return ClonePolicy(Error(EPERM));
+ 
++      case __NR_clone3:
++        return Error(ENOSYS);
++
+ #  ifdef __NR_fadvise64
+       case __NR_fadvise64:
+         return Allow();
+ #  endif
+ 
+ #  ifdef __NR_fadvise64_64
+       case __NR_fadvise64_64:
+         return Allow();
+

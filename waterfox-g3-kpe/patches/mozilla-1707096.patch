@@ -1,0 +1,60 @@
+diff --git a/build/moz.configure/warnings.configure b/build/moz.configure/warnings.configure
+index 5d48f34d8b22..0d536ffba242 100755
+--- a/build/moz.configure/warnings.configure
++++ b/build/moz.configure/warnings.configure
+@@ -175,6 +175,9 @@ check_and_add_gcc_warning('-Wno-error=atomic-alignment')
+ # https://bugzilla.mozilla.org/show_bug.cgi?id=1515356
+ check_and_add_gcc_warning('-Wno-error=deprecated-copy')
+ 
++# new in clang-trunk/13, turned on by -Wall, but we have many occurances of this in our code.
++check_and_add_gcc_warning("-Wno-error=unused-but-set-variable")
++
+ # catches format/argument mismatches with printf
+ c_format_warning, cxx_format_warning = check_and_add_gcc_warning(
+     '-Wformat', when=depends(target)(lambda t: t.kernel != 'WINNT'))
+diff --git a/gfx/harfbuzz/README-mozilla b/gfx/harfbuzz/README-mozilla
+index 66b461377f18..ebbaffee80d9 100644
+--- a/gfx/harfbuzz/README-mozilla
++++ b/gfx/harfbuzz/README-mozilla
+@@ -3,6 +3,12 @@ https://github.com/harfbuzz/harfbuzz
+ 
+ Current version: 2.6.6 [commit 42025680cb0a30eba4ed48d125586a4dda3c973e]
+ 
++!!!Please Note!!!
++Because LLVM added in D100581 support for -Wunused-but-set-parameter and -Wunused-but-set-variable
++and clang doesn't cope well with `#pragma GCC diagnostic warning` vs gcc we had to patch this version up.
++The same patch was upstream in #2995 so, starting with the next version, the current patch will no longer
++be needed.
++
+ UPDATING:
+ 
+ Our in-tree copy of HarfBuzz does not depend on any generated files from the
+diff --git a/gfx/harfbuzz/src/hb-subset-cff1.cc b/gfx/harfbuzz/src/hb-subset-cff1.cc
+index f3ed518f7e11..029ccf602af6 100644
+--- a/gfx/harfbuzz/src/hb-subset-cff1.cc
++++ b/gfx/harfbuzz/src/hb-subset-cff1.cc
+@@ -402,12 +402,11 @@ struct cff_subset_plan {
+   void plan_subset_encoding (const OT::cff1::accelerator_subset_t &acc, hb_subset_plan_t *plan)
+   {
+     const Encoding *encoding = acc.encoding;
+-    unsigned int  size0, size1, supp_size;
++    unsigned int  size0, size1;
+     hb_codepoint_t  code, last_code = CFF_UNDEF_CODE;
+     hb_vector_t<hb_codepoint_t> supp_codes;
+ 
+     subset_enc_code_ranges.resize (0);
+-    supp_size = 0;
+     supp_codes.init ();
+ 
+     subset_enc_num_codes = plan->num_output_glyphs () - 1;
+@@ -443,7 +442,6 @@ struct cff_subset_plan {
+ 	  code_pair_t pair = { supp_codes[i], sid };
+ 	  subset_enc_supp_codes.push (pair);
+ 	}
+-	supp_size += SuppEncoding::static_size * supp_codes.length;
+       }
+     }
+     supp_codes.fini ();
+-- 
+2.33.0
+

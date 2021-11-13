@@ -1,0 +1,62 @@
+diff -ur a/js/xpconnect/src/XPCJSContext.cpp b/js/xpconnect/src/XPCJSContext.cpp
+--- a/js/xpconnect/src/XPCJSContext.cpp	2021-07-05 21:16:02.000000000 +0200
++++ b/js/xpconnect/src/XPCJSContext.cpp	2021-07-19 15:01:24.083460460 +0200
+@@ -81,14 +81,6 @@
+ using namespace JS;
+ using mozilla::dom::AutoEntryScript;
+ 
+-// The watchdog thread loop is pretty trivial, and should not require much stack
+-// space to do its job. So only give it 32KiB or the platform minimum.
+-#if !defined(PTHREAD_STACK_MIN)
+-#  define PTHREAD_STACK_MIN 0
+-#endif
+-static constexpr size_t kWatchdogStackSize =
+-    PTHREAD_STACK_MIN < 32 * 1024 ? 32 * 1024 : PTHREAD_STACK_MIN;
+-
+ static void WatchdogMain(void* arg);
+ class Watchdog;
+ class WatchdogManager;
+@@ -161,7 +153,7 @@
+       // watchdog, we need to join it on shutdown.
+       mThread = PR_CreateThread(PR_USER_THREAD, WatchdogMain, this,
+                                 PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD,
+-                                PR_JOINABLE_THREAD, kWatchdogStackSize);
++                                PR_JOINABLE_THREAD, 0);
+       if (!mThread) {
+         MOZ_CRASH("PR_CreateThread failed!");
+       }
+diff -ur a/security/sandbox/linux/launch/SandboxLaunch.cpp b/security/sandbox/linux/launch/SandboxLaunch.cpp
+--- a/security/sandbox/linux/launch/SandboxLaunch.cpp	2021-07-05 18:20:36.000000000 +0200
++++ b/security/sandbox/linux/launch/SandboxLaunch.cpp	2021-07-20 08:39:17.272136982 +0200
+@@ -489,7 +489,8 @@ static int CloneCallee(void* aPtr) {
+ // we don't currently support sandboxing under valgrind.
+ MOZ_NEVER_INLINE MOZ_ASAN_BLACKLIST static pid_t DoClone(int aFlags,
+                                                          jmp_buf* aCtx) {
+-  uint8_t miniStack[PTHREAD_STACK_MIN];
++  static constexpr size_t kStackAlignment = 16;
++  uint8_t miniStack[4096] __attribute__((aligned(kStackAlignment)));
+ #ifdef __hppa__
+   void* stackPtr = miniStack;
+ #else
+@@ -510,13 +511,19 @@ static pid_t ForkWithFlags(int aFlags) {
+                                CLONE_CHILD_CLEARTID;
+   MOZ_RELEASE_ASSERT((aFlags & kBadFlags) == 0);
+ 
++  // Block signals due to small stack in DoClone.
++  sigset_t oldSigs;
++  BlockAllSignals(&oldSigs);
++
++  int ret = 0;
+   jmp_buf ctx;
+   if (setjmp(ctx) == 0) {
+     // In the parent and just called setjmp:
+-    return DoClone(aFlags | SIGCHLD, &ctx);
++    ret = DoClone(aFlags | SIGCHLD, &ctx);
+   }
++  RestoreSignals(&oldSigs);
+   // In the child and have longjmp'ed:
+-  return 0;
++  return ret;
+ }
+ 
+ static bool WriteStringToFile(const char* aPath, const char* aStr,

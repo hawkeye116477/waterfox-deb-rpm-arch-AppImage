@@ -6,3 +6,6 @@ libavcodec58_91.patch -p1
 sandbox-fips.patch -p1
 remoting-name.patch -p1
 PL_langpack.patch -p1
+icecat-glibc-dynstack.patch -p1
+mozilla-1715254_glibc_2.34.patch -p1
+mozilla-1707096.patch -p1
