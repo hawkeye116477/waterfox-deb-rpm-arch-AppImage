@@ -19,6 +19,14 @@ if test `lsb_release -sc` = "xenial"; then
 export PATH=/usr/lib/llvm-8/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+export NODEJS=/usr/lib/nodejs-mozilla/bin/node
+fi
+
+if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
+
 ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g3
