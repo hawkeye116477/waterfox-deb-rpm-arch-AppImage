@@ -19,7 +19,7 @@ if test `lsb_release -sc` = "xenial"; then
 export PATH=/usr/lib/llvm-8/bin/:$PATH
 fi
 
-ac_add_options --enable-linker=gold
+ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g3
 ac_add_options --with-app-basename=Waterfox
