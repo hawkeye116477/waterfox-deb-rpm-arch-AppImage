@@ -37,13 +37,14 @@ fi
 
 ac_add_options --prefix=/usr
 
-ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
+ac_add_options --enable-optimize
 ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
-ac_add_options --disable-elf-hack
 ac_add_options --enable-linker=lld
+
+ac_add_options --disable-elf-hack
 
 export MOZ_PGO=1
 

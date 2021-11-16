@@ -9,5 +9,3 @@ PL_langpack.patch -p1
 icecat-glibc-dynstack.patch -p1
 mozilla-1715254_glibc_2.34.patch -p1
 mozilla-1707096.patch -p1
-rust_1.56_p1.patch -p1
-rust_1.56_p2.patch -p1
