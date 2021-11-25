@@ -1,3 +1,9 @@
+waterfox-classic-kpe (2021.11-0) obs; urgency=medium
+
+   * Added security patches from latest ESR
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 25 Nov 2021 11:43:36 +0100
+
 waterfox-classic-kpe (2021.10-0) obs; urgency=medium
 
     * Updated RegExp engine, with resulting perfomance improvement in JavaScript
