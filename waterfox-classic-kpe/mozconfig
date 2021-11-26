@@ -7,6 +7,10 @@ if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish"; then
+export PATH=/usr/lib/llvm-12/bin/:$PATH
+fi
+
 if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
