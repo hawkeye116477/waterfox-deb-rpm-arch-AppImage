@@ -37,7 +37,7 @@ ac_add_options --enable-eme=widevine
 ac_add_options --enable-rust-simd
 ac_add_options --enable-lto
 
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
+if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
 ac_add_options --enable-linker=gold
 else
 ac_add_options --enable-linker=lld
