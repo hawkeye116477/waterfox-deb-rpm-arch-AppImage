@@ -1,3 +1,14 @@
+waterfox-g4-kpe (0.3.1-0) obs; urgency=medium
+
+    * Plugins such as Flash can now be enabled, but require you to interact to have web pages run it for security reasons.
+    * The address bar now makes it more obvious when a website is secure or insecure.
+    * Bootstraped extensions will now load on restart.
+    * Fixed various bookmarks bar and status bar issues.
+    * Issues installing bootstrapped extensions have now been resolved.
+    * Copy tab URL should now no longer throw an error.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 29 Nov 2021 15:08:10 +0100
+
 waterfox-g4-kpe (0.2.1-0) obs; urgency=medium
 
     * Based on Gecko 91
