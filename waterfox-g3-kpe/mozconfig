@@ -78,5 +78,6 @@ export MOZ_REQUIRE_SIGNING=0
 export MOZ_INCLUDE_SOURCE_INFO=1
 ac_add_options "MOZ_ALLOW_LEGACY_EXTENSIONS=1"
 
-X=$(($(nproc --all)/3))
+X=$(($(nproc --all)/2))
 mk_add_options MOZ_MAKE_FLAGS="-j${X%.*}"
+export RUSTFLAGS="-Cdebuginfo=0"
