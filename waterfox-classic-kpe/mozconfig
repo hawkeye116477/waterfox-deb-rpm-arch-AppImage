@@ -1,9 +1,12 @@
-if test `lsb_release -sc` = "xenial" || test `lsb_release -sc` = "bionic"; then
+if test `lsb_release -sc` = "xenial"; then
 export PATH=/usr/lib/llvm-8/bin/:$PATH
 fi
 
-# n/a = Debian Unstable
-if test `lsb_release -sc` = "n/a" || test `lsb_release -sc` = "Bullseye" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic"; then
+export PATH=/usr/lib/llvm-10/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
@@ -49,7 +52,7 @@ ac_add_options --enable-hardening
 
 ac_add_options --disable-stylo
 
-if test `lsb_release -sc` = "hirsute" || test `lsb_release -sc` = "n/a"; then
+if test `lsb_release -sc` = "hirsute" || test `lsb_release -sc` = "impish"; then
 ac_add_options --disable-elf-hack
 fi
 
