@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="78.14.0" buildID="20210915162724" detailsURL="https://www.waterfox.net/blog/waterfox-G3.2.6" displayVersion="G3.2.6" extensionVersion="78.14.0" platformVersion="78.14.0" version="78.14.0">
+    <update type="major" appVersion="78.15.1" buildID="20211202054825" detailsURL="https://www.waterfox.net/blog/waterfox-G3.2.6" displayVersion="G3.2.7" extensionVersion="78.15.1" platformVersion="78.15.1" version="78.15.1">
         <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g3-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
