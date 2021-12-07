@@ -17,8 +17,8 @@
         <p xml:lang="pl">Uwaga: Pakiet ten zawiera ulepszenia do integracji z KDE stworzone przez openSUSE, ale działa poprawnie również na innych środowiskach pulpitu, a funkcje integracji z KDE Plasma mogą nie działać, jeśli kwaterfoxhelper nie został zainstalowany. Dla lepszej integracji zalecane jest również zainstalowanie pakietu plasma-browser-integration razem z rozszerzeniem Plasma Integration</p>
     </description>
     <launchable type="desktop-id">waterfox-classic.desktop</launchable>
-    <url type="homepage">https://www.waterfox.net/</url>
-    <url type="bugtracker">https://github.com/MrAlex94/Waterfox/issues</url>
+    <url type="homepage">https://classic.waterfox.net/</url>
+    <url type="bugtracker">https://github.com/WaterfoxCo/Waterfox-Classic/issues</url>
     <translation type="gettext">waterfox-classic</translation>
     <screenshots>
         <screenshot type="default">
