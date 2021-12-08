@@ -5,9 +5,6 @@ nongnome-proxies.patch -p1
 mozilla-ntlm-full-path.patch -p1
 Use-remoting-name-for-GDK-application-names.patch -p1
 sandbox-fips.patch -p1
-branded-icons.patch -p1
 libavcodec58_91.patch -p1
 fix-wayland-build.patch -p1
-fix-testing-build.patch -p1
 fix-langpack-id.patch -p1
-git_sourcestamp-info.patch -p1

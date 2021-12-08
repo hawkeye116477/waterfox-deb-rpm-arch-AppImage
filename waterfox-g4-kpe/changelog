@@ -1,3 +1,12 @@
+waterfox-g4-kpe (0.4-0) obs; urgency=medium
+
+    * Widevine has been updated to 4.10.2391.0 which should fix issues playing DRM protected content.
+    * Contrast has increased on Australis Light theme, to better differentiate tabs.
+    * The way tab positioning and various other Waterfox features have been implemented has been improved.
+    * Updated to Gecko 91.4.0, which includes various security patches.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 08 Dec 2021 17:40:01 +0100
+
 waterfox-g4-kpe (0.3.1-0) obs; urgency=medium
 
     * Plugins such as Flash can now be enabled, but require you to interact to have web pages run it for security reasons.
