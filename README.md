@@ -29,6 +29,8 @@
 
 [Click to see instructions for Waterfox G3.](https://appimage.github.io/Waterfox_Third_Generation/)
 
+[Click to see instructions for Waterfox G4.](https://appimage.github.io/Waterfox_Fourth_Generation/)
+
 ## Other source files
 
 [Click to see other source files for waterfox-classic-kpe.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-classic-kpe)
@@ -40,6 +42,8 @@
 [Click to see other source files for Waterfox Classic AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-classic-appimage)
 
 [Click to see other source files for Waterfox G3 AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g3-appimage)
+
+[Click to see other source files for Waterfox G4 AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g4-appimage)
 
 ## Patches
 Latest Waterfox Classic KDE Plasma Edition contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-classic-kpe/patches).
