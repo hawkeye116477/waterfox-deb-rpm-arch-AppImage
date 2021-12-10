@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Waterfox Classic
-Source: https://github.com/WaterfoxCo/Waterfox.git
+Source: https://github.com/WaterfoxCo/Waterfox-Classic.git
 Comment: This package was debianized by hawkeye116477 <hawkeye116477@gmail.com>.
 
 Files: *
