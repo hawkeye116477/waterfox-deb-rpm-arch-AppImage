@@ -29,20 +29,7 @@ fi
 
 ac_add_options --prefix=/usr
 
-ac_add_options --enable-optimize
-ac_add_options --enable-eme=widevine
-ac_add_options --enable-rust-simd
-ac_add_options --enable-lto
-
-ac_add_options --enable-linker=lld
-
-ac_add_options --disable-elf-hack
-
 export MOZ_PGO=1
-
-ac_add_options --enable-pulseaudio
-ac_add_options --enable-alsa
-ac_add_options --enable-jack
 
 mk_add_options AUTOCLOBBER=1
 
@@ -54,11 +41,21 @@ ac_add_options --disable-verify-mar
 ac_add_options --disable-dmd
 ac_add_options --disable-geckodriver
 ac_add_options --disable-bootstrap
-
-ac_add_options --enable-application=browser
 ac_add_options --disable-updater
+ac_add_options --disable-elf-hack
 
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-alsa
+ac_add_options --enable-jack
+ac_add_options --enable-eme=widevine
+ac_add_options --enable-startup-notification
+ac_add_options --enable-application=browser
+ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 ac_add_options --enable-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-rust-simd
+ac_add_options --enable-lto
+ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g4
 ac_add_options --with-app-basename=Waterfox
@@ -66,7 +63,6 @@ ac_add_options --with-branding=browser/branding/waterfox
 ac_add_options --with-unsigned-addon-scopes=app,system
 ac_add_options --allow-addon-sideload
 
-ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 
 export MOZ_REQUIRE_SIGNING=
 export MOZ_INCLUDE_SOURCE_INFO=1
