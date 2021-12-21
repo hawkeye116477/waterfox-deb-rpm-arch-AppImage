@@ -1,3 +1,11 @@
+waterfox-g4-kpe (0.5.1-0) obs; urgency=medium
+
+    * Tabs toolbar and status bar will now be appropriately coloured when tabs toolbar set to bottom display with a dark theme.
+    * Tabs toolbar set to bottom display will now collapse correctly when entering DOM fullscreen mode (e.g. fullscreen video).
+    * Widget text in the status bar will be coloured correctly with dark themes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 21 Dec 2021 17:23:26 +0100
+
 waterfox-g4-kpe (0.5-0) obs; urgency=medium
 
     * Added an option to about:preferences to prevent pinned tabs shrinking to icon size.

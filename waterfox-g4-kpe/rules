@@ -2,7 +2,7 @@
 # -*- makefile -*-
 
 export SHELL=/bin/bash
-LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
+export MOZCONFIG=$(shell pwd)/debian/mozconfig
 export MOZ_NOSPAM:=1
 export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g4-kpe.obsinfo)
 export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g4-kpe.obsinfo)
@@ -10,6 +10,8 @@ export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export source_repo=https://github.com/WaterfoxCo/Waterfox
 export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export TODAY_DATE=$(shell date +%Y-%m-%d)
+
+LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
 
 distrelease := $(shell lsb_release -sc)
 ifeq ($(distrelease),$(filter $(distrelease),stretch xenial))
@@ -28,17 +30,16 @@ export MACH_USE_SYSTEM_PYTHON=1
 	dh $@
 
 override_dh_auto_clean:
-	rm -f .mozconfig
 	dh_auto_clean
 	find . -name '*.pyc' -delete
 
 override_dh_auto_configure:
-	cp debian/mozconfig mozconfig
+	cp ../SOURCES/waterfox-g4-kpe.obsinfo debian/waterfox-g4-kpe.obsinfo
 
 override_dh_auto_build:
 	# Build browser
 	# LTO needs more open files
-	ulimit -n 4096; export MOZCONFIG=mozconfig; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
+	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
 
 	# Build langpacks
 	mkdir -p $$(pwd)/extensions
