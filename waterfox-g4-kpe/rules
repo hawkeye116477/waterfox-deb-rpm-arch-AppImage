@@ -33,9 +33,6 @@ override_dh_auto_clean:
 	dh_auto_clean
 	find . -name '*.pyc' -delete
 
-override_dh_auto_configure:
-	cp ../SOURCES/waterfox-g4-kpe.obsinfo debian/waterfox-g4-kpe.obsinfo
-
 override_dh_auto_build:
 	# Build browser
 	# LTO needs more open files
