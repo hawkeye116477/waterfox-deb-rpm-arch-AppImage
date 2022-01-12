@@ -1,3 +1,11 @@
+waterfox-g4-kpe (0.6-0) obs; urgency=medium
+
+    * Added default items to the status bar when enabled.
+    * You can now toggle text contrast on the status bar in about:preferences → General → Language and Appearance → Status Bar.
+    * Importing data from other browsers now works once again. (`File → Import From Another Browser)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 12 Jan 2022 15:43:30 +0100
+
 waterfox-g4-kpe (0.5.1-0) obs; urgency=medium
 
     * Tabs toolbar and status bar will now be appropriately coloured when tabs toolbar set to bottom display with a dark theme.
