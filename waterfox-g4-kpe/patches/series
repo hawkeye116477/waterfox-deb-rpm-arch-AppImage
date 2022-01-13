@@ -18,3 +18,4 @@ debian-hacks/python-importlib-metadata-py35-compat.patch
 debian-hacks/python-glean-parser-nonetype-dereference.patch
 debian-hacks/python-init-subclass.patch
 debian-hacks/python-dont-open-posixpath.patch
+debian-hacks/Allow-to-build-with-older-versions-of-nodejs-10.patch
