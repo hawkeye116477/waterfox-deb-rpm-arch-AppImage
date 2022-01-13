@@ -1,0 +1,13 @@
+--- a/third_party/python/glean_parser/glean_parser/parser.py
++++ b/third_party/python/glean_parser/glean_parser/parser.py
+@@ -240,8 +240,8 @@ def _instantiate_metrics(
+             if metric_obj is not None:
+                 metric_obj.no_lint = list(set(metric_obj.no_lint + global_no_lint))
+ 
+-            if isinstance(filepath, Path):
+-                metric_obj.defined_in["filepath"] = str(filepath)
++                if isinstance(filepath, Path):
++                    metric_obj.defined_in["filepath"] = str(filepath)
+ 
+             already_seen = sources.get((category_key, metric_key))
+             if already_seen is not None:

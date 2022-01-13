@@ -1,0 +1,25 @@
+--- a/third_party/python/importlib_metadata/importlib_metadata/_compat.py
++++ b/third_party/python/importlib_metadata/importlib_metadata/_compat.py
+@@ -5,6 +5,12 @@ __all__ = ['install', 'NullFinder', 'PyP
+ 
+ 
+ try:
++    ModuleNotFoundError = builtins.FileNotFoundError
++except (NameError, AttributeError):  # pragma: nocover
++    ModuleNotFoundError = ImportError  # type: ignore
++
++
++try:
+     from typing import Protocol
+ except ImportError:  # pragma: no cover
+     """
+--- a/third_party/python/importlib_metadata/importlib_metadata/__init__.py
++++ b/third_party/python/importlib_metadata/importlib_metadata/__init__.py
+@@ -20,6 +20,7 @@ from ._compat import (
+     Protocol,
+     PyPy_repr,
+     install,
++    ModuleNotFoundError,
+ )
+ from ._functools import method_cache
+ from ._itertools import unique_everseen

@@ -1,0 +1,190 @@
+--- a/tools/compare-locales/mach_commands.py
++++ b/tools/compare-locales/mach_commands.py
+@@ -107,7 +107,7 @@ the output file, pass "-" to serialize t
+ def _positive_int(value):
+     value = int(value)
+     if value <= 0:
+-        raise argparse.ArgumentTypeError(f"{value} must be a positive integer.")
++        raise argparse.ArgumentTypeError("{} must be a positive integer.".format(value))
+     return value
+ 
+ 
+@@ -242,7 +242,7 @@ class CrossChannel(MachCommandBase):
+                 self._clone_hg_repo(VCT_URL, VCT_PATH)
+                 hgrc_content = [
+                     "[extensions]",
+-                    f"firefoxtree = {FXTREE_PATH}",
++                    "firefoxtree = {}".format(FXTREE_PATH),
+                     "",
+                     "[ui]",
+                     "username = trybld",
+@@ -250,7 +250,7 @@ class CrossChannel(MachCommandBase):
+                 if ssh_key_file:
+                     hgrc_content.extend(
+                         [
+-                            f"ssh = ssh -i {ssh_key_file} -l {ssh_key_secret['user']}",
++                            "ssh = ssh -i {} -l {}".format(ssh_key_file, ssh_key_secret['user']),
+                         ]
+                     )
+                 HGRC_PATH.write_text("\n".join(hgrc_content))
+@@ -265,7 +265,7 @@ class CrossChannel(MachCommandBase):
+                     command.append(head)
+                     status = self._retry_run_process(command, ensure_exit_code=False)
+                     if status not in (0, 255):  # 255 on pull with no changes
+-                        raise RetryError(f"Failure on pull: status {status}!")
++                        raise RetryError("Failure on pull: status {}!".format(status))
+                     if repo_config.get("update_on_pull"):
+                         command = [
+                             "hg",
+@@ -280,7 +280,7 @@ class CrossChannel(MachCommandBase):
+                             command, ensure_exit_code=False
+                         )
+                         if status not in (0, 255):  # 255 on pull with no changes
+-                            raise RetryError(f"Failure on update: status {status}!")
++                            raise RetryError("Failure on update: status {}!".format(status))
+                 self._check_hg_repo(
+                     repo_config["path"], heads=repo_config.get("heads", {}).keys()
+                 )
+@@ -291,7 +291,7 @@ class CrossChannel(MachCommandBase):
+                     repo_config["path"], heads=repo_config.get("heads", {}).keys()
+                 )
+             if self._check_outgoing(strings_path):
+-                raise RetryError(f"check: Outgoing changes in {strings_path}!")
++                raise RetryError("check: Outgoing changes in {}!".format(strings_path))
+ 
+         if "create" in actions:
+             try:
+@@ -332,7 +332,7 @@ class CrossChannel(MachCommandBase):
+         if status == 1:
+             return False
+         raise RetryError(
+-            f"Outgoing check in {strings_path} returned unexpected {status}!"
++            "Outgoing check in {} returned unexpected {}!".format(strings_path, status)
+         )
+ 
+     def _strip_outgoing(self, strings_path):
+@@ -357,7 +357,7 @@ class CrossChannel(MachCommandBase):
+         with open(path, "w") as fh:
+ 
+             def writeln(line):
+-                fh.write(f"{line}\n")
++                fh.write("{}\n".format(line))
+ 
+             self._retry_run_process(
+                 [
+@@ -381,12 +381,12 @@ class CrossChannel(MachCommandBase):
+ 
+     def _check_hg_repo(self, path, heads=None):
+         if not (path.is_dir() and (path / ".hg").is_dir()):
+-            raise RetryError(f"{path} is not a Mercurial repository")
++            raise RetryError("{} is not a Mercurial repository".format(path))
+         if heads:
+             for head in heads:
+                 self._retry_run_process(
+                     ["hg", "--cwd", str(path), "log", "-r", head],
+-                    error_msg=f"check: {path} has no head {head}!",
++                    error_msg="check: {} has no head {}!".format(path, head),
+                 )
+ 
+     def _clone_hg_repo(self, url, path):
+--- a/build/moz.configure/flags.configure
++++ b/build/moz.configure/flags.configure
+@@ -86,8 +86,8 @@ def file_prefix_map_flags(path_remapping
+         compiler.type in ("clang", "clang-cl") and compiler.version < "10.0.0"
+     ):
+         die(
+-            f"Compiler of type {compiler.type} and version {compiler.version} "
+-            "does not support --enable-path-remapping."
++            "Compiler of type {} and version {} "
++            "does not support --enable-path-remapping.".format(compiler.type, compiler.version)
+         )
+ 
+     flags = []
+@@ -95,7 +95,7 @@ def file_prefix_map_flags(path_remapping
+         # We would prefer to use just -ffile-prefix-map, but clang-cl doesn't
+         # seem to recognize it.
+         for flag in ("-fdebug-prefix-map", "-fmacro-prefix-map"):
+-            flag = f"{flag}={old}={new}"
++            flag = "{}={}={}".format(flag, old, new)
+             if compiler.type in ("gcc", "clang"):
+                 flags.append(flag)
+             elif compiler.type == "clang-cl":
+--- a/build/moz.configure/toolchain.configure
++++ b/build/moz.configure/toolchain.configure
+@@ -1998,7 +1998,7 @@ def coverage_cflags(target, c_compiler,
+     if exclude:
+         exclude = ";".join(exclude)
+         cflags += [
+-            f"-fprofile-exclude-files={exclude}",
++            "-fprofile-exclude-files={}".format(exclude),
+         ]
+ 
+     response_file_path = os.path.join(build_env.topobjdir, "code_coverage_cflags")
+@@ -2765,6 +2765,6 @@ def path_remappings(
+         p = path_remappings[i][0]
+         for q, _ in path_remappings[i + 1 :]:
+             if q.startswith(p):
+-                die(f"Cannot remap paths because {p} is an ancestor of {q}")
++                die("Cannot remap paths because {} is an ancestor of {}".format(p, q))
+ 
+     return path_remappings
+--- a/build/moz.configure/rust.configure
++++ b/build/moz.configure/rust.configure
+@@ -664,7 +664,7 @@ def rust_compile_flags(
+         # before our required minimum Rust version, so there's no need to
+         # feature-detect or gate on versions.
+         for old, new in path_remappings:
+-            flags.append(f"--remap-path-prefix={old}={new}")
++            flags.append("--remap-path-prefix={}={}".format(old, new))
+ 
+     return flags
+ 
+--- a/toolkit/components/glean/build_scripts/glean_parser_ext/js.py
++++ b/toolkit/components/glean/build_scripts/glean_parser_ext/js.py
+@@ -68,7 +68,7 @@ def metric_identifier(category, metric_n
+     """
+     The metric's unique identifier, including the category and name
+     """
+-    return f"{category}.{util.camelize(metric_name)}"
++    return "{}.{}".format(category, util.camelize(metric_name))
+ 
+ 
+ def type_name(obj):
+--- a/toolkit/components/glean/build_scripts/glean_parser_ext/run_glean_parser.py
++++ b/toolkit/components/glean/build_scripts/glean_parser_ext/run_glean_parser.py
+@@ -132,11 +132,11 @@ def output_gifft_map(output_fd, probe_ty
+                 hasattr(metric, "telemetry_mirror")
+                 and metric.telemetry_mirror is not None
+             ):
+-                info = (metric.telemetry_mirror, f"{category_name}.{metric.name}")
++                info = (metric.telemetry_mirror, "{}.{}".format(category_name, metric.name))
+                 if metric.type in GIFFT_TYPES[probe_type]:
+                     if info in ids_to_probes.values():
+                         print(
+-                            f"Telemetry mirror {metric.telemetry_mirror} already registered",
++                            "Telemetry mirror {} already registered".format(metric.telemetry_mirror),
+                             file=sys.stderr,
+                         )
+                         sys.exit(1)
+@@ -149,8 +149,8 @@ def output_gifft_map(output_fd, probe_ty
+                     ]
+                 ):
+                     print(
+-                        f"Glean metric {category_name}.{metric.name} is of type {metric.type}"
+-                        " which can't be mirrored (we don't know how).",
++                        "Glean metric {}.{} is of type {}"
++                        " which can't be mirrored (we don't know how).".format(category_name, metric.name, metric.type),
+                         file=sys.stderr,
+                     )
+                     sys.exit(1)
+--- a/toolkit/components/glean/build_scripts/glean_parser_ext/rust.py
++++ b/toolkit/components/glean/build_scripts/glean_parser_ext/rust.py
+@@ -197,7 +197,7 @@ def output_rust(objs, output_fd, options
+ 
+                 metric_name = util.snake_case(metric.name)
+                 category_name = util.snake_case(category_name)
+-                full_path = f"{category_name}::{metric_name}"
++                full_path = "{}::{}".format(category_name, metric_name)
+ 
+                 if metric.type == "event":
+                     events_by_id[get_metric_id(metric)] = full_path
