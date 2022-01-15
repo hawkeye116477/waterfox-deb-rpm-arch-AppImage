@@ -1,3 +1,9 @@
+waterfox-classic-kpe (2022.01-0) obs; urgency=medium
+
+    * Latest security patches
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 15 Jan 2022 12:22:14 +0100
+
 waterfox-classic-kpe (2021.11-0) obs; urgency=medium
 
    * Added security patches from latest ESR
