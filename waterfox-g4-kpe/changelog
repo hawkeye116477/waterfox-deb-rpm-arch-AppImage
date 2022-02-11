@@ -1,3 +1,11 @@
+waterfox-g4-kpe (0.7-0) obs; urgency=medium
+
+    * The default theme Lepton has been updated, fixing various issues.
+    * The status bar is now visible when in Customise Mode.
+    * Updated Gecko to 91.6.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 11 Feb 2022 13:53:09 +0100
+
 waterfox-g4-kpe (0.6-0) obs; urgency=medium
 
     * Added default items to the status bar when enabled.

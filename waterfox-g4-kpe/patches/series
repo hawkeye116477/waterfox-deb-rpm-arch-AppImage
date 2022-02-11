@@ -7,7 +7,6 @@ Use-remoting-name-for-GDK-application-names.patch -p1
 sandbox-fips.patch -p1
 libavcodec58_91.patch -p1
 fix-langpack-id.patch -p1
-mozwayland-add-missing-stub.patch -p1
 debian-hacks/python-build-dont-require-python36.patch
 debian-hacks/python-mach-dont-require-python36.patch
 debian-hacks/python-no-f-strings.patch
