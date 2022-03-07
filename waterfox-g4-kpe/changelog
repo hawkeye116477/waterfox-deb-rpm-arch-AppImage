@@ -1,3 +1,12 @@
+waterfox-g4-kpe (0.8-0) obs; urgency=medium
+
+    * Added a toggle on about:preferences to force light/dark mode with Lepton theme.
+    * Private tab will now correctly not store search suggestions and recently closed tabs.
+    * Private tab icon will now only appear in Lepton theme, so should no longer appear on themes that do not have context menu icons.
+    * Forcing dark mode in Lepton with ui.systemUsesDarkTheme on Linux distros should now work.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 07 Mar 2022 13:42:22 +0100
+
 waterfox-g4-kpe (0.7-0) obs; urgency=medium
 
     * The default theme Lepton has been updated, fixing various issues.
