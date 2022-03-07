@@ -1,0 +1,27 @@
+From d60db2f9bbfd59bf0ce72482f93a22a5b93c2443 Mon Sep 17 00:00:00 2001
+From: Jed Davis <jld@mozilla.com>
+Date: Mon, 13 Jul 2020 14:56:24 +0200
+Subject: [PATCH] Bug 1651701 - Allow rseq in the Linux sandboxes.
+
+---
+ security/sandbox/linux/SandboxFilter.cpp | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/security/sandbox/linux/SandboxFilter.cpp b/security/sandbox/linux/SandboxFilter.cpp
+index 53ed5a74ee35..ff164cf1c67a 100644
+--- a/security/sandbox/linux/SandboxFilter.cpp
++++ b/security/sandbox/linux/SandboxFilter.cpp
+@@ -354,6 +354,13 @@ class SandboxPolicyCommon : public SandboxPolicyBase
+       case __NR_getrandom:
+         return Allow();
+ 
++        // Bug 1651701: an API for restartable atomic sequences and
++        // per-CPU data; exposing information about CPU numbers and
++        // when threads are migrated or preempted isn't great but the
++        // risk should be relatively low.
++      case __NR_rseq:
++        return Allow();
++
+ #ifdef MOZ_ASAN
+       // ASAN's error reporter wants to know if stderr is a tty.
+     case __NR_ioctl: {
