@@ -1,3 +1,20 @@
+waterfox-g4-kpe (1.0-0) obs; urgency=medium
+
+    * Addon version numbers once more show next to their names in about:addons
+    * Startpage is now the default search when performance searches in Private Tab and Private Window.
+    * Tabs will now unload automatically when your system is running low on memory.
+    * Tabs can now be manually unloaded after enabling the preference in about:preferences → General → Tabs. You can then right click on a tab and unload it.
+    * Chrome Web Store extensions should now install properly once again.
+    * Back and forward buttons on various mice now work properly in Waterfox, instead of acting as middle-click.
+    * Sometimes non-private tabs would be restored as private tabs. This will no longer occur.
+    * Various fixes to the default Lepton theme.
+    * Various Japanese translation improvements by @surapunoyousei
+    * Unprefixed -moz-fit-content. -fit-content show now work without the -moz prefix.
+    * The <dialog> HTML element is now enabled.
+    * References to his and her have been replaced with their where relevant.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 09 Apr 2022 16:14:14 +0200
+
 waterfox-g4-kpe (0.8-0) obs; urgency=medium
 
     * Added a toggle on about:preferences to force light/dark mode with Lepton theme.
