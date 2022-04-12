@@ -23,7 +23,7 @@ pref("intl.locale.requested", "");
 pref("network.manage-offline-status", true);
 
 // Disable downloading language packs, cuz Waterfox uses own and they are already included in subpackages
-pref("extensions.getAddons.langpacks.url", "");
+pref("extensions.getAddons.langpacks.url", "", locked);
 
 // Disable requiring signatures for language packs
-pref("extensions.langpacks.signatures.required", false);
+pref("extensions.langpacks.signatures.required", false, locked);
