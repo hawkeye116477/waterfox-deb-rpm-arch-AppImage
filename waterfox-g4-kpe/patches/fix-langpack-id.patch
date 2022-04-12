@@ -4,7 +4,7 @@ index 496379c4306f..96b056bd6813 100644
 +++ b/browser/locales/Makefile.in
 @@ -21,9 +21,9 @@ PWD := $(CURDIR)
  ZIP_IN ?= $(ABS_DIST)/$(PACKAGE)
- 
+
  ifdef MOZ_DEV_EDITION
 -MOZ_LANGPACK_EID=langpack-$(AB_CD)@devedition.mozilla.org
 +MOZ_LANGPACK_EID=langpack-$(AB_CD)@l10n.waterfox.net
@@ -14,6 +14,19 @@ index 496379c4306f..96b056bd6813 100644
  endif
  # For Nightly, we know where to get the builds from to do local repacks
  ifdef NIGHTLY_BUILD
--- 
+--
 2.33.0
 
+diff --git a/browser/components/preferences/preferences.js b/browser/components/preferences/preferences.js
+index 91e9e469cea2..b13c445bc396 100644
+--- a/browser/components/preferences/preferences.js
++++ b/browser/components/preferences/preferences.js
+@@ -529,7 +529,7 @@ async function getAvailableLocales() {
+   // If defaultLocale isn't lastFallbackLocale, then we still need the langpack
+   // for lastFallbackLocale for it to be useful.
+   if (defaultLocale != lastFallbackLocale) {
+-    let lastFallbackId = `langpack-${lastFallbackLocale}@firefox.mozilla.org`;
++    let lastFallbackId = `langpack-${lastFallbackLocale}@l10n.waterfox.net`;
+     let lastFallbackInstalled = await AddonManager.getAddonByID(lastFallbackId);
+     if (!lastFallbackInstalled) {
+       return availableLocales.filter(locale => locale != lastFallbackLocale);
