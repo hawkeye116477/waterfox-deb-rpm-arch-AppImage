@@ -1,3 +1,13 @@
+waterfox-classic-kpe (2022.04-0) obs; urgency=medium
+
+    * Various security patches in the Mozilla Foundation Security Advisory 2022-14.
+    * Bing should crash less frequently.
+    * Signing into sync from about:accounts should work again.
+    * Fixed sandbox crashing with glibc/libc6 >=2.35.
+    * Copying text with the style "white-space: pre;" should now preserve white space.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 16 Apr 2022 13:40:06 +0200
+
 waterfox-classic-kpe (2022.02-0) obs; urgency=medium
 
     * Latest security patches
