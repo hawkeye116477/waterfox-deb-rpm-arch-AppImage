@@ -1,3 +1,0 @@
-waterfox-g4 binary: embedded-library usr/lib/waterfox-g4/libxul.so: libjpeg
-waterfox-g4 binary: embedded-library usr/lib/waterfox-g4/libmozsqlite3.so: sqlite
-waterfox-g4 binary: image-file-in-usr-lib

@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export SHELL=/bin/bash
+export MOZCONFIG=$(shell pwd)/debian/mozconfig
+export MOZ_NOSPAM:=1
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
+export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
+export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export source_repo=https://github.com/WaterfoxCo/Waterfox
+export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export TODAY_DATE=$(shell date +%Y-%m-%d)
+
+LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
+
+distrelease := $(shell lsb_release -sc)
+ifeq ($(distrelease),$(filter $(distrelease),stretch xenial))
+LDFLAGS += -static-libstdc++
+endif
+
+export LDFLAGS
+
+export WF_VER=$(shell cat browser/config/version_display.txt)
+
+export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
+
+export MACH_USE_SYSTEM_PYTHON=1
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_build:
+	# Build browser
+	# LTO needs more open files
+	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
+
+	# Build langpacks
+	mkdir -p $$(pwd)/extensions
+	# langpack-build can not be done in parallel easily (see https://bugzilla.mozilla.org/show_bug.cgi?id=1660943)
+	# Therefore, we have to have a separate obj-dir for each language
+	# We do this, by creating a mozconfig-template with the necessary switches
+	# and a placeholder obj-dir, which gets copied and modified for each language
+	sed -r '/^(ja-JP-mac|en-US|)$$/d;s/ .*$$//' debian/locales.shipped | cut -f1 -d":" \
+    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g-$$WF_VER.$$locale.langpack.xpi \
+	$$(pwd)/extensions/langpack-$$locale@l10n.waterfox.net.xpi' -- {}
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-g-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-g-kpe ./mach install
+	rm -rf $$(pwd)/debian/waterfox-g-kpe/usr/lib/waterfox-g/dictionaries
+	rm -rf $$(pwd)/debian/waterfox-g-kpe/usr/lib/waterfox-g/waterfox-g-bin
+	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-g.appdata.xml.in
+	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-g.appdata.xml.in > $$(pwd)/debian/waterfox-g-kpe/usr/share/metainfo/waterfox-g.appdata.xml
+	mv $$(pwd)/debian/waterfox-g-wayland-bin.sh $$(pwd)/debian/waterfox-g-wayland/usr/bin/waterfox-g-wayland
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox-g/waterfox-g
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xdebian/waterfox-g-kpe/usr/lib/waterfox-g/browser/features/formautofill@mozilla.org.xpi
