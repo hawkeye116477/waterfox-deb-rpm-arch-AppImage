@@ -34,7 +34,7 @@ index fc9ab10a3379..cc4486ab1b75 100644
 +            .createInstance(Components.interfaces.nsIProcess);
 +          process.init(shellObj);
 +          var args = ["--file", "kdeglobals", "--group", "General", "--key",
-+              "BrowserApplication", "waterfox-g4"];
++              "BrowserApplication", "waterfox-g"];
 +          process.run(false, args, args.length);
 +        }
        } catch (ex) {
