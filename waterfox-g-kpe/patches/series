@@ -1,6 +1,6 @@
 global_menu.patch -p1
-g4-kde.patch -p1
-g4-kde_link-fix.patch -p1
+g-kde.patch -p1
+g-kde_link-fix.patch -p1
 nongnome-proxies.patch -p1
 mozilla-ntlm-full-path.patch -p1
 Use-remoting-name-for-GDK-application-names.patch -p1
