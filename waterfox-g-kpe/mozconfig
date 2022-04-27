@@ -12,6 +12,10 @@ if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish"; then
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "jammy"; then
+export PATH=/usr/lib/llvm-13/bin/:$PATH
+fi
+
 export CC=clang
 export CXX=clang++
 export AR=llvm-ar

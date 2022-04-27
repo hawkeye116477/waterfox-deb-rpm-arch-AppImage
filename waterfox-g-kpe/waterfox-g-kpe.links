@@ -9,6 +9,7 @@ usr/lib/waterfox-g/browser/chrome/icons/default/default128.png usr/share/icons/h
 usr/lib/waterfox-g/waterfox-g-bin.sh usr/bin/waterfox-g
 
 # Backwards compatibility symlinks
+# TODO: Remove them in November
 usr/bin/waterfox-g usr/bin/waterfox-g3
 usr/bin/waterfox-g usr/bin/waterfox-g4
 
