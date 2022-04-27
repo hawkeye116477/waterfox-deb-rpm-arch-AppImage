@@ -18,14 +18,12 @@
 
 ### Note 2: Grabbing packages directly doesn't always work without errors. If you got error about unmet depends, then  you need to lookup what depends it needs (see control file for package), then download and install them manually or just do the step with adding repository instead of.
 
-### Note 3: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_16.04/all](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all).
+### Note 3: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all).
 
 
 ## Downloading and installing AppImage packages
 
 [Click to see instructions for Waterfox Classic.](https://appimage.github.io/Waterfox_Classic/)
-
-[Click to see instructions for Waterfox G3.](https://appimage.github.io/Waterfox_Third_Generation/)
 
 [Click to see instructions for Waterfox G4.](https://appimage.github.io/Waterfox_Fourth_Generation/)
 
@@ -36,8 +34,6 @@
 [Click to see other source files for waterfox-g-kpe.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g-kpe)
 
 [Click to see other source files for Waterfox Classic AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-classic-appimage)
-
-[Click to see other source files for Waterfox G3 AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g3-appimage)
 
 [Click to see other source files for Waterfox G4 AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g4-appimage)
 
