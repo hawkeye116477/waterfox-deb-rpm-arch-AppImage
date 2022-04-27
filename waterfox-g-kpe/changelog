@@ -2,7 +2,7 @@ waterfox-g-kpe (4.1.1.1-0) obs; urgency=medium
 
     * Fixed an issue where container tabs were not being restored properly.
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 24 Apr 2022 19:28:12 +0200
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 27 Apr 2022 13:12:51 +0200
 
 waterfox-g4-kpe (1.1-0) obs; urgency=medium
 
