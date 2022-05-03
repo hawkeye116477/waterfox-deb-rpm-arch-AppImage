@@ -1,3 +1,9 @@
+waterfox-g-kpe (4.1.2-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 03 May 2022 17:06:37 +0200
+
 waterfox-g-kpe (4.1.1.1-0) obs; urgency=medium
 
     * Fixed an issue where container tabs were not being restored properly.
