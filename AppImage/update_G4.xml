@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="91.8.0" buildID="20220409153938" detailsURL="https://www.waterfox.net/docs/releases/G4.1.0" displayVersion="G4.1.0" extensionVersion="91.8.0" platformVersion="91.8.0" version="91.8.0">
+    <update type="major" appVersion="91.10.0" buildID="20220506122034" detailsURL="https://www.waterfox.net/docs/releases/G4.1.2" displayVersion="G4.1.2" extensionVersion="91.10.0" platformVersion="91.10.0" version="91.10.0">
         <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g4-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
