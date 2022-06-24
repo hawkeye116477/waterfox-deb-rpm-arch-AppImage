@@ -1,3 +1,11 @@
+waterfox-classic-kpe (2022.06-0) obs; urgency=medium
+
+    * Added support for some emojis added in Unicode 13.
+    * Various security patches from the latest Mozilla Foundation Security Advisories.
+    * Web compatibility improvements to fix breakages across a variety of websites.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 24 Jun 2022 22:53:56 +0200
+
 waterfox-classic-kpe (2022.04-0) obs; urgency=medium
 
     * Various security patches in the Mozilla Foundation Security Advisory 2022-14.
