@@ -1,3 +1,9 @@
+waterfox-g-kpe (4.1.3.1-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 24 Jun 2022 22:47:00 +0200
+
 waterfox-g-kpe (4.1.2.1-0) obs; urgency=medium
 
     * Various stability, functionality, and security fixes
