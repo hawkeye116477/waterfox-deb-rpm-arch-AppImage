@@ -1,3 +1,9 @@
+waterfox-g-kpe (4.1.4-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 13 Aug 2022 18:32:09 +0200
+
 waterfox-g-kpe (4.1.3.2-0) obs; urgency=medium
 
     * Waterfox now identifies as Firefox for better website compatibility. This also fixes issue such as being unable to log in to Sync.
