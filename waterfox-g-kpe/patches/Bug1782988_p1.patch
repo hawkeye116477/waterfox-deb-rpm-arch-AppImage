@@ -1,0 +1,51 @@
+From c154dfe01c4e88fe0f16b6aa6f966bdeb5dfac97 Mon Sep 17 00:00:00 2001
+From: Mike Hommey <mh+mozilla@glandium.org>
+Date: Tue, 9 Aug 2022 22:42:44 +0200
+Subject: [PATCH] Bug 1782988 - Avoid build bustage when building against glibc
+ 2.36 or newer.
+
+---
+ ipc/chromium/src/third_party/libevent/README.mozilla      | 4 ++++
+ .../src/third_party/libevent/linux/event2/event-config.h  | 8 ++++++--
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/ipc/chromium/src/third_party/libevent/README.mozilla b/ipc/chromium/src/third_party/libevent/README.mozilla
+index 262a6228e436..2a06b12b1f84 100644
+--- a/ipc/chromium/src/third_party/libevent/README.mozilla
++++ b/ipc/chromium/src/third_party/libevent/README.mozilla
+@@ -21,6 +21,10 @@ distinguish the two cases. If you get something wrong, the CHECK_EVENT_SIZEOF
+ static assertions in message_pump_libevent.cc will fail. If a new constant is
+ added, also add a static assertion for it to message_pump_libevent.cc.
+ 
++You also need to modify the EVENT__HAVE_ARC4RANDOM and EVENT__HAVE_ARC4RANDOM_BUF
++constants in the generated Linux header to account for the results of the arc4random
++and arc4random_buf configure checks.
++
+ 2. Apply the following patches from
+ ipc/chromium/src/third_party/libevent/patches/:
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+index dd64dc621002..2844bcac67de 100644
+--- a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+@@ -26,11 +26,15 @@
+ /* Define to 1 if you have the `accept4' function. */
+ #define EVENT__HAVE_ACCEPT4 1
+ 
++#ifdef HAVE_ARC4RANDOM
+ /* Define to 1 if you have the `arc4random' function. */
+-/* #undef EVENT__HAVE_ARC4RANDOM */
++#define EVENT__HAVE_ARC4RANDOM 1
++#endif
+ 
++#ifdef HAVE_ARC4RANDOM_BUF
+ /* Define to 1 if you have the `arc4random_buf' function. */
+-/* #undef EVENT__HAVE_ARC4RANDOM_BUF */
++#define EVENT__HAVE_ARC4RANDOM_BUF 1
++#endif
+ 
+ /* Define to 1 if you have the <arpa/inet.h> header file. */
+ #define EVENT__HAVE_ARPA_INET_H 1
+-- 
+2.37.1
+
