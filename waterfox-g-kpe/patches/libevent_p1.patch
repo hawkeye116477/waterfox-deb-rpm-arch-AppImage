@@ -1,0 +1,160 @@
+From 6c542069421c05b61c7677100eb742d7ff13f5b9 Mon Sep 17 00:00:00 2001
+Date: Tue, 23 Aug 2022 14:48:45 +0200
+Subject: [PATCH 1/4] [libevent] Detect arch4random_addrandom() existence
+
+https://github.com/libevent/libevent/commit/6541168d7037457b8e5c51cc354f11bd94e618b6
+---
+ ipc/chromium/src/third_party/libevent/CMakeLists.txt        | 1 +
+ .../src/third_party/libevent/android/event2/event-config.h  | 3 +++
+ .../src/third_party/libevent/bsd/event2/event-config.h      | 5 +++++
+ ipc/chromium/src/third_party/libevent/configure.ac          | 1 +
+ ipc/chromium/src/third_party/libevent/evutil_rand.c         | 2 +-
+ ipc/chromium/src/third_party/libevent/include/event2/util.h | 6 +++---
+ .../src/third_party/libevent/linux/event2/event-config.h    | 3 +++
+ .../src/third_party/libevent/mac/event2/event-config.h      | 3 +++
+ .../src/third_party/libevent/solaris/event2/event-config.h  | 3 +++
+ 9 files changed, 23 insertions(+), 4 deletions(-)
+
+diff --git a/ipc/chromium/src/third_party/libevent/CMakeLists.txt b/ipc/chromium/src/third_party/libevent/CMakeLists.txt
+index b4a34f3d26ae..38b8e34e5b6d 100644
+--- a/ipc/chromium/src/third_party/libevent/CMakeLists.txt
++++ b/ipc/chromium/src/third_party/libevent/CMakeLists.txt
+@@ -330,6 +330,7 @@ CHECK_FUNCTION_EXISTS_EX(sysctl EVENT__HAVE_SYSCTL)
+ CHECK_FUNCTION_EXISTS_EX(accept4 EVENT__HAVE_ACCEPT4)
+ CHECK_FUNCTION_EXISTS_EX(arc4random EVENT__HAVE_ARC4RANDOM)
+ CHECK_FUNCTION_EXISTS_EX(arc4random_buf EVENT__HAVE_ARC4RANDOM_BUF)
++CHECK_FUNCTION_EXISTS_EX(arc4random_addrandom EVENT__HAVE_ARC4RANDOM_ADDRANDOM)
+ CHECK_FUNCTION_EXISTS_EX(epoll_create1 EVENT__HAVE_EPOLL_CREATE1)
+ CHECK_FUNCTION_EXISTS_EX(getegid EVENT__HAVE_GETEGID)
+ CHECK_FUNCTION_EXISTS_EX(geteuid EVENT__HAVE_GETEUID)
+diff --git a/ipc/chromium/src/third_party/libevent/android/event2/event-config.h b/ipc/chromium/src/third_party/libevent/android/event2/event-config.h
+index 2922acb52e11..fee9be09d621 100644
+--- a/ipc/chromium/src/third_party/libevent/android/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/android/event2/event-config.h
+@@ -33,6 +33,9 @@
+ /* Define to 1 if you have the `arc4random' function. */
+ #define EVENT__HAVE_ARC4RANDOM 1
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#define EVENT__HAVE_ARC4RANDOM_ADDRANDOM 1
++
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #if __ANDROID_API__ >= 21 || defined(__ANDROID_API_L__)
+ #define EVENT__HAVE_ARC4RANDOM_BUF 1
+diff --git a/ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h b/ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h
+index 7a4578b82b5f..b183f02e49d7 100644
+--- a/ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/bsd/event2/event-config.h
+@@ -31,6 +31,11 @@
+ /* Define to 1 if you have the `arc4random' function. */
+ #define EVENT__HAVE_ARC4RANDOM 1
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#if defined(__DragonFly__) || defined(__NetBSD__)
++#define EVENT__HAVE_ARC4RANDOM_ADDRANDOM 1
++#endif
++
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #define EVENT__HAVE_ARC4RANDOM_BUF 1
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/configure.ac b/ipc/chromium/src/third_party/libevent/configure.ac
+index 7528d37ee03f..b3db7acaa7c1 100644
+--- a/ipc/chromium/src/third_party/libevent/configure.ac
++++ b/ipc/chromium/src/third_party/libevent/configure.ac
+@@ -342,6 +342,7 @@ AC_CHECK_FUNCS([ \
+   accept4 \
+   arc4random \
+   arc4random_buf \
++  arc4random_addrandom \
+   eventfd \
+   epoll_create1 \
+   fcntl \
+diff --git a/ipc/chromium/src/third_party/libevent/evutil_rand.c b/ipc/chromium/src/third_party/libevent/evutil_rand.c
+index 02df7899d106..4be0b1c5e2bb 100644
+--- a/ipc/chromium/src/third_party/libevent/evutil_rand.c
++++ b/ipc/chromium/src/third_party/libevent/evutil_rand.c
+@@ -192,7 +192,7 @@ evutil_secure_rng_get_bytes(void *buf, size_t n)
+ 	ev_arc4random_buf(buf, n);
+ }
+ 
+-#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(ANDROID)
++#if !defined(EVENT__HAVE_ARC4RANDOM) || defined(EVENT__HAVE_ARC4RANDOM_ADDRANDOM)
+ void
+ evutil_secure_rng_add_bytes(const char *buf, size_t n)
+ {
+diff --git a/ipc/chromium/src/third_party/libevent/include/event2/util.h b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+index c6f450bf0d08..1230605054e4 100644
+--- a/ipc/chromium/src/third_party/libevent/include/event2/util.h
++++ b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+@@ -446,7 +446,7 @@ int evutil_closesocket(evutil_socket_t sock);
+ 
+ /** Do platform-specific operations, if possible, to make a tcp listener
+  *  socket defer accept()s until there is data to read.
+- *  
++ *
+  *  Not all platforms support this.  You don't want to do this for every
+  *  listener socket: only the ones that implement a protocol where the
+  *  client transmits before the server needs to respond.
+@@ -454,7 +454,7 @@ int evutil_closesocket(evutil_socket_t sock);
+  *  @param sock The listening socket to to make deferred
+  *  @return 0 on success (whether the operation is supported or not),
+  *       -1 on failure
+-*/ 
++*/
+ EVENT2_EXPORT_SYMBOL
+ int evutil_make_tcp_listen_socket_deferred(evutil_socket_t sock);
+ 
+@@ -842,7 +842,7 @@ int evutil_secure_rng_init(void);
+ EVENT2_EXPORT_SYMBOL
+ int evutil_secure_rng_set_urandom_device_file(char *fname);
+ 
+-#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(ANDROID)
++#ifdef EVENT__HAVE_ARC4RANDOM_ADDRANDOM
+ /** Seed the random number generator with extra random bytes.
+ 
+     You should almost never need to call this function; it should be
+diff --git a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+index dd64dc621002..0c062a0c7dba 100644
+--- a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+@@ -29,6 +29,9 @@
+ /* Define to 1 if you have the `arc4random' function. */
+ /* #undef EVENT__HAVE_ARC4RANDOM */
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++/* #undef EVENT__HAVE_ARC4RANDOM_ADDRANDOM */
++
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ /* #undef EVENT__HAVE_ARC4RANDOM_BUF */
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/mac/event2/event-config.h b/ipc/chromium/src/third_party/libevent/mac/event2/event-config.h
+index e4ad1e2edb28..72839ca1eb6b 100644
+--- a/ipc/chromium/src/third_party/libevent/mac/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/mac/event2/event-config.h
+@@ -29,6 +29,9 @@
+ /* Define to 1 if you have the `arc4random' function. */
+ #define EVENT__HAVE_ARC4RANDOM 1
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#define EVENT__HAVE_ARC4RANDOM_ADDRANDOM 1
++
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #define EVENT__HAVE_ARC4RANDOM_BUF 1
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/solaris/event2/event-config.h b/ipc/chromium/src/third_party/libevent/solaris/event2/event-config.h
+index 43aedbe8e351..86499e24d53b 100644
+--- a/ipc/chromium/src/third_party/libevent/solaris/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/solaris/event2/event-config.h
+@@ -29,6 +29,9 @@
+ /* Define to 1 if you have the `arc4random' function. */
+ #define EVENT__HAVE_ARC4RANDOM 1
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#define EVENT__HAVE_ARC4RANDOM_ADDRANDOM 1
++
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #define EVENT__HAVE_ARC4RANDOM_BUF 1
+ 
+-- 
+2.37.1
+

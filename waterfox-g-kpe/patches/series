@@ -18,5 +18,7 @@ debian-hacks/python-glean-parser-nonetype-dereference.patch
 debian-hacks/python-init-subclass.patch
 debian-hacks/python-dont-open-posixpath.patch
 debian-hacks/Allow-to-build-with-older-versions-of-nodejs-10.patch
-Bug1782988_p1.patch -p1
-Bug1782988_p2.patch -p1
+libevent_p1.patch -p1
+libevent_p2.patch -p1
+libevent_p3.patch -p1
+libevent_p4.patch -p1

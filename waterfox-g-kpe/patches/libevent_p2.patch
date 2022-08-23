@@ -1,0 +1,43 @@
+From 48eb61df90ea2a66f197ab3d71fb1138a19571c3 Mon Sep 17 00:00:00 2001
+From: Azat Khuzhin <a3at.mail@gmail.com>
+Date: Mon, 27 Mar 2017 15:50:23 +0300
+Subject: [PATCH 2/4] [libevent] Fix arc4random_addrandom() detecting and
+ fallback (regression)
+
+But this is kind of hot-fix, we definitelly need more sane arc4random
+compat layer.
+---
+ ipc/chromium/src/third_party/libevent/event-config.h.cmake  | 3 +++
+ ipc/chromium/src/third_party/libevent/include/event2/util.h | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/ipc/chromium/src/third_party/libevent/event-config.h.cmake b/ipc/chromium/src/third_party/libevent/event-config.h.cmake
+index c1355be91485..158dc0a8f801 100644
+--- a/ipc/chromium/src/third_party/libevent/event-config.h.cmake
++++ b/ipc/chromium/src/third_party/libevent/event-config.h.cmake
+@@ -53,6 +53,9 @@
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #cmakedefine EVENT__HAVE_ARC4RANDOM_BUF
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#cmakedefine EVENT__HAVE_ARC4RANDOM_ADDRANDOM
++
+ /* Define if clock_gettime is available in libc */
+ #cmakedefine EVENT__DNS_USE_CPU_CLOCK_FOR_ID
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/include/event2/util.h b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+index 1230605054e4..e13a9abbedb2 100644
+--- a/ipc/chromium/src/third_party/libevent/include/event2/util.h
++++ b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+@@ -842,7 +842,7 @@ int evutil_secure_rng_init(void);
+ EVENT2_EXPORT_SYMBOL
+ int evutil_secure_rng_set_urandom_device_file(char *fname);
+ 
+-#ifdef EVENT__HAVE_ARC4RANDOM_ADDRANDOM
++#if !defined(EVENT__HAVE_ARC4RANDOM) || defined(EVENT__HAVE_ARC4RANDOM_ADDRANDOM)
+ /** Seed the random number generator with extra random bytes.
+ 
+     You should almost never need to call this function; it should be
+-- 
+2.37.1
+

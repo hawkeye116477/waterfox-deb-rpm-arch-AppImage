@@ -1,8 +1,8 @@
-From c154dfe01c4e88fe0f16b6aa6f966bdeb5dfac97 Mon Sep 17 00:00:00 2001
+From 0da7c146077ff049c397380d49d50da0dcebe70f Mon Sep 17 00:00:00 2001
 From: Mike Hommey <mh+mozilla@glandium.org>
 Date: Tue, 9 Aug 2022 22:42:44 +0200
-Subject: [PATCH] Bug 1782988 - Avoid build bustage when building against glibc
- 2.36 or newer.
+Subject: [PATCH 3/4] Bug 1782988 - Avoid build bustage when building against
+ glibc 2.36 or newer.
 
 ---
  ipc/chromium/src/third_party/libevent/README.mozilla      | 4 ++++
@@ -25,10 +25,10 @@ index 262a6228e436..2a06b12b1f84 100644
  ipc/chromium/src/third_party/libevent/patches/:
  
 diff --git a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
-index dd64dc621002..2844bcac67de 100644
+index 0c062a0c7dba..fc6b90afe497 100644
 --- a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
 +++ b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
-@@ -26,11 +26,15 @@
+@@ -26,14 +26,18 @@
  /* Define to 1 if you have the `accept4' function. */
  #define EVENT__HAVE_ACCEPT4 1
  
@@ -37,6 +37,9 @@ index dd64dc621002..2844bcac67de 100644
 -/* #undef EVENT__HAVE_ARC4RANDOM */
 +#define EVENT__HAVE_ARC4RANDOM 1
 +#endif
+ 
+ /* Define to 1 if you have the `arc4random_addrandom' function. */
+ /* #undef EVENT__HAVE_ARC4RANDOM_ADDRANDOM */
  
 +#ifdef HAVE_ARC4RANDOM_BUF
  /* Define to 1 if you have the `arc4random_buf' function. */
