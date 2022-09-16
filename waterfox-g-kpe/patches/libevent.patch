@@ -158,3 +158,131 @@ index 43aedbe8e351..86499e24d53b 100644
 -- 
 2.37.1
 
+From 48eb61df90ea2a66f197ab3d71fb1138a19571c3 Mon Sep 17 00:00:00 2001
+From: Azat Khuzhin <a3at.mail@gmail.com>
+Date: Mon, 27 Mar 2017 15:50:23 +0300
+Subject: [PATCH 2/4] [libevent] Fix arc4random_addrandom() detecting and
+ fallback (regression)
+
+But this is kind of hot-fix, we definitelly need more sane arc4random
+compat layer.
+---
+ ipc/chromium/src/third_party/libevent/event-config.h.cmake  | 3 +++
+ ipc/chromium/src/third_party/libevent/include/event2/util.h | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/ipc/chromium/src/third_party/libevent/event-config.h.cmake b/ipc/chromium/src/third_party/libevent/event-config.h.cmake
+index c1355be91485..158dc0a8f801 100644
+--- a/ipc/chromium/src/third_party/libevent/event-config.h.cmake
++++ b/ipc/chromium/src/third_party/libevent/event-config.h.cmake
+@@ -53,6 +53,9 @@
+ /* Define to 1 if you have the `arc4random_buf' function. */
+ #cmakedefine EVENT__HAVE_ARC4RANDOM_BUF
+ 
++/* Define to 1 if you have the `arc4random_addrandom' function. */
++#cmakedefine EVENT__HAVE_ARC4RANDOM_ADDRANDOM
++
+ /* Define if clock_gettime is available in libc */
+ #cmakedefine EVENT__DNS_USE_CPU_CLOCK_FOR_ID
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/include/event2/util.h b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+index 1230605054e4..e13a9abbedb2 100644
+--- a/ipc/chromium/src/third_party/libevent/include/event2/util.h
++++ b/ipc/chromium/src/third_party/libevent/include/event2/util.h
+@@ -842,7 +842,7 @@ int evutil_secure_rng_init(void);
+ EVENT2_EXPORT_SYMBOL
+ int evutil_secure_rng_set_urandom_device_file(char *fname);
+ 
+-#ifdef EVENT__HAVE_ARC4RANDOM_ADDRANDOM
++#if !defined(EVENT__HAVE_ARC4RANDOM) || defined(EVENT__HAVE_ARC4RANDOM_ADDRANDOM)
+ /** Seed the random number generator with extra random bytes.
+ 
+     You should almost never need to call this function; it should be
+-- 
+2.37.1
+
+From 0da7c146077ff049c397380d49d50da0dcebe70f Mon Sep 17 00:00:00 2001
+From: Mike Hommey <mh+mozilla@glandium.org>
+Date: Tue, 9 Aug 2022 22:42:44 +0200
+Subject: [PATCH 3/4] Bug 1782988 - Avoid build bustage when building against
+ glibc 2.36 or newer.
+
+---
+ ipc/chromium/src/third_party/libevent/README.mozilla      | 4 ++++
+ .../src/third_party/libevent/linux/event2/event-config.h  | 8 ++++++--
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/ipc/chromium/src/third_party/libevent/README.mozilla b/ipc/chromium/src/third_party/libevent/README.mozilla
+index 262a6228e436..2a06b12b1f84 100644
+--- a/ipc/chromium/src/third_party/libevent/README.mozilla
++++ b/ipc/chromium/src/third_party/libevent/README.mozilla
+@@ -21,6 +21,10 @@ distinguish the two cases. If you get something wrong, the CHECK_EVENT_SIZEOF
+ static assertions in message_pump_libevent.cc will fail. If a new constant is
+ added, also add a static assertion for it to message_pump_libevent.cc.
+ 
++You also need to modify the EVENT__HAVE_ARC4RANDOM and EVENT__HAVE_ARC4RANDOM_BUF
++constants in the generated Linux header to account for the results of the arc4random
++and arc4random_buf configure checks.
++
+ 2. Apply the following patches from
+ ipc/chromium/src/third_party/libevent/patches/:
+ 
+diff --git a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+index 0c062a0c7dba..fc6b90afe497 100644
+--- a/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
++++ b/ipc/chromium/src/third_party/libevent/linux/event2/event-config.h
+@@ -26,14 +26,18 @@
+ /* Define to 1 if you have the `accept4' function. */
+ #define EVENT__HAVE_ACCEPT4 1
+ 
++#ifdef HAVE_ARC4RANDOM
+ /* Define to 1 if you have the `arc4random' function. */
+-/* #undef EVENT__HAVE_ARC4RANDOM */
++#define EVENT__HAVE_ARC4RANDOM 1
++#endif
+ 
+ /* Define to 1 if you have the `arc4random_addrandom' function. */
+ /* #undef EVENT__HAVE_ARC4RANDOM_ADDRANDOM */
+ 
++#ifdef HAVE_ARC4RANDOM_BUF
+ /* Define to 1 if you have the `arc4random_buf' function. */
+-/* #undef EVENT__HAVE_ARC4RANDOM_BUF */
++#define EVENT__HAVE_ARC4RANDOM_BUF 1
++#endif
+ 
+ /* Define to 1 if you have the <arpa/inet.h> header file. */
+ #define EVENT__HAVE_ARPA_INET_H 1
+-- 
+2.37.1
+
+From b7be1330b05983393be0b1845dbabf87a85a0d39 Mon Sep 17 00:00:00 2001
+From: Mike Hommey <mh+mozilla@glandium.org>
+Date: Tue, 9 Aug 2022 20:42:44 +0000
+Subject: [PATCH 4/4] Bug 1782988 - Fix use of arc4random_buf use in ping.cpp.
+ r=gsvelto
+
+The code was probably never built before glibc 2.36, because before
+that, only Android and some BSDs had arc4random_buf, but none of those
+actually built this code.
+
+Differential Revision: https://phabricator.services.mozilla.com/D154024
+---
+ toolkit/crashreporter/client/ping.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/toolkit/crashreporter/client/ping.cpp b/toolkit/crashreporter/client/ping.cpp
+index 4341df49ea70..959cddc16657 100644
+--- a/toolkit/crashreporter/client/ping.cpp
++++ b/toolkit/crashreporter/client/ping.cpp
+@@ -53,7 +53,7 @@ static string GenerateUUID() {
+ 
+   CFRelease(uuid);
+ #elif defined(HAVE_ARC4RANDOM_BUF)  // Android, BSD, ...
+-  arc4random_buf(id, sizeof(UUID));
++  arc4random_buf(&id, sizeof(UUID));
+ #else                               // Linux
+   int fd = open("/dev/urandom", O_RDONLY);
+ 
+-- 
+2.37.1
+
