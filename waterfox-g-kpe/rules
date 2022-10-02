@@ -24,7 +24,7 @@ export WF_VER=$(shell cat browser/config/version_display.txt)
 
 export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
 
-export MACH_USE_SYSTEM_PYTHON=1
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 
 %:
 	dh $@

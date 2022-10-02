@@ -1,10 +1,32 @@
+diff --git a/browser/components/preferences/tests/browser_browser_languages_subdialog.js b/browser/components/preferences/tests/browser_browser_languages_subdialog.js
+index a204f697f904..4b87ab85156a 100644
+--- a/browser/components/preferences/tests/browser_browser_languages_subdialog.js
++++ b/browser/components/preferences/tests/browser_browser_languages_subdialog.js
+@@ -14,7 +14,7 @@ const DICTIONARY_ID_PL = "pl@dictionaries.addons.mozilla.org";
+ const TELEMETRY_CATEGORY = "intl.ui.browserLanguage";
+ 
+ function langpackId(locale) {
+-  return `langpack-${locale}@firefox.mozilla.org`;
++  return `langpack-${locale}@l10n.waterfox.net`;
+ }
+ 
+ function getManifestData(locale, version = "2.0") {
+@@ -670,7 +670,7 @@ add_task(async function testInstallFromAMO() {
+   is(getMainPaneLocales(), "en-US,pl,search", "en-US and pl now available");
+ 
+   // Disable the Polish langpack.
+-  langpack = await AddonManager.getAddonByID("langpack-pl@firefox.mozilla.org");
++  langpack = await AddonManager.getAddonByID("langpack-pl@l10n.waterfox.net");
+   await langpack.disable();
+ 
+   ({ dialogDoc, available, selected } = await openDialog(doc, true));
 diff --git a/browser/locales/Makefile.in b/browser/locales/Makefile.in
-index 496379c4306f..96b056bd6813 100644
+index e4b60a039956..208871cb6f75 100644
 --- a/browser/locales/Makefile.in
 +++ b/browser/locales/Makefile.in
 @@ -21,9 +21,9 @@ PWD := $(CURDIR)
  ZIP_IN ?= $(ABS_DIST)/$(PACKAGE)
-
+ 
  ifdef MOZ_DEV_EDITION
 -MOZ_LANGPACK_EID=langpack-$(AB_CD)@devedition.mozilla.org
 +MOZ_LANGPACK_EID=langpack-$(AB_CD)@l10n.waterfox.net
@@ -14,14 +36,11 @@ index 496379c4306f..96b056bd6813 100644
  endif
  # For Nightly, we know where to get the builds from to do local repacks
  ifdef NIGHTLY_BUILD
---
-2.33.0
-
-diff --git a/browser/components/preferences/preferences.js b/browser/components/preferences/preferences.js
-index 91e9e469cea2..b13c445bc396 100644
---- a/browser/components/preferences/preferences.js
-+++ b/browser/components/preferences/preferences.js
-@@ -529,7 +529,7 @@ async function getAvailableLocales() {
+diff --git a/intl/locale/LangPackMatcher.jsm b/intl/locale/LangPackMatcher.jsm
+index 0913ef9fda38..2b923b59df6d 100644
+--- a/intl/locale/LangPackMatcher.jsm
++++ b/intl/locale/LangPackMatcher.jsm
+@@ -370,7 +370,7 @@ async function getAvailableLocales() {
    // If defaultLocale isn't lastFallbackLocale, then we still need the langpack
    // for lastFallbackLocale for it to be useful.
    if (defaultLocale != lastFallbackLocale) {
@@ -30,3 +49,19 @@ index 91e9e469cea2..b13c445bc396 100644
      let lastFallbackInstalled = await AddonManager.getAddonByID(lastFallbackId);
      if (!lastFallbackInstalled) {
        return availableLocales.filter(locale => locale != lastFallbackLocale);
+diff --git a/intl/locale/tests/LangPackMatcherTestUtils.jsm b/intl/locale/tests/LangPackMatcherTestUtils.jsm
+index 38345e1ec2d6..9898c733747c 100644
+--- a/intl/locale/tests/LangPackMatcherTestUtils.jsm
++++ b/intl/locale/tests/LangPackMatcherTestUtils.jsm
+@@ -43,7 +43,7 @@ function getAddonAndLocalAPIsMocker(testScope, sandbox) {
+         );
+         resolve(
+           availableLangpacks.map(locale => ({
+-            guid: `langpack-${locale}@firefox.mozilla.org`,
++            guid: `langpack-${locale}@l10n.waterfox.net`,
+             type: "language",
+             target_locale: locale,
+             current_compatible_version: {
+-- 
+2.37.3
+

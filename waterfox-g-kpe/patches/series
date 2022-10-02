@@ -1,21 +1,12 @@
 global_menu.patch -p1
+fis-csd-global-menu.patch -p1
 g-kde.patch -p1
-g-kde_link-fix.patch -p1
 nongnome-proxies.patch -p1
 mozilla-ntlm-full-path.patch -p1
-Use-remoting-name-for-GDK-application-names.patch -p1
-sandbox-fips.patch -p1
 libavcodec58_91.patch -p1
 fix-langpack-id.patch -p1
-debian-hacks/python-build-dont-require-python36.patch
-debian-hacks/python-mach-dont-require-python36.patch
-debian-hacks/python-no-f-strings.patch
-debian-hacks/python-no-comma-after-kwargs-def.patch
-debian-hacks/python-glean-parser-no-f-strings.patch
-debian-hacks/python-no-variable-type.patch
-debian-hacks/python-importlib-metadata-py35-compat.patch
-debian-hacks/python-glean-parser-nonetype-dereference.patch
-debian-hacks/python-init-subclass.patch
-debian-hacks/python-dont-open-posixpath.patch
-debian-hacks/Allow-to-build-with-older-versions-of-nodejs-10.patch
-libevent.patch -p1
+glibc236.patch -p1
+waterfox-branded-icons.patch -p1
+fix-wayland-build.patch -p1
+cbindgen-0.24.0.patch -p1
+zstandard-0.18.0.patch -p1

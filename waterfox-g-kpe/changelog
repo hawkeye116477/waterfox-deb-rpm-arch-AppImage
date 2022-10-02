@@ -1,3 +1,12 @@
+waterfox-g-kpe (5.0-0) obs; urgency=medium
+
+    * You can now toggle to view password you are typing in.
+    * You can now Sync your settings.
+    * The search input type is now enabled.
+    * Updated Gecko to v102 ESR.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 02 Oct 2022 21:36:28 +0200
+
 waterfox-g-kpe (4.1.5-0) obs; urgency=medium
 
     * Various stability, functionality, and security fixes.

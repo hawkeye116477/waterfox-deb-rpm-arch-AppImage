@@ -2,7 +2,7 @@ Source: https://bazaar.launchpad.net/~mozillateam/firefox/firefox.bionic/view/14
 Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 diff --git a/browser/base/content/browser-menubar.inc b/browser/base/content/browser-menubar.inc
-index cd348e8e7817..c7c38a6fb546 100644
+index 1adea92456c7..9cb91a4befdf 100644
 --- a/browser/base/content/browser-menubar.inc
 +++ b/browser/base/content/browser-menubar.inc
 @@ -7,7 +7,12 @@
@@ -20,10 +20,10 @@ index cd348e8e7817..c7c38a6fb546 100644
                                                      event.target.parentNode.openedWithKey);"
  #endif
 diff --git a/browser/base/content/browser.js b/browser/base/content/browser.js
-index 3b3c698e448e..f1cd6d5409c4 100644
+index d72ed6495612..eb4af8d23195 100644
 --- a/browser/base/content/browser.js
 +++ b/browser/base/content/browser.js
-@@ -6243,11 +6243,18 @@ function onViewToolbarsPopupShowing(aEvent, aInsertPoint) {
+@@ -6481,11 +6481,18 @@ function onViewToolbarsPopupShowing(aEvent, aInsertPoint) {
    MozXULElement.insertFTLIfNeeded("browser/toolbarContextMenu.ftl");
    let firstMenuItem = aInsertPoint || popup.firstElementChild;
    let toolbarNodes = gNavToolbox.querySelectorAll("toolbar");
@@ -39,24 +39,23 @@ index 3b3c698e448e..f1cd6d5409c4 100644
 +      continue;
 +    }
 +
-     if (toolbar.id == "PersonalToolbar" && gBookmarksToolbar2h2020) {
+     if (toolbar.id == "PersonalToolbar") {
        let menu = BookmarkingUI.buildBookmarksToolbarSubmenu(toolbar);
        popup.insertBefore(menu, firstMenuItem);
 diff --git a/browser/components/places/content/places.xhtml b/browser/components/places/content/places.xhtml
-index 8f89e2259872..1904555ceb67 100644
+index e19a58029828..4271915765c6 100644
 --- a/browser/components/places/content/places.xhtml
 +++ b/browser/components/places/content/places.xhtml
-@@ -169,7 +169,7 @@
-         <toolbarbutton type="menu" class="tabbable" wantdropmarker="true"
-               onpopupshowing="document.getElementById('placeContent').focus()"
+@@ -166,6 +166,7 @@
  #else
--      <menubar id="placesMenu">
-+      <menubar id="placesMenu" _moz-menubarkeeplocal="true">
-         <menu accesskey="&organize.accesskey;" class="menu-iconic"
+       <menubar id="placesMenu">
+         <menu class="menu-iconic" data-l10n-id="places-organize-button"
++              _moz-menubarkeeplocal="true"
  #endif
-               id="organizeButton" label="&organize.label;"
+               id="organizeButton">
+           <menupopup id="organizeButtonPopup">
 diff --git a/dom/xul/XULPopupElement.cpp b/dom/xul/XULPopupElement.cpp
-index 1f4fb8361d77..dd57c3879d36 100644
+index b6a50a3e2408..cda8315b0ef8 100644
 --- a/dom/xul/XULPopupElement.cpp
 +++ b/dom/xul/XULPopupElement.cpp
 @@ -207,6 +207,10 @@ void XULPopupElement::GetState(nsString& aState) {
@@ -83,10 +82,10 @@ index 1f4fb8361d77..dd57c3879d36 100644
  
  nsINode* XULPopupElement::GetTriggerNode() const {
 diff --git a/dom/xul/moz.build b/dom/xul/moz.build
-index 155fece3899b..d366f520c22b 100644
+index bb7e4b08d924..42d4bd9b654f 100644
 --- a/dom/xul/moz.build
 +++ b/dom/xul/moz.build
-@@ -83,6 +83,11 @@ LOCAL_INCLUDES += [
+@@ -82,4 +82,9 @@ LOCAL_INCLUDES += [
  
  include("/ipc/chromium/chromium-config.mozbuild")
  
@@ -96,13 +95,11 @@ index 155fece3899b..d366f520c22b 100644
 +    ]
 +
  FINAL_LIBRARY = "xul"
- 
- if CONFIG["CC_TYPE"] in ("clang", "gcc"):
 diff --git a/layout/build/moz.build b/layout/build/moz.build
-index 448a2404a73b..8756beec2926 100644
+index c7869a01a373..2cbdb021b3b7 100644
 --- a/layout/build/moz.build
 +++ b/layout/build/moz.build
-@@ -68,6 +68,10 @@ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
+@@ -70,6 +70,10 @@ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
          "/dom/system",
          "/dom/system/android",
      ]
@@ -114,10 +111,10 @@ index 448a2404a73b..8756beec2926 100644
  XPCOM_MANIFESTS += [
      "components.conf",
 diff --git a/modules/libpref/init/all.js b/modules/libpref/init/all.js
-index 78ce2cb71ea1..78b7aad7c442 100644
+index 30641d9727cf..c8382f50ab28 100644
 --- a/modules/libpref/init/all.js
 +++ b/modules/libpref/init/all.js
-@@ -300,6 +300,9 @@ pref("dom.mouseevent.click.hack.use_legacy_non-primary_dispatch", "");
+@@ -188,6 +188,9 @@ pref("dom.mouseevent.click.hack.use_legacy_non-primary_dispatch", "");
  // Fastback caching - if this pref is negative, then we calculate the number
  // of content viewers to cache based on the amount of available memory.
  pref("browser.sessionhistory.max_total_viewers", -1);
@@ -128,59 +125,52 @@ index 78ce2cb71ea1..78b7aad7c442 100644
  pref("browser.display.force_inline_alttext", false); // true = force ALT text for missing images to be layed out inline
  // 0 = no external leading,
 diff --git a/toolkit/content/xul.css b/toolkit/content/xul.css
-index f8a2894ffbe6..bfb58e7dd229 100644
+index 70bfc2047c05..6b7938a6a7a5 100644
 --- a/toolkit/content/xul.css
 +++ b/toolkit/content/xul.css
-@@ -230,6 +230,18 @@ toolbar[type="menubar"] {
+@@ -226,6 +226,13 @@ toolbox {
+   }
  }
- %endif
  
-+%ifdef MOZ_WIDGET_GTK
++@media (-moz-platform: linux) {
 +*|*:root[shellshowingmenubar="true"]
 +toolbar[type="menubar"]:not([customizing="true"]) {
 +  display: none !important;
 +}
-+%endif
-+
-+*|*:root[shellshowingmenubar="true"]
-+#toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container {
-+  visibility: visible !important;
 +}
 +
  toolbarspring {
    -moz-box-flex: 1000;
  }
 diff --git a/widget/gtk/NativeMenuSupport.cpp b/widget/gtk/NativeMenuSupport.cpp
-new file mode 100644
-index 000000000000..1f4e230cddbe
---- /dev/null
+index 4360867fff3f..c3a69f31b1d3 100644
+--- a/widget/gtk/NativeMenuSupport.cpp
 +++ b/widget/gtk/NativeMenuSupport.cpp
-@@ -0,0 +1,25 @@
-+/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
-+/* This Source Code Form is subject to the terms of the Mozilla Public
-+ * License, v. 2.0. If a copy of the MPL was not distributed with this
-+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-+
-+#include "mozilla/widget/NativeMenuSupport.h"
-+
-+#include "MainThreadUtils.h"
+@@ -7,6 +7,8 @@
+ 
+ #include "MainThreadUtils.h"
+ #include "NativeMenuGtk.h"
 +#include "nsINativeMenuService.h"
++#include "nsServiceManagerUtils.h"
+ 
+ namespace mozilla::widget {
+ 
+@@ -14,7 +16,14 @@ void NativeMenuSupport::CreateNativeMenuBar(nsIWidget* aParent,
+                                             dom::Element* aMenuBarElement) {
+   MOZ_RELEASE_ASSERT(NS_IsMainThread(),
+                      "Attempting to create native menu bar on wrong thread!");
+-  // TODO
 +
-+namespace mozilla::widget {
++  nsCOMPtr<nsINativeMenuService> nms =
++      do_GetService("@mozilla.org/widget/nativemenuservice;1");
++  if (!nms) {
++    return;
++  }
 +
-+void NativeMenuSupport::CreateNativeMenuBar(nsIWidget* aParent, dom::Element* aMenuBarElement) {
-+    MOZ_RELEASE_ASSERT(NS_IsMainThread(), "Attempting to create native menu bar on wrong thread!");
-+
-+    nsCOMPtr<nsINativeMenuService> nms =
-+        do_GetService("@mozilla.org/widget/nativemenuservice;1");
-+    if (!nms) {
-+        return;
-+    }
-+
-+    nms->CreateNativeMenuBar(aParent, aMenuBarElement);
-+}
-+
-+}  // namespace mozilla::widget
++  nms->CreateNativeMenuBar(aParent, aMenuBarElement);
+ }
+ 
+ already_AddRefed<NativeMenu> NativeMenuSupport::CreateNativeContextMenu(
 diff --git a/widget/gtk/NativeMenuSupport.h b/widget/gtk/NativeMenuSupport.h
 new file mode 100644
 index 000000000000..0843d45185e5
@@ -219,12 +209,12 @@ index 000000000000..0843d45185e5
 +
 +#endif  // mozilla_widget_NativeMenuSupport_h
 diff --git a/widget/gtk/components.conf b/widget/gtk/components.conf
-index 38c07bd81240..21cb705ca951 100644
+index 61714d8b8190..1738093137f2 100644
 --- a/widget/gtk/components.conf
 +++ b/widget/gtk/components.conf
-@@ -76,6 +76,14 @@ Classes = [
-         'headers': ['/widget/gtk/nsApplicationChooser.h'],
-         'processes': ProcessSelector.MAIN_PROCESS_ONLY,
+@@ -117,6 +117,14 @@ Classes = [
+         'headers': ['/widget/gtk/nsUserIdleServiceGTK.h'],
+         'constructor': 'nsUserIdleServiceGTK::GetInstance',
      },
 +    {
 +        'cid': '{0b3fe5aa-bc72-4303-85ae-76365df1251d}',
@@ -236,28 +226,12 @@ index 38c07bd81240..21cb705ca951 100644
 +    },
  ]
  
- if defined('MOZ_X11'):
+ if defined('NS_PRINTING'):
 diff --git a/widget/gtk/moz.build b/widget/gtk/moz.build
-index d288acb36fdc..95edfab23bf9 100644
+index 5218c7df06aa..bf64f7ebdc65 100644
 --- a/widget/gtk/moz.build
 +++ b/widget/gtk/moz.build
-@@ -33,6 +33,7 @@ EXPORTS += [
- EXPORTS.mozilla += ["WidgetUtilsGtk.h"]
- 
- EXPORTS.mozilla.widget += [
-+    "NativeMenuSupport.h",
-     "WindowSurface.h",
-     "WindowSurfaceProvider.h",
- ]
-@@ -45,6 +46,7 @@ UNIFIED_SOURCES += [
-     "MozContainer.cpp",
-     "MPRISServiceHandler.cpp",
-     "NativeKeyBindings.cpp",
-+    "NativeMenuSupport.cpp",
-     "nsApplicationChooser.cpp",
-     "nsAppShell.cpp",
-     "nsBidiKeyboard.cpp",
-@@ -70,6 +72,15 @@ UNIFIED_SOURCES += [
+@@ -77,6 +77,15 @@ UNIFIED_SOURCES += [
  
  SOURCES += [
      "MediaKeysEventSourceFactory.cpp",
@@ -273,7 +247,7 @@ index d288acb36fdc..95edfab23bf9 100644
      "nsNativeThemeGTK.cpp",  # conflicts with X11 headers
      "nsWindow.cpp",  # conflicts with X11 headers
      "WaylandVsyncSource.cpp",  # conflicts with X11 headers
-@@ -139,6 +150,7 @@ LOCAL_INCLUDES += [
+@@ -156,6 +165,7 @@ LOCAL_INCLUDES += [
      "/layout/base",
      "/layout/forms",
      "/layout/generic",
@@ -457,7 +431,7 @@ index 000000000000..8d46a0d27bdb
 +#endif /* __nsDbusmenu_h__ */
 diff --git a/widget/gtk/nsMenu.cpp b/widget/gtk/nsMenu.cpp
 new file mode 100644
-index 000000000000..004b4831021f
+index 000000000000..255eb390e577
 --- /dev/null
 +++ b/widget/gtk/nsMenu.cpp
 @@ -0,0 +1,795 @@
@@ -908,7 +882,7 @@ index 000000000000..004b4831021f
 +}
 +
 +void
-+nsMenu::Update(ComputedStyle *aComputedStyle)
++nsMenu::Update(const ComputedStyle *aComputedStyle)
 +{
 +    if (mNeedsUpdate) {
 +        mNeedsUpdate = false;
@@ -960,10 +934,10 @@ index 000000000000..004b4831021f
 +        UpdateLabel();
 +    } else if (aAttribute == nsGkAtoms::hidden ||
 +        aAttribute == nsGkAtoms::collapsed) {
-+        RefPtr<ComputedStyle> style = GetComputedStyle();
++        RefPtr<const ComputedStyle> style = GetComputedStyle();
 +        UpdateVisibility(style);
 +    } else if (aAttribute == nsGkAtoms::image) {
-+        RefPtr<ComputedStyle> style = GetComputedStyle();
++        RefPtr<const ComputedStyle> style = GetComputedStyle();
 +        UpdateIcon(style);
 +    }
 +}
@@ -1209,7 +1183,7 @@ index 000000000000..004b4831021f
 +
 +    OnOpen();
 +
-+    mOpenDelayTimer = do_CreateInstance(NS_TIMER_CONTRACTID);
++    mOpenDelayTimer = NS_NewTimer();
 +    if (!mOpenDelayTimer) {
 +        return;
 +    }
@@ -1258,7 +1232,7 @@ index 000000000000..004b4831021f
 +
 diff --git a/widget/gtk/nsMenu.h b/widget/gtk/nsMenu.h
 new file mode 100644
-index 000000000000..07a8068ea85f
+index 000000000000..40244d012290
 --- /dev/null
 +++ b/widget/gtk/nsMenu.h
 @@ -0,0 +1,123 @@
@@ -1354,7 +1328,7 @@ index 000000000000..07a8068ea85f
 +                              nsIContent *aChild);
 +
 +    void InitializeNativeData() override;
-+    void Update(mozilla::ComputedStyle *aComputedStyle) override;
++    void Update(const mozilla::ComputedStyle *aComputedStyle) override;
 +    nsMenuObject::PropertyFlags SupportedProperties() const override;
 +
 +    void OnAttributeChanged(nsIContent *aContent, nsAtom *aAttribute) override;
@@ -2310,7 +2284,7 @@ index 000000000000..b7e8fa8db46f
 +#endif /* __nsMenuContainer_h__ */
 diff --git a/widget/gtk/nsMenuItem.cpp b/widget/gtk/nsMenuItem.cpp
 new file mode 100644
-index 000000000000..41bed9c16526
+index 000000000000..3a9915e609f5
 --- /dev/null
 +++ b/widget/gtk/nsMenuItem.cpp
 @@ -0,0 +1,766 @@
@@ -2962,7 +2936,7 @@ index 000000000000..41bed9c16526
 +}
 +
 +void
-+nsMenuItem::Update(ComputedStyle *aComputedStyle)
++nsMenuItem::Update(const ComputedStyle *aComputedStyle)
 +{
 +    if (mNeedsUpdate) {
 +        mNeedsUpdate = false;
@@ -3037,10 +3011,10 @@ index 000000000000..41bed9c16526
 +            UpdateState();
 +        } else if (aAttribute == nsGkAtoms::hidden ||
 +                   aAttribute == nsGkAtoms::collapsed) {
-+            RefPtr<ComputedStyle> style = GetComputedStyle();
++            RefPtr<const ComputedStyle> style = GetComputedStyle();
 +            UpdateVisibility(style);
 +        } else if (aAttribute == nsGkAtoms::image) {
-+            RefPtr<ComputedStyle> style = GetComputedStyle();
++            RefPtr<const ComputedStyle> style = GetComputedStyle();
 +            UpdateIcon(style);
 +        }
 +    } else if (aContent == mKeyContent &&
@@ -3082,7 +3056,7 @@ index 000000000000..41bed9c16526
 +}
 diff --git a/widget/gtk/nsMenuItem.h b/widget/gtk/nsMenuItem.h
 new file mode 100644
-index 000000000000..0dfaf86ec631
+index 000000000000..c621b4e223f1
 --- /dev/null
 +++ b/widget/gtk/nsMenuItem.h
 @@ -0,0 +1,80 @@
@@ -3150,7 +3124,7 @@ index 000000000000..0dfaf86ec631
 +
 +    void InitializeNativeData() override;
 +    void UpdateContentAttributes() override;
-+    void Update(mozilla::ComputedStyle *aComputedStyle) override;
++    void Update(const mozilla::ComputedStyle *aComputedStyle) override;
 +    bool IsCompatibleWithNativeData(DbusmenuMenuitem *aNativeData) const override;
 +    nsMenuObject::PropertyFlags SupportedProperties() const override;
 +
@@ -3168,7 +3142,7 @@ index 000000000000..0dfaf86ec631
 +#endif /* __nsMenuItem_h__ */
 diff --git a/widget/gtk/nsMenuObject.cpp b/widget/gtk/nsMenuObject.cpp
 new file mode 100644
-index 000000000000..769979a99bfb
+index 000000000000..fbf0fbef1368
 --- /dev/null
 +++ b/widget/gtk/nsMenuObject.cpp
 @@ -0,0 +1,664 @@
@@ -3191,6 +3165,7 @@ index 000000000000..769979a99bfb
 +#include "mozilla/Preferences.h"
 +#include "mozilla/PresShell.h"
 +#include "mozilla/PresShellInlines.h"
++#include "mozilla/GRefPtr.h"
 +#include "nsAttrValue.h"
 +#include "nsComputedDOMStyle.h"
 +#include "nsContentUtils.h"
@@ -3246,7 +3221,7 @@ index 000000000000..769979a99bfb
 +
 +    nsMenuObjectIconLoader(nsMenuObject *aOwner) : mOwner(aOwner) { };
 +
-+    void LoadIcon(ComputedStyle *aComputedStyle);
++    void LoadIcon(const ComputedStyle *aComputedStyle);
 +    void Destroy();
 +
 +private:
@@ -3331,19 +3306,18 @@ index 000000000000..769979a99bfb
 +        return;
 +    }
 +
-+    GdkPixbuf *pixbuf = nsImageToPixbuf::ImageToPixbuf(img);
++    RefPtr<GdkPixbuf> pixbuf = nsImageToPixbuf::ImageToPixbuf(img);
 +    if (pixbuf) {
 +        dbusmenu_menuitem_property_set_image(mOwner->GetNativeData(),
 +                                             DBUSMENU_MENUITEM_PROP_ICON_DATA,
 +                                             pixbuf);
-+        g_object_unref(pixbuf);
 +    }
 +
 +    return;
 +}
 +
 +void
-+nsMenuObjectIconLoader::LoadIcon(ComputedStyle *aComputedStyle)
++nsMenuObjectIconLoader::LoadIcon(const ComputedStyle *aComputedStyle)
 +{
 +    dom::Document *doc = mOwner->ContentNode()->OwnerDoc();
 +
@@ -3609,7 +3583,7 @@ index 000000000000..769979a99bfb
 +}
 +
 +void
-+nsMenuObject::UpdateVisibility(ComputedStyle *aComputedStyle)
++nsMenuObject::UpdateVisibility(const ComputedStyle *aComputedStyle)
 +{
 +    bool vis = true;
 +
@@ -3640,7 +3614,7 @@ index 000000000000..769979a99bfb
 +}
 +
 +void
-+nsMenuObject::UpdateIcon(ComputedStyle *aComputedStyle)
++nsMenuObject::UpdateIcon(const ComputedStyle *aComputedStyle)
 +{
 +    if (ShouldShowIcon()) {
 +        if (!mIconLoader) {
@@ -3658,12 +3632,12 @@ index 000000000000..769979a99bfb
 +    }
 +}
 +
-+already_AddRefed<ComputedStyle>
++already_AddRefed<const ComputedStyle>
 +nsMenuObject::GetComputedStyle()
 +{
-+    RefPtr<ComputedStyle> style =
++    RefPtr<const ComputedStyle> style =
 +        nsComputedDOMStyle::GetComputedStyleNoFlush(
-+            mContent->AsElement(), nullptr);
++            mContent->AsElement());
 +
 +    return style.forget();
 +}
@@ -3691,7 +3665,7 @@ index 000000000000..769979a99bfb
 +}
 +
 +void
-+nsMenuObject::Update(ComputedStyle *aComputedStyle)
++nsMenuObject::Update(const ComputedStyle *aComputedStyle)
 +{
 +}
 +
@@ -3795,7 +3769,7 @@ index 000000000000..769979a99bfb
 +
 +    UpdateContentAttributes();
 +
-+    RefPtr<ComputedStyle> style = GetComputedStyle();
++    RefPtr<const ComputedStyle> style = GetComputedStyle();
 +    Update(style);
 +}
 +
@@ -3838,7 +3812,7 @@ index 000000000000..769979a99bfb
 +}
 diff --git a/widget/gtk/nsMenuObject.h b/widget/gtk/nsMenuObject.h
 new file mode 100644
-index 000000000000..48f190bf5f8c
+index 000000000000..92b1ffd8f2fa
 --- /dev/null
 +++ b/widget/gtk/nsMenuObject.h
 @@ -0,0 +1,169 @@
@@ -3930,11 +3904,11 @@ index 000000000000..48f190bf5f8c
 +    };
 +
 +    void UpdateLabel();
-+    void UpdateVisibility(mozilla::ComputedStyle *aComputedStyle);
++    void UpdateVisibility(const mozilla::ComputedStyle *aComputedStyle);
 +    void UpdateSensitivity();
-+    void UpdateIcon(mozilla::ComputedStyle *aComputedStyle);
++    void UpdateIcon(const mozilla::ComputedStyle *aComputedStyle);
 +
-+    already_AddRefed<mozilla::ComputedStyle> GetComputedStyle();
++    already_AddRefed<const mozilla::ComputedStyle> GetComputedStyle();
 +
 +private:
 +    friend class nsMenuObjectIconLoader;
@@ -3961,7 +3935,7 @@ index 000000000000..48f190bf5f8c
 +    // Update properties that should be refreshed when the container opens.
 +    // This should be implemented by subclasses that have properties which
 +    // need refreshing
-+    virtual void Update(mozilla::ComputedStyle *aComputedStyle);
++    virtual void Update(const mozilla::ComputedStyle *aComputedStyle);
 +
 +    bool ShouldShowIcon() const;
 +    void ClearIcon();
@@ -4013,7 +3987,7 @@ index 000000000000..48f190bf5f8c
 +#endif /* __nsMenuObject_h__ */
 diff --git a/widget/gtk/nsMenuSeparator.cpp b/widget/gtk/nsMenuSeparator.cpp
 new file mode 100644
-index 000000000000..1eca91cfc034
+index 000000000000..3ab135bd8a20
 --- /dev/null
 +++ b/widget/gtk/nsMenuSeparator.cpp
 @@ -0,0 +1,82 @@
@@ -4044,7 +4018,7 @@ index 000000000000..1eca91cfc034
 +}
 +
 +void
-+nsMenuSeparator::Update(ComputedStyle *aComputedStyle)
++nsMenuSeparator::Update(const ComputedStyle *aComputedStyle)
 +{
 +    UpdateVisibility(aComputedStyle);
 +}
@@ -4077,7 +4051,7 @@ index 000000000000..1eca91cfc034
 +
 +    if (aAttribute == nsGkAtoms::hidden ||
 +        aAttribute == nsGkAtoms::collapsed) {
-+        RefPtr<ComputedStyle> style = GetComputedStyle();
++        RefPtr<const ComputedStyle> style = GetComputedStyle();
 +        UpdateVisibility(style);
 +    }
 +}
@@ -4101,7 +4075,7 @@ index 000000000000..1eca91cfc034
 +}
 diff --git a/widget/gtk/nsMenuSeparator.h b/widget/gtk/nsMenuSeparator.h
 new file mode 100644
-index 000000000000..f9a3ea435c65
+index 000000000000..dd3f5b974dd3
 --- /dev/null
 +++ b/widget/gtk/nsMenuSeparator.h
 @@ -0,0 +1,37 @@
@@ -4134,7 +4108,7 @@ index 000000000000..f9a3ea435c65
 +
 +private:
 +    void InitializeNativeData() override;
-+    void Update(mozilla::ComputedStyle *aComputedStyle) override;
++    void Update(const mozilla::ComputedStyle *aComputedStyle) override;
 +    bool IsCompatibleWithNativeData(DbusmenuMenuitem *aNativeData) const override;
 +    nsMenuObject::PropertyFlags SupportedProperties() const override;
 +
@@ -5229,10 +5203,10 @@ index 000000000000..2e0d429eddfd
 +
 +#endif /* __nsNativeMenuService_h__ */
 diff --git a/widget/gtk/nsWindow.cpp b/widget/gtk/nsWindow.cpp
-index ba4661b02a30..aeb21e99bb98 100644
+index 5f227073d8cd..1ab99c38551f 100644
 --- a/widget/gtk/nsWindow.cpp
 +++ b/widget/gtk/nsWindow.cpp
-@@ -6953,6 +6953,10 @@ void nsWindow::HideWindowChrome(bool aShouldHide) {
+@@ -7103,6 +7103,10 @@ void nsWindow::HideWindowChrome(bool aShouldHide) {
    SetWindowDecoration(aShouldHide ? eBorderStyle_none : mBorderStyle);
  }
  
@@ -5244,10 +5218,10 @@ index ba4661b02a30..aeb21e99bb98 100644
                                bool aAlwaysRollup) {
    nsIRollupListener* rollupListener = GetActiveRollupListener();
 diff --git a/widget/gtk/nsWindow.h b/widget/gtk/nsWindow.h
-index c94b7eee5037..8afebaadc56f 100644
+index d4951ec54d1c..90fbd91765b1 100644
 --- a/widget/gtk/nsWindow.h
 +++ b/widget/gtk/nsWindow.h
-@@ -26,6 +26,8 @@
+@@ -27,6 +27,8 @@
  #include "nsRefPtrHashtable.h"
  #include "IMContextWrapper.h"
  
@@ -5256,16 +5230,16 @@ index c94b7eee5037..8afebaadc56f 100644
  #ifdef ACCESSIBILITY
  #  include "mozilla/a11y/LocalAccessible.h"
  #endif
-@@ -182,6 +184,8 @@ class nsWindow final : public nsBaseWidget {
-                                   nsIScreen* aTargetScreen = nullptr) override;
-   virtual void HideWindowChrome(bool aShouldHide) override;
+@@ -203,6 +205,8 @@ class nsWindow final : public nsBaseWidget {
+   nsresult MakeFullScreen(bool aFullScreen) override;
+   void HideWindowChrome(bool aShouldHide) override;
  
 +  void SetMenuBar(mozilla::UniquePtr<nsMenuBar> aMenuBar);
 +
    /**
     * GetLastUserInputTime returns a timestamp for the most recent user input
     * event.  This is intended for pointer grab requests (including drags).
-@@ -785,6 +789,8 @@ class nsWindow final : public nsBaseWidget {
+@@ -874,6 +878,8 @@ class nsWindow final : public nsBaseWidget {
  
    static bool sTransparentMainWindow;
  
@@ -5275,10 +5249,10 @@ index c94b7eee5037..8afebaadc56f 100644
    RefPtr<mozilla::a11y::LocalAccessible> mRootAccessible;
  
 diff --git a/widget/moz.build b/widget/moz.build
-index 07e6970e5621..d59ce9cdc52c 100644
+index 9b150c592a8c..77bd0cbbe5c5 100644
 --- a/widget/moz.build
 +++ b/widget/moz.build
-@@ -138,6 +138,11 @@ EXPORTS += [
+@@ -161,6 +161,11 @@ EXPORTS += [
      "PuppetWidget.h",
  ]
  
@@ -5289,7 +5263,7 @@ index 07e6970e5621..d59ce9cdc52c 100644
 +
  EXPORTS.mozilla += [
      "BasicEvents.h",
-     "CommandList.h",
+     "ColorScheme.h",
 diff --git a/widget/nsINativeMenuService.h b/widget/nsINativeMenuService.h
 new file mode 100644
 index 000000000000..e92d7a74a3bc
@@ -5336,7 +5310,7 @@ index 000000000000..e92d7a74a3bc
 +
 +#endif  // nsINativeMenuService_h_
 diff --git a/widget/nsWidgetsCID.h b/widget/nsWidgetsCID.h
-index 8a295823b0eb..61547225a939 100644
+index 8e0f67661414..911711e88a0e 100644
 --- a/widget/nsWidgetsCID.h
 +++ b/widget/nsWidgetsCID.h
 @@ -66,6 +66,14 @@
@@ -5370,7 +5344,7 @@ index 000000000000..488c8f49c021
 +    Atom("shellshowingmenubar", "shellshowingmenubar"),
 +]
 diff --git a/xpcom/ds/StaticAtoms.py b/xpcom/ds/StaticAtoms.py
-index 2f5be143517b..73a3b7181ba0 100644
+index 740b3f6e187d..3ca7630abf25 100644
 --- a/xpcom/ds/StaticAtoms.py
 +++ b/xpcom/ds/StaticAtoms.py
 @@ -7,6 +7,7 @@
@@ -5381,7 +5355,7 @@ index 2f5be143517b..73a3b7181ba0 100644
  import sys
  
  # Static atom definitions, used to generate nsGkAtomList.h.
-@@ -2509,7 +2510,7 @@ STATIC_ATOMS = [
+@@ -2536,7 +2537,7 @@ STATIC_ATOMS = [
      InheritingAnonBoxAtom("AnonBox_mozSVGForeignContent", ":-moz-svg-foreign-content"),
      InheritingAnonBoxAtom("AnonBox_mozSVGText", ":-moz-svg-text"),
      # END ATOMS
@@ -5391,7 +5365,7 @@ index 2f5be143517b..73a3b7181ba0 100644
  
  
 diff --git a/xpfe/appshell/AppWindow.cpp b/xpfe/appshell/AppWindow.cpp
-index 4c29d020048d..0aad519c3545 100644
+index fb36837f23da..c6b6aae09ac8 100644
 --- a/xpfe/appshell/AppWindow.cpp
 +++ b/xpfe/appshell/AppWindow.cpp
 @@ -80,7 +80,7 @@
@@ -5404,5 +5378,5 @@ index 4c29d020048d..0aad519c3545 100644
  #  define USE_NATIVE_MENUS
  #endif
 -- 
-2.33.0
+2.37.3
 

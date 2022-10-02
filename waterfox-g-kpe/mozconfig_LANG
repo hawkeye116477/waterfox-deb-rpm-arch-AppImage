@@ -18,15 +18,15 @@ if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
 export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
-export MACH_USE_SYSTEM_PYTHON=1
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 
 ac_add_options --enable-linker=lld
 
 ac_add_options --with-app-name=waterfox-g
 ac_add_options --with-app-basename=Waterfox
-ac_add_options --with-branding=browser/branding/waterfox
+ac_add_options --with-branding=waterfox/browser/branding/waterfox
 mk_add_options MOZ_OBJDIR=$topsrcdir/../obj_LANG
 ac_add_options --prefix=/usr
-ac_add_options --with-l10n-base=$topsrcdir/browser/locales/l10n
+ac_add_options --with-l10n-base=$topsrcdir/waterfox/browser/locales
 ac_add_options --disable-updater
 ac_add_options --disable-bootstrap
