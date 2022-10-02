@@ -66,6 +66,7 @@ ac_add_options --allow-addon-sideload
 
 export MOZ_REQUIRE_SIGNING=
 export MOZ_INCLUDE_SOURCE_INFO=1
+export MOZ_APP_REMOTINGNAME=waterfox-g
 ac_add_options "MOZ_ALLOW_LEGACY_EXTENSIONS=1"
 
 X=$(($(nproc --all)/2))
