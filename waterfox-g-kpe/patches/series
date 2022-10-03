@@ -9,4 +9,3 @@ glibc236.patch -p1
 waterfox-branded-icons.patch -p1
 fix-wayland-build.patch -p1
 cbindgen-0.24.0.patch -p1
-zstandard-0.18.0.patch -p1
