@@ -1,3 +1,10 @@
+waterfox-g-kpe (5.0.1-0) obs; urgency=medium
+
+    * There was an issue when upgrading from G3 onward where your theme would get reset to default. This is no longer the case.
+    * Various preferences were incorrectly configured and these have now been changed.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Oct 2022 15:58:46 +0200
+
 waterfox-g-kpe (5.0-0) obs; urgency=medium
 
     * You can now toggle to view password you are typing in.
