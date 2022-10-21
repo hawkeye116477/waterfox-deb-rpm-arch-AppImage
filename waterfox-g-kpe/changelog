@@ -1,3 +1,13 @@
+waterfox-g-kpe (5.0.2-0) obs; urgency=medium
+
+    * The option to "Open All Bookmarks" once again works.
+    * DNS-over-HTTPS being forced on users will no longer happen by default.
+    * Forms will no longer save data in Private Tab.
+    * Disabling images now works properly.
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 21 Oct 2022 13:37:16 +0200
+
 waterfox-g-kpe (5.0.1-0) obs; urgency=medium
 
     * There was an issue when upgrading from G3 onward where your theme would get reset to default. This is no longer the case.
