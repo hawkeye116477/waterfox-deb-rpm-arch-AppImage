@@ -1,14 +1,11 @@
 # For successfull LTO build, we need to use matching LLVM version
 
-if test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "stretch"; then
 export PATH=/usr/lib/llvm-11/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "bionic"; then
-export PATH=/usr/lib/llvm-10/bin/:$PATH
-fi
 
-if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test `lsb_release -sc` = "jammy"; then
+if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test `lsb_release -sc` = "jammy" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
