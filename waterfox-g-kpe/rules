@@ -10,6 +10,7 @@ export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export source_repo=https://github.com/WaterfoxCo/Waterfox
 export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export TODAY_DATE=$(shell date +%Y-%m-%d)
+export LC_ALL=C.UTF-8
 
 LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
 
