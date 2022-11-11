@@ -6,7 +6,7 @@ if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "eoan" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 

@@ -16,7 +16,7 @@ export NM=llvm-nm
 export RANLIB=llvm-ranlib
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch"; then
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster"; then
 export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
