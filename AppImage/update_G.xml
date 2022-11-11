@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+    <update type="major" appVersion="102.4.0" buildID="20221110223436" detailsURL="https://www.waterfox.net/docs/releases/G5.0.2" displayVersion="G5.0.2" extensionVersion="102.4.0" platformVersion="102.4.0" version="102.4.0">
+        <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
+    </update>
+</updates>
