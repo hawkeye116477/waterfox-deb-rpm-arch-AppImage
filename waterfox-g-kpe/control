@@ -38,49 +38,6 @@ Replaces: waterfox-g4-wayland (<< 4.1.1-0~), waterfox-g3-wayland (<< 4.1.1-0~)
 Breaks: waterfox-g4-wayland (<< 4.1.1-0~), waterfox-g3-wayland (<< 4.1.1-0~)
 Description: Waterfox Third Generation Wayland launcher
  This package contains launcher and desktop file to run Waterfox Third Generation natively on Wayland.
-
-Package: waterfox-g4-kpe
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-kpe
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g4-kde
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-kde
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g4-wayland
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-wayland
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-kpe
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-kpe
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-kde
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-kde
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-wayland
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-wayland
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -88,20 +45,6 @@ Replaces: waterfox-g4-i18n-ar (<< 4.1.1-0~), waterfox-g3-i18n-ar (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-ar (<< 4.1.1-0~), waterfox-g3-i18n-ar (<< 4.1.1-0~)
 Description: Arabic language pack for Waterfox G
  This package contains Arabic translations for Waterfox G
-
-Package: waterfox-g4-i18n-ar
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ar
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-ar
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ar
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-cs
 Architecture: all
@@ -111,20 +54,6 @@ Breaks: waterfox-g4-i18n-cs (<< 4.1.1-0~), waterfox-g3-i18n-cs (<< 4.1.1-0~)
 Description: Czech language pack for Waterfox G
  This package contains Czech translations for Waterfox G
 
-Package: waterfox-g4-i18n-cs
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-cs
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-cs
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-cs
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-da
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -132,20 +61,6 @@ Replaces: waterfox-g4-i18n-da (<< 4.1.1-0~), waterfox-g3-i18n-da (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-da (<< 4.1.1-0~), waterfox-g3-i18n-da (<< 4.1.1-0~)
 Description: Danish language pack for Waterfox G
  This package contains Danish translations for Waterfox G
-
-Package: waterfox-g4-i18n-da
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-da
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-da
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-da
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-de
 Architecture: all
@@ -155,20 +70,6 @@ Breaks: waterfox-g4-i18n-de (<< 4.1.1-0~), waterfox-g3-i18n-de (<< 4.1.1-0~)
 Description: German language pack for Waterfox G
  This package contains German translations for Waterfox G
 
-Package: waterfox-g4-i18n-de
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-de
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-de
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-de
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-el
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -176,20 +77,6 @@ Replaces: waterfox-g4-i18n-el (<< 4.1.1-0~), waterfox-g3-i18n-el (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-el (<< 4.1.1-0~), waterfox-g3-i18n-el (<< 4.1.1-0~)
 Description: Greek language pack for Waterfox G
  This package contains Greek translations for Waterfox G
-
-Package: waterfox-g4-i18n-el
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-el
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-el
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-el
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-en-gb
 Architecture: all
@@ -199,20 +86,6 @@ Breaks: waterfox-g4-i18n-en-gb (<< 4.1.1-0~), waterfox-g3-i18n-en-gb (<< 4.1.1-0
 Description: English (British) language pack for Waterfox G
  This package contains English (British) translations for Waterfox G
 
-Package: waterfox-g4-i18n-en-gb
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-en-gb
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-en-gb
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-en-gb
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-es-es
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -220,20 +93,6 @@ Replaces: waterfox-g4-i18n-es-es (<< 4.1.1-0~), waterfox-g3-i18n-es-es (<< 4.1.1
 Breaks: waterfox-g4-i18n-es-es (<< 4.1.1-0~), waterfox-g3-i18n-es-es (<< 4.1.1-0~)
 Description: Spanish (Spain) language pack for Waterfox G
  This package contains Spanish (Spain) translations for Waterfox G
-
-Package: waterfox-g4-i18n-es-es
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-es-es
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-es-es
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-es-es
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-es-mx
 Architecture: all
@@ -243,20 +102,6 @@ Breaks: waterfox-g4-i18n-es-mx (<< 4.1.1-0~), waterfox-g3-i18n-es-mx (<< 4.1.1-0
 Description: Spanish (Mexico) language pack for Waterfox G
  This package contains Spanish (Mexico) translations for Waterfox G
 
-Package: waterfox-g4-i18n-es-mx
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-es-mx
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-es-mx
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-es-mx
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-fr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -264,20 +109,6 @@ Replaces: waterfox-g4-i18n-fr (<< 4.1.1-0~), waterfox-g3-i18n-fr (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-fr (<< 4.1.1-0~), waterfox-g3-i18n-fr (<< 4.1.1-0~)
 Description: French language pack for Waterfox G
  This package contains French translations for Waterfox G
-
-Package: waterfox-g4-i18n-fr
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-fr
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-fr
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-fr
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-hu
 Architecture: all
@@ -287,20 +118,6 @@ Breaks: waterfox-g4-i18n-hu (<< 4.1.1-0~), waterfox-g3-i18n-hu (<< 4.1.1-0~)
 Description: Hungarian language pack for Waterfox G
  This package contains Hungarian translations for Waterfox G
 
-Package: waterfox-g4-i18n-hu
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-hu
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-hu
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-hu
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-id
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -308,20 +125,6 @@ Replaces: waterfox-g4-i18n-id (<< 4.1.1-0~), waterfox-g3-i18n-id (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-id (<< 4.1.1-0~), waterfox-g3-i18n-id (<< 4.1.1-0~)
 Description: Indonesian language pack for Waterfox G
  This package contains Indonesian translations for Waterfox G
-
-Package: waterfox-g4-i18n-id
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-id
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-id
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-id
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-it
 Architecture: all
@@ -331,20 +134,6 @@ Breaks: waterfox-g4-i18n-it (<< 4.1.1-0~), waterfox-g3-i18n-it (<< 4.1.1-0~)
 Description: Italian language pack for Waterfox G
  This package contains Italian translations for Waterfox G
 
-Package: waterfox-g4-i18n-it
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-it
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-it
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-it
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-ja
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -352,20 +141,6 @@ Replaces: waterfox-g4-i18n-ja (<< 4.1.1-0~), waterfox-g3-i18n-ja (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-ja (<< 4.1.1-0~), waterfox-g3-i18n-ja (<< 4.1.1-0~)
 Description: Japanese language pack for Waterfox G
  This package contains Japanese translations for Waterfox G
-
-Package: waterfox-g4-i18n-ja
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ja
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-ja
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ja
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-ko
 Architecture: all
@@ -375,20 +150,6 @@ Breaks: waterfox-g4-i18n-ko (<< 4.1.1-0~), waterfox-g3-i18n-ko (<< 4.1.1-0~)
 Description: Korean language pack for Waterfox G
  This package contains Korean translations for Waterfox G
 
-Package: waterfox-g4-i18n-ko
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ko
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-ko
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ko
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-lt
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -396,20 +157,6 @@ Replaces: waterfox-g4-i18n-lt (<< 4.1.1-0~), waterfox-g3-i18n-lt (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-lt (<< 4.1.1-0~), waterfox-g3-i18n-lt (<< 4.1.1-0~)
 Description: Lithuanian language pack for Waterfox G
  This package contains Lithuanian translations for Waterfox G
-
-Package: waterfox-g4-i18n-lt
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-lt
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-lt
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-lt
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-nl
 Architecture: all
@@ -419,20 +166,6 @@ Breaks: waterfox-g4-i18n-nl (<< 4.1.1-0~), waterfox-g3-i18n-nl (<< 4.1.1-0~)
 Description: Dutch; Flemish language pack for Waterfox G
  This package contains Dutch; Flemish translations for Waterfox G
 
-Package: waterfox-g4-i18n-nl
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-nl
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-nl
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-nl
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-nn-no
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -440,20 +173,6 @@ Replaces: waterfox-g4-i18n-nn-no (<< 4.1.1-0~), waterfox-g3-i18n-nn-no (<< 4.1.1
 Breaks: waterfox-g4-i18n-nn-no (<< 4.1.1-0~), waterfox-g3-i18n-nn-no (<< 4.1.1-0~)
 Description: Norwegian (Nynorsk) language pack for Waterfox G
  This package contains Norwegian (Nynorsk) translations for Waterfox G
-
-Package: waterfox-g4-i18n-nn-no
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-nn-no
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-nn-no
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-nn-no
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-pl
 Architecture: all
@@ -463,20 +182,6 @@ Breaks: waterfox-g4-i18n-pl (<< 4.1.1-0~), waterfox-g3-i18n-pl (<< 4.1.1-0~)
 Description: Polish language pack for Waterfox G
  This package contains Polish translations for Waterfox G
 
-Package: waterfox-g4-i18n-pl
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pl
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-pl
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pl
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-pt-br
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -484,20 +189,6 @@ Replaces: waterfox-g4-i18n-pt-br (<< 4.1.1-0~), waterfox-g3-i18n-pt-br (<< 4.1.1
 Breaks: waterfox-g4-i18n-pt-br (<< 4.1.1-0~), waterfox-g3-i18n-pt-br (<< 4.1.1-0~)
 Description: Portuguese (Brazilian) language pack for Waterfox G
  This package contains Portuguese (Brazilian) translations for Waterfox G
-
-Package: waterfox-g4-i18n-pt-br
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pt-br
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-pt-br
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pt-br
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-pt-pt
 Architecture: all
@@ -507,20 +198,6 @@ Breaks: waterfox-g4-i18n-pt-pt (<< 4.1.1-0~), waterfox-g3-i18n-pt-pt (<< 4.1.1-0
 Description: Portuguese (Portugal) language pack for Waterfox G
  This package contains Portuguese (Portugal) translations for Waterfox G
 
-Package: waterfox-g4-i18n-pt-pt
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pt-pt
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-pt-pt
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-pt-pt
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-ru
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -528,20 +205,6 @@ Replaces: waterfox-g4-i18n-ru (<< 4.1.1-0~), waterfox-g3-i18n-ru (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-ru (<< 4.1.1-0~), waterfox-g3-i18n-ru (<< 4.1.1-0~)
 Description: Russian language pack for Waterfox G
  This package contains Russian translations for Waterfox G
-
-Package: waterfox-g4-i18n-ru
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ru
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-ru
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-ru
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-sv-se
 Architecture: all
@@ -551,20 +214,6 @@ Breaks: waterfox-g4-i18n-sv-se (<< 4.1.1-0~), waterfox-g3-i18n-sv-se (<< 4.1.1-0
 Description: Swedish (Sweden) language pack for Waterfox G
  This package contains Swedish (Sweden) translations for Waterfox G
 
-Package: waterfox-g4-i18n-sv-se
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-sv-se
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-sv-se
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-sv-se
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-th
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -572,20 +221,6 @@ Replaces: waterfox-g4-i18n-th (<< 4.1.1-0~), waterfox-g3-i18n-th (<< 4.1.1-0~)
 Breaks: waterfox-g4-i18n-th (<< 4.1.1-0~), waterfox-g3-i18n-th (<< 4.1.1-0~)
 Description: Thai language pack for Waterfox G
  This package contains Thai translations for Waterfox G
-
-Package: waterfox-g4-i18n-th
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-th
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-th
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-th
-Description: Transitional package
- This is a transitional package. It can safely be removed.
 
 Package: waterfox-g-i18n-vi
 Architecture: all
@@ -595,20 +230,6 @@ Breaks: waterfox-g4-i18n-vi (<< 4.1.1-0~), waterfox-g3-i18n-vi (<< 4.1.1-0~)
 Description: Vietnamese language pack for Waterfox G
  This package contains Vietnamese translations for Waterfox G
 
-Package: waterfox-g4-i18n-vi
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-vi
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-vi
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-vi
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-zh-cn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -617,20 +238,6 @@ Breaks: waterfox-g4-i18n-zh-cn (<< 4.1.1-0~), waterfox-g3-i18n-zh-cn (<< 4.1.1-0
 Description: Simplified Chinese language pack for Waterfox G
  This package contains Simplified Chinese translations for Waterfox G
 
-Package: waterfox-g4-i18n-zh-cn
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-zh-cn
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-zh-cn
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-zh-cn
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 Package: waterfox-g-i18n-zh-tw
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
@@ -638,17 +245,3 @@ Replaces: waterfox-g4-i18n-zh-tw (<< 4.1.1-0~), waterfox-g3-i18n-zh-tw (<< 4.1.1
 Breaks: waterfox-g4-i18n-zh-tw (<< 4.1.1-0~), waterfox-g3-i18n-zh-tw (<< 4.1.1-0~)
 Description: Traditional Chinese language pack for Waterfox G
  This package contains Traditional Chinese translations for Waterfox G
-
-Package: waterfox-g4-i18n-zh-tw
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-zh-tw
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: waterfox-g3-i18n-zh-tw
-Architecture: all
-Section: oldlibs
-Depends: ${misc:Depends}, waterfox-g-i18n-zh-tw
-Description: Transitional package
- This is a transitional package. It can safely be removed.

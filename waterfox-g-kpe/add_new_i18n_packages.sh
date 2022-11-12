@@ -21,20 +21,6 @@ Breaks: $_pkgname_trans4 (<< 4.1.1-0~), $_pkgname_trans3 (<< 4.1.1-0~)
 Description: $_locale_desc language pack for Waterfox G
  This package contains $_locale_desc translations for Waterfox G
 
-Package: $_pkgname_trans4
-Architecture: all
-Section: oldlibs
-Depends: \${misc:Depends}, $_pkgname
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
-Package: $_pkgname_trans3
-Architecture: all
-Section: oldlibs
-Depends: \${misc:Depends}, $_pkgname
-Description: Transitional package
- This is a transitional package. It can safely be removed.
-
 EOT
 touch $SCRIPT_PATH/${_pkgname}.install
 
