@@ -1,3 +1,11 @@
+waterfox-g-kpe (5.1-0) obs; urgency=medium
+
+    * You can modify Waterfox's look and feel by heading to about:preferences → Look & Feel. You can set various default presets, change the way tabs behave and much more!
+    * Desktop counterparts to your WebExtensions will now be able to communicate with Waterfox once again!
+    * Various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 15 Nov 2022 16:54:44 +0100
+
 waterfox-g-kpe (5.0.2-0) obs; urgency=medium
 
     * The option to "Open All Bookmarks" once again works.
