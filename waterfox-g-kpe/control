@@ -38,6 +38,7 @@ Replaces: waterfox-g4-wayland (<< 4.1.1-0~), waterfox-g3-wayland (<< 4.1.1-0~)
 Breaks: waterfox-g4-wayland (<< 4.1.1-0~), waterfox-g3-wayland (<< 4.1.1-0~)
 Description: Waterfox Third Generation Wayland launcher
  This package contains launcher and desktop file to run Waterfox Third Generation natively on Wayland.
+
 Package: waterfox-g-i18n-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox-g-kpe (>= ${source:Version})
