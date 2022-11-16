@@ -6,7 +6,7 @@ export MOZCONFIG=$(shell pwd)/debian/mozconfig
 export MOZ_NOSPAM:=1
 export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
 export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
-export MOZ_APP_VERSION_DISPLAY=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
+export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
 export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
 export source_repo=https://github.com/WaterfoxCo/Waterfox
 export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
@@ -34,6 +34,9 @@ override_dh_auto_clean:
 	find . -name '*.pyc' -delete
 
 override_dh_auto_build:
+	mkdir -p $$(pwd)/debian/app_version
+	cp $$(pwd)/browser/config/version.txt $$(pwd)/debian/app_version/version.txt
+	echo $$WF_VERSION > $$(pwd)/debian/app_version/version_display.txt
 	# Build browser
 	# LTO needs more open files
 	ulimit -n 4096; xvfb-run -a -n 97 -s "-screen 0 1920x1080x24" ./mach build
@@ -45,7 +48,7 @@ override_dh_auto_build:
 	# We do this, by creating a mozconfig-template with the necessary switches
 	# and a placeholder obj-dir, which gets copied and modified for each language
 	sed -r '/^(ja-JP-mac|en-US|)$$/d;s/ .*$$//' debian/locales.shipped | cut -f1 -d":" \
-    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g-$$MOZ_APP_VERSION_DISPLAY.$$locale.langpack.xpi \
+    | xargs -n 1 -P $$JOBS -I {} /bin/sh -c 'locale=$$1; cp debian/mozconfig_LANG mozconfig_$$locale; sed -i "s|obj_LANG|obj_$$locale|" mozconfig_$$locale; export MOZCONFIG=mozconfig_$$locale; ./mach build config/nsinstall langpack-$$locale; cp -L ../obj_$$locale/dist/linux-*/xpi/waterfox-g-$$WF_VERSION.$$locale.langpack.xpi \
 	$$(pwd)/extensions/langpack-$$locale@l10n.waterfox.net.xpi' -- {}
 
 override_dh_auto_install:
@@ -54,7 +57,7 @@ override_dh_auto_install:
 	rm -rf $$(pwd)/debian/waterfox-g-kpe/usr/lib/waterfox-g/dictionaries
 	rm -rf $$(pwd)/debian/waterfox-g-kpe/usr/lib/waterfox-g/waterfox-g-bin
 	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-g.appdata.xml.in
-	sed -e "s/__VERSION__/$$MOZ_APP_VERSION_DISPLAY/g" $$(pwd)/debian/waterfox-g.appdata.xml.in > $$(pwd)/debian/waterfox-g-kpe/usr/share/metainfo/waterfox-g.appdata.xml
+	sed -e "s/__VERSION__/$$WF_VERSION/g" $$(pwd)/debian/waterfox-g.appdata.xml.in > $$(pwd)/debian/waterfox-g-kpe/usr/share/metainfo/waterfox-g.appdata.xml
 	mv $$(pwd)/debian/waterfox-g-wayland-bin.sh $$(pwd)/debian/waterfox-g-wayland/usr/bin/waterfox-g-wayland
 
 override_dh_shlibdeps:

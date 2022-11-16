@@ -27,3 +27,4 @@ ac_add_options --with-l10n-base=$topsrcdir/waterfox/browser/locales
 ac_add_options --disable-updater
 ac_add_options --disable-bootstrap
 ac_add_options --without-wasm-sandboxed-libraries
+ac_add_options --with-version-file-path=$topsrcdir/debian/app_version
