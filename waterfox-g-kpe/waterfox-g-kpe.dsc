@@ -11,6 +11,6 @@ Package-List:
  waterfox-g-kpe deb web optional arch=any
 Files:
  0000000000000000000000000000000 1 waterfox-g-kpe.orig.tar.xz
- 0000000000000000000000000000000 1 waterfox-g-kpe.debian.tar.gz
+ 0000000000000000000000000000000 1 waterfox-g-kpe.debian.tar.xz
 # https://github.com/openSUSE/obs-build/pull/147
 DEBTRANSFORM-RELEASE: 1

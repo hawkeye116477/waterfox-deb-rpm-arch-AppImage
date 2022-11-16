@@ -4,12 +4,9 @@
 export SHELL=/bin/bash
 export MOZCONFIG=$(shell pwd)/debian/mozconfig
 export MOZ_NOSPAM:=1
-export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
-export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
-export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
-export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
-export source_repo=https://github.com/WaterfoxCo/Waterfox
 export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
+export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
 export TODAY_DATE=$(shell date +%Y-%m-%d)
 export LC_ALL=C.UTF-8
 
@@ -34,6 +31,9 @@ override_dh_auto_clean:
 	find . -name '*.pyc' -delete
 
 override_dh_auto_build:
+	# Upstream modifies version_display.txt using script included in GitHub Actions (version=git_tag),
+	# without patching. Debhelper won't allow us to do that by same way and
+	# patching won't be much convenient, so we need to create new files.
 	mkdir -p $$(pwd)/debian/app_version
 	cp $$(pwd)/browser/config/version.txt $$(pwd)/debian/app_version/version.txt
 	echo $$WF_VERSION > $$(pwd)/debian/app_version/version_display.txt
