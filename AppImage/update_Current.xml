@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="56.3" detailsURL="https://www.waterfox.net/blog/waterfox-2020.10-release" displayVersion="2020.10" extensionVersion="56.3" platformVersion="56.3" version="56.3">
-        <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-current-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
+    <update type="major" appVersion="102.5.0" buildID="20221117004937" detailsURL="https://www.waterfox.net/docs/releases/G5.1" displayVersion="G5.1" extensionVersion="102.5.0" platformVersion="102.5.0" version="102.5.0">
+        <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
