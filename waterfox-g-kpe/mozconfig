@@ -1,11 +1,13 @@
-# For successfull LTO build, we need to use matching LLVM version
-
-if test `lsb_release -sc` = "stretch"; then
-export PATH=/usr/lib/llvm-11/bin/:$PATH
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster"; then
+export NODEJS=/usr/lib/nodejs-mozilla/bin/node
 fi
 
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
 
-if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test `lsb_release -sc` = "jammy" || test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
+# For successfull LTO build, we need to use matching LLVM version
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
@@ -15,14 +17,6 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
-
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster"; then
-export NODEJS=/usr/lib/nodejs-mozilla/bin/node
-fi
-
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
-export NASM=/usr/lib/nasm-mozilla/bin/nasm
-fi
 
 ac_add_options --prefix=/usr
 
