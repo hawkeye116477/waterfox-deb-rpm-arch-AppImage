@@ -3730,7 +3730,7 @@ index 63d7d56523d4..e6d294b84929 100644
 +  desktop = NS_LITERAL_STRING("win");
  #pragma warning(pop)
  #elif defined(MOZ_WIDGET_COCOA)
-   SInt32 majorVersion = nsCocoaFeatures::OSXVersionMajor();
+   SInt32 majorVersion = nsCocoaFeatures::macOSVersionMajor();
 @@ -547,10 +551,12 @@ ParseManifest(NSLocationType aType, FileLocation& aFile, char* aBuf,
    nsTextFormatter::ssprintf(osVersion, u"%ld.%ld",
                              majorVersion,
