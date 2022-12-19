@@ -1,3 +1,12 @@
+waterfox-g-kpe (5.1.1-0) obs; urgency=medium
+
+    * Issue playing Netflix and similar DRM protected websites have now resolved. If it's not working straight away, you can update the DRM plugin by going to the Preferences page → General → Files and Applications and un-check "Play DRM-controlled content". Wait for a few seconds, then re-check the box. The DRM plugin should update.
+    * Drag space is now disabled by default (that extra space above your tabs, so you can drag the window around).
+    * The status bar colour now matches the navigation bar.
+    * Various security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 19 Dec 2022 18:40:41 +0100
+
 waterfox-g-kpe (5.1-0) obs; urgency=medium
 
     * You can modify Waterfox's look and feel by heading to about:preferences → Look & Feel. You can set various default presets, change the way tabs behave and much more!
