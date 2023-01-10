@@ -11,6 +11,10 @@ if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "kinetic"; then
+export PATH=/usr/lib/llvm-14/bin/:$PATH
+fi
+
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 
 ac_add_options --enable-linker=lld

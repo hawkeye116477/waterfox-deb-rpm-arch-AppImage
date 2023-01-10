@@ -11,6 +11,10 @@ if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test
 export PATH=/usr/lib/llvm-12/bin/:$PATH
 fi
 
+if test `lsb_release -sc` = "kinetic"; then
+export PATH=/usr/lib/llvm-14/bin/:$PATH
+fi
+
 export CC=clang
 export CXX=clang++
 export AR=llvm-ar
