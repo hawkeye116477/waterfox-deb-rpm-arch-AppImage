@@ -1,3 +1,11 @@
+waterfox-g-kpe (5.1.2-0) obs; urgency=medium
+
+    * JPEG-XL is now enabled by default.
+    * Fixed various theme issues.
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 22 Jan 2023 18:28:26 +0100
+
 waterfox-g-kpe (5.1.1-0) obs; urgency=medium
 
     * Issue playing Netflix and similar DRM protected websites have now resolved. If it's not working straight away, you can update the DRM plugin by going to the Preferences page → General → Files and Applications and un-check "Play DRM-controlled content". Wait for a few seconds, then re-check the box. The DRM plugin should update.
