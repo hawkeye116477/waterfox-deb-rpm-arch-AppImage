@@ -25,7 +25,7 @@
 
 [Click to see instructions for Waterfox Classic.](https://appimage.github.io/Waterfox_Classic/)
 
-[Click to see instructions for Waterfox G.](https://appimage.github.io/Waterfox_G/)
+[Click to see instructions for Waterfox G.](https://appimage.github.io/Waterfox_Current/)
 
 ## Other source files
 
