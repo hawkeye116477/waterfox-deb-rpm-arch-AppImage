@@ -25,7 +25,7 @@
 
 [Click to see instructions for Waterfox Classic.](https://appimage.github.io/Waterfox_Classic/)
 
-[Click to see instructions for Waterfox G.](https://appimage.github.io/Waterfox_Current/)
+[Click to download latest Waterfox G.](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g-latest-x86_64.AppImage.mirrorlist)
 
 ## Other source files
 
