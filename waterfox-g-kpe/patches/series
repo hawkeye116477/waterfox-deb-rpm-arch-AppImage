@@ -8,3 +8,4 @@ fix-langpack-id.patch -p1
 waterfox-branded-icons.patch -p1
 fix-wayland-build.patch -p1
 Bug1811714.patch -p1
+Bug1777674.patch -p1
