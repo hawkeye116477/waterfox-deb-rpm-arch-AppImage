@@ -1,3 +1,6 @@
+## Problems
+When you have some problem with my packages or repository, for first check opened or pinned [issues](https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage/issues?q=is%3Aopen+is%3Aissue) and [discussions](https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage/discussions?discussions_q=is%3Aopened).
+
 ## Adding repository/direct download
 
 * If you're using Debian or Ubuntu with KDE:
