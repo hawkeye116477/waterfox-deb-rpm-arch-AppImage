@@ -1,3 +1,9 @@
+waterfox-g-kpe (5.1.10-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 01 Aug 2023 21:05:03 +0200
+
 waterfox-g-kpe (5.1.9-0) obs; urgency=medium
 
     * Added various security fixes.
