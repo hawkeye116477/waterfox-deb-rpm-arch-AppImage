@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox-classic-kpe
 Binary: waterfox-classic-kpe
 Architecture: any
-Version: 2020.07.1-1
+Version: 2022.11-0
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://classic.waterfox.net/
 Standards-Version: 3.9.7
@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 9), autoconf2.13, libgtk-3-dev (>= 3.4), libdbus-gl
 Package-List:
  waterfox-classic-kpe deb web optional arch=any
 Files:
- 0000000000000000000000000000000 1 waterfox-classic-kpe.orig.tar.xz
+ 0000000000000000000000000000000 1 waterfox-classic-kpe.orig.tar.gz
  0000000000000000000000000000000 1 waterfox-classic-kpe.debian.tar.xz
 # https://github.com/openSUSE/obs-build/pull/147
 DEBTRANSFORM-RELEASE: 1

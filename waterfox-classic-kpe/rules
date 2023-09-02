@@ -3,10 +3,7 @@
 
 export SHELL=/bin/bash
 export MOZCONFIG=$(shell pwd)/debian/mozconfig
-export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-classic-kpe.obsinfo)
-export MOZ_SOURCE_STAMP=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-classic-kpe.obsinfo)
-export SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox-Classic
-export source_repo=https://github.com/WaterfoxCo/Waterfox-Classic
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/tar_stamps)
 export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox-Classic
 export TODAY_DATE=$(shell date +%Y-%m-%d)
 

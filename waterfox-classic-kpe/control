@@ -14,6 +14,8 @@ Provides: www-browser, gnome-www-browser, waterfox-classic
 Replaces: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
 Breaks: waterfox-kde (<< 2019.10-4), waterfox (<< 2019.10-4)
 Description: Customizable privacy-conscious web browser with primary support for legacy extensions and better integration with KDE
+ ATTENTION!!! This package reached EOL status. I recommend migration to Pale Moon or Basilisk if you want XUL, otherwise there is also waterfox-g-kpe package.
+ .
  Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.
  .
  Waterfox is powered by Mozilla Firefox source code.
