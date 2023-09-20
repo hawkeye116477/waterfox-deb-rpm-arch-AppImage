@@ -6,9 +6,11 @@ Description: Fix FTBFS on bionic. Compiler errors:
 
 Author: Rico Tzschichholz <ricotz@ubuntu.com>
 
+diff --git a/widget/gtk/WaylandBuffer.cpp b/widget/gtk/WaylandBuffer.cpp
+index f3fc4093623f..78d213d5d302 100644
 --- a/widget/gtk/WaylandBuffer.cpp
 +++ b/widget/gtk/WaylandBuffer.cpp
-@@ -258,7 +258,7 @@
+@@ -197,7 +197,7 @@ void WaylandBufferSHM::DumpToFile(const char* aHint) {
  
  /* static */
  RefPtr<WaylandBufferDMABUF> WaylandBufferDMABUF::Create(

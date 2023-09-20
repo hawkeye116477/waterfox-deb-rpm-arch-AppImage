@@ -1,8 +1,8 @@
 diff --git a/browser/base/content/browser.css b/browser/base/content/browser.css
-index 03a778809dc8..8f0267b45328 100644
+index 4279c9ccfc83..8573feb7cdfb 100644
 --- a/browser/base/content/browser.css
 +++ b/browser/base/content/browser.css
-@@ -334,6 +334,13 @@ toolbar[customizing] #whats-new-menu-button {
+@@ -359,6 +359,13 @@ toolbar[customizing] #whats-new-menu-button {
    visibility: hidden;
  }
  
@@ -16,6 +16,3 @@ index 03a778809dc8..8f0267b45328 100644
  :root[tabsintitlebar] .titlebar-buttonbox {
    position: relative;
  }
--- 
-2.37.3
-

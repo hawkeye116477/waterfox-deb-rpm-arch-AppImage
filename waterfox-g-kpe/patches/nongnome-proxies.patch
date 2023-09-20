@@ -2,14 +2,10 @@ From: Wolfgang Rosenauer
 Subject: Do not use gconf for proxy settings if not running within Gnome
 
 diff --git a/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp b/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp
+index 982faf7d7968..185dc1e22a90 100644
 --- a/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp
 +++ b/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp
-@@ -49,20 +49,24 @@ NS_IMETHODIMP
- nsUnixSystemProxySettings::GetMainThreadOnly(bool* aMainThreadOnly) {
-   // dbus prevents us from being threadsafe, but this routine should not block
-   // anyhow
-   *aMainThreadOnly = true;
-   return NS_OK;
+@@ -52,10 +52,14 @@ nsUnixSystemProxySettings::GetMainThreadOnly(bool* aMainThreadOnly) {
  }
  
  void nsUnixSystemProxySettings::Init() {
@@ -28,8 +24,3 @@ diff --git a/toolkit/system/unixproxy/nsUnixSystemProxySettings.cpp b/toolkit/sy
    }
  }
  
- nsresult nsUnixSystemProxySettings::GetPACURI(nsACString& aResult) {
-   if (mProxySettings) {
-     nsCString proxyMode;
-     // Check if mode is auto
-     nsresult rv = mProxySettings->GetString("mode"_ns, proxyMode);
