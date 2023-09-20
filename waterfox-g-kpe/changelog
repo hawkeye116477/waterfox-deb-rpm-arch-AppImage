@@ -1,3 +1,12 @@
+waterfox-g-kpe (6.0-0) obs; urgency=medium
+
+    * Waterfox uses DNS over Oblivious HTTP1, a privacy preserving method for DNS queries.
+    * You can now move and remove the extension button from the navigation bar.
+    * Linux, alongside Windows, now supports DRM. That means you can watch your favourite shows on the streaming platform of your choice.
+    * Waterfox preferences have been gone through with a fine tooth comb, with a lot of assistance from yokoffing, who maintains Betterfox.js.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 20 Sep 2023 17:47:57 +0200
+
 waterfox-g-kpe (5.1.13-0) obs; urgency=medium
 
     * High severity security fix

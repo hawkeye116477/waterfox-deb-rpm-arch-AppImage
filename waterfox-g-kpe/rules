@@ -28,6 +28,8 @@ export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
 %:
 	dh $@
 
+override_dh_auto_configure:
+
 override_dh_auto_clean:
 	dh_auto_clean
 	find . -name '*.pyc' -delete
