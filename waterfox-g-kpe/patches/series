@@ -1,4 +1,3 @@
-global_menu.patch -p1
 fis-csd-global-menu.patch -p1
 g-kde.patch -p1
 nongnome-proxies.patch -p1
