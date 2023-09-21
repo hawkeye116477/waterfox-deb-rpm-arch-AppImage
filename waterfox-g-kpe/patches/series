@@ -5,3 +5,5 @@ mozilla-ntlm-full-path.patch -p1
 libavcodec58_91.patch -p1
 fix-langpack-id.patch -p1
 fix-wayland-build.patch -p1
+debian-hacks/Relax-nodejs-minimum-version.patch -p1
+debian-hacks/Relax-cargo-version-requirement.patch -p1

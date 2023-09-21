@@ -1,0 +1,21 @@
+From: Mike Hommey <mh@glandium.org>
+Date: Wed, 21 Sep 2022 08:48:27 +0900
+Subject: Relax nodejs minimum version
+
+---
+ python/mozbuild/mozbuild/nodeutil.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/python/mozbuild/mozbuild/nodeutil.py b/python/mozbuild/mozbuild/nodeutil.py
+index 8ec724a..efc7b7f 100644
+--- a/python/mozbuild/mozbuild/nodeutil.py
++++ b/python/mozbuild/mozbuild/nodeutil.py
+@@ -11,7 +11,7 @@ from mozboot.util import get_tools_dir
+ from mozfile import which
+ from six import PY3
+ 
+-NODE_MIN_VERSION = StrictVersion("12.22.12")
++NODE_MIN_VERSION = StrictVersion("12.22")
+ NPM_MIN_VERSION = StrictVersion("6.14.16")
+ 
+ 

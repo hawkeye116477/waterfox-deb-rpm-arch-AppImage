@@ -1,0 +1,21 @@
+From: Mike Hommey <mh@glandium.org>
+Date: Wed, 2 Aug 2023 08:46:33 +0900
+Subject: Relax cargo version requirement
+
+---
+ build/moz.configure/rust.configure | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build/moz.configure/rust.configure b/build/moz.configure/rust.configure
+index 7a2fd1a..9801f82 100644
+--- a/build/moz.configure/rust.configure
++++ b/build/moz.configure/rust.configure
+@@ -180,7 +180,7 @@ def rust_compiler(rustc_info, cargo_info, target):
+             )
+         )
+     rustc_min_version = Version(MINIMUM_RUST_VERSION)
+-    cargo_min_version = rustc_min_version
++    cargo_min_version = Version("1.65.0")
+ 
+     version = rustc_info.version
+     is_nightly = "nightly" in version.version
