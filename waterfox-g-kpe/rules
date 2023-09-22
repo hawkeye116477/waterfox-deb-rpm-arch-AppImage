@@ -9,16 +9,6 @@ export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' .
 export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-g-kpe.obsinfo)
 export TODAY_DATE=$(shell date +%Y-%m-%d)
 export LC_ALL=C.UTF-8
-
-LDFLAGS += -Wl,--no-keep-memory -Wl,--no-mmap-output-file
-
-distrelease := $(shell lsb_release -sc)
-ifeq ($(distrelease),$(filter $(distrelease),stretch xenial))
-LDFLAGS += -static-libstdc++
-endif
-
-export LDFLAGS
-
 export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
 
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
@@ -50,4 +40,3 @@ override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox-g/waterfox-g
 
 override_dh_strip_nondeterminism:
-	dh_strip_nondeterminism -Xdebian/waterfox-g-kpe/usr/lib/waterfox-g/browser/features/formautofill@mozilla.org.xpi

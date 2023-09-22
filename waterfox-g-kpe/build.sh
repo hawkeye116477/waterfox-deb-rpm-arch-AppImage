@@ -11,6 +11,8 @@ echo "$WF_VERSION" >"$(pwd)"/debian/app_version/version_display.txt
 # LTO needs more open files
 ulimit -n 4096
 # Do 3-tier PGO
+LDFLAGS+=" -Wl,--no-keep-memory -Wl,--no-mmap-output-file"
+export LDFLAGS
 export GEN_PGO=1
 ./mach build
 

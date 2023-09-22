@@ -44,15 +44,14 @@ ac_add_options --enable-eme=widevine
 ac_add_options --enable-application=browser
 ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
 ac_add_options --enable-hardening
-POLLY="-mllvm -polly -mllvm -polly-2nd-level-tiling -mllvm -polly-loopfusion-greedy -mllvm -polly-pattern-matching-based-opts -mllvm -polly-position=before-vectorizer -mllvm -polly-vectorizer=stripmine"
-ac_add_options --enable-optimize="-ffp-contract=fast -fno-math-errno -fno-signaling-nans -fno-trapping-math $POLLY -O3 -w"
+ac_add_options --enable-optimize
 ac_add_options --enable-rust-simd
 ac_add_options --enable-linker=lld
 ac_add_options --enable-jxl
 if test "$GEN_PGO"; then
     ac_add_options --enable-profile-generate=cross
 elif test "$USE_PGO"; then
-    ac_add_options --enable-lto=cross,full
+    ac_add_options --enable-lto=cross
     ac_add_options --enable-profile-use=cross
     ac_add_options --with-pgo-profile-path="$PWD"/merged.profdata
     ac_add_options --with-pgo-jarlog="$PWD"/jarlog
@@ -69,7 +68,6 @@ ac_add_options --with-version-file-path="$topsrcdir"/debian/app_version
 export MOZ_REQUIRE_SIGNING=
 export MOZ_INCLUDE_SOURCE_INFO=1
 export MOZ_APP_REMOTINGNAME=waterfox-g
-ac_add_options RUSTC_OPT_LEVEL=3
 
 X=$(($(nproc --all)/2))
 mk_add_options MOZ_MAKE_FLAGS="-j${X%.*}"
