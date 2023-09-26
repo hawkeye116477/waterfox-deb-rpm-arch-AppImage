@@ -1,3 +1,10 @@
+waterfox-g-kpe (6.0.1-0) obs; urgency=medium
+
+    * Update privacy preferences.
+    * Prevent new searches and opening bookmarks from opening in a new tab by default.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 26 Sep 2023 22:38:10 +0200
+
 waterfox-g-kpe (6.0-0) obs; urgency=medium
 
     * Waterfox uses DNS over Oblivious HTTP1, a privacy preserving method for DNS queries.

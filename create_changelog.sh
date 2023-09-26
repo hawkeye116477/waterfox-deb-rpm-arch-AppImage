@@ -7,7 +7,7 @@ TSTAMP=$(date --rfc-2822)
 cat /dev/stdin "$SCRIPT_PATH"/"$1"/changelog <<EOI | tee "$SCRIPT_PATH"/"$1"/changelog >/dev/null
 $1 ($2-0) obs; urgency=medium
 
-    * https://www.waterfox.net/blog/waterfox-$2-release
+    * https://www.waterfox.net/en-US/docs/releases/G$2/
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  $TSTAMP
 
