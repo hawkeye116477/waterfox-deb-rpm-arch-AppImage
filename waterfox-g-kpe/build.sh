@@ -13,12 +13,36 @@ ulimit -n 4096
 # Do 3-tier PGO
 LDFLAGS+=" -Wl,--no-keep-memory -Wl,--no-mmap-output-file"
 export LDFLAGS
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "buster"; then
+export NODEJS=/usr/lib/nodejs-mozilla/bin/node
+fi
+
+if test `lsb_release -sc` = "bionic"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
+
+# For successfull LTO build, we need to use matching LLVM version
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
+export PATH=/usr/lib/llvm-13/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "jammy"; then
+export PATH=/usr/lib/llvm-15/bin/:$PATH
+fi
+
+export CC=clang
+export CXX=clang++
+export AR=llvm-ar
+export NM=llvm-nm
+export RANLIB=llvm-ranlib
+export LLVM_PROFDATA=llvm-profdata
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 export GEN_PGO=1
 ./mach build
 
 echo "Profiling instrumented browser..."
 ./mach package
-LLVM_PROFDATA=llvm-profdata JARLOG_FILE="$(pwd)/jarlog" xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" ./mach python build/pgo/profileserver.py
+JARLOG_FILE="$(pwd)/jarlog" xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" ./mach python build/pgo/profileserver.py
 
 stat -c "Profile data found (%s bytes)" merged.profdata
 test -s merged.profdata

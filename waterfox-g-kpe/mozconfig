@@ -1,31 +1,3 @@
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "buster"; then
-export NODEJS=/usr/lib/nodejs-mozilla/bin/node
-fi
-
-if test `lsb_release -sc` = "bionic"; then
-export NASM=/usr/lib/nasm-mozilla/bin/nasm
-fi
-
-# For successfull LTO build, we need to use matching LLVM version
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
-export PATH=/usr/lib/llvm-13/bin/:$PATH
-fi
-
-if test `lsb_release -sc` = "kinetic"; then
-export PATH=/usr/lib/llvm-14/bin/:$PATH
-fi
-
-if test `lsb_release -sc` = "jammy"; then
-export PATH=/usr/lib/llvm-15/bin/:$PATH
-fi
-
-export CC=clang
-export CXX=clang++
-export AR=llvm-ar
-export NM=llvm-nm
-export RANLIB=llvm-ranlib
-export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
-
 ac_add_options --prefix=/usr
 
 mk_add_options AUTOCLOBBER=1
@@ -39,6 +11,7 @@ ac_add_options --disable-geckodriver
 ac_add_options --disable-bootstrap
 ac_add_options --disable-updater
 ac_add_options --disable-elf-hack
+ac_add_options --disable-tests
 
 ac_add_options --enable-unverified-updates
 ac_add_options --enable-pulseaudio
