@@ -8,6 +8,9 @@ mkdir -p "$(pwd)"/debian/app_version
 cp "$(pwd)"/browser/config/version.txt "$(pwd)"/debian/app_version/version.txt
 echo "$WF_VERSION" >"$(pwd)"/debian/app_version/version_display.txt
 
+echo "$CFLAGS"
+echo "$CXXFLAGS"
+
 # LTO needs more open files
 ulimit -n 4096
 # Do 3-tier PGO
