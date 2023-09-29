@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <updates>
-    <update type="major" appVersion="102.15.2esr" buildID="20230916221151" detailsURL="https://www.waterfox.net/docs/releases/G5.1.13" displayVersion="G5.1.13" extensionVersion="102.15.2esr" platformVersion="102.15.2esr" version="102.15.2esr">
+    <update type="major" appVersion="115.4.0" buildID="20230929183936" detailsURL="https://www.waterfox.net/docs/releases/G6.0.2" displayVersion="G6.0.2" extensionVersion="115.4.0" platformVersion="115.4.0" version="115.4.0">
         <patch type="complete" URL="https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g-latest-x86_64.AppImage" hashFunction="" hashValue="" size=""/>
     </update>
 </updates>
