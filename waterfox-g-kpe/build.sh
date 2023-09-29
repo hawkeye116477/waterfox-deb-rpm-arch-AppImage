@@ -8,8 +8,10 @@ mkdir -p "$(pwd)"/debian/app_version
 cp "$(pwd)"/browser/config/version.txt "$(pwd)"/debian/app_version/version.txt
 echo "$WF_VERSION" >"$(pwd)"/debian/app_version/version_display.txt
 
-echo "$CFLAGS"
-echo "$CXXFLAGS"
+# Tune flags
+OPT_EXTRA_FLAGS="-march=x86-64 -mtune=k8"
+CFLAGS+=" $OPT_EXTRA_FLAGS"
+CXXFLAGS+=" $OPT_EXTRA_FLAGS"
 
 # LTO needs more open files
 ulimit -n 4096
