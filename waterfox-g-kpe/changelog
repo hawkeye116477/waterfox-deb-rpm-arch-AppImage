@@ -1,3 +1,13 @@
+waterfox-g-kpe (6.0.4-0) obs; urgency=medium
+
+    * On pages that try to load mixed content, Waterfox will attempt to upgrade non secure content.
+    * When closing multiple tabs to the left or right, Waterfox will now show the correct close dialogue.
+    * If DNS requests take too long, Waterfox will fallback to your default DNS much quicker.
+    * Waterfox will no longer decode URLs when copying them. This should allow easier sharing.
+    * You can now disable Oblivious DNS via the Preferences page.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 10 Oct 2023 19:18:03 +0200
+
 waterfox-g-kpe (6.0.3-0) obs; urgency=medium
 
     * Hovering over inactive tabs will once again show the close button.
