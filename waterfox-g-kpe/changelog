@@ -1,3 +1,10 @@
+waterfox-g-kpe (6.0.5-0) obs; urgency=medium
+
+    * Security fixes
+    * Modal dialogues that display checkboxes would erroneously have two checkboxes, even if they werent meant to. This has now been fixed.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 25 Oct 2023 16:16:14 +0200
+
 waterfox-g-kpe (6.0.4-0) obs; urgency=medium
 
     * On pages that try to load mixed content, Waterfox will attempt to upgrade non secure content.
