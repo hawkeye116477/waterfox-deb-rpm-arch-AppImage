@@ -1,3 +1,12 @@
+waterfox-g-kpe (6.0.6-0) obs; urgency=medium
+
+    * DNS over Oblivious HTTP is now powered by Fastly!
+    * You can now choose to disable closing windows or tabs with Ctrl+W by setting browser.closeShortcut.disabled to true in about:config.
+    * Improved support for JPEG XL. Waterfox can now act as the default image viewer for such image files.
+    * Security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 21 Nov 2023 13:44:11 +0100
+
 waterfox-g-kpe (6.0.5-0) obs; urgency=medium
 
     * Security fixes
