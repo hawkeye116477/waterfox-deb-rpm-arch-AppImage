@@ -3,16 +3,16 @@
 # Original Author: Jamie Strandboge <jamie@canonical.com>
 
 # Declare an apparmor variable to help with overrides
-@{MOZ_LIBDIR}=/usr/lib/waterfox-g4
+@{MOZ_LIBDIR}=/usr/lib/waterfox-g
 
 #include <tunables/global>
 
 # We want to confine the binaries that match:
-#  /usr/lib/waterfox-g4/waterfox-g4
-#  /usr/lib/waterfox-g4/waterfox-g4
+#  /usr/lib/waterfox-g/waterfox-g
+#  /usr/lib/waterfox-g/waterfox-g
 # but not:
-#  /usr/lib/waterfox-g4/waterfox-g4.sh
-/usr/lib/waterfox-g4/waterfox-g4{,*[^s][^h]} {
+#  /usr/lib/waterfox-g/waterfox-g.sh
+/usr/lib/waterfox-g/waterfox-g{,*[^s][^h]} {
   #include <abstractions/audio>
   #include <abstractions/cups-client>
   #include <abstractions/dbus-strict>
@@ -80,8 +80,8 @@
   /etc/wildmidi/wildmidi.cfg r,
 
   # waterfox specific
-  /etc/waterfox-g4*/ r,
-  /etc/waterfox-g4*/** r,
+  /etc/waterfox-g*/ r,
+  /etc/waterfox-g*/** r,
 
   # firefox specific
   #/etc/xul-ext/** r,
@@ -224,9 +224,9 @@
   }
 
   # Addons
-  #include <abstractions/ubuntu-browsers.d/waterfox-g4>
+  #include <abstractions/ubuntu-browsers.d/waterfox-g>
   /usr/lib/waterfox/kwaterfoxhelper Cxr -> sanitized_helper,
 
   # Site-specific additions and overrides. See local/README for details.
-  #include <local/usr.bin.waterfox-g4>
+  #include <local/usr.bin.waterfox-g>
 }
