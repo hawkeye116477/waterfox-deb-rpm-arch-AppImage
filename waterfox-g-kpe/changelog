@@ -1,3 +1,12 @@
+waterfox-g-kpe (6.0.7-0) obs; urgency=medium
+
+    * Emoji support updated to 15.0.
+    * Security fixes
+    * You should now be able to Refresh your profile in about:support.
+    * NVIDIA Super Resolution should now work correctly, when toggling gfx.webrender.super-resolution.nvidia to true.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 21 Dec 2023 13:48:16 +0100
+
 waterfox-g-kpe (6.0.6-0) obs; urgency=medium
 
     * DNS over Oblivious HTTP is now powered by Fastly!
