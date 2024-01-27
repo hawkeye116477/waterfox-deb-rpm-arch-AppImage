@@ -1,3 +1,9 @@
+waterfox-kde (6.0.8-0) obs; urgency=medium
+
+    * Security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 27 Jan 2024 16:10:07 +0100
+
 waterfox-g-kpe (6.0.7-0) obs; urgency=medium
 
     * Emoji support updated to 15.0.

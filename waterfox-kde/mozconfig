@@ -34,7 +34,7 @@ elif test "$USE_PGO"; then
     ac_add_options --with-pgo-jarlog="$PWD"/jarlog
 fi
 
-ac_add_options --with-app-name=waterfox-g
+ac_add_options --with-app-name=waterfox
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=waterfox/browser/branding
 ac_add_options --with-unsigned-addon-scopes=app,system
