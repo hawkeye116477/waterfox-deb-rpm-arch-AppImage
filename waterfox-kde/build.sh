@@ -72,6 +72,6 @@ sed -r '/^(ja-JP-mac|en-US|)$/d;s/ .*$//' debian/locales.shipped | cut -f1 -d":"
         sed -i "s|obj_LANG|obj_$locale|" ${PWD}/mozconfig_$locale
         export MOZCONFIG=${PWD}/mozconfig_$locale
         ./mach build config/nsinstall langpack-$locale
-        cp -L ../obj_$locale/dist/linux-*/xpi/waterfox-g-$WF_VERSION.$locale.langpack.xpi \
+        cp -L ../obj_$locale/dist/linux-*/xpi/waterfox-$WF_VERSION.$locale.langpack.xpi \
             "$(pwd)"/extensions/langpack-$locale@l10n.waterfox.net.xpi
 ' -- {}
