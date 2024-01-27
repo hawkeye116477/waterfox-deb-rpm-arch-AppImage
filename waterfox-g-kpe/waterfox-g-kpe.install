@@ -1,7 +1,0 @@
-debian/vendor.js usr/lib/waterfox-g/browser/defaults/preferences
-debian/spellcheck.js usr/lib/waterfox-g/browser/defaults/preferences
-debian/waterfox-g.desktop usr/share/applications
-debian/distribution.ini usr/lib/waterfox-g/distribution
-debian/waterfox-g-bin.sh usr/lib/waterfox-g
-debian/usr.bin.waterfox-g etc/apparmor.d
-debian/syspref.js etc/waterfox-g

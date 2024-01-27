@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export SHELL=/bin/bash
+export MOZCONFIG=$(shell pwd)/debian/mozconfig
+export MOZ_NOSPAM:=1
+export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-kde.obsinfo)
+export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-kde.obsinfo)
+export TODAY_DATE=$(shell date +%Y-%m-%d)
+export LC_ALL=C.UTF-8
+export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+
+export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
+include /usr/share/dpkg/buildflags.mk
+export CXXFLAGS CFLAGS LDFLAGS
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+
+override_dh_auto_clean:
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_build:
+	$$(pwd)/debian/build.sh
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-bin.sh
+	DESTDIR=$$(pwd)/debian/waterfox-kde ./mach install
+	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox/dictionaries
+	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox/waterfox-bin
+	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox.appdata.xml.in
+	sed -e "s/__VERSION__/$$WF_VERSION/g" $$(pwd)/debian/waterfox.appdata.xml.in > $$(pwd)/debian/waterfox-kde/usr/share/metainfo/waterfox.appdata.xml
+	mv $$(pwd)/debian/waterfox-wayland-bin.sh $$(pwd)/debian/waterfox-wayland/usr/bin/waterfox-wayland
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox/waterfox
+
+override_dh_strip_nondeterminism:
