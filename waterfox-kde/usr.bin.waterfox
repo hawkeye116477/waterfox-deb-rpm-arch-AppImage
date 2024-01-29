@@ -3,16 +3,16 @@
 # Original Author: Jamie Strandboge <jamie@canonical.com>
 
 # Declare an apparmor variable to help with overrides
-@{MOZ_LIBDIR}=/usr/lib/waterfox
+@{MOZ_LIBDIR}=/usr/lib/waterfox-g
 
 #include <tunables/global>
 
 # We want to confine the binaries that match:
-#  /usr/lib/waterfox/waterfox
-#  /usr/lib/waterfox/waterfox
+#  /usr/lib/waterfox-g/waterfox-g
+#  /usr/lib/waterfox-g/waterfox-g
 # but not:
-#  /usr/lib/waterfox/waterfox.sh
-/usr/lib/waterfox/waterfox{,*[^s][^h]} {
+#  /usr/lib/waterfox-g/waterfox-g.sh
+/usr/lib/waterfox-g/waterfox-g{,*[^s][^h]} {
   #include <abstractions/audio>
   #include <abstractions/cups-client>
   #include <abstractions/dbus-strict>

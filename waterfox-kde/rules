@@ -31,13 +31,13 @@ override_dh_auto_build:
 override_dh_auto_install:
 	chmod +x $$(pwd)/debian/waterfox-bin.sh
 	DESTDIR=$$(pwd)/debian/waterfox-kde ./mach install
-	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox/dictionaries
-	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox/waterfox-bin
+	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox-g/dictionaries
+	rm -rf $$(pwd)/debian/waterfox-kde/usr/lib/waterfox-g/waterfox-g-bin
 	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox.appdata.xml.in
 	sed -e "s/__VERSION__/$$WF_VERSION/g" $$(pwd)/debian/waterfox.appdata.xml.in > $$(pwd)/debian/waterfox-kde/usr/share/metainfo/waterfox.appdata.xml
 	mv $$(pwd)/debian/waterfox-wayland-bin.sh $$(pwd)/debian/waterfox-wayland/usr/bin/waterfox-wayland
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l /usr/lib/waterfox/waterfox
+	dh_shlibdeps -l /usr/lib/waterfox-g/waterfox-g
 
 override_dh_strip_nondeterminism:

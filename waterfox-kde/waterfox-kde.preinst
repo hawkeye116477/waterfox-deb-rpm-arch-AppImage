@@ -7,7 +7,7 @@ APP_PROFILE="usr.bin.waterfox"
 APP_CONFFILE="$APP_DIR/$APP_PROFILE"
 APP_DISABLE="$APP_DIR/disable/$APP_PROFILE"
 MOZ_PKG_NAME=waterfox
-MOZ_LIBDIR=/usr/lib/waterfox
+MOZ_LIBDIR=/usr/lib/waterfox-g
 
 # Prepare to move a conffile without triggering a dpkg question
 prepare_mv_conffile() {

@@ -1,6 +1,6 @@
 ac_add_options --enable-linker=lld
 
-ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-name=waterfox-g
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-branding=waterfox/browser/branding
 mk_add_options MOZ_OBJDIR=$topsrcdir/../obj_LANG

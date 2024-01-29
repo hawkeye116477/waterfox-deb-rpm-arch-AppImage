@@ -2,7 +2,7 @@
 
 set -e
 
-MOZ_LIBDIR=/usr/lib/waterfox
+MOZ_LIBDIR=/usr/lib/waterfox-g
 MOZ_APP_NAME=waterfox
 MOZ_PKG_NAME=waterfox
 
