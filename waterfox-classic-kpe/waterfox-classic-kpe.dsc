@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox-classic-kpe
 Binary: waterfox-classic-kpe
 Architecture: any
-Version: 2022.11-0
+Version: 2022.11-9999
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://classic.waterfox.net/
 Standards-Version: 3.9.7
