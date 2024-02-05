@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>waterfox-classic</id>
+    <metadata_license>CC-BY-SA-3.0</metadata_license>
+    <project_license>MPL-2.0</project_license>
+    <project_group>Waterfox</project_group>
+    <developer_name>Waterfox Ltd</developer_name>
+    <name>Waterfox Classic KDE Plasma Edition</name>
+    <summary>Customizable privacy-conscious web browser with primary support for legacy extensions and better integration with KDE</summary>
+    <summary xml:lang="pl">Konfigurowalna dbająca o prywatność przeglądarka internetowa z obsługą starszych rozszerzeń i lepszą integracją z KDE</summary>
+    <description>
+        <p>Waterfox focuses on giving users choice. The browser is focused on power users, which lets you make the important decisions. There is no plugin whitelist (meaning you can run Java Applets and Silverlight apps), you can run whichever extensions you like (including bootstrapped add-ons that can completely change functionality of the browser) and absolutely no data or telemetry is sent back to Mozilla or the Waterfox project.</p>
+        <p xml:lang="pl">Waterfox skupia się na zapewnianiu użytkownikom wyboru. Przeglądarka ta koncentruje się na zaawansowanych użytkownikach, co pozwala podejmować ważne decyzje. Nie ma białych list wtyczek (co oznacza, że można uruchomić applety Java i aplikacje Silverlight), można uruchomić dowolne rozszerzenie (w tym dodatki bootstrapowane, które mogą całkowicie zmienić funkcjonalność przeglądarki) i absolutnie żadne dane ani telemetria nie są wysyłane z powrotem do Mozilli ani do projektu Waterfox.</p>
+        <p>Waterfox is powered by Mozilla Firefox source code.</p>
+        <p xml:lang="pl">Waterfox bazuje na kodzie źródłowym programu Mozilla Firefox.</p>
+        <p>Note: This package contains integration improvements for KDE made by openSUSE, but works good also on other desktop environments and KDE Plasma integration features may not work if kwaterfoxhelper isn't installed. For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension</p>
+        <p xml:lang="pl">Uwaga: Pakiet ten zawiera ulepszenia do integracji z KDE stworzone przez openSUSE, ale działa poprawnie również na innych środowiskach pulpitu, a funkcje integracji z KDE Plasma mogą nie działać, jeśli kwaterfoxhelper nie został zainstalowany. Dla lepszej integracji zalecane jest również zainstalowanie pakietu plasma-browser-integration razem z rozszerzeniem Plasma Integration</p>
+    </description>
+    <launchable type="desktop-id">waterfox-classic.desktop</launchable>
+    <url type="homepage">https://classic.waterfox.net/</url>
+    <url type="bugtracker">https://github.com/WaterfoxCo/Waterfox-Classic/issues</url>
+    <translation type="gettext">waterfox-classic</translation>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://i.imgur.com/5tTNJNJ.png</image>
+        </screenshot>
+    </screenshots>
+    <provides>
+        <id>waterfox-classic.desktop</id>
+    </provides>
+    <content_rating type="oars-1.1" />
+    <releases>
+        <release version="__VERSION__" date="__DATE__"/>
+    </releases>
+    <kudos>
+        <kudo>ModernToolkit</kudo>
+    </kudos>
+</component>

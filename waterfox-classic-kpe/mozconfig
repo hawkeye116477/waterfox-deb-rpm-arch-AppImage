@@ -1,0 +1,50 @@
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "stretch"; then
+export NASM=/usr/lib/nasm-mozilla/bin/nasm
+fi
+
+if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "impish" || test `lsb_release -sc` = "stretch" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye"; then
+export PATH=/usr/lib/llvm-12/bin/:$PATH
+fi
+
+if test `lsb_release -sc` = "kinetic"; then
+export PATH=/usr/lib/llvm-14/bin/:$PATH
+fi
+
+export CC=clang
+export CXX=clang++
+
+ac_add_options --prefix=/usr
+
+mk_add_options AUTOCLOBBER=1
+
+ac_add_options --disable-crashreporter
+ac_add_options --disable-js-shell
+ac_add_options --disable-maintenance-service
+ac_add_options --disable-profiling
+ac_add_options --disable-signmar
+ac_add_options --disable-tests
+ac_add_options --disable-verify-mar
+ac_add_options --disable-gconf
+ac_add_options --disable-updater
+ac_add_options --disable-elf-hack
+
+ac_add_options --enable-eme=widevine
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-alsa
+ac_add_options --enable-startup-notification
+ac_add_options --enable-rust-simd
+ac_add_options --enable-hardening
+ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
+ac_add_options --enable-application=browser
+ac_add_options --enable-release
+
+ac_add_options --disable-stylo
+
+ac_add_options --with-app-name=waterfox-classic
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=browser/branding/unofficial
+
+export MOZ_GECKO_PROFILER=
+export MOZ_ENABLE_PROFILER_SPS=
+export MOZ_PROFILING=
+export MOZ_INCLUDE_SOURCE_INFO=1

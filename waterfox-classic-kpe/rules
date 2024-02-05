@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export SHELL=/bin/bash
+export MOZCONFIG=$(shell pwd)/debian/mozconfig
+export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/tar_stamps)
+export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox-Classic
+export TODAY_DATE=$(shell date +%Y-%m-%d)
+
+distrelease := $(shell lsb_release -sc)
+ifeq ($(distrelease),$(filter $(distrelease),stretch xenial))
+LDFLAGS += -static-libstdc++
+endif
+
+export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	find . -name '*.pyc' -delete
+
+override_dh_auto_build:
+	./mach build
+
+override_dh_auto_install:
+	chmod +x $$(pwd)/debian/waterfox-classic-bin.sh
+	cp debian/kde.js obj-x86_64-pc-linux-gnu/dist/bin/defaults/pref
+	DESTDIR=$$(pwd)/debian/waterfox-classic-kpe ./mach install
+	mv $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/browser/features/ $$(pwd)
+	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/waterfox-classic-bin
+	rm -rf $$(pwd)/debian/waterfox-classic-kpe/usr/lib/waterfox-classic/dictionaries
+	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox-classic.appdata.xml.in
+	sed -e "s/__VERSION__/$$(<browser/config/version_display.txt)/g" $$(pwd)/debian/waterfox-classic.appdata.xml.in > $$(pwd)/debian/waterfox-classic-kpe/usr/share/metainfo/waterfox-classic.appdata.xml
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l /usr/lib/waterfox-classic/waterfox-classic
+
+override_dh_strip_nondeterminism:
+	dh_strip_nondeterminism -Xdebian/waterfox-classic-kpe/usr/lib/waterfox-classic/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
