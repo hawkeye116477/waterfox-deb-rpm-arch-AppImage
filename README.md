@@ -3,11 +3,11 @@ When you have some problem with my packages or repository, for first check opene
 
 ## Adding repository/direct download
 
-* If you're using Debian or Ubuntu with KDE:
+* If you're using Arch, Debian or Ubuntu with KDE:
 
 [Click to see instructions for waterfox-kde-full.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-kde-full)
 
-* If you're using other environment than KDE (Gnome, XFCE, etc) or other distro than Debian or Ubuntu:
+* If you're using other environment than KDE (Gnome, XFCE, etc) or other distro than Arch, Debian or Ubuntu:
 
 [Click to see instructions for waterfox-kde.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-kde)
 
