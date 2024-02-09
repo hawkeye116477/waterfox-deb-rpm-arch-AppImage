@@ -11,8 +11,8 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: waterfox-g4-kpe (<= 4.1.1-0+), waterfox-g3-kpe (<= 4.1.1-0+), waterfox-g-kpe (<= 6.0.7-0+)
 Breaks: waterfox-g4-kpe (<= 4.1.1-0+), waterfox-g3-kpe (<= 4.1.1-0+), waterfox-g-kpe (<= 6.0.7-0+)
-Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-g-wayland, ffmpeg
-Provides: www-browser, gnome-www-browser, waterfox-g
+Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-wayland, ffmpeg
+Provides: www-browser, gnome-www-browser, waterfox
 Description: Customizable privacy-conscious web browser with primary support for webextensions and better integration with KDE
  Waterfox allows you to make the choices within your browser, while providing sane defaults to make sure things run smoothly for the average user. Waterfox supports extensions from the Chrome Web Store, Firefox add-on store and the Opera Extensions store.
  .
@@ -24,7 +24,7 @@ Description: Customizable privacy-conscious web browser with primary support for
 
 Package: waterfox-kde-full
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-g, kwaterfoxhelper
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox, kwaterfoxhelper
 Replaces: waterfox-g4-kde (<= 4.1.1-0+), waterfox-g3-kde (<= 4.1.1-0+), waterfox-g-kde (<= 6.0.7-0+)
 Breaks: waterfox-g4-kde (<= 4.1.1-0+), waterfox-g3-kde (<= 4.1.1-0+), waterfox-g-kde (<= 6.0.7-0+)
 Suggests: plasma-browser-integration
@@ -33,7 +33,7 @@ Description: KDE Plasma integration for Waterfox Third Generation
 
 Package: waterfox-wayland
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox-g
+Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox
 Replaces: waterfox-g4-wayland (<= 4.1.1-0+), waterfox-g3-wayland (<= 4.1.1-0+), waterfox-g-wayland (<= 6.0.7-0+)
 Breaks: waterfox-g4-wayland (<= 4.1.1-0+), waterfox-g3-wayland (<= 4.1.1-0+), waterfox-g-wayland (<= 6.0.7-0+)
 Description: Waterfox Wayland launcher
