@@ -28,7 +28,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox, kwaterfoxhelper
 Replaces: waterfox-g4-kde (<= 4.1.1-0+), waterfox-g3-kde (<= 4.1.1-0+), waterfox-g-kde (<= 6.0.7-0+)
 Breaks: waterfox-g4-kde (<= 4.1.1-0+), waterfox-g3-kde (<= 4.1.1-0+), waterfox-g-kde (<= 6.0.7-0+)
 Suggests: plasma-browser-integration
-Description: KDE Plasma integration for Waterfox Third Generation
+Description: KDE Plasma integration for Waterfox
  For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
 
 Package: waterfox-wayland
