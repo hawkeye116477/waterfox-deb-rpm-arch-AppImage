@@ -9,8 +9,8 @@ Homepage: https://www.waterfox.net/
 Package: waterfox-kde
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: waterfox-g4-kpe (<= 4.1.2-0+), waterfox-g3-kpe (<= 4.1.2-0+), waterfox-g-kpe (<< ${source:Version})
-Breaks: waterfox-g4-kpe (<= 4.1.2-0+), waterfox-g3-kpe (<= 4.1.2-0+), waterfox-g-kpe (<< ${source:Version})
+Replaces: waterfox-g4-kpe (<< ${source:Version}), waterfox-g3-kpe (<< ${source:Version}), waterfox-g-kpe (<< ${source:Version})
+Breaks: waterfox-g4-kpe (<< ${source:Version}), waterfox-g3-kpe (<< ${source:Version}), waterfox-g-kpe (<< ${source:Version})
 Suggests: fonts-lyx, pulseaudio, kwaterfoxhelper, waterfox-wayland, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox
 Description: Customizable privacy-conscious web browser with primary support for webextensions and better integration with KDE
@@ -25,8 +25,8 @@ Description: Customizable privacy-conscious web browser with primary support for
 Package: waterfox-kde-full
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox, kwaterfoxhelper
-Replaces: waterfox-g4-kde (<= 4.1.2-0+), waterfox-g3-kde (<= 4.1.2-0+), waterfox-g-kde (<< ${source:Version})
-Breaks: waterfox-g4-kde (<= 4.1.2-0+), waterfox-g3-kde (<= 4.1.2-0+), waterfox-g-kde (<< ${source:Version})
+Replaces: waterfox-g4-kde (<< ${source:Version}), waterfox-g3-kde (<< ${source:Version}), waterfox-g-kde (<< ${source:Version})
+Breaks: waterfox-g4-kde (<< ${source:Version}), waterfox-g3-kde (<< ${source:Version}), waterfox-g-kde (<< ${source:Version})
 Suggests: plasma-browser-integration
 Description: KDE Plasma integration for Waterfox
  For better integration recommended is also installing plasma-browser-integration package together with Plasma Integration extension.
@@ -34,8 +34,8 @@ Description: KDE Plasma integration for Waterfox
 Package: waterfox-wayland
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox
-Replaces: waterfox-g4-wayland (<= 4.1.2-0+), waterfox-g3-wayland (<= 4.1.2-0+), waterfox-g-wayland (<< ${source:Version})
-Breaks: waterfox-g4-wayland (<= 4.1.2-0+), waterfox-g3-wayland (<= 4.1.2-0+), waterfox-g-wayland (<< ${source:Version})
+Replaces: waterfox-g4-wayland (<< ${source:Version}), waterfox-g3-wayland (<< ${source:Version}), waterfox-g-wayland (<< ${source:Version})
+Breaks: waterfox-g4-wayland (<< ${source:Version}), waterfox-g3-wayland (<< ${source:Version}), waterfox-g-wayland (<< ${source:Version})
 Description: Waterfox Wayland launcher
  This package contains launcher and desktop file to run Waterfox natively on Wayland.
 
@@ -63,8 +63,8 @@ Description: Transitional package
 Package: waterfox-i18n-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-ar (<= 4.1.2-0+), waterfox-g3-i18n-ar (<= 4.1.2-0+), waterfox-g-i18n-ar (<< ${source:Version})
-Breaks: waterfox-g4-i18n-ar (<= 4.1.2-0+), waterfox-g3-i18n-ar (<= 4.1.2-0+), waterfox-g-i18n-ar (<< ${source:Version})
+Replaces: waterfox-g4-i18n-ar (<< ${source:Version}), waterfox-g3-i18n-ar (<< ${source:Version}), waterfox-g-i18n-ar (<< ${source:Version})
+Breaks: waterfox-g4-i18n-ar (<< ${source:Version}), waterfox-g3-i18n-ar (<< ${source:Version}), waterfox-g-i18n-ar (<< ${source:Version})
 Description: Arabic language pack for Waterfox G
  This package contains Arabic translations for Waterfox G
 
@@ -78,8 +78,8 @@ Description: Transitional package
 Package: waterfox-i18n-cs
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-cs (<= 4.1.2-0+), waterfox-g3-i18n-cs (<= 4.1.2-0+), waterfox-g-i18n-cs (<< ${source:Version})
-Breaks: waterfox-g4-i18n-cs (<= 4.1.2-0+), waterfox-g3-i18n-cs (<= 4.1.2-0+), waterfox-g-i18n-cs (<< ${source:Version})
+Replaces: waterfox-g4-i18n-cs (<< ${source:Version}), waterfox-g3-i18n-cs (<< ${source:Version}), waterfox-g-i18n-cs (<< ${source:Version})
+Breaks: waterfox-g4-i18n-cs (<< ${source:Version}), waterfox-g3-i18n-cs (<< ${source:Version}), waterfox-g-i18n-cs (<< ${source:Version})
 Description: Czech language pack for Waterfox G
  This package contains Czech translations for Waterfox G
 
@@ -93,8 +93,8 @@ Description: Transitional package
 Package: waterfox-i18n-da
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-da (<= 4.1.2-0+), waterfox-g3-i18n-da (<= 4.1.2-0+), waterfox-g-i18n-da (<< ${source:Version})
-Breaks: waterfox-g4-i18n-da (<= 4.1.2-0+), waterfox-g3-i18n-da (<= 4.1.2-0+), waterfox-g-i18n-da (<< ${source:Version})
+Replaces: waterfox-g4-i18n-da (<< ${source:Version}), waterfox-g3-i18n-da (<< ${source:Version}), waterfox-g-i18n-da (<< ${source:Version})
+Breaks: waterfox-g4-i18n-da (<< ${source:Version}), waterfox-g3-i18n-da (<< ${source:Version}), waterfox-g-i18n-da (<< ${source:Version})
 Description: Danish language pack for Waterfox G
  This package contains Danish translations for Waterfox G
 
@@ -108,8 +108,8 @@ Description: Transitional package
 Package: waterfox-i18n-de
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-de (<= 4.1.2-0+), waterfox-g3-i18n-de (<= 4.1.2-0+), waterfox-g-i18n-de (<< ${source:Version})
-Breaks: waterfox-g4-i18n-de (<= 4.1.2-0+), waterfox-g3-i18n-de (<= 4.1.2-0+), waterfox-g-i18n-de (<< ${source:Version})
+Replaces: waterfox-g4-i18n-de (<< ${source:Version}), waterfox-g3-i18n-de (<< ${source:Version}), waterfox-g-i18n-de (<< ${source:Version})
+Breaks: waterfox-g4-i18n-de (<< ${source:Version}), waterfox-g3-i18n-de (<< ${source:Version}), waterfox-g-i18n-de (<< ${source:Version})
 Description: German language pack for Waterfox G
  This package contains German translations for Waterfox G
 
@@ -123,8 +123,8 @@ Description: Transitional package
 Package: waterfox-i18n-el
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-el (<= 4.1.2-0+), waterfox-g3-i18n-el (<= 4.1.2-0+), waterfox-g-i18n-el (<< ${source:Version})
-Breaks: waterfox-g4-i18n-el (<= 4.1.2-0+), waterfox-g3-i18n-el (<= 4.1.2-0+), waterfox-g-i18n-el (<< ${source:Version})
+Replaces: waterfox-g4-i18n-el (<< ${source:Version}), waterfox-g3-i18n-el (<< ${source:Version}), waterfox-g-i18n-el (<< ${source:Version})
+Breaks: waterfox-g4-i18n-el (<< ${source:Version}), waterfox-g3-i18n-el (<< ${source:Version}), waterfox-g-i18n-el (<< ${source:Version})
 Description: Greek language pack for Waterfox G
  This package contains Greek translations for Waterfox G
 
@@ -138,8 +138,8 @@ Description: Transitional package
 Package: waterfox-i18n-en-gb
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-en-gb (<= 4.1.2-0+), waterfox-g3-i18n-en-gb (<= 4.1.2-0+), waterfox-g-i18n-en-gb (<< ${source:Version})
-Breaks: waterfox-g4-i18n-en-gb (<= 4.1.2-0+), waterfox-g3-i18n-en-gb (<= 4.1.2-0+), waterfox-g-i18n-en-gb (<< ${source:Version})
+Replaces: waterfox-g4-i18n-en-gb (<< ${source:Version}), waterfox-g3-i18n-en-gb (<< ${source:Version}), waterfox-g-i18n-en-gb (<< ${source:Version})
+Breaks: waterfox-g4-i18n-en-gb (<< ${source:Version}), waterfox-g3-i18n-en-gb (<< ${source:Version}), waterfox-g-i18n-en-gb (<< ${source:Version})
 Description: English (British) language pack for Waterfox G
  This package contains English (British) translations for Waterfox G
 
@@ -153,8 +153,8 @@ Description: Transitional package
 Package: waterfox-i18n-es-es
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-es-es (<= 4.1.2-0+), waterfox-g3-i18n-es-es (<= 4.1.2-0+), waterfox-g-i18n-es-es (<< ${source:Version})
-Breaks: waterfox-g4-i18n-es-es (<= 4.1.2-0+), waterfox-g3-i18n-es-es (<= 4.1.2-0+), waterfox-g-i18n-es-es (<< ${source:Version})
+Replaces: waterfox-g4-i18n-es-es (<< ${source:Version}), waterfox-g3-i18n-es-es (<< ${source:Version}), waterfox-g-i18n-es-es (<< ${source:Version})
+Breaks: waterfox-g4-i18n-es-es (<< ${source:Version}), waterfox-g3-i18n-es-es (<< ${source:Version}), waterfox-g-i18n-es-es (<< ${source:Version})
 Description: Spanish (Spain) language pack for Waterfox G
  This package contains Spanish (Spain) translations for Waterfox G
 
@@ -168,8 +168,8 @@ Description: Transitional package
 Package: waterfox-i18n-es-mx
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-es-mx (<= 4.1.2-0+), waterfox-g3-i18n-es-mx (<= 4.1.2-0+), waterfox-g-i18n-es-mx (<< ${source:Version})
-Breaks: waterfox-g4-i18n-es-mx (<= 4.1.2-0+), waterfox-g3-i18n-es-mx (<= 4.1.2-0+), waterfox-g-i18n-es-mx (<< ${source:Version})
+Replaces: waterfox-g4-i18n-es-mx (<< ${source:Version}), waterfox-g3-i18n-es-mx (<< ${source:Version}), waterfox-g-i18n-es-mx (<< ${source:Version})
+Breaks: waterfox-g4-i18n-es-mx (<< ${source:Version}), waterfox-g3-i18n-es-mx (<< ${source:Version}), waterfox-g-i18n-es-mx (<< ${source:Version})
 Description: Spanish (Mexico) language pack for Waterfox G
  This package contains Spanish (Mexico) translations for Waterfox G
 
@@ -183,8 +183,8 @@ Description: Transitional package
 Package: waterfox-i18n-fr
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-fr (<= 4.1.2-0+), waterfox-g3-i18n-fr (<= 4.1.2-0+), waterfox-g-i18n-fr (<< ${source:Version})
-Breaks: waterfox-g4-i18n-fr (<= 4.1.2-0+), waterfox-g3-i18n-fr (<= 4.1.2-0+), waterfox-g-i18n-fr (<< ${source:Version})
+Replaces: waterfox-g4-i18n-fr (<< ${source:Version}), waterfox-g3-i18n-fr (<< ${source:Version}), waterfox-g-i18n-fr (<< ${source:Version})
+Breaks: waterfox-g4-i18n-fr (<< ${source:Version}), waterfox-g3-i18n-fr (<< ${source:Version}), waterfox-g-i18n-fr (<< ${source:Version})
 Description: French language pack for Waterfox G
  This package contains French translations for Waterfox G
 
@@ -198,8 +198,8 @@ Description: Transitional package
 Package: waterfox-i18n-hu
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-hu (<= 4.1.2-0+), waterfox-g3-i18n-hu (<= 4.1.2-0+), waterfox-g-i18n-hu (<< ${source:Version})
-Breaks: waterfox-g4-i18n-hu (<= 4.1.2-0+), waterfox-g3-i18n-hu (<= 4.1.2-0+), waterfox-g-i18n-hu (<< ${source:Version})
+Replaces: waterfox-g4-i18n-hu (<< ${source:Version}), waterfox-g3-i18n-hu (<< ${source:Version}), waterfox-g-i18n-hu (<< ${source:Version})
+Breaks: waterfox-g4-i18n-hu (<< ${source:Version}), waterfox-g3-i18n-hu (<< ${source:Version}), waterfox-g-i18n-hu (<< ${source:Version})
 Description: Hungarian language pack for Waterfox G
  This package contains Hungarian translations for Waterfox G
 
@@ -213,8 +213,8 @@ Description: Transitional package
 Package: waterfox-i18n-id
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-id (<= 4.1.2-0+), waterfox-g3-i18n-id (<= 4.1.2-0+), waterfox-g-i18n-id (<< ${source:Version})
-Breaks: waterfox-g4-i18n-id (<= 4.1.2-0+), waterfox-g3-i18n-id (<= 4.1.2-0+), waterfox-g-i18n-id (<< ${source:Version})
+Replaces: waterfox-g4-i18n-id (<< ${source:Version}), waterfox-g3-i18n-id (<< ${source:Version}), waterfox-g-i18n-id (<< ${source:Version})
+Breaks: waterfox-g4-i18n-id (<< ${source:Version}), waterfox-g3-i18n-id (<< ${source:Version}), waterfox-g-i18n-id (<< ${source:Version})
 Description: Indonesian language pack for Waterfox G
  This package contains Indonesian translations for Waterfox G
 
@@ -228,8 +228,8 @@ Description: Transitional package
 Package: waterfox-i18n-it
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-it (<= 4.1.2-0+), waterfox-g3-i18n-it (<= 4.1.2-0+), waterfox-g-i18n-it (<< ${source:Version})
-Breaks: waterfox-g4-i18n-it (<= 4.1.2-0+), waterfox-g3-i18n-it (<= 4.1.2-0+), waterfox-g-i18n-it (<< ${source:Version})
+Replaces: waterfox-g4-i18n-it (<< ${source:Version}), waterfox-g3-i18n-it (<< ${source:Version}), waterfox-g-i18n-it (<< ${source:Version})
+Breaks: waterfox-g4-i18n-it (<< ${source:Version}), waterfox-g3-i18n-it (<< ${source:Version}), waterfox-g-i18n-it (<< ${source:Version})
 Description: Italian language pack for Waterfox G
  This package contains Italian translations for Waterfox G
 
@@ -243,8 +243,8 @@ Description: Transitional package
 Package: waterfox-i18n-ja
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-ja (<= 4.1.2-0+), waterfox-g3-i18n-ja (<= 4.1.2-0+), waterfox-g-i18n-ja (<< ${source:Version})
-Breaks: waterfox-g4-i18n-ja (<= 4.1.2-0+), waterfox-g3-i18n-ja (<= 4.1.2-0+), waterfox-g-i18n-ja (<< ${source:Version})
+Replaces: waterfox-g4-i18n-ja (<< ${source:Version}), waterfox-g3-i18n-ja (<< ${source:Version}), waterfox-g-i18n-ja (<< ${source:Version})
+Breaks: waterfox-g4-i18n-ja (<< ${source:Version}), waterfox-g3-i18n-ja (<< ${source:Version}), waterfox-g-i18n-ja (<< ${source:Version})
 Description: Japanese language pack for Waterfox G
  This package contains Japanese translations for Waterfox G
 
@@ -258,8 +258,8 @@ Description: Transitional package
 Package: waterfox-i18n-ko
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-ko (<= 4.1.2-0+), waterfox-g3-i18n-ko (<= 4.1.2-0+), waterfox-g-i18n-ko (<< ${source:Version})
-Breaks: waterfox-g4-i18n-ko (<= 4.1.2-0+), waterfox-g3-i18n-ko (<= 4.1.2-0+), waterfox-g-i18n-ko (<< ${source:Version})
+Replaces: waterfox-g4-i18n-ko (<< ${source:Version}), waterfox-g3-i18n-ko (<< ${source:Version}), waterfox-g-i18n-ko (<< ${source:Version})
+Breaks: waterfox-g4-i18n-ko (<< ${source:Version}), waterfox-g3-i18n-ko (<< ${source:Version}), waterfox-g-i18n-ko (<< ${source:Version})
 Description: Korean language pack for Waterfox G
  This package contains Korean translations for Waterfox G
 
@@ -273,8 +273,8 @@ Description: Transitional package
 Package: waterfox-i18n-lt
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-lt (<= 4.1.2-0+), waterfox-g3-i18n-lt (<= 4.1.2-0+), waterfox-g-i18n-lt (<< ${source:Version})
-Breaks: waterfox-g4-i18n-lt (<= 4.1.2-0+), waterfox-g3-i18n-lt (<= 4.1.2-0+), waterfox-g-i18n-lt (<< ${source:Version})
+Replaces: waterfox-g4-i18n-lt (<< ${source:Version}), waterfox-g3-i18n-lt (<< ${source:Version}), waterfox-g-i18n-lt (<< ${source:Version})
+Breaks: waterfox-g4-i18n-lt (<< ${source:Version}), waterfox-g3-i18n-lt (<< ${source:Version}), waterfox-g-i18n-lt (<< ${source:Version})
 Description: Lithuanian language pack for Waterfox G
  This package contains Lithuanian translations for Waterfox G
 
@@ -288,8 +288,8 @@ Description: Transitional package
 Package: waterfox-i18n-nl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-nl (<= 4.1.2-0+), waterfox-g3-i18n-nl (<= 4.1.2-0+), waterfox-g-i18n-nl (<< ${source:Version})
-Breaks: waterfox-g4-i18n-nl (<= 4.1.2-0+), waterfox-g3-i18n-nl (<= 4.1.2-0+), waterfox-g-i18n-nl (<< ${source:Version})
+Replaces: waterfox-g4-i18n-nl (<< ${source:Version}), waterfox-g3-i18n-nl (<< ${source:Version}), waterfox-g-i18n-nl (<< ${source:Version})
+Breaks: waterfox-g4-i18n-nl (<< ${source:Version}), waterfox-g3-i18n-nl (<< ${source:Version}), waterfox-g-i18n-nl (<< ${source:Version})
 Description: Dutch; Flemish language pack for Waterfox G
  This package contains Dutch; Flemish translations for Waterfox G
 
@@ -303,8 +303,8 @@ Description: Transitional package
 Package: waterfox-i18n-nn-no
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-nn-no (<= 4.1.2-0+), waterfox-g3-i18n-nn-no (<= 4.1.2-0+), waterfox-g-i18n-nn-no (<< ${source:Version})
-Breaks: waterfox-g4-i18n-nn-no (<= 4.1.2-0+), waterfox-g3-i18n-nn-no (<= 4.1.2-0+), waterfox-g-i18n-nn-no (<< ${source:Version})
+Replaces: waterfox-g4-i18n-nn-no (<< ${source:Version}), waterfox-g3-i18n-nn-no (<< ${source:Version}), waterfox-g-i18n-nn-no (<< ${source:Version})
+Breaks: waterfox-g4-i18n-nn-no (<< ${source:Version}), waterfox-g3-i18n-nn-no (<< ${source:Version}), waterfox-g-i18n-nn-no (<< ${source:Version})
 Description: Norwegian (Nynorsk) language pack for Waterfox G
  This package contains Norwegian (Nynorsk) translations for Waterfox G
 
@@ -318,8 +318,8 @@ Description: Transitional package
 Package: waterfox-i18n-pl
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-pl (<= 4.1.2-0+), waterfox-g3-i18n-pl (<= 4.1.2-0+), waterfox-g-i18n-pl (<< ${source:Version})
-Breaks: waterfox-g4-i18n-pl (<= 4.1.2-0+), waterfox-g3-i18n-pl (<= 4.1.2-0+), waterfox-g-i18n-pl (<< ${source:Version})
+Replaces: waterfox-g4-i18n-pl (<< ${source:Version}), waterfox-g3-i18n-pl (<< ${source:Version}), waterfox-g-i18n-pl (<< ${source:Version})
+Breaks: waterfox-g4-i18n-pl (<< ${source:Version}), waterfox-g3-i18n-pl (<< ${source:Version}), waterfox-g-i18n-pl (<< ${source:Version})
 Description: Polish language pack for Waterfox G
  This package contains Polish translations for Waterfox G
 
@@ -333,8 +333,8 @@ Description: Transitional package
 Package: waterfox-i18n-pt-br
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-pt-br (<= 4.1.2-0+), waterfox-g3-i18n-pt-br (<= 4.1.2-0+), waterfox-g-i18n-pt-br (<< ${source:Version})
-Breaks: waterfox-g4-i18n-pt-br (<= 4.1.2-0+), waterfox-g3-i18n-pt-br (<= 4.1.2-0+), waterfox-g-i18n-pt-br (<< ${source:Version})
+Replaces: waterfox-g4-i18n-pt-br (<< ${source:Version}), waterfox-g3-i18n-pt-br (<< ${source:Version}), waterfox-g-i18n-pt-br (<< ${source:Version})
+Breaks: waterfox-g4-i18n-pt-br (<< ${source:Version}), waterfox-g3-i18n-pt-br (<< ${source:Version}), waterfox-g-i18n-pt-br (<< ${source:Version})
 Description: Portuguese (Brazilian) language pack for Waterfox G
  This package contains Portuguese (Brazilian) translations for Waterfox G
 
@@ -348,8 +348,8 @@ Description: Transitional package
 Package: waterfox-i18n-pt-pt
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-pt-pt (<= 4.1.2-0+), waterfox-g3-i18n-pt-pt (<= 4.1.2-0+), waterfox-g-i18n-pt-pt (<< ${source:Version})
-Breaks: waterfox-g4-i18n-pt-pt (<= 4.1.2-0+), waterfox-g3-i18n-pt-pt (<= 4.1.2-0+), waterfox-g-i18n-pt-pt (<< ${source:Version})
+Replaces: waterfox-g4-i18n-pt-pt (<< ${source:Version}), waterfox-g3-i18n-pt-pt (<< ${source:Version}), waterfox-g-i18n-pt-pt (<< ${source:Version})
+Breaks: waterfox-g4-i18n-pt-pt (<< ${source:Version}), waterfox-g3-i18n-pt-pt (<< ${source:Version}), waterfox-g-i18n-pt-pt (<< ${source:Version})
 Description: Portuguese (Portugal) language pack for Waterfox G
  This package contains Portuguese (Portugal) translations for Waterfox G
 
@@ -363,8 +363,8 @@ Description: Transitional package
 Package: waterfox-i18n-ru
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-ru (<= 4.1.2-0+), waterfox-g3-i18n-ru (<= 4.1.2-0+), waterfox-g-i18n-ru (<< ${source:Version})
-Breaks: waterfox-g4-i18n-ru (<= 4.1.2-0+), waterfox-g3-i18n-ru (<= 4.1.2-0+), waterfox-g-i18n-ru (<< ${source:Version})
+Replaces: waterfox-g4-i18n-ru (<< ${source:Version}), waterfox-g3-i18n-ru (<< ${source:Version}), waterfox-g-i18n-ru (<< ${source:Version})
+Breaks: waterfox-g4-i18n-ru (<< ${source:Version}), waterfox-g3-i18n-ru (<< ${source:Version}), waterfox-g-i18n-ru (<< ${source:Version})
 Description: Russian language pack for Waterfox G
  This package contains Russian translations for Waterfox G
 
@@ -378,8 +378,8 @@ Description: Transitional package
 Package: waterfox-i18n-sv-se
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-sv-se (<= 4.1.2-0+), waterfox-g3-i18n-sv-se (<= 4.1.2-0+), waterfox-g-i18n-sv-se (<< ${source:Version})
-Breaks: waterfox-g4-i18n-sv-se (<= 4.1.2-0+), waterfox-g3-i18n-sv-se (<= 4.1.2-0+), waterfox-g-i18n-sv-se (<< ${source:Version})
+Replaces: waterfox-g4-i18n-sv-se (<< ${source:Version}), waterfox-g3-i18n-sv-se (<< ${source:Version}), waterfox-g-i18n-sv-se (<< ${source:Version})
+Breaks: waterfox-g4-i18n-sv-se (<< ${source:Version}), waterfox-g3-i18n-sv-se (<< ${source:Version}), waterfox-g-i18n-sv-se (<< ${source:Version})
 Description: Swedish (Sweden) language pack for Waterfox G
  This package contains Swedish (Sweden) translations for Waterfox G
 
@@ -393,8 +393,8 @@ Description: Transitional package
 Package: waterfox-i18n-th
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-th (<= 4.1.2-0+), waterfox-g3-i18n-th (<= 4.1.2-0+), waterfox-g-i18n-th (<< ${source:Version})
-Breaks: waterfox-g4-i18n-th (<= 4.1.2-0+), waterfox-g3-i18n-th (<= 4.1.2-0+), waterfox-g-i18n-th (<< ${source:Version})
+Replaces: waterfox-g4-i18n-th (<< ${source:Version}), waterfox-g3-i18n-th (<< ${source:Version}), waterfox-g-i18n-th (<< ${source:Version})
+Breaks: waterfox-g4-i18n-th (<< ${source:Version}), waterfox-g3-i18n-th (<< ${source:Version}), waterfox-g-i18n-th (<< ${source:Version})
 Description: Thai language pack for Waterfox G
  This package contains Thai translations for Waterfox G
 
@@ -408,8 +408,8 @@ Description: Transitional package
 Package: waterfox-i18n-vi
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-vi (<= 4.1.2-0+), waterfox-g3-i18n-vi (<= 4.1.2-0+), waterfox-g-i18n-vi (<< ${source:Version})
-Breaks: waterfox-g4-i18n-vi (<= 4.1.2-0+), waterfox-g3-i18n-vi (<= 4.1.2-0+), waterfox-g-i18n-vi (<< ${source:Version})
+Replaces: waterfox-g4-i18n-vi (<< ${source:Version}), waterfox-g3-i18n-vi (<< ${source:Version}), waterfox-g-i18n-vi (<< ${source:Version})
+Breaks: waterfox-g4-i18n-vi (<< ${source:Version}), waterfox-g3-i18n-vi (<< ${source:Version}), waterfox-g-i18n-vi (<< ${source:Version})
 Description: Vietnamese language pack for Waterfox G
  This package contains Vietnamese translations for Waterfox G
 
@@ -423,8 +423,8 @@ Description: Transitional package
 Package: waterfox-i18n-zh-cn
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-zh-cn (<= 4.1.2-0+), waterfox-g3-i18n-zh-cn (<= 4.1.2-0+), waterfox-g-i18n-zh-cn (<< ${source:Version})
-Breaks: waterfox-g4-i18n-zh-cn (<= 4.1.2-0+), waterfox-g3-i18n-zh-cn (<= 4.1.2-0+), waterfox-g-i18n-zh-cn (<< ${source:Version})
+Replaces: waterfox-g4-i18n-zh-cn (<< ${source:Version}), waterfox-g3-i18n-zh-cn (<< ${source:Version}), waterfox-g-i18n-zh-cn (<< ${source:Version})
+Breaks: waterfox-g4-i18n-zh-cn (<< ${source:Version}), waterfox-g3-i18n-zh-cn (<< ${source:Version}), waterfox-g-i18n-zh-cn (<< ${source:Version})
 Description: Simplified Chinese language pack for Waterfox G
  This package contains Simplified Chinese translations for Waterfox G
 
@@ -438,8 +438,8 @@ Description: Transitional package
 Package: waterfox-i18n-zh-tw
 Architecture: all
 Depends: ${misc:Depends}, waterfox-kde (>= ${source:Version})
-Replaces: waterfox-g4-i18n-zh-tw (<= 4.1.2-0+), waterfox-g3-i18n-zh-tw (<= 4.1.2-0+), waterfox-g-i18n-zh-tw (<< ${source:Version})
-Breaks: waterfox-g4-i18n-zh-tw (<= 4.1.2-0+), waterfox-g3-i18n-zh-tw (<= 4.1.2-0+), waterfox-g-i18n-zh-tw (<< ${source:Version})
+Replaces: waterfox-g4-i18n-zh-tw (<< ${source:Version}), waterfox-g3-i18n-zh-tw (<< ${source:Version}), waterfox-g-i18n-zh-tw (<< ${source:Version})
+Breaks: waterfox-g4-i18n-zh-tw (<< ${source:Version}), waterfox-g3-i18n-zh-tw (<< ${source:Version}), waterfox-g-i18n-zh-tw (<< ${source:Version})
 Description: Traditional Chinese language pack for Waterfox G
  This package contains Traditional Chinese translations for Waterfox G
 

@@ -17,8 +17,8 @@ for _lang in "${_languages[@]}"; do
 Package: $_pkgname
 Architecture: all
 Depends: \${misc:Depends}, waterfox-kde (>= \${source:Version})
-Replaces: $_pkgname_trans4 (<= 4.1.2-0+), $_pkgname_trans3 (<= 4.1.2-0+), $_pkgname_trans5 (<< \${source:Version})
-Breaks: $_pkgname_trans4 (<= 4.1.2-0+), $_pkgname_trans3 (<= 4.1.2-0+), $_pkgname_trans5 (<< \${source:Version})
+Replaces: $_pkgname_trans4 (<< \${source:Version}), $_pkgname_trans3 (<< \${source:Version}), $_pkgname_trans5 (<< \${source:Version})
+Breaks: $_pkgname_trans4 (<< \${source:Version}), $_pkgname_trans3 (<< \${source:Version}), $_pkgname_trans5 (<< \${source:Version})
 Description: $_locale_desc language pack for Waterfox G
  This package contains $_locale_desc translations for Waterfox G
 
