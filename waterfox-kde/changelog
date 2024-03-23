@@ -1,3 +1,10 @@
+waterfox-kde (6.0.10-0) obs; urgency=medium
+
+    * Security fixes
+    * You can now start testing the Waterfox Sidebar. Go to about:config, search for browser.sidebar.disabled and set the value to false
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 23 Mar 2024 13:40:42 +0100
+
 waterfox-kde (6.0.9-0) obs; urgency=medium
 
     * Security fixes
