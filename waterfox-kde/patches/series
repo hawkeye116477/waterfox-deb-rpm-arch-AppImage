@@ -7,3 +7,4 @@ fix-langpack-id.patch -p1
 fix-wayland-build.patch -p1
 debian-hacks/Relax-nodejs-minimum-version.patch -p1
 debian-hacks/Relax-cargo-version-requirement.patch -p1
+pgo_py12.patch -p1
