@@ -1,12 +1,21 @@
+waterfox-kde (6.0.15-0) obs; urgency=medium
+
+    * Updates to the tabs sidebar
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 29 May 2024 13:56:06 +0200
+
 waterfox-kde (6.0.14-0) obs; urgency=medium
 
-    * https://www.waterfox.net/en-US/docs/releases/G6.0.14/
+    * Various UI bug fixes.
+    * Updates to the tabs sidebar.
+    * Security fixes.
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 18 May 2024 11:47:39 +0200
 
 waterfox-kde (6.0.13-0) obs; urgency=medium
 
-    * https://www.waterfox.net/en-US/docs/releases/G6.0.13/
+    * Mojeek is now available as a search engine in Waterfox.
+    * The Sidebar has seen multiple bug fixes and improvements. If you want to completely hide the feature, you can navigate to about:config, search for browser.sidebar.disabled and toggle the value to true.
 
  -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 24 Apr 2024 18:56:56 +0200
 
