@@ -4,7 +4,6 @@
 # without patching. Debhelper won't allow us to do that by same way and
 # patching won't be much convenient, so we need to create new files.
 mkdir -p "$(pwd)"/debian/app_version
-
 cp "$(pwd)"/browser/config/version.txt "$(pwd)"/debian/app_version/version.txt
 echo "$WF_VERSION" >"$(pwd)"/debian/app_version/version_display.txt
 

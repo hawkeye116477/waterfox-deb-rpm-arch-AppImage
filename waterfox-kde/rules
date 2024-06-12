@@ -4,7 +4,7 @@
 export SHELL=/bin/bash
 export MOZCONFIG=$(shell pwd)/debian/mozconfig
 export MOZ_NOSPAM:=1
-export MOZ_SOURCE_REPO=https://github.com/WaterfoxCo/Waterfox
+export MOZ_SOURCE_REPO=https://github.com/BrowserWorks/Waterfox
 export MOZ_SOURCE_CHANGESET=$(shell awk -F ': ' '/^commit:/ {print $$2; exit}' ../SOURCES/waterfox-kde.obsinfo)
 export WF_VERSION=$(shell awk -F ': ' '/^version:/ {print "G"$$2; exit}' ../SOURCES/waterfox-kde.obsinfo)
 export TODAY_DATE=$(shell date +%Y-%m-%d)
