@@ -30,6 +30,7 @@ if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || tes
 export PATH=/usr/lib/llvm-15/bin/:$PATH
 fi
 
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export CC=clang
 export CXX=clang++
 export AR=llvm-ar
