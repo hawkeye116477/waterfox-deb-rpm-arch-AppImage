@@ -1,3 +1,9 @@
+waterfox-kde (6.0.17-0) obs; urgency=medium
+
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 04 Jul 2024 18:22:29 +0200
+
 waterfox-kde (6.0.16-0) obs; urgency=medium
 
     * Status bar text is now vertically aligned, instead of being completel misaligned. Thanks to @black7375
