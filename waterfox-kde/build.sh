@@ -30,7 +30,11 @@ if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || tes
 export PATH=/usr/lib/llvm-15/bin/:$PATH
 fi
 
-export XDG_RUNTIME_DIR=/run/user/$(id -u)
+if test `lsb_release -sc` = "noble"; then
+export PATH=/usr/lib/llvm-17/bin/:$PATH
+fi
+
+
 export CC=clang
 export CXX=clang++
 export AR=llvm-ar
@@ -39,6 +43,12 @@ export RANLIB=llvm-ranlib
 export LLVM_PROFDATA=llvm-profdata
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 export GEN_PGO=1
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    XDG_RUNTIME_DIR=/run/user/$(id -u)
+    export XDG_RUNTIME_DIR
+fi
+export GALLIUM_DRIVER=llvmpipe
+
 ./mach build
 
 echo "Profiling instrumented browser..."
