@@ -19,12 +19,13 @@ When you have some problem with my packages or repository, for first check opene
 
 ### Note 3: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all).
 
-
-## Downloading and installing AppImage packages
+## Downloading and installing AppImage packages (compatible with glibc 2.28+ *)
 
 [Click to see instructions for Waterfox Classic.](https://appimage.github.io/Waterfox_Classic/)
 
 [Click to download latest Waterfox G.](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/AppImage/waterfox-g-latest-x86_64.AppImage.mirrorlist)
+
+#### \* From 8.8.2024, AppImage will be built on Alma Linux 8, so distros using older glibc than 2.28 won't be supported. However RPM package for CentOS 7 (which is now in EOL state) might still remain for some time, but not longer than 6 months.
 
 ## Other source files
 
