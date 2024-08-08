@@ -1,3 +1,11 @@
+waterfox-kde (6.0.18-0) obs; urgency=medium
+
+    * Security fixes.
+    * Updated Emoji to support v15.1.
+    * Moved the position of Tabs Sidebar prefs to below Search.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 08 Aug 2024 16:55:31 +0200
+
 waterfox-kde (6.0.17-0) obs; urgency=medium
 
     * Security fixes.
