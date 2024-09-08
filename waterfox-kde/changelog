@@ -1,3 +1,9 @@
+waterfox-kde (6.0.19-0) obs; urgency=medium
+
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 08 Sep 2024 12:05:40 +0200
+
 waterfox-kde (6.0.18-0) obs; urgency=medium
 
     * Security fixes.
