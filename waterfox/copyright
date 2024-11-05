@@ -1,0 +1,8 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Waterfox
+Source: https://github.com/BrowserWorks/Waterfox
+Comment: This package was debianized by hawkeye116477 <hawkeye116477@gmail.com>.
+
+Files: *
+Copyright: Copyright 2024, all rights belongs to BrowserWorks Ltd and other respective owners.
+License: MPL-2.0

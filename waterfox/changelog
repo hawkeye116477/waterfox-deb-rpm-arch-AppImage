@@ -1,0 +1,411 @@
+waterfox (6.5.0-0) obs; urgency=medium
+
+    * https://www.waterfox.net/en-US/docs/releases/G6.5.0/
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 05 Nov 2024 17:36:26 +0100
+
+waterfox-kde (6.0.20-0) obs; urgency=medium
+
+    * Critical Security Fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 13 Oct 2024 12:22:01 +0200
+
+waterfox-kde (6.0.19-0) obs; urgency=medium
+
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 08 Sep 2024 12:05:40 +0200
+
+waterfox-kde (6.0.18-0) obs; urgency=medium
+
+    * Security fixes.
+    * Updated Emoji to support v15.1.
+    * Moved the position of Tabs Sidebar prefs to below Search.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 08 Aug 2024 16:55:31 +0200
+
+waterfox-kde (6.0.17-0) obs; urgency=medium
+
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 04 Jul 2024 18:22:29 +0200
+
+waterfox-kde (6.0.16-0) obs; urgency=medium
+
+    * Status bar text is now vertically aligned, instead of being completel misaligned. Thanks to @black7375
+    * Updates to the tabs sidebar (1.0.2).
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 12 Jun 2024 17:51:24 +0200
+
+waterfox-kde (6.0.15-0) obs; urgency=medium
+
+    * Updates to the tabs sidebar
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 29 May 2024 13:56:06 +0200
+
+waterfox-kde (6.0.14-0) obs; urgency=medium
+
+    * Various UI bug fixes.
+    * Updates to the tabs sidebar.
+    * Security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 18 May 2024 11:47:39 +0200
+
+waterfox-kde (6.0.13-0) obs; urgency=medium
+
+    * Mojeek is now available as a search engine in Waterfox.
+    * The Sidebar has seen multiple bug fixes and improvements. If you want to completely hide the feature, you can navigate to about:config, search for browser.sidebar.disabled and toggle the value to true.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 24 Apr 2024 18:56:56 +0200
+
+waterfox-kde (6.0.12-0) obs; urgency=medium
+
+    * The Waterfox sidebar is now available by default. There have been many bug fixes an improvements since the previous release, thanks to everyone who reported them!
+    * You now have the option to hide the “close” button on tabs, using the preferences browser.tabs.closeButtons.
+    * Security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 17 Apr 2024 22:22:32 +0200
+
+waterfox-kde (6.0.11-0) obs; urgency=medium
+
+    * Security fixes
+    * Some bug fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 24 Mar 2024 16:29:58 +0100
+
+waterfox-kde (6.0.10-0) obs; urgency=medium
+
+    * Security fixes
+    * You can now start testing the Waterfox Sidebar. Go to about:config, search for browser.sidebar.disabled and set the value to false
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 23 Mar 2024 13:40:42 +0100
+
+waterfox-kde (6.0.9-0) obs; urgency=medium
+
+    * Security fixes
+    * Chrome Web Store extensions should now install properly once again
+    * Fixed up some poorly written code
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 20 Feb 2024 18:36:01 +0100
+
+waterfox-kde (6.0.8-0) obs; urgency=medium
+
+    * Security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 27 Jan 2024 16:10:07 +0100
+
+waterfox-g-kpe (6.0.7-0) obs; urgency=medium
+
+    * Emoji support updated to 15.0.
+    * Security fixes
+    * You should now be able to Refresh your profile in about:support.
+    * NVIDIA Super Resolution should now work correctly, when toggling gfx.webrender.super-resolution.nvidia to true.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 21 Dec 2023 13:48:16 +0100
+
+waterfox-g-kpe (6.0.6-0) obs; urgency=medium
+
+    * DNS over Oblivious HTTP is now powered by Fastly!
+    * You can now choose to disable closing windows or tabs with Ctrl+W by setting browser.closeShortcut.disabled to true in about:config.
+    * Improved support for JPEG XL. Waterfox can now act as the default image viewer for such image files.
+    * Security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 21 Nov 2023 13:44:11 +0100
+
+waterfox-g-kpe (6.0.5-0) obs; urgency=medium
+
+    * Security fixes
+    * Modal dialogues that display checkboxes would erroneously have two checkboxes, even if they werent meant to. This has now been fixed.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 25 Oct 2023 16:16:14 +0200
+
+waterfox-g-kpe (6.0.4-0) obs; urgency=medium
+
+    * On pages that try to load mixed content, Waterfox will attempt to upgrade non secure content.
+    * When closing multiple tabs to the left or right, Waterfox will now show the correct close dialogue.
+    * If DNS requests take too long, Waterfox will fallback to your default DNS much quicker.
+    * Waterfox will no longer decode URLs when copying them. This should allow easier sharing.
+    * You can now disable Oblivious DNS via the Preferences page.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 10 Oct 2023 19:18:03 +0200
+
+waterfox-g-kpe (6.0.3-0) obs; urgency=medium
+
+    * Hovering over inactive tabs will once again show the close button.
+    * Waterfox will be less strict with its public key pinning, which should resolve issues some users had connecting to certain websites.
+    * The extension button should no longer be missing! For the time being, moving it around has been disabled.
+    * When you click on the address bar, your top sites will now show.
+    * If you are closing more than 1 tab, you will now receive a prompt.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 10 Oct 2023 15:08:49 +0200
+
+waterfox-g-kpe (6.0.2-0) obs; urgency=medium
+
+    * Critical security fix
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 29 Sep 2023 17:43:11 +0200
+
+waterfox-g-kpe (6.0.1-0) obs; urgency=medium
+
+    * Update privacy preferences.
+    * Prevent new searches and opening bookmarks from opening in a new tab by default.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 26 Sep 2023 22:38:10 +0200
+
+waterfox-g-kpe (6.0-0) obs; urgency=medium
+
+    * Waterfox uses DNS over Oblivious HTTP1, a privacy preserving method for DNS queries.
+    * You can now move and remove the extension button from the navigation bar.
+    * Linux, alongside Windows, now supports DRM. That means you can watch your favourite shows on the streaming platform of your choice.
+    * Waterfox preferences have been gone through with a fine tooth comb, with a lot of assistance from yokoffing, who maintains Betterfox.js.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 20 Sep 2023 17:47:57 +0200
+
+waterfox-g-kpe (5.1.13-0) obs; urgency=medium
+
+    * High severity security fix
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 16 Sep 2023 23:48:21 +0200
+
+waterfox-g-kpe (5.1.12-0) obs; urgency=medium
+
+    * Various security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 02 Sep 2023 14:07:45 +0200
+
+waterfox-g-kpe (5.1.10-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 01 Aug 2023 21:05:03 +0200
+
+waterfox-g-kpe (5.1.9-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 06 Jul 2023 21:28:18 +0200
+
+waterfox-g-kpe (5.1.8-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 07 Jun 2023 18:32:46 +0200
+
+waterfox-g-kpe (5.1.6-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 11 May 2023 12:46:00 +0200
+
+waterfox-g-kpe (5.1.5-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 15 Apr 2023 23:46:00 +0200
+
+waterfox-g-kpe (5.1.4-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 28 Mar 2023 14:07:17 +0200
+
+waterfox-g-kpe (5.1.3-0) obs; urgency=medium
+
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 25 Feb 2023 13:56:05 +0100
+
+waterfox-g-kpe (5.1.2-0) obs; urgency=medium
+
+    * JPEG-XL is now enabled by default.
+    * Fixed various theme issues.
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 22 Jan 2023 18:28:26 +0100
+
+waterfox-g-kpe (5.1.1-0) obs; urgency=medium
+
+    * Issue playing Netflix and similar DRM protected websites have now resolved. If it's not working straight away, you can update the DRM plugin by going to the Preferences page → General → Files and Applications and un-check "Play DRM-controlled content". Wait for a few seconds, then re-check the box. The DRM plugin should update.
+    * Drag space is now disabled by default (that extra space above your tabs, so you can drag the window around).
+    * The status bar colour now matches the navigation bar.
+    * Various security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 19 Dec 2022 18:40:41 +0100
+
+waterfox-g-kpe (5.1-0) obs; urgency=medium
+
+    * You can modify Waterfox's look and feel by heading to about:preferences → Look & Feel. You can set various default presets, change the way tabs behave and much more!
+    * Desktop counterparts to your WebExtensions will now be able to communicate with Waterfox once again!
+    * Various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 15 Nov 2022 16:54:44 +0100
+
+waterfox-g-kpe (5.0.2-0) obs; urgency=medium
+
+    * The option to "Open All Bookmarks" once again works.
+    * DNS-over-HTTPS being forced on users will no longer happen by default.
+    * Forms will no longer save data in Private Tab.
+    * Disabling images now works properly.
+    * Added various security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 21 Oct 2022 13:37:16 +0200
+
+waterfox-g-kpe (5.0.1-0) obs; urgency=medium
+
+    * There was an issue when upgrading from G3 onward where your theme would get reset to default. This is no longer the case.
+    * Various preferences were incorrectly configured and these have now been changed.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 05 Oct 2022 15:58:46 +0200
+
+waterfox-g-kpe (5.0-0) obs; urgency=medium
+
+    * You can now toggle to view password you are typing in.
+    * You can now Sync your settings.
+    * The search input type is now enabled.
+    * Updated Gecko to v102 ESR.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 02 Oct 2022 21:36:28 +0200
+
+waterfox-g-kpe (4.1.5-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 26 Aug 2022 23:24:31 +0200
+
+waterfox-g-kpe (4.1.4-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 13 Aug 2022 18:32:09 +0200
+
+waterfox-g-kpe (4.1.3.2-0) obs; urgency=medium
+
+    * Waterfox now identifies as Firefox for better website compatibility. This also fixes issue such as being unable to log in to Sync.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Thu, 14 Jul 2022 15:04:50 +0200
+
+waterfox-g-kpe (4.1.3.1-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 24 Jun 2022 22:47:00 +0200
+
+waterfox-g-kpe (4.1.2.1-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 01 Jun 2022 18:52:17 +0200
+
+waterfox-g-kpe (4.1.2-0) obs; urgency=medium
+
+    * Various stability, functionality, and security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 03 May 2022 17:06:37 +0200
+
+waterfox-g-kpe (4.1.1.1-0) obs; urgency=medium
+
+    * Fixed an issue where container tabs were not being restored properly.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 27 Apr 2022 13:12:51 +0200
+
+waterfox-g4-kpe (1.1-0) obs; urgency=medium
+
+    * Users who have DuckDuckGo as their default search should now have it as their default Private search as well.
+    * Various links in the About Waterfox dialogue have now been updated.
+    * A small cosmetic UI fix.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 12 Apr 2022 18:53:17 +0200
+
+waterfox-g4-kpe (1.0-0) obs; urgency=medium
+
+    * Addon version numbers once more show next to their names in about:addons
+    * Startpage is now the default search when performance searches in Private Tab and Private Window.
+    * Tabs will now unload automatically when your system is running low on memory.
+    * Tabs can now be manually unloaded after enabling the preference in about:preferences → General → Tabs. You can then right click on a tab and unload it.
+    * Chrome Web Store extensions should now install properly once again.
+    * Back and forward buttons on various mice now work properly in Waterfox, instead of acting as middle-click.
+    * Sometimes non-private tabs would be restored as private tabs. This will no longer occur.
+    * Various fixes to the default Lepton theme.
+    * Various Japanese translation improvements by @surapunoyousei
+    * Unprefixed -moz-fit-content. -fit-content show now work without the -moz prefix.
+    * The <dialog> HTML element is now enabled.
+    * References to his and her have been replaced with their where relevant.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 09 Apr 2022 16:14:14 +0200
+
+waterfox-g4-kpe (0.8-0) obs; urgency=medium
+
+    * Added a toggle on about:preferences to force light/dark mode with Lepton theme.
+    * Private tab will now correctly not store search suggestions and recently closed tabs.
+    * Private tab icon will now only appear in Lepton theme, so should no longer appear on themes that do not have context menu icons.
+    * Forcing dark mode in Lepton with ui.systemUsesDarkTheme on Linux distros should now work.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 07 Mar 2022 13:42:22 +0100
+
+waterfox-g4-kpe (0.7-0) obs; urgency=medium
+
+    * The default theme Lepton has been updated, fixing various issues.
+    * The status bar is now visible when in Customise Mode.
+    * Updated Gecko to 91.6.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 11 Feb 2022 13:53:09 +0100
+
+waterfox-g4-kpe (0.6-0) obs; urgency=medium
+
+    * Added default items to the status bar when enabled.
+    * You can now toggle text contrast on the status bar in about:preferences → General → Language and Appearance → Status Bar.
+    * Importing data from other browsers now works once again. (`File → Import From Another Browser)
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 12 Jan 2022 15:43:30 +0100
+
+waterfox-g4-kpe (0.5.1-0) obs; urgency=medium
+
+    * Tabs toolbar and status bar will now be appropriately coloured when tabs toolbar set to bottom display with a dark theme.
+    * Tabs toolbar set to bottom display will now collapse correctly when entering DOM fullscreen mode (e.g. fullscreen video).
+    * Widget text in the status bar will be coloured correctly with dark themes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 21 Dec 2021 17:23:26 +0100
+
+waterfox-g4-kpe (0.5-0) obs; urgency=medium
+
+    * Added an option to about:preferences to prevent pinned tabs shrinking to icon size.
+    * Added options to about:preferences to allow new tabs to be opened after all existing tabs.
+    * Google search suggestions should now display again.
+    * bloomberg.com should no longer display an out of date browser warning.
+    * White bar no longer visible at the bottom of the browser window when using light themes.
+    * More AVIF image types are now supported, which fixes issues of images not rendering on websites such as The Daily Mail.
+    * The default Lepton theme has been upgraded to its latest version, with improved visual changes.
+    * The Firefox themes are now more identifiable by name.
+    * The Firefox Modern Dynamic theme has now also been added.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 17 Dec 2021 18:15:07 +0100
+
+waterfox-g4-kpe (0.4-0) obs; urgency=medium
+
+    * Widevine has been updated to 4.10.2391.0 which should fix issues playing DRM protected content.
+    * Contrast has increased on Australis Light theme, to better differentiate tabs.
+    * The way tab positioning and various other Waterfox features have been implemented has been improved.
+    * Updated to Gecko 91.4.0, which includes various security patches.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 08 Dec 2021 17:40:01 +0100
+
+waterfox-g4-kpe (0.3.1-0) obs; urgency=medium
+
+    * Plugins such as Flash can now be enabled, but require you to interact to have web pages run it for security reasons.
+    * The address bar now makes it more obvious when a website is secure or insecure.
+    * Bootstraped extensions will now load on restart.
+    * Fixed various bookmarks bar and status bar issues.
+    * Issues installing bootstrapped extensions have now been resolved.
+    * Copy tab URL should now no longer throw an error.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Mon, 29 Nov 2021 15:08:10 +0100
+
+waterfox-g4-kpe (0.2.1-0) obs; urgency=medium
+
+    * Based on Gecko 91
+    * "Lepton" theme based on an improved Photon theme.
+    * You can now import specific Gecko-based profiles (Firefox, Waterfox etc.) from File > Import From Another Browswer
+    * Limited as many outgoing connections as possible to keep the browser operational
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Fri, 12 Nov 2021 22:15:00 +0100

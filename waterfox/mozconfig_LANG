@@ -1,0 +1,12 @@
+ac_add_options --enable-linker=lld
+
+ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=waterfox/browser/branding
+mk_add_options MOZ_OBJDIR=$topsrcdir/../obj_LANG
+ac_add_options --prefix=/usr
+ac_add_options --with-l10n-base=$topsrcdir/waterfox/browser/locales
+ac_add_options --disable-updater
+ac_add_options --disable-bootstrap
+ac_add_options --without-wasm-sandboxed-libraries
+ac_add_options --with-version-file-path=$topsrcdir/debian/app_version
