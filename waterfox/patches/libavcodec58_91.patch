@@ -1,9 +1,9 @@
 diff --git a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
-index 7716162e0707..a9bed062905d 100644
+index 81eb2c0441ac..94a83c3e221f 100644
 --- a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
 +++ b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
-@@ -41,6 +41,8 @@ static const char* sLibs[] = {
- #else
+@@ -49,6 +49,8 @@ static const char* sLibs[] = {
+   "libavcodec.so.61",
    "libavcodec.so.60",
    "libavcodec.so.59",
 +  "libavcodec.so.58.134",
