@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 9), libgtk-3-dev, libdbus-glib-1-dev, libpulse-dev,
 Package-List:
  waterfox deb web optional arch=any
 Files:
- 0000000000000000000000000000000 1 waterfox.orig.tar.xz
+ 0000000000000000000000000000000 1 waterfox.orig.tar.gz
  0000000000000000000000000000000 1 waterfox.debian.tar.xz
 # https://github.com/openSUSE/obs-build/pull/147
 DEBTRANSFORM-RELEASE: 1

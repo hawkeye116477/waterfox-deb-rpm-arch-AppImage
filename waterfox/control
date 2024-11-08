@@ -55,6 +55,7 @@ Section: oldlibs
 Depends: ${misc:Depends}, waterfox-wayland
 Description: Transitional package
  This is a transitional package. It can safely be removed.
+
 Package: waterfox-i18n-ar
 Architecture: all
 Depends: ${misc:Depends}, waterfox (>= ${source:Version})
