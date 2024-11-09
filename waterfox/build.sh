@@ -47,7 +47,7 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
     XDG_RUNTIME_DIR=/run/user/$(id -u)
     export XDG_RUNTIME_DIR
 fi
-
+export GALLIUM_DRIVER=llvmpipe
 ./mach build
 
 echo "Profiling instrumented browser..."

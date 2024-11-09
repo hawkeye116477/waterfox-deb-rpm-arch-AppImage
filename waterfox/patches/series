@@ -4,6 +4,6 @@ libavcodec58_91.patch -p1
 fix-langpack-id.patch -p1
 fix-wayland-build.patch -p1
 debian-hacks/Relax-nodejs-minimum-version.patch -p1
-debian-hacks/Relax-cargo-version-requirement.patch -p1
 mach-depends.patch -p1
 0026-bgo-925101-force-software-rendering-during-pgo-build.patch -p1
+0013-bmo-1196777-Set-GDK_FOCUS_CHANGE_MASK.patch -p1
