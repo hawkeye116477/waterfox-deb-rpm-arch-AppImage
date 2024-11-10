@@ -26,14 +26,15 @@ export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
 # For successfull LTO build, we need to use matching LLVM version
-if test `lsb_release -sc` = "bionic" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye" || test `lsb_release -sc` = "jammy" || test `lsb_release -sc` = "focal"; then
-export PATH=/usr/lib/llvm-15/bin/:$PATH
+if test "$(lsb_release -sc)" = "buster" || test "$(lsb_release -sc)" = "bullseye" || test "$(lsb_release -sc)" = "bookworm"; then
+export PATH=/usr/lib/llvm-16/bin/:$PATH
 fi
 
-if test `lsb_release -sc` = "noble"; then
-export PATH=/usr/lib/llvm-17/bin/:$PATH
+if test "$(lsb_release -sc)" = "focal" || test "$(lsb_release -sc)" = "jammy"; then
+export PATH=/usr/lib/llvm-19/bin/:$PATH
 fi
 
+export MOZBUILD_STATE_PATH="$pwd/debian/.mozbuild"
 
 export CC=clang
 export CXX=clang++
