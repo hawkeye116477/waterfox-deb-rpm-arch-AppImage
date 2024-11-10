@@ -16,6 +16,6 @@ EOI
 mkdir -p "$SCRIPT_PATH"/tmp
 wget https://raw.githubusercontent.com/openSUSE/obs-build/20210902/changelog2spec -O "$SCRIPT_PATH"/tmp/changelog2spec
 
-perl "$SCRIPT_PATH"/tmp/changelog2spec "$SCRIPT_PATH"/"$1"/changelog > ~/obs/home:hawkeye116477:waterfox/"$1"/"$1".changes
+perl "$SCRIPT_PATH"/tmp/changelog2spec "$SCRIPT_PATH"/"$1"/changelog > ~/obs/home:hawkeye116477:waterfox/"$1"-kde/"$1".changes
 
 rm -rf "$SCRIPT_PATH"/tmp/

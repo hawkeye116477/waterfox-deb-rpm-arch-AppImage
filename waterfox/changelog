@@ -1,8 +1,13 @@
-waterfox (6.5.0-0) obs; urgency=medium
+waterfox (6.5.1-0) obs; urgency=medium
 
-    * https://www.waterfox.net/en-US/docs/releases/G6.5.0/
+    * You should now see a Table of Contents in the Preferences page, for easier navigation of settings.
+    * You can now set any URL as the new tab page by setting the browser.newtab.url preference in about:config.
+    * The old school password manager has been re-implemented, available at about:passwords.
+    * The old school configuration manager has been re-implemented, available at about:cfg. Thanks to @black7375 for the help with this.
+    * Updated the JPEG-XL library to the latest version. This should stop various websites that serve .jxl files from crashing in the tab they’re loaded.
+    * The missing strings for Look & Feel page are now no longer missing, meaning you can change your theme preferences once again.
 
- -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 07 Nov 2024 18:51:26 +0100
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sun, 10 Nov 2024 17:34:59 +0100
 
 waterfox-kde (6.0.20-0) obs; urgency=medium
 
