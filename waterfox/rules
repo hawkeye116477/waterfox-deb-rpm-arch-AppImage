@@ -11,7 +11,7 @@ export TODAY_DATE=$(shell date +%Y-%m-%d)
 export LC_ALL=C.UTF-8
 export JOBS=$(shell echo $(shell grep -c ^processor /proc/cpuinfo)\/2 | bc)
 export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
-
+export MOZBUILD_STATE_PATH=$(shell pwd)/debian/.mozbuild
 export DEB_BUILD_MAINT_OPTIONS = optimize=-lto
 include /usr/share/dpkg/buildflags.mk
 export CXXFLAGS CFLAGS LDFLAGS
@@ -22,7 +22,7 @@ export CXXFLAGS CFLAGS LDFLAGS
 override_dh_auto_configure:
 
 override_dh_auto_clean:
-	dh_auto_clean
+	dh_auto_clean --builddirectory=waterfox-$$WF_VERSION
 	find . -name '*.pyc' -delete
 
 override_dh_auto_build:
