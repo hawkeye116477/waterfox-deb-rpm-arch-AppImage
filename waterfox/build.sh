@@ -26,11 +26,13 @@ export NASM=/usr/lib/nasm-mozilla/bin/nasm
 fi
 
 # For successfull LTO build, we need to use matching LLVM version
-if test "$(lsb_release -sc)" = "focal" || test "$(lsb_release -sc)" = "jammy" || test "$(lsb_release -sc)" = "buster" || test "$(lsb_release -sc)" = "bullseye" || test "$(lsb_release -sc)" = "bookworm"; then
+if test `lsb_release -sc` = "focal" || test `lsb_release -sc` = "jammy" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye" || test `lsb_release -sc` = "bookworm"; then
 export PATH=/usr/lib/llvm-19/bin/:$PATH
 fi
 
-export MOZBUILD_STATE_PATH="$pwd/debian/.mozbuild"
+echo $PATH
+
+export MOZBUILD_STATE_PATH="$(pwd)"/debian/.mozbuild
 
 export CC=clang
 export CXX=clang++
@@ -38,7 +40,7 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 export LLVM_PROFDATA=llvm-profdata
-export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 export GEN_PGO=1
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     XDG_RUNTIME_DIR=/run/user/$(id -u)
