@@ -40,7 +40,7 @@ export AR=llvm-ar
 export NM=llvm-nm
 export RANLIB=llvm-ranlib
 export LLVM_PROFDATA=llvm-profdata
-export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
+export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
 export GEN_PGO=1
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     XDG_RUNTIME_DIR=/run/user/$(id -u)
@@ -51,7 +51,7 @@ export GALLIUM_DRIVER=llvmpipe
 
 echo "Profiling instrumented browser..."
 ./mach package
-JARLOG_FILE="$(pwd)/jarlog" dbus-run-session xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" ./mach python build/pgo/profileserver.py
+JARLOG_FILE="$(pwd)/jarlog" xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" ./mach python build/pgo/profileserver.py
 
 stat -c "Profile data found (%s bytes)" merged.profdata
 test -s merged.profdata
