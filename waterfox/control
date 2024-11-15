@@ -9,7 +9,7 @@ Homepage: https://www.waterfox.net/
 Package: waterfox
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Replaces: waterfox-kde (<< ${source:Version}), waterfox-g-kpe (<< ${source:Version})
+Replaces: waterfox-kde (<< ${source:Version}), waterfox-g-kpe (<< ${source:Version}), waterfox-wayland (<< ${source:Version}), waterfox-g4-wayland (<< ${source:Version}), waterfox-g3-wayland (<< ${source:Version}), waterfox-g-wayland (<< ${source:Version})
 Breaks: waterfox-kde (<< ${source:Version}), waterfox-g-kpe (<< ${source:Version})
 Suggests: fonts-lyx, pulseaudio, waterfox-wayland, ffmpeg
 Provides: www-browser, gnome-www-browser, waterfox
@@ -20,17 +20,9 @@ Description: Customizable privacy-conscious web browser with primary support for
  .
  NOTE 1: Language packs are available as separate packages to install from apt repository!
 
-Package: waterfox-wayland
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, waterfox
-Replaces: waterfox-g4-wayland (<< ${source:Version}), waterfox-g3-wayland (<< ${source:Version}), waterfox-g-wayland (<< ${source:Version})
-Breaks: waterfox-g4-wayland (<< ${source:Version}), waterfox-g3-wayland (<< ${source:Version}), waterfox-g-wayland (<< ${source:Version})
-Description: Waterfox Wayland launcher
- This package contains launcher and desktop file to run Waterfox natively on Wayland.
-
 Package: waterfox-kde-full
 Architecture: any
-Depends: ${misc:Depends}, waterfox
+Depends: ${misc:Depends}, waterfox, xdg-desktop-portal-kde
 Suggests: plasma-browser-integration
 Description: KDE Plasma integration for Waterfox
  For better integration with KDE recommended is installing plasma-browser-integration package together with Plasma Integration extension.

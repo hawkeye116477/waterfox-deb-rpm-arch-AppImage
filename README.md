@@ -9,15 +9,18 @@ When you have some problem with my packages or repository, for first check opene
 
 * If you're using other environment than KDE (Gnome, XFCE, etc) or other distro than Arch, Debian or Ubuntu:
 
-[Click to see instructions for waterfox-kde.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox-kde)
+[Click to see instructions for waterfox.](https://software.opensuse.org//download.html?project=home%3Ahawkeye116477%3Awaterfox&package=waterfox)
 
 
 ------
-### Note 1: KDE package is compatible with other DE also and doesn't depend on KDE libs. Hovewer for KDE I recommend installing package waterfox-kde-full, which also installs other depends required for proper working of KDE integration features.
+### Note 1: KDE-full package contains changes to about:config, installs required dependencies for KDE integration and main waterfox package. There are no longer KDE patches, cuz openSUSE decided to drop it and looks like it works good with new solution now.
 
-### Note 2: Grabbing packages directly doesn't always work without errors. If you got error about unmet depends, then  you need to lookup what depends it needs (see control file for package), then download and install them manually or just do the step with adding repository instead of.
+### Note 2: Grabbing packages directly doesn't always work without errors. If you got error about unmet depends, then you need to lookup what depends it needs (see control file for package), then download and install them manually or just do the step with adding repository instead of.
 
 ### Note 3: Language packs are available as separate packages to install from apt repository! You can also download and install it directly from [download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all](https://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_18.04/all).
+
+### Note 4: I'll probably drop Waterfox packages by the end of year and start making Floorp packages instead of.
+
 
 ## Downloading and installing AppImage packages (compatible with glibc 2.28+ *)
 
@@ -27,9 +30,9 @@ When you have some problem with my packages or repository, for first check opene
 
 ## Other source files
 
-[Click to see other source files for waterfox-kde.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-kde)
+[Click to see other source files for waterfox.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-kde)
 
 [Click to see other source files for Waterfox G AppImage Edition.](https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g-appimage)
 
 ## Patches
-Latest Waterfox G KDE Plasma Edition contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-kde/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox-kde/patches).
+Latest Waterfox contains following patches: [github.com/hawkeye116477/waterfox-deb/tree/master/waterfox/patches](https://github.com/hawkeye116477/waterfox-deb/tree/master/waterfox/patches).
