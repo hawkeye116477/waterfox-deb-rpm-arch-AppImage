@@ -27,7 +27,7 @@ fi
 
 # For successfull LTO build, we need to use matching LLVM version
 if test `lsb_release -sc` = "focal"; then
-export PATH=/usr/lib/llvm-17/bin/:$PATH
+export PATH=/usr/lib/llvm-17/bin/:/usr/lib/rust-1.80/bin/:$PATH
 fi
 
 if test `lsb_release -sc` = "jammy" || test `lsb_release -sc` = "buster" || test `lsb_release -sc` = "bullseye" || test `lsb_release -sc` = "bookworm"; then
