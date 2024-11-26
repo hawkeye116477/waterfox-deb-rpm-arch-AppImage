@@ -1,3 +1,11 @@
+waterfox (6.5.2-0) obs; urgency=medium
+
+    * Fixed various theming issues.
+    * Fixed various vertical tab issues.
+    * Latest security fixes.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 26 Nov 2024 15:21:13 +0100
+
 waterfox (6.5.1-0) obs; urgency=medium
 
     * You should now see a Table of Contents in the Preferences page, for easier navigation of settings.
