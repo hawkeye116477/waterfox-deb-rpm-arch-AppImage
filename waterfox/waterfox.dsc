@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox
 Binary: waterfox
 Architecture: any
-Version: 6.5.1-0
+Version: 6.5.2-0
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://www.waterfox.net
 Standards-Version: 3.9.7
@@ -14,4 +14,4 @@ Files:
  0000000000000000000000000000000 1 waterfox.debian.tar.xz
 # https://github.com/openSUSE/obs-build/pull/147
 DEBTRANSFORM-RELEASE: 1
-DEBTRANSFORM-TAR: waterfox-6.5.1.tar.gz
+DEBTRANSFORM-TAR: waterfox-6.5.2.tar.gz
