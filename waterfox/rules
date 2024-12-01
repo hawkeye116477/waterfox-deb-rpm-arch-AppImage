@@ -35,7 +35,6 @@ override_dh_auto_install:
 	rm -rf $$(pwd)/debian/waterfox/usr/lib/waterfox/waterfox-bin
 	sed -i "s/__DATE__/$$TODAY_DATE/g" $$(pwd)/debian/waterfox.appdata.xml.in
 	sed -e "s/__VERSION__/$$WF_VERSION/g" $$(pwd)/debian/waterfox.appdata.xml.in > $$(pwd)/debian/waterfox/usr/share/metainfo/waterfox.appdata.xml
-	mv $$(pwd)/debian/waterfox-wayland-bin.sh $$(pwd)/debian/waterfox-wayland/usr/bin/waterfox-wayland
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l /usr/lib/waterfox/waterfox
