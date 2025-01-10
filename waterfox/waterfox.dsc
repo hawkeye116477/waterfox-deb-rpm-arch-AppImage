@@ -2,7 +2,7 @@ Format: 3.0 (quilt)
 Source: waterfox
 Binary: waterfox
 Architecture: any
-Version: 6.5.2-0
+Version: 6.5.3-0
 Maintainer: hawkeye116477 <hawkeye116477@gmail.com>
 Homepage: https://www.waterfox.net
 Standards-Version: 3.9.7
