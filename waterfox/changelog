@@ -1,3 +1,9 @@
+waterfox (6.5.5-0) obs; urgency=medium
+
+    * https://www.waterfox.net/en-US/docs/releases/G6.5.5/
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Tue, 04 Mar 2025 23:11:22 +0100
+
 waterfox (6.5.3-0) obs; urgency=medium
 
     * Fixed various theming issues.
