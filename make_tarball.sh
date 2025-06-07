@@ -26,15 +26,15 @@ COMPRESSOR_CMD=""      # The full command for the chosen compressor
 COMPRESSOR_NAME=""     # Just the name of the chosen compressor (e.g., 'xz', 'pigz')
 OUTPUT_EXTENSION=""    # The file extension for the compressed archive
 
-# Prioritize xz for compression
-if command -v xz &>/dev/null; then
-    # Use xz with optimal (default) compression level (-6) and all available threads (-T0) for speed
-    COMPRESSOR_CMD="xz -6 -T0"
-    COMPRESSOR_NAME="xz"
-    OUTPUT_EXTENSION=".tar.xz"
-    echo "Using xz for compression (optimal level, multi-threaded)."
+# # Prioritize xz for compression
+# if command -v xz &>/dev/null; then
+#     # Use xz with optimal (default) compression level (-6) and all available threads (-T0) for speed
+#     COMPRESSOR_CMD="xz -6 -T0"
+#     COMPRESSOR_NAME="xz"
+#     OUTPUT_EXTENSION=".tar.xz"
+#     echo "Using xz for compression (optimal level, multi-threaded)."
 # Fallback to pigz if xz is not found
-elif command -v pigz &>/dev/null; then
+if command -v pigz &>/dev/null; then
     # Use pigz with optimal (default) compression level (-6), it's parallel by default
     COMPRESSOR_CMD="pigz -6"
     COMPRESSOR_NAME="pigz"
