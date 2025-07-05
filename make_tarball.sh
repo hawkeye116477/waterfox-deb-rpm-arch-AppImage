@@ -275,7 +275,7 @@ ELAPSED_PIPELINE_TIME=$((PIPELINE_END_TIME - PIPELINE_START_TIME))
 echo "Archiving pipeline time: ${ELAPSED_PIPELINE_TIME} seconds."
 
 obs_folder="waterfox-kde"
-if [[ "APPNAME" == "waterfox-g" ]]; then
+if [[ "$APPNAME" == "waterfox-g" ]]; then
     obs_folder="waterfox-g-appimage"
 fi
 
