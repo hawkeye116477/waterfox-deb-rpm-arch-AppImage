@@ -1,3 +1,10 @@
+waterfox (6.5.10-0) obs; urgency=medium
+
+    * Added latest security fixes.
+    * Startpage is now temporarily the default search.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Sat, 05 Jul 2025 12:21:36 +0200
+
 waterfox (6.5.9-0) obs; urgency=medium
 
     * Added latest security fixes.
