@@ -1,0 +1,16 @@
+diff --git a/build/moz.configure/flags.configure b/build/moz.configure/flags.configure
+index f0f4d7aeb2c6d..23b8ed1b88fac 100644
+--- a/build/moz.configure/flags.configure
++++ b/build/moz.configure/flags.configure
+@@ -76,11 +76,6 @@ def link_libstdcxx_statically(
+             )
+ 
+ 
+-@depends(when=link_libstdcxx_statically)
+-def check_libstdcxx_linkage():
+-    die("Firefox does not support linking statically with libstdc++")
+-
+-
+ check_and_add_flag(
+     "-mieee",
+     when=target_has_linux_kernel & depends(target.cpu)(lambda cpu: cpu == "Alpha"),
