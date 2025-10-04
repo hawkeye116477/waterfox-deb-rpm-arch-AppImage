@@ -1,8 +1,8 @@
 diff --git a/browser/components/preferences/tests/browser_browser_languages_subdialog.js b/browser/components/preferences/tests/browser_browser_languages_subdialog.js
-index 8b57bf08a83b..dd6f22094a93 100644
+index 49853d95af640..66888ce6b7489 100644
 --- a/browser/components/preferences/tests/browser_browser_languages_subdialog.js
 +++ b/browser/components/preferences/tests/browser_browser_languages_subdialog.js
-@@ -13,7 +13,7 @@ const DICTIONARY_ID_PL = "pl@dictionaries.addons.mozilla.org";
+@@ -15,7 +15,7 @@ const DICTIONARY_ID_PL = "pl@dictionaries.addons.mozilla.org";
  const TELEMETRY_CATEGORY = "intl.ui.browserLanguage";
  
  function langpackId(locale) {
@@ -11,7 +11,7 @@ index 8b57bf08a83b..dd6f22094a93 100644
  }
  
  function getManifestData(locale, version = "2.0") {
-@@ -669,7 +669,7 @@ add_task(async function testInstallFromAMO() {
+@@ -726,7 +726,7 @@ add_task(async function testInstallFromAMO() {
    is(getMainPaneLocales(), "en-US,pl,search", "en-US and pl now available");
  
    // Disable the Polish langpack.
@@ -21,10 +21,10 @@ index 8b57bf08a83b..dd6f22094a93 100644
  
    ({ dialogDoc, available, selected } = await openDialog(doc, true));
 diff --git a/browser/locales/Makefile.in b/browser/locales/Makefile.in
-index 1b8f21be1ca6..7ca5d391219a 100644
+index 2f6a2c9be2e93..787033888670e 100644
 --- a/browser/locales/Makefile.in
 +++ b/browser/locales/Makefile.in
-@@ -21,9 +21,9 @@ PWD := $(CURDIR)
+@@ -19,9 +19,9 @@ PWD := $(CURDIR)
  ZIP_IN ?= $(ABS_DIST)/$(PACKAGE)
  
  ifdef MOZ_DEV_EDITION
@@ -34,10 +34,10 @@ index 1b8f21be1ca6..7ca5d391219a 100644
 -MOZ_LANGPACK_EID=langpack-$(AB_CD)@firefox.mozilla.org
 +MOZ_LANGPACK_EID=langpack-$(AB_CD)@l10n.waterfox.net
  endif
- # For Nightly, we know where to get the builds from to do local repacks
- ifdef NIGHTLY_BUILD
+ 
+ # Required for l10n.mk - defines a list of app sub dirs that should
 diff --git a/intl/locale/LangPackMatcher.sys.mjs b/intl/locale/LangPackMatcher.sys.mjs
-index 977398b082e8..fd7c72939369 100644
+index 2310107c7f9e5..58f375a7ea4ff 100644
 --- a/intl/locale/LangPackMatcher.sys.mjs
 +++ b/intl/locale/LangPackMatcher.sys.mjs
 @@ -374,7 +374,7 @@ async function getAvailableLocales() {
@@ -46,11 +46,11 @@ index 977398b082e8..fd7c72939369 100644
    if (defaultLocale != lastFallbackLocale) {
 -    let lastFallbackId = `langpack-${lastFallbackLocale}@firefox.mozilla.org`;
 +    let lastFallbackId = `langpack-${lastFallbackLocale}@l10n.waterfox.net`;
-     let lastFallbackInstalled = await lazy.AddonManager.getAddonByID(
-       lastFallbackId
-     );
+     let lastFallbackInstalled =
+       await lazy.AddonManager.getAddonByID(lastFallbackId);
+     if (!lastFallbackInstalled) {
 diff --git a/intl/locale/tests/LangPackMatcherTestUtils.sys.mjs b/intl/locale/tests/LangPackMatcherTestUtils.sys.mjs
-index 4b18f1be134e..1e1008b55edd 100644
+index e746d558bdd80..34d80f94d4af6 100644
 --- a/intl/locale/tests/LangPackMatcherTestUtils.sys.mjs
 +++ b/intl/locale/tests/LangPackMatcherTestUtils.sys.mjs
 @@ -38,7 +38,7 @@ export function getAddonAndLocalAPIsMocker(testScope, sandbox) {

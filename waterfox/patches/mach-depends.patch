@@ -1,8 +1,8 @@
 diff --git a/python/sites/mach.txt b/python/sites/mach.txt
-index eb2ac069b22d..e230cce8bb32 100644
+index b47e4914fb6de..2a1232fdab9c4 100644
 --- a/python/sites/mach.txt
 +++ b/python/sites/mach.txt
-@@ -89,7 +89,7 @@ vendored:third_party/python/toml
+@@ -97,7 +97,7 @@ vendored:third_party/python/toml
  vendored:third_party/python/tomli
  vendored:third_party/python/tomlkit
  vendored:third_party/python/tqdm
@@ -11,7 +11,7 @@ index eb2ac069b22d..e230cce8bb32 100644
  vendored:third_party/python/urllib3
  vendored:third_party/python/wcwidth
  vendored:third_party/python/wheel
-@@ -100,5 +100,5 @@ pypi-optional:glean-sdk==60.1.1:telemetry will not be collected
+@@ -108,6 +108,6 @@ pypi-optional:glean-sdk==64.3.1:telemetry will not be collected
  # Mach gracefully handles the case where `psutil` is unavailable.
  # We aren't (yet) able to pin packages in automation, so we have to
  # support down to the oldest locally-installed version (5.4.2).
@@ -19,3 +19,5 @@ index eb2ac069b22d..e230cce8bb32 100644
 -pypi-optional:zstandard>=0.11.1,<=0.23.0:zstd archives will not be possible to extract
 +pypi-optional:psutil>=5.4.2,<=7.0.0:telemetry will be missing some data
 +pypi-optional:zstandard>=0.11.1,<=1.0.0:zstd archives will not be possible to extract
+ pypi-optional:orjson>=3.10.15:json operations will be slower in various tools
+\ No newline at end of file

@@ -1,15 +1,28 @@
-# User Petr Cerny <pcerny@novell.com>
+From: Petr Cerny <pcerny@novell.com>
+Subject: Bug 634334 - call to the ntlm_auth helper fails
+
+
 
 diff --git a/extensions/auth/nsAuthSambaNTLM.cpp b/extensions/auth/nsAuthSambaNTLM.cpp
-index 5b701f237978..4004a5cfc79a 100644
 --- a/extensions/auth/nsAuthSambaNTLM.cpp
 +++ b/extensions/auth/nsAuthSambaNTLM.cpp
-@@ -160,7 +160,7 @@ nsresult nsAuthSambaNTLM::SpawnNTLMAuthHelper() {
-   const char* username = PR_GetEnv("USER");
-   if (!username) return NS_ERROR_FAILURE;
+@@ -148,17 +148,17 @@ nsresult nsAuthSambaNTLM::SpawnNTLMAuthH
+     }
  
--  const char* const args[] = {"ntlm_auth",
-+  const char* const args[] = {"/usr/bin/ntlm_auth",
-                               "--helper-protocol",
-                               "ntlmssp-client-1",
-                               "--use-cached-creds",
+     base::LaunchOptions options;
+     options.fds_to_remap.push_back(
+         std::pair{toChildPipeRead.get(), STDIN_FILENO});
+     options.fds_to_remap.push_back(
+         std::pair{fromChildPipeWrite.get(), STDOUT_FILENO});
+ 
+-    std::vector<std::string> argvVec{"ntlm_auth",        "--helper-protocol",
++    std::vector<std::string> argvVec{"/usr/bin/ntlm_auth",        "--helper-protocol",
+                                      "ntlmssp-client-1", "--use-cached-creds",
+                                      "--username",       username};
+ 
+     auto result = base::LaunchApp(argvVec, std::move(options), &mChildPID);
+     if (result.isErr()) {
+       return NS_ERROR_FAILURE;
+     }
+ 
+
