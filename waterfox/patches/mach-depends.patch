@@ -17,7 +17,7 @@ index b47e4914fb6de..2a1232fdab9c4 100644
  # support down to the oldest locally-installed version (5.4.2).
 -pypi-optional:psutil>=5.4.2,<=5.9.4:telemetry will be missing some data
 -pypi-optional:zstandard>=0.11.1,<=0.23.0:zstd archives will not be possible to extract
-+pypi-optional:psutil>=5.4.2,<=7.0.0:telemetry will be missing some data
++pypi-optional:psutil>=5.4.2,<=8.0.0:telemetry will be missing some data
 +pypi-optional:zstandard>=0.11.1,<=1.0.0:zstd archives will not be possible to extract
  pypi-optional:orjson>=3.10.15:json operations will be slower in various tools
 \ No newline at end of file
