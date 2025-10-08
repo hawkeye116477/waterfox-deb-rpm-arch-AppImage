@@ -1,3 +1,15 @@
+waterfox (6.6.3-0) obs; urgency=medium
+
+    * Resolved a long‑standing issue where Waterfox’s styles could “leak” into the web page area. 
+    * Customisations now apply only to the browser interface, not to website content.
+    * Improved handling of theme colouring to prevent contrast issues.
+    * Active tab context line has been enabled by default, after many requests.
+    * Smoother startup: automatic grouping now waits until your previous session has fully restored. It only applies to tabs you open after everything is loaded.
+    * Your existing tab order and groups are preserved at startup; nothing gets rearranged automatically.
+    * Updated emoji support to Emoji 16.0.1 on platforms that don’t provide these characters natively, improving how newer emojis appear.
+
+ -- hawkeye116477 <hawkeye116477@gmail.com>  Wed, 08 Oct 2025 22:47:05 +0200
+
 waterfox (6.5.11-0) obs; urgency=medium
 
     * Added latest security fixes.
