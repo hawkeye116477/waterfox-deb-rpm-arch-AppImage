@@ -6,3 +6,7 @@ Comment: This package was debianized by hawkeye116477 <hawkeye116477@gmail.com>.
 Files: *
 Copyright: Copyright 2024, all rights belongs to BrowserWorks Ltd and other respective owners.
 License: MPL-2.0
+
+Files: debian/*
+Copyright: 2025 hawkeye116477
+License: MIT
