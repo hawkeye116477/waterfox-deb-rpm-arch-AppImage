@@ -1,3 +1,5 @@
+## Note: I decided to close this repository due to no longer using Waterfox, so you can either switch to my [installer for official tarballs](https://github.com/hawkeye116477/install-waterfox-linux) or [use new official PPA/repos](https://www.waterfox.com/download/). Personally for now I'm using Vivaldi, but perhaps will switch soon to Floorp Browser, which already have official repos and unofficial packages for other distros, so I guess similar package from me won't be longer needed.
+
 ## Problems
 When you have some problem with my packages or repository, for first check opened or pinned [issues](https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage/issues?q=is%3Aopen+is%3Aissue) and [discussions](https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage/discussions?discussions_q=is%3Aopened).
 
