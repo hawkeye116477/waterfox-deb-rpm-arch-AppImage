@@ -1,0 +1,60 @@
+app: waterfox-classic
+build:
+  packages:
+    - linuxdeployqt
+    - adwaita-icon-theme
+    - gdk-pixbuf-loader-rsvg
+    - cracklib-dict
+
+ingredients:
+  packages:
+    - waterfox-classic-appimage
+
+script:
+  - cd $BUILD_APPDIR/
+  - cp $BUILD_APPDIR/usr/lib64/waterfox-classic/browser/chrome/icons/default/default128.png $BUILD_APPDIR/waterfox-classic.png
+  - rm -rf $BUILD_APPDIR/usr/bin/*
+  - mv $BUILD_APPDIR/usr/lib64/waterfox-classic/* $BUILD_APPDIR/usr/bin/
+  - rm -rf $BUILD_APPDIR/usr/lib64/*
+  - rm -rf $BUILD_APPDIR/usr/lib/*
+  - rm -rf $BUILD_APPDIR/bin/*
+  - rm -rf $BUILD_APPDIR/boot/*
+  - rm -rf $BUILD_APPDIR/dev/*
+  - rm -rf $BUILD_APPDIR/etc/*
+  - rm -rf $BUILD_APPDIR/home/*
+  - rm -rf $BUILD_APPDIR/lib/*
+  - rm -rf $BUILD_APPDIR/lib64/*
+  - rm -rf $BUILD_APPDIR/root/*
+  - rm -rf $BUILD_APPDIR/run/*
+  - rm -rf $BUILD_APPDIR/sbin/*
+  - rm -rf $BUILD_APPDIR/srv/*
+  - rm -rf $BUILD_APPDIR/var/*
+  - rm -rf $BUILD_APPDIR/usr/include/*
+  - rm -rf $BUILD_APPDIR/usr/local/*
+  - rm -rf $BUILD_APPDIR/usr/sbin/*
+  - mv $BUILD_APPDIR/usr/share/applications/waterfox-classic.desktop $BUILD_APPDIR
+  - mv $BUILD_APPDIR/usr/share/appdata/waterfox-classic.appdata.xml $BUILD_APPDIR
+  - rm -rf $BUILD_APPDIR/usr/share/*
+  # - mkdir -p $BUILD_APPDIR/usr/share/metainfo/
+  # - mv $BUILD_APPDIR/waterfox-classic.appdata.xml $BUILD_APPDIR/usr/share/metainfo/
+  - mkdir -p $BUILD_APPDIR/usr/share/applications/
+  - cp $BUILD_APPDIR/waterfox-classic.desktop $BUILD_APPDIR/usr/share/applications/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/16x16/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/22x22/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/24x24/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/32x32/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/48x48/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/256x256/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/64x64/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/128x128/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/192x192/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/384x384/apps/
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default16.png $BUILD_APPDIR/usr/share/icons/hicolor/16x16/apps/waterfox-classic.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default32.png $BUILD_APPDIR/usr/share/icons/hicolor/32x32/apps/waterfox-classic.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default48.png $BUILD_APPDIR/usr/share/icons/hicolor/48x48/apps/waterfox-classic.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default64.png $BUILD_APPDIR/usr/share/icons/hicolor/64x64/apps/waterfox-classic.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default128.png $BUILD_APPDIR/usr/share/icons/hicolor/128x128/apps/waterfox-classic.png
+  - find $BUILD_APPDIR -type d -empty -delete
+  - rm -rf $BUILD_APPDIR/usr/lib64/*
+  - mkdir -p $BUILD_APPDIR/usr/share/applications/
+  - cp $BUILD_APPDIR/waterfox-classic.desktop $BUILD_APPDIR/usr/share/applications/waterfox_classic.desktop

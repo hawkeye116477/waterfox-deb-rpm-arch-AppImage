@@ -1,0 +1,40 @@
+Subject: [PATCH] Fix NSS build with glibc < 2.19
+
+CentOS 7 has glibc 2.17 and NSS build fails due to implicit declaration of function putenv during build. This is because of the Feature Test Macro Requirements for glibc:
+  putenv(): _XOPEN_SOURCE
+      || /* Glibc since 2.19: */ _DEFAULT_SOURCE
+      || /* Glibc versions <= 2.19: */ _SVID_SOURCE
+and because security/nss/coreconf/Linux.mk only defines `-D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE`.
+---
+ security/nss/coreconf/Linux.mk    | 2 +-
+ security/nss/coreconf/config.gypi | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/security/nss/coreconf/Linux.mk b/security/nss/coreconf/Linux.mk
+index dcb432415fbe..2aa9cc69c273 100644
+--- a/security/nss/coreconf/Linux.mk
++++ b/security/nss/coreconf/Linux.mk
+@@ -22,7 +22,7 @@ ifeq ($(USE_PTHREADS),1)
+ endif
+ 
+ DEFAULT_COMPILER = gcc
+-DEFINES += -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE -DSDB_MEASURE_USE_TEMP_DIR
++DEFINES += -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_SVID_SOURCE -D_POSIX_SOURCE -DSDB_MEASURE_USE_TEMP_DIR
+ 
+ ifeq ($(OS_TARGET),Android)
+ ifndef ANDROID_NDK
+diff --git a/security/nss/coreconf/config.gypi b/security/nss/coreconf/config.gypi
+index 7bae38ae43f0..cfd4b4cb623b 100644
+--- a/security/nss/coreconf/config.gypi
++++ b/security/nss/coreconf/config.gypi
+@@ -370,6 +370,7 @@
+               'linux',
+               '_DEFAULT_SOURCE', # for <endian.h> functions, strdup, realpath, and getentropy
+               '_BSD_SOURCE', # for the above in glibc <= 2.19
++              '_SVID_SOURCE', # for putenv in glibc <= 2.19
+               '_POSIX_SOURCE', # for <signal.h>
+               'SDB_MEASURE_USE_TEMP_DIR', # use tmpdir for the access calls
+             ],
+-- 
+2.38.1
+

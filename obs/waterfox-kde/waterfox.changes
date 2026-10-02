@@ -1,0 +1,288 @@
+* Wed Oct  8 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.6.3-0
+  * https://www.waterfox.net/en-US/docs/releases/G6.6.3/
+* Thu Aug 14 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.11-0
+  * Added latest security fixes.
+* Sat Jul  5 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.10-0
+  * Added latest security fixes.
+  * Startpage is now temporarily the default search.
+* Sat Jun  7 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.9-0
+  * Added latest security fixes.
+  * Fixed crashing when playing media files.
+* Thu Apr  3 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.6-0
+  * Updated JPEG-XL library to fix two security issues.
+  * Added latest security fixes.
+* Tue Mar  4 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.5-0
+   * Added latest security fixes.
+   * The Restart button is present again on Linux and Windows.
+   * (NULL) is no longer present next to the Status Bar text on Linux and Windows.
+* Fri Jan 10 2025 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.3-0
+  * Fixed various theming issues.
+  * Updated base configurations, removing unused values.
+  * Latest security fixes.
+* Tue Nov 26 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.2-0
+  * Fixed various theming issues.
+  * Fixed various vertical tab issues.
+  * Latest security fixes.
+* Sun Nov 10 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.5.1-0
+  * You should now see a Table of Contents in the Preferences page, for easier navigation of settings.
+  * You can now set any URL as the new tab page by setting the browser.newtab.url preference in about:config.
+  * The old school password manager has been re-implemented, available at about:passwords.
+  * The old school configuration manager has been re-implemented, available at about:cfg. Thanks to @black7375 for the help with this.
+  * Updated the JPEG-XL library to the latest version. This should stop various websites that serve .jxl files from crashing in the tab they’re loaded.
+  * The missing strings for Look & Feel page are now no longer missing, meaning you can change your theme preferences once again.
+* Sun Oct 13 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.20-0
+  * Critical Security Fixes.
+* Sun Sep  8 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.19-0
+  * Security fixes.
+* Thu Aug  8 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.18-0
+  * Security fixes.
+  * Updated Emoji to support v15.1.
+  * Moved the position of Tabs Sidebar prefs to below Search.
+* Thu Jul  4 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.17-0
+  * Security fixes.
+* Wed Jun 12 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.16-0
+  * Status bar text is now vertically aligned, instead of being completel misaligned. Thanks to @black7375
+  * Updates to the tabs sidebar (1.0.2).
+  * Security fixes.
+* Wed May 29 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.15-0
+  * Updates to the tabs sidebar
+* Sat May 18 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.14-0
+  * Various UI bug fixes.
+  * Updates to the tabs sidebar.
+  * Security fixes.
+* Wed Apr 24 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.13-0
+  * Mojeek is now available as a search engine in Waterfox.
+  * The Sidebar has seen multiple bug fixes and improvements. If you want to completely hide the feature, you can navigate to about:config, search for browser.sidebar.disabled and toggle the value to true.
+* Wed Apr 17 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.12-0
+  * The Waterfox sidebar is now available by default. There have been many bug fixes an improvements since the previous release, thanks to everyone who reported them!
+  * You now have the option to hide the “close” button on tabs, using the preferences browser.tabs.closeButtons.
+  * Security fixes
+* Sun Mar 24 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.11-0
+  * Security fixes
+  * Some bug fixes
+* Sat Mar 23 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.10-0
+  * Security fixes
+  * You can now start testing the Waterfox Sidebar. Go to about:config, search for browser.sidebar.disabled and set the value to false
+* Tue Feb 20 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.9-0
+  * Security fixes
+  * Chrome Web Store extensions should now install properly once again
+  * Fixed up some poorly written code
+* Sat Jan 27 2024 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.8-0
+  * Security fixes
+* Thu Dec 21 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.7-0
+  * Emoji support updated to 15.0.
+  * Security fixes
+  * You should now be able to Refresh your profile in about:support.
+  * NVIDIA Super Resolution should now work correctly, when toggling gfx.webrender.super-resolution.nvidia to true.
+* Tue Nov 21 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.6-0
+  * DNS over Oblivious HTTP is now powered by Fastly!
+  * You can now choose to disable closing windows or tabs with Ctrl+W by setting browser.closeShortcut.disabled to true in about:config.
+  * Improved support for JPEG XL. Waterfox can now act as the default image viewer for such image files.
+  * Security fixes
+* Wed Oct 25 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.5-0
+  * Security fixes
+  * Modal dialogues that display checkboxes would erroneously have two checkboxes, even if they werent meant to. This has now been fixed.
+* Tue Oct 10 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.4-0
+  * On pages that try to load mixed content, Waterfox will attempt to upgrade non secure content.
+  * When closing multiple tabs to the left or right, Waterfox will now show the correct close dialogue.
+  * If DNS requests take too long, Waterfox will fallback to your default DNS much quicker.
+  * Waterfox will no longer decode URLs when copying them. This should allow easier sharing.
+  * You can now disable Oblivious DNS via the Preferences page.
+* Tue Oct 10 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.3-0
+  * Hovering over inactive tabs will once again show the close button.
+  * Waterfox will be less strict with its public key pinning, which should resolve issues some users had connecting to certain websites.
+  * The extension button should no longer be missing! For the time being, moving it around has been disabled.
+  * When you click on the address bar, your top sites will now show.
+  * If you are closing more than 1 tab, you will now receive a prompt.
+* Fri Sep 29 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.2-0
+  * Critical security fix
+* Tue Sep 26 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0.1-0
+  * Update privacy preferences.
+  * Prevent new searches and opening bookmarks from opening in a new tab by default.
+* Wed Sep 20 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 6.0-0
+  * Waterfox uses DNS over Oblivious HTTP1, a privacy preserving method for DNS queries.
+  * You can now move and remove the extension button from the navigation bar.
+  * Linux, alongside Windows, now supports DRM. That means you can watch your favourite shows on the streaming platform of your choice.
+  * Waterfox preferences have been gone through with a fine tooth comb, with a lot of assistance from yokoffing, who maintains Betterfox.js.
+* Sat Sep 16 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.13-0
+  * High severity security fix
+* Sat Sep  2 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.12-0
+  * Various security fixes
+* Tue Aug  1 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.10-0
+  * Added various security fixes.
+* Thu Jul  6 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.9-0
+  * Added various security fixes.
+* Wed Jun  7 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.8-0
+  * Added various security fixes.
+* Thu May 11 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.6-0
+  * Added various security fixes.
+* Sat Apr 15 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.5-0
+  * Added various security fixes.
+* Tue Mar 28 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.4-0
+  * Added various security fixes.
+* Sat Feb 25 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.3-0
+  * Added various security fixes.
+* Sun Jan 22 2023 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.2-0
+  * JPEG-XL is now enabled by default.
+  * Fixed various theme issues.
+  * Added various security fixes.
+* Mon Dec 19 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1.1-0
+  * Issue playing Netflix and similar DRM protected websites have now resolved. If it's not working straight away, you can update the DRM plugin by going to the Preferences page → General → Files and Applications and un-check "Play DRM-controlled content". Wait for a few seconds, then re-check the box. The DRM plugin should update.
+  * Drag space is now disabled by default (that extra space above your tabs, so you can drag the window around).
+  * The status bar colour now matches the navigation bar.
+  * Various security fixes
+* Tue Nov 15 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.1-0
+  * You can modify Waterfox's look and feel by heading to about:preferences → Look & Feel. You can set various default presets, change the way tabs behave and much more!
+  * Desktop counterparts to your WebExtensions will now be able to communicate with Waterfox once again!
+  * Various security fixes.
+* Fri Oct 21 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.2-0
+  * The option to "Open All Bookmarks" once again works.
+  * DNS-over-HTTPS being forced on users will no longer happen by default.
+  * Forms will no longer save data in Private Tab.
+  * Disabling images now works properly.
+  * Added various security fixes.
+* Wed Oct  5 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.1-0
+  * There was an issue when upgrading from G3 onward where your theme would get reset to default. This is no longer the case.
+  * Various preferences were incorrectly configured and these have now been changed.
+* Sun Oct  2 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0-0
+  * You can now toggle to view password you are typing in.
+  * You can now Sync your settings.
+  * The search input type is now enabled.
+  * Updated Gecko to v102 ESR.
+* Fri Aug 26 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.5-0
+  * Various stability, functionality, and security fixes.
+* Sat Aug 13 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.4-0
+  * Various stability, functionality, and security fixes.
+* Thu Jul 14 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.3.2-0
+  * Waterfox now identifies as Firefox for better website compatibility. This also fixes issue such as being unable to log in to Sync.
+* Fri Jun 24 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.3.1-0
+  * Various stability, functionality, and security fixes.
+* Wed Jun  1 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.2.1-0
+  * Various stability, functionality, and security fixes
+* Tue May  3 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.2-0
+  * Various stability, functionality, and security fixes.
+* Wed Apr 27 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 4.1.1.1-0
+  * Fixed an issue where container tabs were not being restored properly.
+* Tue Apr 12 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 1.1-0
+  * Users who have DuckDuckGo as their default search should now have it as their default Private search as well.
+  * Various links in the About Waterfox dialogue have now been updated.
+  * A small cosmetic UI fix.
+* Sat Apr  9 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 1.0-0
+  * Addon version numbers once more show next to their names in about:addons
+  * Startpage is now the default search when performance searches in Private Tab and Private Window.
+  * Tabs will now unload automatically when your system is running low on memory.
+  * Tabs can now be manually unloaded after enabling the preference in about:preferences → General → Tabs. You can then right click on a tab and unload it.
+  * Chrome Web Store extensions should now install properly once again.
+  * Back and forward buttons on various mice now work properly in Waterfox, instead of acting as middle-click.
+  * Sometimes non-private tabs would be restored as private tabs. This will no longer occur.
+  * Various fixes to the default Lepton theme.
+  * Various Japanese translation improvements by @surapunoyousei
+  * Unprefixed -moz-fit-content. -fit-content show now work without the -moz prefix.
+  * The <dialog> HTML element is now enabled.
+  * References to his and her have been replaced with their where relevant.
+* Mon Mar  7 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.8-0
+  * Added a toggle on about:preferences to force light/dark mode with Lepton theme.
+  * Private tab will now correctly not store search suggestions and recently closed tabs.
+  * Private tab icon will now only appear in Lepton theme, so should no longer appear on themes that do not have context menu icons.
+  * Forcing dark mode in Lepton with ui.systemUsesDarkTheme on Linux distros should now work.
+* Fri Feb 11 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.7-0
+  * The default theme Lepton has been updated, fixing various issues.
+  * The status bar is now visible when in Customise Mode.
+  * Updated Gecko to 91.6.
+* Wed Jan 12 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.6-0
+  * Added default items to the status bar when enabled.
+  * You can now toggle text contrast on the status bar in about:preferences → General → Language and Appearance → Status Bar.
+  * Importing data from other browsers now works once again. (`File → Import From Another Browser)
+* Tue Dec 21 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.5.1-0
+  * Tabs toolbar and status bar will now be appropriately coloured when tabs toolbar set to bottom display with a dark theme.
+  * Tabs toolbar set to bottom display will now collapse correctly when entering DOM fullscreen mode (e.g. fullscreen video).
+  * Widget text in the status bar will be coloured correctly with dark themes.
+* Fri Dec 17 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.5-0
+  * Added an option to about:preferences to prevent pinned tabs shrinking to icon size.
+  * Added options to about:preferences to allow new tabs to be opened after all existing tabs.
+  * Google search suggestions should now display again.
+  * bloomberg.com should no longer display an out of date browser warning.
+  * White bar no longer visible at the bottom of the browser window when using light themes.
+  * More AVIF image types are now supported, which fixes issues of images not rendering on websites such as The Daily Mail.
+  * The default Lepton theme has been upgraded to its latest version, with improved visual changes.
+  * The Firefox themes are now more identifiable by name.
+  * The Firefox Modern Dynamic theme has now also been added.
+* Wed Dec  8 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.4-0
+  * Widevine has been updated to 4.10.2391.0 which should fix issues playing DRM protected content.
+  * Contrast has increased on Australis Light theme, to better differentiate tabs.
+  * The way tab positioning and various other Waterfox features have been implemented has been improved.
+  * Updated to Gecko 91.4.0, which includes various security patches.
+* Mon Nov 29 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.3.1-0
+  * Plugins such as Flash can now be enabled, but require you to interact to have web pages run it for security reasons.
+  * The address bar now makes it more obvious when a website is secure or insecure.
+  * Bootstraped extensions will now load on restart.
+  * Fixed various bookmarks bar and status bar issues.
+  * Issues installing bootstrapped extensions have now been resolved.
+  * Copy tab URL should now no longer throw an error.
+* Fri Nov 12 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 0.2.1-0
+  * Based on Gecko 91
+  * "Lepton" theme based on an improved Photon theme.
+  * You can now import specific Gecko-based profiles (Firefox, Waterfox etc.) from File > Import From Another Browswer
+  * Limited as many outgoing connections as possible to keep the browser operational

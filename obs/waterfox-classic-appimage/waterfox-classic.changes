@@ -1,0 +1,9 @@
+Thu Jul 11 2019 - <hawkeye116477@gmail.com> - 56.2.12
+
+- Patches for mfsa2019-22.
+- Updated Twemoji Mozilla to 0.4.0 (twemoji 11.4.0).
+
+Sun Jun 30 2019 - <hawkeye116477@gmail.com> - 56.2.11.1
+
+- First release as RPM package
+- Built from https://github.com/MrAlex94/Waterfox/commit/63b480e7462482482f6609c305cd793d938f58c0

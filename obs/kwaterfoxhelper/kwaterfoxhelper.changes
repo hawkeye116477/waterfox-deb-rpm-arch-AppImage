@@ -1,0 +1,22 @@
+* Wed Feb 03 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.7
+  * Excluded kwaterfoxhelper from session management (boo#1176852)
+
+* Sun Oct 13 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.6
+  * Changed way of determining browser's name
+
+* Sat Oct 12 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.5
+  * Added checking if it's started from Waterfox Classic or Current
+  * Restored compatibility with KIO lower than 5.31.0
+
+* Sat Jul 20 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 5.0.4
+  * Cache helper protocols (boo#1037806)
+  * Use new style connect
+  * Don't use deprecated KRun:runUrl without flags, use with flags
+
+* Sun Jun 30 2019 - <hawkeye116477@gmail.com>
+- version 5.0.3
+  * First release as RPM package

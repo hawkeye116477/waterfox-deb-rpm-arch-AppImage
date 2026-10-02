@@ -1,0 +1,322 @@
+# Maintainer: hawkeye116477 <hawkeye116477 at gmail dot com>
+
+pkgname=('waterfox' 'waterfox-kde-full')
+pkgver=6.6.3
+pkgrel=1
+pkgdesc="Customizable privacy conscious web browser with better integration with KDE and primary support for webextensions"
+arch=('x86_64')
+license=('MPL')
+url="https://www.waterfox.net/"
+depends=('gtk3' 'libxt' 'startup-notification' 'mime-types' 'dbus' 'ffmpeg'
+         'ttf-font' 'hicolor-icon-theme' 'glibc>=2.40' 'libpulse')
+makedepends=('unzip' 'zip' 'diffutils' 'yasm' 'mesa' 'imake' 'inetutils' 'xorg-server-xvfb'
+             'rust' 'clang' 'llvm' 'alsa-lib' 'jack' 'cbindgen' 'nasm'
+             'nodejs' 'lld' 'bc' 'python-setuptools' 'python-psutil' 'python-zstandard' 'python-dulwich' 'python-typing_extensions' 'pciutils' 'dump_syms'
+             'wasi-compiler-rt' 'wasi-libc' 'wasi-libc++' 'wasi-libc++abi' 'base-devel')
+options=('!emptydirs' '!makeflags' 'zipman' '!lto')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/BrowserWorks/Waterfox/archive/${pkgver}.tar.gz"
+        waterfox.desktop
+        distribution.ini
+        vendor.js
+        waterfox.1
+        syspref.js
+        waterfox.appdata.xml.in
+        mozilla-ntlm-full-path.patch
+        libavcodec58_91.patch
+        fix-langpack-id.patch
+        locales.shipped
+        mach-depends.patch
+        kde.js
+        tar_stamps
+        )
+  sha256sums=('SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             "SKIP"
+             "SKIP"
+             "SKIP"
+             )
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+
+  # Add patches
+  patch -Np1 -i ../mozilla-ntlm-full-path.patch
+  patch -Np1 -i ../libavcodec58_91.patch
+  patch -Np1 -i ../fix-langpack-id.patch
+  patch -Np1 -i ../mach-depends.patch
+
+  cat >../mozconfig <<END
+ac_add_options --enable-alsa
+ac_add_options --enable-pulseaudio
+ac_add_options --enable-jack
+
+ac_add_options --prefix=/usr
+
+# Disable unwanted features
+ac_add_options --disable-updater
+ac_add_options --disable-debug
+ac_add_options --disable-debug-symbols
+ac_add_options --disable-crashreporter
+ac_add_options --disable-dmd
+ac_add_options --disable-geckodriver
+ac_add_options --disable-bootstrap
+ac_add_options --disable-elf-hack
+ac_add_options --disable-tests
+
+# Enable wanted features
+ac_add_options --enable-unverified-updates
+ac_add_options --enable-jxl
+ac_add_options --enable-optimize
+ac_add_options --enable-eme=widevine
+ac_add_options --enable-rust-simd
+ac_add_options --enable-application=browser
+ac_add_options --enable-hardening
+ac_add_options --enable-linker=lld
+ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
+
+ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=waterfox/browser/branding
+ac_add_options --with-unsigned-addon-scopes=app,system
+ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
+ac_add_options --allow-addon-sideload
+
+ac_add_options "MOZ_ALLOW_LEGACY_EXTENSIONS=1"
+
+export MOZ_REQUIRE_SIGNING=
+export MOZ_INCLUDE_SOURCE_INFO=1
+export MOZ_APP_REMOTINGNAME=waterfox
+
+X=$(($(nproc --all)/2))
+mk_add_options MOZ_MAKE_FLAGS="-j\${X%.*}"
+mk_add_options MOZ_PARALLEL_BUILD="\${X%.*}"
+mk_add_options MOZ_OBJDIR=${PWD@Q}/obj
+END
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+
+  CFLAGS="${CFLAGS//-mtune=generic/-mtune=k8}"
+  CXXFLAGS="${CXXFLAGS//-mtune=generic/-mtune=k8}"
+
+  # malloc_usable_size is used in various parts of the codebase
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  # Breaks compilation since https://bugzilla.mozilla.org/show_bug.cgi?id=1896066
+  CFLAGS="${CFLAGS/-fexceptions/}"
+  CXXFLAGS="${CXXFLAGS/-fexceptions/}"
+
+  export MOZ_SOURCE_REPO=https://github.com/BrowserWorks/Waterfox
+  export MOZ_SOURCE_CHANGESET=$(awk -F ': ' '/^commit:/ {print $2; exit}' "../tar_stamps")
+  export WF_VERSION="$pkgver"
+  echo "$WF_VERSION" > ./browser/config/version_display.txt
+
+  export MOZ_NOSPAM=1
+  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+  export LDFLAGS+=" -Wl,--no-keep-memory -Wl,--no-mmap-output-file "
+  export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+
+  # LTO needs more open files
+  ulimit -n 4096
+
+  # Do 3-tier PGO
+  echo "Building instrumented browser..."
+  cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-profile-generate=cross
+END
+  ./mach build --priority normal
+
+
+  echo "Profiling instrumented browser..."
+  ./mach package
+  LLVM_PROFDATA=llvm-profdata \
+    JARLOG_FILE="$PWD/jarlog" \
+    dbus-run-session \
+    xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
+    ./mach python build/pgo/profileserver.py
+
+  stat -c "Profile data found (%s bytes)" merged.profdata
+  test -s merged.profdata
+
+  stat -c "Jar log found (%s bytes)" jarlog
+  test -s jarlog
+
+  echo "Removing instrumented browser..."
+  ./mach clobber objdir
+
+  echo "Building optimized browser..."
+  cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-lto=cross
+ac_add_options --enable-profile-use=cross
+ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
+ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
+END
+  ./mach build --priority normal
+
+  # Build langpacks
+  cat > ../mozconfig_LANG <<END
+ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=waterfox/browser/branding
+mk_add_options MOZ_OBJDIR=${PWD}/../obj_LANG
+ac_add_options --prefix=/usr
+ac_add_options --with-l10n-base=${PWD}/waterfox/browser/locales
+ac_add_options --enable-linker=lld
+ac_add_options --disable-updater
+ac_add_options --disable-bootstrap
+ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
+END
+
+  export JOBS=$(echo $(grep -c ^processor /proc/cpuinfo)\/2 | bc)
+  sed -r '/^(ja-JP-mac|en-US|)$/d;s/ .*$//' ../locales.shipped | cut -f1 -d":" \
+    | xargs -n 1 -P $JOBS -I {} /bin/sh -c '
+        locale=$1
+        cp ../mozconfig_LANG ${PWD}/mozconfig_$locale
+        sed -i "s|obj_LANG|obj_$locale|" ${PWD}/mozconfig_$locale
+        export MOZCONFIG=${PWD}/mozconfig_$locale
+        ./mach build config/nsinstall langpack-$locale
+        cp -L ../obj_$locale/dist/linux-*/xpi/waterfox-$WF_VERSION.$locale.langpack.xpi \
+            ${PWD}/langpack-$locale@l10n.waterfox.net.xpi
+' -- {}
+}
+
+package_waterfox-kde-full() {
+  pkgdesc="Waterfox with KDE Plasma integration"
+  depends=("waterfox>=$pkgver")
+  replaces=("waterfox-kde" "waterfox-g-kde" "waterfox-g3-kde" "waterfox-g4-kde")
+
+  cd waterfox-${pkgver}
+  install -Dm644 "$srcdir/kde.js" "$pkgdir/usr/lib/waterfox/browser/defaults/preferences/kde.js"
+}
+package_waterfox() {
+  optdepends=('networkmanager: Location detection via available WiFi networks'
+             'libnotify: Notification integration'
+             'pulseaudio: Audio support'
+             'alsa-lib: Audio support'
+             'speech-dispatcher: Text-to-Speech'
+             'hunspell-en_US: Spell checking, American English'
+             'kwaterfoxhelper: KDE Plasma Integration')
+  provides=("waterfox=${pkgver}")
+  replaces=("waterfox-kpe" "waterfox-g4-kpe" "waterfox-g3-kpe")
+
+  cd ${pkgname}-${pkgver}
+
+  export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=system
+  export MOZ_SOURCE_REPO=https://github.com/BrowserWorks/Waterfox
+  export MOZ_SOURCE_CHANGESET=$(awk -F ': ' '/^commit:/ {print $2; exit}' "../tar_stamps")
+
+  DESTDIR="$pkgdir" ./mach install
+
+  _spellcheck_js="$pkgdir/usr/lib/waterfox/browser/defaults/preferences/spellcheck.js"
+  install -Dm644 /dev/stdin "$_spellcheck_js" <<END
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+END
+
+  for i in 16 22 24 32 48 64 128 256; do
+      install -d "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps"
+      ln -Ts /usr/lib/waterfox/browser/chrome/icons/default/default$i.png \
+        "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/waterfox.png"
+  done
+  install -Dm644 waterfox/browser/branding/content/about-logo.png \
+    "$pkgdir/usr/share/icons/hicolor/192x192/apps/waterfox.png"
+  install -Dm644 waterfox/browser/branding/content/about-logo@2x.png \
+    "$pkgdir/usr/share/icons/hicolor/384x384/apps/waterfox.png"
+
+  install -Dm644 $srcdir/waterfox.desktop \
+    "$pkgdir/usr/share/applications/waterfox.desktop"
+
+  install -Dm644 $srcdir/waterfox.1 \
+    "$pkgdir/usr/share/man/man1/waterfox.1"
+
+  install -Dm644 $srcdir/distribution.ini \
+    "$pkgdir/usr/lib/waterfox/distribution/distribution.ini"
+
+  install -Dm644 "$srcdir/vendor.js" "$pkgdir/usr/lib/waterfox/browser/defaults/preferences/vendor.js"
+
+  # Generate date and version for metadata file
+  export TODAY_DATE=$(date +%Y-%m-%d)
+  sed -i "s/__DATE__/$TODAY_DATE/g" $srcdir/waterfox.appdata.xml.in
+  sed -i "s/__VERSION__/G$pkgver/g" $srcdir/waterfox.appdata.xml.in
+
+  install -Dm644 $srcdir/waterfox.appdata.xml.in \
+    "$pkgdir/usr/share/metainfo/waterfox.appdata.xml"
+
+  # Install a wrapper to avoid confusion about binary path
+  install -Dm755 /dev/stdin "$pkgdir/usr/bin/waterfox" <<END
+#!/bin/sh
+exec /usr/lib/waterfox/waterfox "\$@"
+END
+
+  # Replace duplicate binary with wrapper
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
+  ln -srf "$pkgdir/usr/bin/waterfox" \
+    "$pkgdir/usr/lib/waterfox/waterfox-bin"
+
+  # Backwards compatibility symlinks
+  ln -srf "$pkgdir/usr/bin/waterfox" "$pkgdir/usr/bin/waterfox-g"
+
+  # Add syspref.js for setting preferences for all users
+  mkdir -p "$pkgdir/etc/waterfox"
+  cp "$srcdir/syspref.js" "$pkgdir/etc/waterfox/"
+  ln -Tsf /etc/waterfox/syspref.js "$pkgdir/usr/lib/waterfox/browser/defaults/preferences/syspref.js"
+}
+
+_languages=(
+  'ar     "Arabic"'
+  'cs     "Czech"'
+  'da     "Danish"'
+  'de     "German"'
+  'el     "Greek"'
+  'en-GB  "English (British)"'
+  'es-ES  "Spanish (Spain)"'
+  'es-MX  "Spanish (Mexico)"'
+  'fr     "French"'
+  'hu     "Hungarian"'
+  'id     "Indonesian"'
+  'it     "Italian"'
+  'ja     "Japanese"'
+  'ko     "Korean"'
+  'lt     "Lithuanian"'
+  'nl     "Dutch"'
+  'nn-NO  "Norwegian (Nynorsk)"'
+  'pl     "Polish"'
+  'pt-BR  "Portuguese (Brazilian)"'
+  'pt-PT  "Portuguese (Portugal)"'
+  'ru     "Russian"'
+  'sv-SE  "Swedish"'
+  'th     "Thai"'
+  'vi     "Vietnamese"'
+  'zh-CN  "Chinese (Simplified)"'
+  'zh-TW  "Chinese (Traditional)"'
+)
+
+for _lang in "${_languages[@]}"; do
+  _locale=${_lang%% *}
+  _pkgname=waterfox-i18n-${_locale,,}
+  pkgname+=($_pkgname)
+  eval "package_$_pkgname() {
+    _package $_lang
+  }"
+done
+
+_package() {
+  pkgdesc="$2 language pack for Waterfox"
+  depends=("waterfox=$pkgver")
+  replaces=("waterfox-i18n-$1" "waterfox-g4-i18n-$1" "waterfox-g3-i18n-$1")
+  mkdir -p "$pkgdir/usr/lib/waterfox/browser/extensions/"
+  install -Dm644 "${srcdir}"/waterfox-$pkgver/langpack-$1@l10n.waterfox.net.xpi \
+    "$pkgdir/usr/lib/waterfox/browser/extensions/langpack-$1@l10n.waterfox.net.xpi"
+}
+
+# vim: set ts=2 sw=2 et syn=sh ft=sh:

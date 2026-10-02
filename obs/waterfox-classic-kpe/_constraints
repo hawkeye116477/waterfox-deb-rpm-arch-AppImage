@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<constraints>
+  <hardware>
+    <disk>
+        <size unit="G">36</size>
+    </disk>
+    <memory>
+      <size unit="G">8</size>
+    </memory>
+    <cpu>
+      <flag>sse2</flag>
+    </cpu>
+  </hardware>
+</constraints>

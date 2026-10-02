@@ -1,0 +1,28 @@
+<services>
+  <service name="tar_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/hawkeye116477/waterfox-deb.git</param>
+    <param name="filename">debian</param>
+    <param name="subdir">kwaterfoxhelper</param>
+    <param name="version">_none_</param>
+  </service>
+  <service name="recompress">
+    <param name="file">*debian*.tar</param>
+    <param name="compression">xz</param>
+  </service>
+  <service name="tar_scm">
+    <param name="url">https://github.com/hawkeye116477/kwaterfoxhelper.git</param>
+    <param name="scm">git</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="filename">kwaterfoxhelper</param>
+    <param name="revision">5.0.7</param>
+  </service>
+  <service name="recompress">
+      <param name="file">*kwaterfoxhelper*.tar</param>
+      <param name="compression">xz</param>
+  </service>
+  <service name="extract_file">
+    <param name="archive">*debian*.tar.xz</param>
+    <param name="files">*/*.dsc</param>
+  </service>
+</services>

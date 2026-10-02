@@ -1,0 +1,347 @@
+# Maintainer: hawkeye116477 <hawkeye116477 at gmail dot com>
+
+pkgname=('waterfox-classic-kpe' 'waterfox-kde')
+pkgver=2022.11
+pkgrel=2
+pkgdesc="Customizable privacy conscious web browser with better integration with KDE and primary support for legacy extensions"
+arch=('x86_64')
+license=('MPL')
+url="https://www.waterfox.net/"
+depends=('gtk3' 'gtk2' 'libxt' 'startup-notification' 'mime-types' 'dbus-glib' 'ffmpeg'
+         'ttf-font' 'hicolor-icon-theme' 'kwaterfoxhelper' 'glibc>=2.33')
+makedepends=('unzip' 'zip' 'diffutils' 'python2' 'yasm' 'mesa' 'imake' 'inetutils' 'xorg-server-xvfb'
+             'autoconf2.13' 'rust' 'clang' 'llvm' 'libpulse' 'alsa-lib' 'nasm')
+options=('!emptydirs' '!makeflags' 'zipman')
+_patchrev=7339b115a221
+_patchurl=http://www.rosenauer.org/hg/mozilla/raw-file/$_patchrev
+_commit=ff45971
+source=("${pkgname}-${pkgver}.tar.xz::https://github.com/WaterfoxCo/Waterfox/archive/${pkgver}.tar.xz"
+        waterfox-classic.desktop
+        kde.js
+        distribution.ini
+        waterfox-classic.1
+        no-plt.diff
+        pgo_fix_missing_kdejs.patch
+        classic-kde.patch
+        classic-kde-xul.patch
+        waterfox-classic.appdata.xml.in
+        tar_stamps
+        )
+  sha256sums=('SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP'
+             'SKIP')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+
+  # Fix openSUSE's patches for Waterfox
+  #sed -i 's/Firefox/Waterfox/g' $srcdir/mozilla-kde-$_patchrev.patch
+  #sed -i 's/KMOZILLAHELPER/KWATERFOXHELPER/g' $srcdir/mozilla-kde-$_patchrev.patch
+  #sed -i 's|/usr/lib/mozilla/kmozillahelper|/usr/lib/waterfox-classic/kwaterfoxhelper|g' $srcdir/mozilla-kde-$_patchrev.patch
+  #sed -i 's/kmozillahelper/kwaterfoxhelper/g' $srcdir/mozilla-kde-$_patchrev.patch
+  #sed -i 's/firefox/waterfox/g' $srcdir/firefox-kde-$_patchrev.patch
+
+  # Generate date and version for metadata file
+  export TODAY_DATE=$(date +%Y-%m-%d)
+  sed -i "s/__DATE__/$TODAY_DATE/g" ../waterfox-classic.appdata.xml.in
+  sed -i "s/__VERSION__/$(<browser/config/version_display.txt)/g" ../waterfox-classic.appdata.xml.in
+
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=1382942
+  patch -Np1 -i ../no-plt.diff
+
+  patch -Np1 -i ../classic-kde.patch
+  patch -Np1 -i ../classic-kde-xul.patch
+  patch -Np1 -i ../pgo_fix_missing_kdejs.patch
+
+  cat >.mozconfig <<END
+export CC=clang
+export CXX=clang++
+
+ac_add_options --enable-optimize="-O2 -march=nocona -mtune=nocona -w"
+ac_add_options --target=x86_64-pc-linux-gnu
+
+ac_add_options --enable-alsa
+ac_add_options --enable-pulseaudio
+
+#X=$(($(getconf _NPROCESSORS_ONLN 2>/dev/null || getconf NPROCESSORS_ONLN)*3/2))
+
+mk_add_options AUTOCLOBBER=1
+#mk_add_options MOZ_MAKE_FLAGS=-j6
+
+ac_add_options --prefix=/usr
+
+ac_add_options --with-app-name=waterfox-classic
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=browser/branding/unofficial
+
+# Libraries
+ac_add_options --x-libraries=/usr/lib
+
+# Disable unwanted features
+ac_add_options --disable-crashreporter
+ac_add_options --disable-js-shell
+ac_add_options --disable-maintenance-service
+ac_add_options --disable-updater
+ac_add_options --disable-verify-mar
+ac_add_options --disable-profiling
+ac_add_options --disable-signmar
+ac_add_options --disable-tests
+ac_add_options --disable-gconf
+ac_add_options --disable-stylo
+ac_add_options --disable-elf-hack
+
+# Enable wanted features
+ac_add_options --enable-release
+ac_add_options --enable-rust-simd
+ac_add_options --enable-application=browser
+ac_add_options --enable-eme=widevine
+ac_add_options --enable-startup-notification
+ac_add_options --enable-hardening
+ac_add_options --enable-strip
+
+export MOZ_GECKO_PROFILER=
+export MOZ_ENABLE_PROFILER_SPS=
+export MOZ_PROFILING=
+export MOZ_INCLUDE_SOURCE_INFO=1
+END
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+
+  export MOZ_SOURCE_CHANGESET=$(awk -F ': ' '/^commit:/ {print $2; exit}' "../tar_stamps")
+  export MOZ_SOURCE_REPO="https://github.com/WaterfoxCo/Waterfox-Classic"
+  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+
+  ./mach build
+}
+
+package_waterfox-classic-kpe() {
+  optdepends=('networkmanager: Location detection via available WiFi networks'
+             'libnotify: Notification integration'
+             'pulseaudio: Audio support'
+             'alsa-lib: Audio support'
+             'jack: Audio support'
+             'speech-dispatcher: Text-to-Speech'
+             'hunspell-en_US: Spell checking, American English')
+  provides=("waterfox-classic=${pkgver}")
+  conflicts=('waterfox-classic' 'waterfox-classic-git')
+
+  cd ${pkgname}-${pkgver}
+
+  cp "$srcdir/kde.js" obj-$CARCH-pc-linux-gnu/dist/bin/defaults/pref
+
+  export MOZ_SOURCE_CHANGESET=$(awk -F ': ' '/^commit:/ {print $2; exit}' "../tar_stamps")
+  export MOZ_SOURCE_REPO="https://github.com/WaterfoxCo/Waterfox-Classic"
+
+  DESTDIR="$pkgdir" ./mach install
+
+  _vendor_js="$pkgdir/usr/lib/waterfox-classic/browser/defaults/preferences/vendor.js"
+  install -Dm644 /dev/stdin "$_vendor_js" <<END
+// Disable default browser checking
+pref("browser.shell.checkDefaultBrowser", false);
+
+// Don't disable extensions dropped in to a system
+// location, or those owned by the application
+pref("extensions.autoDisableScopes", 3);
+
+// Don't display the one-off addon selection dialog when
+// upgrading from a version of Waterfox older than 8.0
+pref("extensions.shownSelectionUI", true);
+
+// Use LANG environment variable to choose locale
+pref("intl.locale.matchOS", true);
+
+// Fall back to en-US search plugins if none exist for the current locale
+pref("distribution.searchplugins.defaultLocale", "en-US");
+
+// Use OS regional settings for date and time
+pref("intl.regional_prefs.use_os_locales", true);
+
+// Use system's dictionaries
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+END
+
+  install -Dm644 "$srcdir/kde.js" "$pkgdir/usr/lib/waterfox-classic/browser/defaults/preferences/kde.js"
+
+  for i in 16 22 24 32 48 64 128 256; do
+    install -Dm644 browser/branding/unofficial/default$i.png \
+      "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/waterfox-classic.png"
+  done
+  install -Dm644 browser/branding/unofficial/content/about-logo.png \
+    "$pkgdir/usr/share/icons/hicolor/192x192/apps/waterfox-classic.png"
+  install -Dm644 browser/branding/unofficial/content/about-logo@2x.png \
+    "$pkgdir/usr/share/icons/hicolor/384x384/apps/waterfox-classic.png"
+
+  install -Dm644 $srcdir/waterfox-classic.desktop \
+    "$pkgdir/usr/share/applications/waterfox-classic.desktop"
+
+  install -Dm644 $srcdir/waterfox-classic.1 \
+    "$pkgdir/usr/share/man/man1/waterfox-classic.1"
+
+  install -Dm644 $srcdir/distribution.ini \
+    "$pkgdir/usr/lib/waterfox-classic/distribution/distribution.ini"
+
+  install -Dm644 $srcdir/waterfox-classic.appdata.xml.in \
+    "$pkgdir/usr/share/metainfo/waterfox-classic.appdata.xml"
+
+  # Use system-provided dictionaries
+  rm -r "$pkgdir"/usr/lib/waterfox-classic/dictionaries
+
+  # Install a wrapper to avoid confusion about binary path
+  install -Dm755 /dev/stdin "$pkgdir/usr/bin/waterfox-classic" <<END
+#!/bin/sh
+exec /usr/lib/waterfox-classic/waterfox-classic "\$@"
+END
+
+  # Replace duplicate binary with wrapper
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
+  ln -srf "$pkgdir/usr/bin/waterfox-classic" \
+    "$pkgdir/usr/lib/waterfox-classic/waterfox-classic-bin"
+
+  # Move locales. They will be in separate packages.
+  mv "$pkgdir/usr/lib/waterfox-classic/browser/features" "$srcdir/"
+}
+
+package_waterfox-kde() {
+  pkgdesc="Transitional package"
+  depends=("waterfox-classic-kpe")
+}
+
+package_waterfox-ext-polly() {
+  pkgdesc="Website compatibility workarounds for Waterfox Classic"
+  depends=("waterfox-classic")
+  install -Dm644 "${srcdir}"/features/zakius@polly.xpi \
+    "$pkgdir/usr/lib/waterfox-classic/browser/features/zakius@polly.xpi"
+}
+
+_languages=(
+  'ach    "Acholi"'
+  'af     "Afrikaans"'
+  'an     "Aragonese"'
+  'ar     "Arabic"'
+  'as     "Assamese"'
+  'ast    "Asturian"'
+  'az     "Azerbaijani"'
+  'bg     "Bulgarian"'
+  'bn-BD  "Bengali (Bangladesh)"'
+  'bn-IN  "Bengali (India)"'
+  'br     "Breton"'
+  'bs     "Bosnian"'
+  'ca     "Catalan"'
+  'cak    "Maya Kaqchikel"'
+  'cs     "Czech"'
+  'cy     "Welsh"'
+  'da     "Danish"'
+  'de     "German"'
+  'dsb    "Lower Sorbian"'
+  'el     "Greek"'
+  'en-GB  "English (British)"'
+  'en-ZA  "English (South African)"'
+  'eo     "Esperanto"'
+  'es-AR  "Spanish (Argentina)"'
+  'es-CL  "Spanish (Chile)"'
+  'es-ES  "Spanish (Spain)"'
+  'es-MX  "Spanish (Mexico)"'
+  'et     "Estonian"'
+  'eu     "Basque"'
+  'fa     "Persian"'
+  'ff     "Fulah"'
+  'fi     "Finnish"'
+  'fr     "French"'
+  'fy-NL  "Frisian"'
+  'ga-IE  "Irish"'
+  'gd     "Gaelic (Scotland)"'
+  'gl     "Galician"'
+  'gn     "Guarani"'
+  'gu-IN  "Gujarati (India)"'
+  'he     "Hebrew"'
+  'hi-IN  "Hindi (India)"'
+  'hr     "Croatian"'
+  'hsb    "Upper Sorbian"'
+  'hu     "Hungarian"'
+  'hy-AM  "Armenian"'
+  'id     "Indonesian"'
+  'is     "Icelandic"'
+  'it     "Italian"'
+  'ja     "Japanese"'
+  'ka     "Georgian"'
+  'kab    "Kabyle"'
+  'kk     "Kazakh"'
+  'km     "Khmer"'
+  'kn     "Kannada"'
+  'ko     "Korean"'
+  'lij    "Ligurian"'
+  'lt     "Lithuanian"'
+  'lv     "Latvian"'
+  'mai    "Maithili"'
+  'mk     "Macedonian"'
+  'ml     "Malayalam"'
+  'mr     "Marathi"'
+  'ms     "Malay"'
+  'nb-NO  "Norwegian (Bokmål)"'
+  'nl     "Dutch"'
+  'nn-NO  "Norwegian (Nynorsk)"'
+  'or     "Oriya"'
+  'pa-IN  "Punjabi (India)"'
+  'pl     "Polish"'
+  'pt-BR  "Portuguese (Brazilian)"'
+  'pt-PT  "Portuguese (Portugal)"'
+  'rm     "Romansh"'
+  'ro     "Romanian"'
+  'ru     "Russian"'
+  'si     "Sinhala"'
+  'sk     "Slovak"'
+  'sl     "Slovenian"'
+  'son    "Songhai"'
+  'sq     "Albanian"'
+  'sr     "Serbian"'
+  'sv-SE  "Swedish"'
+  'ta     "Tamil"'
+  'te     "Telugu"'
+  'th     "Thai"'
+  'tr     "Turkish"'
+  'uk     "Ukrainian"'
+  'uz     "Uzbek"'
+  'vi     "Vietnamese"'
+  'xh     "Xhosa"'
+  'zh-CN  "Chinese (Simplified)"'
+  'zh-TW  "Chinese (Traditional)"'
+)
+
+for _lang in "${_languages[@]}"; do
+  _locale=${_lang%% *}
+  _pkgname=waterfox-classic-i18n-${_locale,,}
+  _trans_pkgname=waterfox-i18n-${_locale,,}
+  pkgname+=($_pkgname $_trans_pkgname)
+  eval "package_$_pkgname() {
+    _package $_lang
+  }"
+  eval "package_$_trans_pkgname() {
+    __package $_lang
+  }"
+done
+
+_package() {
+  pkgdesc="$2 language pack for Waterfox Classic"
+  depends=("waterfox-classic>=$pkgver")
+  replaces=("waterfox-i18n-$1")
+  breaks=("waterfox-i18n-$1")
+  install -Dm644 "${srcdir}"/features/langpack-$1@waterfox.xpi \
+    "$pkgdir/usr/lib/waterfox-classic/browser/features/langpack-$1@waterfox.xpi"
+}
+
+__package() {
+  pkgdesc="Transitional package"
+  depends=("waterfox-i18n-$1")
+}
+
+# vim: set ts=2 sw=2 et syn=sh ft=sh:

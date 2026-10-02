@@ -1,0 +1,62 @@
+# Please submit bugfixes or comments via https://build.opensuse.org/package/show/home:hawkeye116477:waterfox/waterfox-g-appimage or https://www.reddit.com/r/waterfox/ or https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage/issues
+
+app: waterfox-g
+build:
+  packages:
+    - linuxdeployqt
+    - adwaita-icon-theme
+    - gdk-pixbuf-loader-rsvg
+    - cracklib-dict
+    - curl
+
+ingredients:
+  packages:
+    - waterfox-g-appimage
+
+script:
+  - cd $BUILD_APPDIR/
+  - cp $BUILD_APPDIR/usr/lib64/waterfox-g/browser/chrome/icons/default/default128.png $BUILD_APPDIR/waterfox-g.png
+  - rm -rf $BUILD_APPDIR/usr/bin/*
+  - mv $BUILD_APPDIR/usr/lib64/waterfox-g/* $BUILD_APPDIR/usr/bin/
+  - rm -rf $BUILD_APPDIR/usr/lib64/
+  - rm -rf $BUILD_APPDIR/usr/lib/*
+  - rm -rf $BUILD_APPDIR/bin/*
+  - rm -rf $BUILD_APPDIR/boot/*
+  - rm -rf $BUILD_APPDIR/dev/*
+  - rm -rf $BUILD_APPDIR/etc/
+  - rm -rf $BUILD_APPDIR/home/*
+  - rm -rf $BUILD_APPDIR/lib/*
+  - rm -rf $BUILD_APPDIR/lib64/*
+  - rm -rf $BUILD_APPDIR/root/
+  - rm -rf $BUILD_APPDIR/run/*
+  - rm -rf $BUILD_APPDIR/sbin/*
+  - rm -rf $BUILD_APPDIR/srv/*
+  - rm -rf $BUILD_APPDIR/var/*
+  - rm -rf $BUILD_APPDIR/usr/include/*
+  - rm -rf $BUILD_APPDIR/usr/local/*
+  - rm -rf $BUILD_APPDIR/usr/sbin/*
+  - mv $BUILD_APPDIR/usr/share/applications/waterfox-g.desktop $BUILD_APPDIR
+  - rm -rf $BUILD_APPDIR/usr/share/*
+  - mkdir -p $BUILD_APPDIR/usr/share/applications/
+  - ln -Tsf $BUILD_APPDIR/waterfox-g.desktop $BUILD_APPDIR/usr/share/applications/waterfox-g.desktop
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/16x16/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/22x22/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/24x24/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/32x32/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/48x48/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/256x256/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/64x64/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/128x128/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/192x192/apps/
+  - mkdir -p $BUILD_APPDIR/usr/share/icons/hicolor/384x384/apps/
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default16.png $BUILD_APPDIR/usr/share/icons/hicolor/16x16/apps/waterfox-g.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default32.png $BUILD_APPDIR/usr/share/icons/hicolor/32x32/apps/waterfox-g.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default48.png $BUILD_APPDIR/usr/share/icons/hicolor/48x48/apps/waterfox-g.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default64.png $BUILD_APPDIR/usr/share/icons/hicolor/64x64/apps/waterfox-g.png
+  - cp $BUILD_APPDIR/usr/bin/browser/chrome/icons/default/default128.png $BUILD_APPDIR/usr/share/icons/hicolor/128x128/apps/waterfox-g.png
+  - find $BUILD_APPDIR -type d -empty -delete
+  - cp $BUILD_SOURCE_DIR/AppRun $BUILD_APPDIR
+  - chmod +x $BUILD_APPDIR/AppRun
+  - rm -rf $BUILD_APPDIR/usr/lib64/*
+  #- mkdir -p $BUILD_APPDIR/usr/share/metainfo/
+  #- cp $BUILD_APP_DIR/usr/share/appdata/waterfox-g.appdata.xml $BUILD_APPDIR/usr/share/metainfo/waterfox-g.appdata.xml

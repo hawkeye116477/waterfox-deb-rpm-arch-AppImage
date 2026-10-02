@@ -1,0 +1,17 @@
+<services>
+  <service name="tar_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/hawkeye116477/waterfox-deb-rpm-arch-AppImage.git</param>
+    <param name="filename">debian</param>
+    <param name="subdir">waterfox</param>
+    <param name="version">_none_</param>
+  </service>
+  <service name="recompress">
+    <param name="file">*debian*.tar</param>
+    <param name="compression">xz</param>
+  </service>
+  <service name="extract_file">
+    <param name="archive">*debian*.tar.xz</param>
+    <param name="files">*/waterfox.dsc */patches/*.patch */waterfox.desktop */distribution.ini */waterfox.1 */syspref.js */locales.shipped */vendor.js */waterfox.appdata.xml.in */waterfox-wayland.desktop */mozconfig_LANG */kde.js</param>
+  </service>
+</services>

@@ -1,0 +1,75 @@
+diff --git a/build/moz.configure/toolchain.configure b/build/moz.configure/toolchain.configure
+index af458a2c76e7..32ab358586c0 100755
+--- a/build/moz.configure/toolchain.configure
++++ b/build/moz.configure/toolchain.configure
+@@ -1371,7 +1371,8 @@ imply_option('--enable-pie', depends_if('--enable-hardening')(lambda v: v))
+ 
+ option(env='RUSTFLAGS',
+        nargs=1,
+-       help='Rust compiler flags')
++       help='Rust compiler flags',
++       comma_split=False)
+ set_config('RUSTFLAGS', depends('RUSTFLAGS')(lambda flags: flags))
+ 
+ 
+diff --git a/python/mozbuild/mozbuild/configure/options.py b/python/mozbuild/mozbuild/configure/options.py
+index 53ae2ae6d62d..6ecdfdf7c56f 100644
+--- a/python/mozbuild/mozbuild/configure/options.py
++++ b/python/mozbuild/mozbuild/configure/options.py
+@@ -136,14 +136,18 @@ class Option(object):
+     - `help` is the option description for use in the --help output.
+     - `possible_origins` is a tuple of strings that are origins accepted for
+       this option. Example origins are 'mozconfig', 'implied', and 'environment'.
++    - `comma_split` specifies whether the value string should be split on
++      commas. The default is True. Setting it False is necessary for things
++      like compiler flags which should be a single string that may contain
++      commas.
+     '''
+     __slots__ = (
+         'id', 'prefix', 'name', 'env', 'nargs', 'default', 'choices', 'help',
+-        'possible_origins',
++        'possible_origins', "comma_split",
+     )
+ 
+     def __init__(self, name=None, env=None, nargs=None, default=None,
+-                 possible_origins=None, choices=None, help=None):
++                 possible_origins=None, choices=None, help=None, comma_split=True):
+         if not name and not env:
+             raise InvalidOptionError(
+                 'At least an option name or an environment variable name must '
+@@ -245,9 +249,10 @@ class Option(object):
+                 raise InvalidOptionError('Not enough `choices` for `nargs`')
+         self.choices = choices
+         self.help = help
++        self.comma_split = comma_split
+ 
+     @staticmethod
+-    def split_option(option):
++    def split_option(option, comma_split=True):
+         '''Split a flag or variable into a prefix, a name and values
+ 
+         Variables come in the form NAME=values (no prefix).
+@@ -260,7 +265,13 @@ class Option(object):
+ 
+         elements = option.split('=', 1)
+         name = elements[0]
+-        values = tuple(elements[1].split(',')) if len(elements) == 2 else ()
++        if len(elements) == 2:
++            if comma_split:
++                values = tuple(elements[1].split(","))
++            else:
++                values = (elements[1],)
++        else:
++            values = ()
+         if name.startswith('--'):
+             name = name[2:]
+             if not name.islower():
+@@ -329,7 +340,7 @@ class Option(object):
+                 '%s can not be set by %s. Values are accepted from: %s' %
+                 (option, origin, ', '.join(self.possible_origins)))
+ 
+-        prefix, name, values = self.split_option(option)
++        prefix, name, values = self.split_option(option, self.comma_split)
+         option = self._join_option(prefix, name)
+ 
+         assert name in (self.name, self.env)

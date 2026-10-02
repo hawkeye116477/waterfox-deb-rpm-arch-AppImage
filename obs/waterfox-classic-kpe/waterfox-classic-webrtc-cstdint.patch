@@ -1,0 +1,11 @@
+diff -ruN Waterfox-Classic/media/webrtc/trunk/webrtc/base/base64.h Waterfox-Classic.cstdint/media/webrtc/trunk/webrtc/base/base64.h
+--- Waterfox-Classic/media/webrtc/trunk/webrtc/base/base64.h	2023-06-28 23:06:09.120299567 -0400
++++ Waterfox-Classic.cstdint/media/webrtc/trunk/webrtc/base/base64.h	2023-06-29 05:36:34.074093371 -0400
+@@ -14,6 +14,7 @@
+ 
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace rtc {
+ 

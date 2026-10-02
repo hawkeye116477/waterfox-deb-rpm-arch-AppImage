@@ -1,0 +1,34 @@
+<services>
+   <service name="tar_scm">
+      <param name="scm">git</param>
+      <param name="url">https://github.com/hawkeye116477/waterfox-deb.git</param>
+      <param name="filename">debian</param>
+      <param name="subdir">waterfox-classic-kpe</param>
+      <param name="version">_none_</param>
+   </service>
+   <service name="recompress">
+      <param name="file">*debian*.tar</param>
+      <param name="compression">gz</param>
+   </service>
+   <service name="extract_file">
+      <param name="archive">*debian*.tar.gz</param>
+      <param name="files">*/vendor.js */waterfox-classic.desktop */waterfox-classic.1 */syspref.js</param>
+   </service>
+   <service name="obs_scm">
+      <param name="scm">git</param>
+      <param name="url">https://github.com/WaterfoxCo/Waterfox-Classic.git</param>
+      <param name="filename">waterfox-classic</param>
+      <param name="versionformat">@PARENT_TAG@</param>
+      <param name="versionrewrite-pattern">(.*)-classic</param>
+      <param name="revision">2022.11-classic</param>
+   </service>
+   <service mode="buildtime" name="tar">
+      <param name="obsinfo">waterfox-classic.obsinfo</param>
+   </service>
+   <service mode="buildtime" name="recompress">
+      <param name="file">waterfox-classic*.tar</param>
+      <param name="compression">gz</param>
+   </service>
+   <service name="appimage"/>
+   <service mode="buildtime" name="set_version" />
+</services>

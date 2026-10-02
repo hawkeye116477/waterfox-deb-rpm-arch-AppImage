@@ -1,0 +1,234 @@
+* Mon Nov 21 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.11-0
+  * Improved module imports.
+* Thu Aug 11 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.08-0
+  * Various security patches from the latest Mozilla Foundation Security Advisories.
+  * Web compatibility improvements to fix breakages across a variety of websites.
+* Fri Jun 24 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.06-0
+  * Added support for some emojis added in Unicode 13.
+  * Various security patches from the latest Mozilla Foundation Security Advisories.
+  * Web compatibility improvements to fix breakages across a variety of websites.
+* Sat Apr 16 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.04-0
+  * Various security patches in the Mozilla Foundation Security Advisory 2022-14.
+  * Bing should crash less frequently.
+  * Signing into sync from about:accounts should work again.
+  * Fixed sandbox crashing with glibc/libc6 >=2.35.
+  * Copying text with the style "white-space: pre;" should now preserve white space.
+* Mon Feb 28 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.02-0
+  * Latest security patches
+* Sat Jan 15 2022 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2022.01-0
+  * Latest security patches
+* Thu Nov 25 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.11-0
+ * Added security patches from latest ESR
+* Wed Oct 13 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.10-0
+  * Updated RegExp engine, with resulting perfomance improvement in JavaScript
+  * Fixed crashes for users on newer Linux distributions
+  * TLS 1.3 compatibility mode is now enabled by default
+* Mon Sep 20 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.09-0
+  * New RegExp engine in SpiderMonkey, adding support for Unicode escape sequences, lookbehind references, and named captures
+  * Scrollbar preferences can be toggled in about:preferences now
+  * Added security patches from latest ESR
+* Tue Aug 31 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.08.1-0
+  * Fixed problems with restoring session cookies.
+  * Fixed problem which disabled some extensions
+* Fri Aug 20 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.08-0
+  * Aligned document.open() with the overhauled specification
+  * Fixed issues with PerformanceObserver
+  * Fixed issues with -moz-appearance and -webkit-appearance
+  * Implemented promise.allSettled()
+  * Implemented the origin-clean algorithm for canvases
+  * Added SVG image support for createImageBitmap
+  * Implemented EventTarget as a constructor.
+  * Updated the lz4 library
+  * Updated the ICU library
+  * Fixed various crashes
+  * Blocked particularly old versions of Mesa/Nouveau drivers due to issues
+  * Changed the default Firefox Compatibility version number to 68.0
+  * Updated user-agent overrides
+  * Addressed CVE-2018-5113
+  * Added security patches from latest ESR
+* Wed Jul 14 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.07-0
+  * Redirects for requests that require preflight are now allowed
+  * Implemented missing calculation support for stroke-dashoffset
+  * Disabled the <menuitem> html tag by default. If you still need this, you can re-enable it with the preference dom.menuitem.enabled in about:config
+  * Changed behavior for <img> without src
+  * Updated ResizeObserver to match the current spec
+  * Added improvements for Web Animations API
+  * Improved tables support
+  * Added user agent overrides for websites that didn't recognise Waterfox Classic
+  * Fixed an issue with CSP .nonce attributes on elements
+  * Fixed an issue with textarea placeholders
+  * Fixed issues with -moz-appearance and -webkit-appearance
+  * Fixed various crashes
+  * Added security patches from latest ESR
+* Fri Jun  4 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.06-0
+  * Added CSS values smooth, high-quality and pixelated to the image-rendering keyword
+  * Added support for the scrollbar-color CSS keyword
+  * Added fixes for SVG sizing
+  * Fixed a website layout issue with table-styled elements potentially overlapping when placed inside a flexbox.
+  * Security patches from latest ESR
+  * Updated Widevine CDM to 4.10.2209
+* Mon Apr 26 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.04.1-0
+  * Security patches from latest ESR
+  * Few useful user-agent overrides
+* Tue Apr  6 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.03-0
+  * Added support for detecting dark mode
+  * Implemented Performance Observer and queueMicrotask()
+  * Fixed CSS Grid Layout issues
+  * Fixed Fetch API issues
+  * Security patches from latest ESR
+  * Updated media codecs for better performance and security
+* Tue Mar  2 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.02-1
+  * Fixed Xenial and Stretch issues
+* Tue Feb 16 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.02-0
+  * Latest security patches
+  * Fixed a JavaScript performance issue
+  * Implemented JSON superset and well-formed JSON stringify (ES2019)
+  * Updated timezone data for internationalization functions.
+  * Polly extension is now integrated with official package (however I left that as a choice to install, if you want it, then just install waterfox-classic-ext-polly from apt)
+* Thu Jan 28 2021 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2021.01.1-0
+  * Latest security patches, backported from Firefox ESR 78.7
+  * Added 'Open the Profile Manager' entry to desktop file
+  * Updated translations in desktop file
+* Tue Dec  8 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.12-0
+  * Latest security advisories patched
+  * Website compatibility patches
+  * Fixed stability
+  * Restored possibility to install extensions made for FF 57
+* Wed Oct 21 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.10-0
+  * Latest security advisories patched
+* Tue Sep 22 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.09-0
+  * Latest security advisories patched
+* Wed Aug 26 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.08.1-0
+  * Fix for existing password database not being used
+  * Support for <link disabled>
+  * Disabled http-equiv cookies draft
+* Tue Aug 25 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.08-0
+  * Added user-agent override for swedbank.se
+  * Improved <table> support
+  * Removed the DOM battery API
+  * Updated SQLite lib to 3.33.0
+  * Changed the security storage database type to SQLite
+  * Updated Network Security Services to 3.44.4
+  * Updated NSPR to 4.21.1
+  * Set maximum supported TLS version to 1.3 and minimum to 1.2
+  * Latest security advisories patched
+* Thu Aug 13 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.07.2.1-0
+  * Added new user-agent overrides
+  * Fixed about pages text color for GTK dark themes
+  * Fixed memory leaks
+  * Implemented Object.fromEntries
+* Wed Aug  5 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.07.2-0
+  * Fixed startpage search issues
+* Thu Jul 30 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.07.1-1
+  * Implemented ShadowRoot.activeElement
+  * Various website rendering issues fixed
+  * Disabled TLS1.3 0-RTT
+  * Latest security advisories patched (best effort)
+* Wed Jul  1 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.07-0
+  * Fixed CSD for Pop! OS
+  * Various stability and security fixes
+* Wed Jun  3 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.06-0
+  * Updated timezone data for internationalization functions
+  * On-going work for implementing ShadowDOM v1, aligning the way DOM works as-needed
+  * Implemented JavaScript globalThis proposal
+  * Various stability and security fixes
+* Thu May  7 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.05-0
+  * Latest security advisories patched (best effort)
+* Tue Apr  7 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.04-0
+  * Security fixes (mfsa2020-13)
+  * Enabled Shutdown Decoder
+  * Added user-agent override for Amazon Prime Video
+  * Implemented titlebar rendering
+* Thu Mar 12 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.03.1-0
+  * Fixed crash when using NoScript
+* Thu Mar 12 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.03-0
+  * Latest security advisories from Mozilla
+  * Fixed various websites not loading properly (Thanks to hawkeye116477 for the gargantuan effort)
+  * Logo now has Classic tag to differentiate from Current
+  * Fixed DRM issues (Netflix, Prime Video etc)
+  * Various privacy settings update
+  * Made ES6 modules working for webextesions
+  * Added missing strings to language packages (migration dialog)
+  * Fixed issues related with dark system's themes
+  * Added AppStream metadata
+* Fri Feb 21 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.02.1-0
+  * Implemented asynchronous iterators
+  * Fixed an issue with form elements sometimes being incorrectly disabled.
+  * Added sourcestamp info
+  * Disabled SSL error reporting
+  * Fixed crashes on sites with Java applets
+* Thu Feb 13 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.02-0
+  * Latest security advisories from Mozilla (mfsa2020-06)
+* Wed Feb  5 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.01.1-0
+  * Various media library updates
+  * Added DNS resolution to webextensions api
+  * Fixed problems with fonts
+* Sat Jan 11 2020 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2020.01-0
+  * Very important security patches (CVE-2019-17026)
+  * Updated timezone data for internationalization functions
+  * Enabled unprefixed Fullscreen API
+  * Various website rendering issues fixed (Kinguin, Intel, Epic Games and others)
+  * Fixed problems related with uBO html filters
+* Thu Dec 19 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2019.12-2
+  * Fixed depends for some transitional packages
+* Tue Dec 10 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2019.12-0
+  * New features:
+      * Restart button in PanelUI and Menu
+      * Copy current tab URL
+      * Copy all tab URLs
+      * New advanced settings in Features tab
+  * Added settings for blocking notifications and exceptions
+  * Added settings for disabling loading images automatically and exceptions
+  * Added settings for disabling JavaScript with exceptions and advanced settings
+  * Added new privacy settings
+  * Added possibility to disable search bar on new tab page
+  * Containers support enabled
+  * Added support for new emoji in Unicode/Emoji 12
+  * Storage API enabled
+  * Security patches
+* Sun Oct 27 2019 hawkeye116477 <hawkeye116477@gmail.com>
+- version 2019.10-5
+  * Various website rending issues fixed. (Thanks to hawkeye116477)
+  * Various media libraries updated, including added support for AV1. (Thanks to hawkeye116477)
+  * Various config updates. (Thanks to Peacock365)
+  * Fixed displaying some emojis
+  * Added the path to the running binary to about:support
+  * Security fixes from mfsa 2019-33

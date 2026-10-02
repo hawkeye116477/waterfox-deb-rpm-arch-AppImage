@@ -1,0 +1,9 @@
+{
+    "policies": {
+        "AppAutoUpdate": false,
+        "AppUpdateURL": "https://hawkeye116477.github.io/waterfox-deb-rpm-arch-AppImage/AppImage/update_G.xml",
+        "Extensions": {
+            "Locked":  ["langpack-ar@l10n.waterfox.net", "langpack-cs@l10n.waterfox.net", "langpack-da@l10n.waterfox.net", "langpack-de@l10n.waterfox.net", "langpack-el@l10n.waterfox.net", "langpack-en-GB@l10n.waterfox.net", "langpack-es-ES@l10n.waterfox.net", "langpack-es-MX@l10n.waterfox.net", "langpack-fr@l10n.waterfox.net", "langpack-hu@l10n.waterfox.net", "langpack-id@l10n.waterfox.net", "langpack-it@l10n.waterfox.net", "langpack-ja@l10n.waterfox.net", "langpack-ko@l10n.waterfox.net", "langpack-lt@l10n.waterfox.net", "langpack-nl@l10n.waterfox.net", "langpack-nn-NO@l10n.waterfox.net", "langpack-pl@l10n.waterfox.net", "langpack-pt-BR@l10n.waterfox.net", "langpack-pt-PT@l10n.waterfox.net", "langpack-ru@l10n.waterfox.net", "langpack-sv-SE@l10n.waterfox.net", "langpack-th@l10n.waterfox.net", "langpack-vi@l10n.waterfox.net", "langpack-zh-CN@l10n.waterfox.net", "langpack-zh-TW@l10n.waterfox.net"]
+          }
+    }
+}
